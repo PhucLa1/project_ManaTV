@@ -1,0 +1,153 @@
+ CREATE DATABASE TVManagement;
+
+use TVManagement
+--Tạo bảng hãng sản xuất
+Create table Manufacturer (
+id int identity(1,1) primary key,
+names varchar(25),
+addresss varchar(50)
+)
+
+--Tạo bảng kiểu dáng
+create table Designs(
+id int identity(1,1) primary key,
+name varchar(25) 
+)
+
+--Tạo bảng màu sắc
+create table Colors(
+id int identity(1,1) primary key,
+names varchar(25)
+--Tên màu có thể lưu theo tên dạng như : red, green
+--Cũng có thể lưu theo màu RGB dạng như : 24,23,29
+)
+
+--Tạo bảng màn hình
+create table Screen(
+id int identity(1,1) primary key,
+names varchar(25)
+)
+
+
+--Tạo bảng cỡ màn hình 
+create table ScreenSize(
+id int identity(1,1) primary key,
+size float
+)
+
+--Tạo bảng nước sản xuất
+create table CountryOfManufacture(
+id int identity(1,1) primary key,
+names varchar(25)
+)
+
+--Tạo bảng sản phẩm 
+create table Products(
+id int identity(1,1) primary key,
+names varchar(50),
+id_Manufacturer int,
+id_Designs int,
+id_Colors int,
+id_Screen int,
+id_ScreenSize int,
+id_COfManufacture int,
+amount int,
+)
+
+--Tạo bảng ảnh
+create table Images(
+id int identity(1,1) primary key,
+id_Products int,
+imagePath varchar(100)
+)
+
+--Tạo bảng chi tiết hóa đơn bán
+create table sellBillDetail(
+id int identity(1,1) primary key,
+id_Products int,
+amount int,
+voucher float , -- Voucher ở đây tức là phần trăm được giảm giá khi khách hàng mua hàng
+id_sellBill int,
+)
+
+
+--Tạo bảng hóa đơn bán
+create table sellBill(
+id int identity(1,1) primary key,
+amount int  ,--ở đây tức là số hóa đơn bán
+id_Customers int,  --Id khách hàng
+id_Staff int, --id nhân viên 
+dateOfSell date, --ngày bán
+tax int  --Thuế
+)
+
+--Tạo bảng chi tiết hóa đơn nhập
+create table importBillDetail(
+id int identity(1,1) primary key,
+id_Products int,
+amount int,
+voucher float ,
+id_importBill int,
+)
+
+
+--Tạo bảng  hóa đơn nhập
+create table importBill(
+id int identity(1,1) primary key,
+amount int, -- số hóa đơn nhập
+id_Customers int,  --Id khách hàng
+id_Staff int, --id nhân viên 
+dateOfImport date  --ngày nhập
+)
+
+--Tạo bảng nhà cung cấp
+create table Supplier(
+id int identity(1,1) primary key,
+names varchar(25),
+addresss varchar(50),
+phoneNumber varchar(11)
+)
+
+--Tạo bảng khách hàng
+create table Customers(
+id int identity(1,1) primary key,
+names varchar(25),
+addresss varchar(50),
+phoneNumber varchar(11)
+)
+
+--Tạo bảng nhân viên 
+create table Staff(
+id int identity(1,1) primary key,
+names varchar(25),
+gender bit ,  --Chứa giá trị 0,1 0: nam, 1 : nữ
+phoneNumber varchar(11),
+dob date,
+addresss varchar(50),
+email varchar(25),
+id_Work int
+)
+
+--Tạo bảng Nhanvien_Calam
+create table Staff_ShiftWork(
+id int identity(1,1) primary key,
+id_Staff int,
+id_ShiftWork int
+)
+
+
+--Tạo bảng Ca làm
+create table ShiftWork(
+id int identity(1,1) primary key,
+names varchar(10),
+descri VARCHAR(MAX)
+)
+
+--Tạo bảng công việc 
+create table Work(
+id int identity(1,1) primary key,
+names varchar(50),
+descri VARCHAR(MAX)
+)
+
+
