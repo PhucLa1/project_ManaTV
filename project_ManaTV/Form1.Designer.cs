@@ -47,6 +47,10 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.miniPic = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.scalePic = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.exitPic = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnHam = new System.Windows.Forms.PictureBox();
@@ -77,7 +81,12 @@
             this.tVManagementDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tVManagementDataSet = new project_ManaTV.TVManagementDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.zoomTrans = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.miniPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scalePic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -93,15 +102,79 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnHam);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1120, 45);
+            this.panel1.Size = new System.Drawing.Size(1120, 46);
             this.panel1.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.miniPic);
+            this.flowLayoutPanel1.Controls.Add(this.scalePic);
+            this.flowLayoutPanel1.Controls.Add(this.exitPic);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(973, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(147, 46);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // miniPic
+            // 
+            this.miniPic.AllowFocused = false;
+            this.miniPic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.miniPic.AutoSizeHeight = true;
+            this.miniPic.BorderRadius = 21;
+            this.miniPic.Image = ((System.Drawing.Image)(resources.GetObject("miniPic.Image")));
+            this.miniPic.IsCircle = true;
+            this.miniPic.Location = new System.Drawing.Point(3, 3);
+            this.miniPic.Name = "miniPic";
+            this.miniPic.Size = new System.Drawing.Size(42, 42);
+            this.miniPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.miniPic.TabIndex = 3;
+            this.miniPic.TabStop = false;
+            this.miniPic.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.miniPic.Click += new System.EventHandler(this.miniPic_Click);
+            // 
+            // scalePic
+            // 
+            this.scalePic.AllowFocused = false;
+            this.scalePic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.scalePic.AutoSizeHeight = true;
+            this.scalePic.BorderRadius = 21;
+            this.scalePic.Image = ((System.Drawing.Image)(resources.GetObject("scalePic.Image")));
+            this.scalePic.IsCircle = true;
+            this.scalePic.Location = new System.Drawing.Point(51, 3);
+            this.scalePic.Name = "scalePic";
+            this.scalePic.Size = new System.Drawing.Size(42, 42);
+            this.scalePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.scalePic.TabIndex = 3;
+            this.scalePic.TabStop = false;
+            this.scalePic.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.scalePic.Click += new System.EventHandler(this.scalePic_Click);
+            // 
+            // exitPic
+            // 
+            this.exitPic.AllowFocused = false;
+            this.exitPic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.exitPic.AutoSizeHeight = true;
+            this.exitPic.BorderRadius = 21;
+            this.exitPic.Image = ((System.Drawing.Image)(resources.GetObject("exitPic.Image")));
+            this.exitPic.IsCircle = true;
+            this.exitPic.Location = new System.Drawing.Point(99, 3);
+            this.exitPic.Name = "exitPic";
+            this.exitPic.Size = new System.Drawing.Size(42, 42);
+            this.exitPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitPic.TabIndex = 3;
+            this.exitPic.TabStop = false;
+            this.exitPic.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.exitPic.Click += new System.EventHandler(this.exitPic_Click);
             // 
             // pictureBox1
             // 
@@ -144,9 +217,9 @@
             this.sidebar.Controls.Add(this.staffSideBar);
             this.sidebar.Controls.Add(this.btnLogOut);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar.Location = new System.Drawing.Point(0, 45);
+            this.sidebar.Location = new System.Drawing.Point(0, 46);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(266, 639);
+            this.sidebar.Size = new System.Drawing.Size(266, 638);
             this.sidebar.TabIndex = 1;
             // 
             // panel2
@@ -1423,6 +1496,10 @@
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 2;
             // 
+            // zoomTrans
+            // 
+            this.zoomTrans.Interval = 10;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1436,6 +1513,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.miniPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scalePic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.sidebar.ResumeLayout(false);
@@ -1449,6 +1530,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tVManagementDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1485,6 +1567,11 @@
         private System.Windows.Forms.BindingSource tVManagementDataSetBindingSource;
         private TVManagementDataSet tVManagementDataSet;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Bunifu.UI.WinForms.BunifuPictureBox miniPic;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Bunifu.UI.WinForms.BunifuPictureBox scalePic;
+        private Bunifu.UI.WinForms.BunifuPictureBox exitPic;
+        private System.Windows.Forms.Timer zoomTrans;
     }
 }
 

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Forms;
 
 namespace project_ManaTV
 {
+    
     public partial class Form1 : Form
     {
         public Form1()
@@ -50,24 +52,26 @@ namespace project_ManaTV
             }
         }
 
-        private void btnProduct_Click(object sender, EventArgs e)
-        {
-            
 
-        }
 
         private void startFormLoad()
         {
 
         }
-
+        private int x;
+        private int y;
         private void Form1_Load(object sender, EventArgs e)
         {
-            Database db = new Database();
-            string sql = "select * from Colors where id = @id";
-            db.SetQuery(sql);
-            var data = db.LoadRow(1);
-            MessageBox.Show(data["names"] + " ");
+
+            x = this.Left;
+            y = this.Top;
+
+
+            //Database db = new Database();
+            //string sql = "select * from Colors where id = @id";
+            //db.SetQuery(sql);
+            //var data = db.LoadRow(10);
+            //MessageBox.Show(data["names"] + " ");
 
 
             //string sql = "select * from Colors";
@@ -112,6 +116,33 @@ namespace project_ManaTV
             //};
 
             //SqlDataReader reader = db.Excute(myArray);
+        }
+
+        private Image filePath(string nameImage)
+        {
+
+            string startupPath = Application.StartupPath;
+            string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
+            string imagesFolderPath = Path.Combine(grandParentDirectory, "Images");
+
+
+            // Đường dẫn tới tệp hình ảnh cụ thể trong thư mục "images"
+            string imagePath = Path.Combine(imagesFolderPath, nameImage); // Thay "your_image.jpg" bằng tên tệp hình ảnh thực tế
+
+            // Kiểm tra xem tệp hình ảnh tồn tại trước khi gán
+            if (File.Exists(imagePath))
+            {
+                // Tạo một đối tượng hình ảnh từ tệp hình ảnh
+                Image image = Image.FromFile(imagePath);
+
+                // Gán hình ảnh cho PictureBox
+                return image;
+            }
+            else
+            {
+                // Xử lý trường hợp tệp hình ảnh không tồn tại
+                return null;
+            }
         }
 
         private bool staffExpand = false;
@@ -224,9 +255,64 @@ namespace project_ManaTV
             btnDashboard.Width = sidebar.Width; 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+        private void btnProduct_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("234");
+            productTrans.Start();
+        }
+
+        private void exitPic_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private bool scaleExpand = false;
+        
+        private void scalePic_Click(object sender, EventArgs e)
+        {
+
+
+            if(scaleExpand == false)
+            {
+                ScaleBigger();
+                scaleExpand = true;
+            }
+            else
+            {
+                ScaleSmaller(x,y);
+                scaleExpand = false;
+            }
+        }
+
+        private void ScaleBigger()
+        {
+            Screen mainScreen = Screen.PrimaryScreen;
+
+            // Thiết lập kích thước của Form để bằng kích thước màn hình
+            this.Width = mainScreen.Bounds.Width;
+            this.Height = mainScreen.Bounds.Height;
+
+
+            // Đặt vị trí của Form để nó ở cuối màn hình
+            this.Location = new System.Drawing.Point(mainScreen.Bounds.Right - this.Width,
+                mainScreen.Bounds.Bottom - this.Height);
+
+            scalePic.Image = filePath("minimize.png");
+        }
+        private void ScaleSmaller(int x,int y)
+        {
+            this.Width = 1120;
+            this.Height = 684;
+
+            this.Location = new System.Drawing.Point(x, y);
+
+            scalePic.Image = filePath("scale.png");
+        }
+
+        private void miniPic_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
