@@ -43,6 +43,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
       <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
@@ -77,8 +80,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\config.cs" />
-    <Compile Include="Models\Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TVManagementDataSet.Designer.cs">
@@ -86,6 +87,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TVManagementDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_Respository\config.cs" />
+    <Compile Include="_Respository\Database.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,13 +128,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="Models\" />
     <Folder Include="Presenters\" />
     <Folder Include="Views\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\1.jpg" />
-    <Content Include="Images\scale.png" />
-    <Content Include="Images\minimize.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

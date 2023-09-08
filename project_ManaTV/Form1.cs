@@ -118,6 +118,8 @@ namespace project_ManaTV
             //SqlDataReader reader = db.Excute(myArray);
         }
 
+
+        //Lay anh tu image
         private Image filePath(string nameImage)
         {
 
@@ -238,7 +240,7 @@ namespace project_ManaTV
             else
             {
                 sidebar.Width -= 5;
-                if (sidebar.Width <= 59)
+                if (sidebar.Width <= 61)
                 {
                     sidebarExpand = false;
                     sidebarTrans.Stop();
@@ -262,57 +264,40 @@ namespace project_ManaTV
             productTrans.Start();
         }
 
-        private void exitPic_Click(object sender, EventArgs e)
+
+
+        private bool isDragging = false;
+        private int mouseX, mouseY;
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            Application.Exit();
-        }
-
-        private bool scaleExpand = false;
-        
-        private void scalePic_Click(object sender, EventArgs e)
-        {
-
-
-            if(scaleExpand == false)
+            if (isDragging)
             {
-                ScaleBigger();
-                scaleExpand = true;
-            }
-            else
-            {
-                ScaleSmaller(x,y);
-                scaleExpand = false;
+                this.Left += e.X - mouseX;
+                this.Top += e.Y - mouseY;
             }
         }
 
-        private void ScaleBigger()
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
-            Screen mainScreen = Screen.PrimaryScreen;
-
-            // Thiết lập kích thước của Form để bằng kích thước màn hình
-            this.Width = mainScreen.Bounds.Width;
-            this.Height = mainScreen.Bounds.Height;
-
-
-            // Đặt vị trí của Form để nó ở cuối màn hình
-            this.Location = new System.Drawing.Point(mainScreen.Bounds.Right - this.Width,
-                mainScreen.Bounds.Bottom - this.Height);
-
-            scalePic.Image = filePath("minimize.png");
-        }
-        private void ScaleSmaller(int x,int y)
-        {
-            this.Width = 1120;
-            this.Height = 684;
-
-            this.Location = new System.Drawing.Point(x, y);
-
-            scalePic.Image = filePath("scale.png");
+            if (e.Button == MouseButtons.Left)
+            {
+                isDragging = false;
+            }
         }
 
-        private void miniPic_Click(object sender, EventArgs e)
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            if (e.Button == MouseButtons.Left)
+            {
+                isDragging = true;
+                mouseX = e.X;
+                mouseY = e.Y;
+            }
         }
+
+
+
+
     }
 }
