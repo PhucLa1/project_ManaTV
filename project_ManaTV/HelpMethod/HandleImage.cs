@@ -17,7 +17,7 @@ namespace project_ManaTV.HelpMethod
 
             string startupPath = Application.StartupPath;
             string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
-            string imagesFolderPath = Path.Combine(grandParentDirectory, "Images/"+folder);
+            string imagesFolderPath = Path.Combine(grandParentDirectory, "wwwroot/"+folder);
 
 
             // Đường dẫn tới tệp hình ảnh cụ thể trong thư mục "images"
@@ -57,7 +57,7 @@ namespace project_ManaTV.HelpMethod
                 // Lưu ảnh vào thư mục cụ thể
                 string startupPath = Application.StartupPath;
                 string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
-                string imagesFolderPath = Path.Combine(grandParentDirectory, "Images/"+folder);
+                string imagesFolderPath = Path.Combine(grandParentDirectory, "wwwroot/" + folder);
                 string genName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
                 string targetPath = Path.Combine(imagesFolderPath, genName);
 

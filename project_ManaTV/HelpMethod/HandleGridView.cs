@@ -17,7 +17,6 @@ namespace project_ManaTV.HelpMethod
                 gridView.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 gridView.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
-
         }
     }
 }

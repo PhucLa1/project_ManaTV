@@ -180,14 +180,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\Products\" />
-    <Folder Include="Images\Users\" />
     <Folder Include="Views\FuncFrm\ProductManagement\" />
+    <Folder Include="wwwroot\Products\" />
+    <Folder Include="wwwroot\Users\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Others\female.png" />
-    <Content Include="Images\Others\male.png" />
-    <Content Include="Images\Others\more.png" />
+    <Content Include="wwwroot\Others\female.png" />
+    <Content Include="wwwroot\Others\male.png" />
+    <Content Include="wwwroot\Others\more.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

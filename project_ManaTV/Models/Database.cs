@@ -126,5 +126,14 @@ namespace project_ManaTV.Models
             return res;
         }
 
+
+        //Thêm hàm thêm, sửa, xóa
+        //Sửa : Sp.Table("Work").Update("")
+        //Xóa : 
+        //Thêm : 
+        //Lấy ra toàn bộ : 
+        //Lấy theo id :   
+        //Bây giờ muốn : Sp.Table("work").Add("1,1,null,null,1,1");
+
     }
 }
