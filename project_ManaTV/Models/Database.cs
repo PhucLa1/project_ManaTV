@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -19,6 +20,7 @@ namespace project_ManaTV.Models
         string connectionString = $"Server={config.SERVER};Database={config.DATABASE};Integrated Security={config.Integrated_Security};";
         SqlConnection con;
         private SqlCommand command;
+        private SqlDataReader reader;
 
         public Database()
         {
@@ -46,7 +48,7 @@ namespace project_ManaTV.Models
         {
             this.command.CommandText = sql;
         }
-        public List<string> getValueOfQuery()
+        private List<string> getValueOfQuery()
         {
             List<string> result = new List<string>();
             MatchCollection matches = Regex.Matches(command.CommandText, @"\@\w+");
@@ -62,16 +64,21 @@ namespace project_ManaTV.Models
         //Dung de danh cho nhung cau lenh update,insert
         public SqlDataReader Excute(params object[] parameters)
         {
-            if(parameters != null)
+            if (reader != null && !reader.IsClosed)
             {
-                List<string> res = getValueOfQuery();
-                for(int i=0; i<parameters.Length; i++)
-                {
-                    command.Parameters.AddWithValue(res[i], parameters[i]);
-                }
+                reader.Close();
             }
-            SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
-            return reader;
+            if (parameters != null)
+                {
+                    List<string> res = getValueOfQuery();
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        command.Parameters.AddWithValue(res[i], parameters[i]);
+                    }
+                }
+                reader = command.ExecuteReader();
+                command.Parameters.Clear();
+                return reader;
         }
 
         //Lay nhieu dong du lieu
@@ -79,31 +86,41 @@ namespace project_ManaTV.Models
         public List<Dictionary<string,object>> LoadAllRows(params object[] parameters)
         {
             List<Dictionary<string, object>> res = new List<Dictionary<string, object>> { };
-            SqlDataReader reader = Excute(parameters);
-
-            while (reader.Read())
+            if (reader != null && !reader.IsClosed)
             {
-                Dictionary<string, object> row = new Dictionary<string, object>();
-
-                for (int i = 0; i < reader.FieldCount; i++)
+                reader.Close();
+            }
+            using (reader = Excute(parameters)) 
+            {
+                while (reader.Read())
                 {
-                    row[reader.GetName(i)] = reader.GetValue(i);
-                }
+                    Dictionary<string, object> row = new Dictionary<string, object>();
 
-                res.Add(row);
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        row[reader.GetName(i)] = reader.GetValue(i);
+                    }
+                    res.Add(row);
+                }
             }
             return res;
         }
 
         public Dictionary<string,object> LoadRow(params object[] parameters)
         {
-            Dictionary<string,object> res = new Dictionary<string,object>();
-            SqlDataReader reader = Excute(parameters);
-            while (reader.Read())
+            if (reader != null && !reader.IsClosed)
             {
-                for (int i = 0; i < reader.FieldCount; i++)
+                reader.Close();
+            }
+            Dictionary<string,object> res = new Dictionary<string,object>();
+            using (SqlDataReader reader = Excute(parameters))
+            {
+                while (reader.Read())
                 {
-                    res[reader.GetName(i)] = reader.GetValue(i);
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        res[reader.GetName(i)] = reader.GetValue(i);
+                    }
                 }
             }
             return res;

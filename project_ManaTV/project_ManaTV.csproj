@@ -40,6 +40,24 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
@@ -49,8 +67,14 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
       <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
       <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar">
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
@@ -62,6 +86,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -74,11 +99,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="HelpMethod\HandleGridView.cs" />
+    <Compile Include="HelpMethod\HandleImage.cs" />
+    <Compile Include="InitClasses.cs" />
+    <Compile Include="Models\m_Staff.cs" />
+    <Compile Include="Models\m_Work.cs" />
+    <Compile Include="Presenters\Staff\AddStaffPresenter.cs" />
+    <Compile Include="Presenters\Staff\StaffPresenter.cs" />
+    <Compile Include="Views\Frm_Layout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\Frm_Layout.Designer.cs">
+      <DependentUpon>Frm_Layout.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,10 +119,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TVManagementDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="_Respository\config.cs" />
-    <Compile Include="_Respository\Database.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Models\config.cs" />
+    <Compile Include="Models\Database.cs" />
+    <Compile Include="Views\FuncFrm\StaffManagement\AddNewStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\StaffManagement\AddNewStaff.designer.cs">
+      <DependentUpon>AddNewStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\StaffManagement\IAddNewStaff.cs" />
+    <Compile Include="Views\FuncFrm\StaffManagement\IStaffView.cs" />
+    <Compile Include="Views\FuncFrm\StaffManagement\StaffView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\StaffManagement\StaffView.Designer.cs">
+      <DependentUpon>StaffView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Frm_Layout.resx">
+      <DependentUpon>Frm_Layout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -103,6 +149,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AddNewStaff.resx">
+      <DependentUpon>AddNewStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\StaffManagement\StaffView.resx">
+      <DependentUpon>StaffView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,10 +180,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
-    <Folder Include="Models\" />
-    <Folder Include="Presenters\" />
-    <Folder Include="Views\" />
+    <Folder Include="Images\Products\" />
+    <Folder Include="Images\Users\" />
+    <Folder Include="Views\FuncFrm\ProductManagement\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Others\female.png" />
+    <Content Include="Images\Others\male.png" />
+    <Content Include="Images\Others\more.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

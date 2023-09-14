@@ -1,0 +1,10 @@
+//Add vào bảng Staff
+//Add vào bảng Work
+INSERT INTO Work (names, descri) VALUES ('Marketing Manager', 'Manage marketing campaigns');
+INSERT INTO Work (names, descri) VALUES ('Product Engineer', 'Develop TV products');
+INSERT INTO Work (names, descri) VALUES ('Technical Support Specialist', 'Provide technical support');
+INSERT INTO Work (names, descri) VALUES ('Business Development Representative', 'Identify new business opportunities');
+INSERT INTO Work (names, descri) VALUES ('Shipping and Delivery Staff', 'Handle shipping and delivery operations');
+INSERT INTO Work (names, descri) VALUES ('Warehouse Staff', 'Manage inventory in the warehouse');
+INSERT INTO Work (names, descri) VALUES ('Finance Staff', 'Handle financial transactions');
+INSERT INTO Work (names, descri) VALUES ('Administrative and HR Staff', 'Manage administrative tasks and HR functions');

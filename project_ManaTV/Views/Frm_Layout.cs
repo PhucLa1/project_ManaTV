@@ -1,28 +1,59 @@
 ﻿using Bunifu.UI.WinForms.BunifuButton;
 using project_ManaTV.Models;
+using project_ManaTV.Presenters;
+using project_ManaTV.Presenters.Staff;
+using project_ManaTV.Views;
+using project_ManaTV.Views.FuncFrm.StaffManagement;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project_ManaTV
 {
-    
-    public partial class Form1 : Form
+
+
+    //Sẽ lấy hết tất cả ở đây
+
+    public partial class Frm_Layout : Form
     {
-        public Form1()
+
+
+
+
+        public Frm_Layout()
         {
             InitializeComponent();
+            setSizeForm();
+        }
+
+        private void ShowFormInPanel(Form formToShow)
+        {
+            panelMainContent.Controls.Clear();
+
+            // Hiển thị form con trong Panel
+            formToShow.TopLevel = false;
+            formToShow.FormBorderStyle = FormBorderStyle.None;
+            formToShow.Dock = DockStyle.Fill;
+            panelMainContent.Controls.Add(formToShow);
+
+            // Đặt lại vị trí và kích thước của form con
+            formToShow.Location = new Point(0, 0); // Đặt vị trí ở góc trên bên trái của panel
+            formToShow.Size = panelMainContent.Size; // Đặt kích thước bằng kích thước của panel
+
+            // Hiển thị form con
+            formToShow.Show();
+            
         }
 
 
+        public void setSizeForm()
+        {
+            this.Left = 130;
+            this.Top = 130;
+            this.Width = 1120;
+            this.Height = 684;
+        }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
@@ -65,87 +96,11 @@ namespace project_ManaTV
 
             x = this.Left;
             y = this.Top;
-
-
-            //Database db = new Database();
-            //string sql = "select * from Colors where id = @id";
-            //db.SetQuery(sql);
-            //var data = db.LoadRow(10);
-            //MessageBox.Show(data["names"] + " ");
-
-
-            //string sql = "select * from Colors";
-            //db.SetQuery(sql);
-            //var data = db.LoadAllRows();
-            //int i = 1;
-            //foreach (var row in data)
-            //{
-            //    MessageBox.Show(row["names"]+" ");
-            //}
-
-
-            //dataGridView1.Columns.Add("FirstName", "First Name");
-            //dataGridView1.Columns.Add("LastName", "Last Name");
-            //dataGridView1.Columns.Add("Age", "Age");
-            //Database db = new Database();
-            //// Gọi phương thức SetQuery để thiết lập câu truy vấn
-            //db.SetQuery("SELECT * FROM Colors");
-
-            //// Gọi phương thức ExecuteReader để thực hiện truy vấn
-            //SqlDataReader reader = db.Excute();
-
-            //// Tạo DataTable để chứa dữ liệu
-            //DataTable dataTable = new DataTable();
-            //dataTable.Load(reader);
-
-            //// Hiển thị dữ liệu lên DataGridView
-            //dataGridView1.DataSource = dataTable;
-
-            //// Đóng kết nối và giải phóng tài nguyên
-            //db.Disconnect();
-            //Database db = new Database();
-            //string query = "update Colors set names = @value where id = @condition";
-            //db.SetQuery(query);
-
-            //object value = "phucdepzaii";
-            //int condition = 1;
-
-            //object[] myArray = new object[]
-            //{
-            //    "phucdepzao", 1
-            //};
-
-            //SqlDataReader reader = db.Excute(myArray);
         }
 
 
         //Lay anh tu image
-        private Image filePath(string nameImage)
-        {
-
-            string startupPath = Application.StartupPath;
-            string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
-            string imagesFolderPath = Path.Combine(grandParentDirectory, "Images");
-
-
-            // Đường dẫn tới tệp hình ảnh cụ thể trong thư mục "images"
-            string imagePath = Path.Combine(imagesFolderPath, nameImage); // Thay "your_image.jpg" bằng tên tệp hình ảnh thực tế
-
-            // Kiểm tra xem tệp hình ảnh tồn tại trước khi gán
-            if (File.Exists(imagePath))
-            {
-                // Tạo một đối tượng hình ảnh từ tệp hình ảnh
-                Image image = Image.FromFile(imagePath);
-
-                // Gán hình ảnh cho PictureBox
-                return image;
-            }
-            else
-            {
-                // Xử lý trường hợp tệp hình ảnh không tồn tại
-                return null;
-            }
-        }
+        
 
         private bool staffExpand = false;
         private void staffTrans_Tick(object sender, EventArgs e)
@@ -153,7 +108,7 @@ namespace project_ManaTV
             if (staffExpand == false)
             {
                 staffSideBar.Height += 10;
-                if (staffSideBar.Height >= 305)
+                if (staffSideBar.Height >= 184)
                 {
                     staffExpand = true;
                     staffTrans.Stop();
@@ -173,6 +128,8 @@ namespace project_ManaTV
         private void btnStaff_Click(object sender, EventArgs e)
         {
             staffTrans.Start();
+
+
         }
 
         private void searchFunction_TextChanged(object sender, EventArgs e)
@@ -284,6 +241,75 @@ namespace project_ManaTV
             {
                 isDragging = false;
             }
+        }
+
+
+        private bool isZoomed = false;
+        private int targetWidth;
+        private int targetHeight;
+
+
+        private void zoom_Tick(object sender, EventArgs e)
+        {
+            if (btnHam.Width < targetWidth)
+                btnHam.Width += 1;
+            if (btnHam.Height < targetHeight)
+                btnHam.Height += 1;
+
+            // Kiểm tra xem nút đã phóng to đủ lớn chưa
+            if (btnHam.Width >= targetWidth && btnHam.Height >= targetHeight)
+            {
+                isZoomed = true;
+                zoom.Stop();
+            }
+        }
+
+        private void btnHam_MouseEnter(object sender, EventArgs e)
+        {
+            targetWidth = btnHam.Width + 10; // Ví dụ: tăng 20 pixel
+            targetHeight = btnHam.Height + 10; // Ví dụ: tăng 20 pixel
+
+            // Bắt đầu Timer
+            zoom.Start();
+        }
+
+        private void btnHam_MouseLeave(object sender, EventArgs e)
+        {
+            zoom.Stop();
+            btnHam.Width = btnHam.MinimumSize.Width;
+            btnHam.Height = btnHam.MinimumSize.Height;
+            isZoomed = false;
+        }
+
+        private void btnHam_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void panelMainContent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+            //Mở form hien thi staff
+            m_Staff m_Staff = new m_Staff();
+            if (InitClasses.AddNewStaff.IsDisposed) {
+                InitClasses.AddNewStaff = new AddNewStaff();
+            }
+            AddStaffPresenter p_Staff = new AddStaffPresenter(m_Staff,InitClasses.AddNewStaff);
+
+            InitClasses.AddNewStaff.Show();
+        }
+
+        private void btnShowStaff_Click(object sender, EventArgs e)
+        {
+            m_Staff m_Staff = new m_Staff();
+            
+            StaffPresenter p_Staff = new StaffPresenter(InitClasses.staffView, m_Staff);
+
+
+            ShowFormInPanel(InitClasses.staffView);
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
