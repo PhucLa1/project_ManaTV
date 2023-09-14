@@ -231,6 +231,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\FuncFrm\ProductManagement\" />
+    <Folder Include="wwwroot\Products\" />
+    <Folder Include="wwwroot\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="wwwroot\Others\female.png" />
