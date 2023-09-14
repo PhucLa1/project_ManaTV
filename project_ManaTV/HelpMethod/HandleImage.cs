@@ -14,7 +14,7 @@ namespace project_ManaTV.HelpMethod
         //Hien thi hinh anh len picturebox
         public static Image filePath(string folder,string nameImage)
         {
-
+            string any = "";
             string startupPath = Application.StartupPath;
             string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
             string imagesFolderPath = Path.Combine(grandParentDirectory, "wwwroot/"+folder);
