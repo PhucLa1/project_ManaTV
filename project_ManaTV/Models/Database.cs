@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -17,7 +18,10 @@ namespace project_ManaTV.Models
 {
     internal class Database
     {
-        string connectionString = $"Server={config.SERVER};Database={config.DATABASE};Integrated Security={config.Integrated_Security};";
+        string connectionString = $"Server={ConfigurationManager.AppSettings["SERVER"]};" +
+           $"Database={ConfigurationManager.AppSettings["DATABASE"]};" +
+           $"Integrated Security={ConfigurationManager.AppSettings["Integrated_Security"]};";
+        //string connectionString = $"Server={config.SERVER};Database={config.DATABASE};Integrated Security={config.Integrated_Security};";
         SqlConnection con;
         private SqlCommand command;
         private SqlDataReader reader;
