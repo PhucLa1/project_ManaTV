@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -12,9 +13,9 @@ namespace project_ManaTV.HelpMethod
     internal class HandleImage
     {
         //Hien thi hinh anh len picturebox
+
         public static Image filePath(string folder,string nameImage)
         {
-            string any = "";
             string startupPath = Application.StartupPath;
             string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
             string imagesFolderPath = Path.Combine(grandParentDirectory, "wwwroot/"+folder);
@@ -42,41 +43,38 @@ namespace project_ManaTV.HelpMethod
 
         //Mo hop thoai chon hinh anh dong thoi luu hinh anh vào folder wwwroot
         //Kiểm tra nếu chuỗi trả về là "" thì có nghĩa là file chưa được chọn hoặc chưa được lưu
-      
-        public static string OpenAndSaveImage(string folder)
-        {
-            string filePath = "";
+
+
+        //Cái open image chỉ trả về một cái generate
+        public static string selectedFilePath = "";
+        public static void OpenImageAndShow(BunifuPictureBox picBox)
+        {           
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp"; // Chỉ cho phép các loại tệp ảnh phổ biến
             openFileDialog1.Title = "Chọn ảnh";
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string selectedFilePath = openFileDialog1.FileName;
-
-                // Lưu ảnh vào thư mục cụ thể
-                string startupPath = Application.StartupPath;
-                string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
-<<<<<<< HEAD
-                string imagesFolderPath = Path.Combine(grandParentDirectory, "wwwroot/"+folder);
-=======
-                string imagesFolderPath = Path.Combine(grandParentDirectory, "wwwroot/" + folder);
->>>>>>> 291e8a3929a784574fdede723272c69d98112e3c
-                string genName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
-                string targetPath = Path.Combine(imagesFolderPath, genName);
-
-
-                // Kiểm tra nếu thư mục đích không tồn tại thì tạo mới
-                if (!Directory.Exists(imagesFolderPath))
-                {
-                    Directory.CreateDirectory(imagesFolderPath);
-                }
-
-                // Copy tệp ảnh vào thư mục đích
-                File.Copy(selectedFilePath, targetPath, true);
-                filePath = targetPath;
+                selectedFilePath = openFileDialog1.FileName;
+                picBox.Image = new Bitmap(openFileDialog1.FileName);
             }
-            return filePath;
+        }
+
+        public static string SaveImage(string folder)
+        {
+            //File được lưu vào trong folder trong dự án
+            string startupPath = Application.StartupPath;
+            string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
+            string imagesFolderPath = Path.Combine(grandParentDirectory, "wwwroot/", folder);
+            string genName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
+            string targetPath = Path.Combine(imagesFolderPath, genName);
+            // Kiểm tra nếu thư mục đích không tồn tại thì tạo mới
+            if (!Directory.Exists(imagesFolderPath))
+            {
+                Directory.CreateDirectory(imagesFolderPath);
+            }
+            File.Copy(selectedFilePath, targetPath, true);
+            return genName;
         }
 
 

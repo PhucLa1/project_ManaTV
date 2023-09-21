@@ -17,7 +17,7 @@ namespace project_ManaTV
         public static StaffView staffView = new StaffView();
 
         //Khoi tao form them nhan vien
-        public static AddNewStaff AddNewStaff = new AddNewStaff();
+        public static AboutStaff AddNewStaff,UpdateStaff,DeleteStaff,DetailStaff;
 
     }
 }

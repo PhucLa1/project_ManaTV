@@ -103,7 +103,25 @@ namespace project_ManaTV.Models
                     res.Add(row);
                 }
             }
+            command.Parameters.Clear();
             return res;
+        }
+        public int getNumberOfRecorder(params object[] parameters)
+        {
+            if (reader != null && !reader.IsClosed)
+            {
+                reader.Close();
+            }
+            int count = 0;
+            using (reader = Excute(parameters))
+            {
+                while (reader.Read())
+                {
+                    count++;
+                }
+            }
+            command.Parameters.Clear();
+            return count ;
         }
 
         public Dictionary<string,object> LoadRow(params object[] parameters)
@@ -119,10 +137,19 @@ namespace project_ManaTV.Models
                 {
                     for (int i = 0; i < reader.FieldCount; i++)
                     {
-                        res[reader.GetName(i)] = reader.GetValue(i);
+                        if(reader.GetValue(i) == DBNull.Value)
+                        {
+                            res[reader.GetName(i)] = null;
+                        }
+                        else
+                        {
+                            res[reader.GetName(i)] = reader.GetValue(i);
+                        }
+                        
                     }
                 }
             }
+            command.Parameters.Clear();
             return res;
         }
 

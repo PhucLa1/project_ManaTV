@@ -8,7 +8,7 @@ namespace project_ManaTV.Models
 {
     internal class config
     {
-        public static  string SERVER = "LAPTOP-7TK1BNVS\\SQLEXPRESS01";
+        public static  string SERVER = "LAPTOP-VM5HDNMQ";
         public static string DATABASE = "TVManagement";
         public static bool Integrated_Security = true;
     }

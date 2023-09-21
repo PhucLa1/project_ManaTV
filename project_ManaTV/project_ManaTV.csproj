@@ -43,7 +43,7 @@
       <HintPath>..\..\BunifuCrack\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
-      <HintPath>..\..\BunifuCrack\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
       <HintPath>..\..\BunifuCrack\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
@@ -61,7 +61,7 @@
       <HintPath>..\..\BunifuCrack\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
-      <HintPath>..\..\BunifuCrack\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\testAPI\BunifuCrack\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
       <HintPath>..\..\BunifuCrack\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
@@ -151,11 +151,18 @@
   <ItemGroup>
     <Compile Include="HelpMethod\HandleGridView.cs" />
     <Compile Include="HelpMethod\HandleImage.cs" />
+    <Compile Include="HelpMethod\Valiadated.cs" />
     <Compile Include="InitClasses.cs" />
     <Compile Include="Models\m_Staff.cs" />
     <Compile Include="Models\m_Work.cs" />
-    <Compile Include="Presenters\Staff\AddStaffPresenter.cs" />
+    <Compile Include="Presenters\Staff\AboutStaffPresenter.cs" />
     <Compile Include="Presenters\Staff\StaffPresenter.cs" />
+    <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.designer.cs">
+      <DependentUpon>AboutStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Frm_Layout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,20 +178,23 @@
     </Compile>
     <Compile Include="Models\config.cs" />
     <Compile Include="Models\Database.cs" />
-    <Compile Include="Views\FuncFrm\StaffManagement\AddNewStaff.cs">
+    <Compile Include="Views\FuncFrm\StaffManagement\IAboutStaff.cs" />
+    <Compile Include="Views\FuncFrm\StaffManagement\IStaffView.cs" />
+    <Compile Include="Views\FuncFrm\StaffManagement\StaffCalender.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FuncFrm\StaffManagement\AddNewStaff.designer.cs">
-      <DependentUpon>AddNewStaff.cs</DependentUpon>
+    <Compile Include="Views\FuncFrm\StaffManagement\StaffCalender.Designer.cs">
+      <DependentUpon>StaffCalender.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FuncFrm\StaffManagement\IAddNewStaff.cs" />
-    <Compile Include="Views\FuncFrm\StaffManagement\IStaffView.cs" />
     <Compile Include="Views\FuncFrm\StaffManagement\StaffView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\StaffView.Designer.cs">
       <DependentUpon>StaffView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
+      <DependentUpon>AboutStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Layout.resx">
       <DependentUpon>Frm_Layout.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,8 +209,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AddNewStaff.resx">
-      <DependentUpon>AddNewStaff.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FuncFrm\StaffManagement\StaffCalender.resx">
+      <DependentUpon>StaffCalender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\StaffView.resx">
       <DependentUpon>StaffView.cs</DependentUpon>
@@ -230,14 +240,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Util\" />
     <Folder Include="Views\FuncFrm\ProductManagement\" />
     <Folder Include="wwwroot\Products\" />
     <Folder Include="wwwroot\Users\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="wwwroot\Others\bin.png" />
+    <Content Include="wwwroot\Others\eye.png" />
     <Content Include="wwwroot\Others\female.png" />
     <Content Include="wwwroot\Others\male.png" />
     <Content Include="wwwroot\Others\more.png" />
+    <Content Include="wwwroot\Others\pen.png" />
+    <Content Include="wwwroot\Others\person.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
