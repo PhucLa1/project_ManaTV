@@ -1,12 +1,14 @@
 ﻿using Bunifu.UI.WinForms.BunifuButton;
-using project_ManaTV.Models;
 using project_ManaTV.Presenters;
 using project_ManaTV.Presenters.Staff;
+using project_ManaTV.Repository;
 using project_ManaTV.Views;
 using project_ManaTV.Views.FuncFrm.StaffManagement;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace project_ManaTV
@@ -17,14 +19,67 @@ namespace project_ManaTV
 
     public partial class Frm_Layout : Form
     {
-
-
-
-
+        FontFamily[] fontFamilies;
         public Frm_Layout()
         {
             InitializeComponent();
             setSizeForm();
+            InitForm();
+        }
+
+
+
+
+        private void InitForm()
+        {
+
+            lblBrandName.ForeColor = ColorTranslator.FromHtml("#30B9DB");
+            searchFunction.FillColor = ColorTranslator.FromHtml("#ECF1F8");
+            searchFunction.BorderColorActive = ColorTranslator.FromHtml("#D9D9D9");
+            sidebar.BackColor = ColorTranslator.FromHtml("#29374B");
+
+           
+
+            var lstMenuButtons = new List<BunifuButton>() { btnDashboard , btnLogOut , btnProduct , btnStaff };
+            foreach (var btn in lstMenuButtons)
+            {
+                CustomMenuButton(btn);
+            }
+        }
+        private void CustomMenuButton(BunifuButton menuButton)
+        {
+            menuButton.IdleFillColor = Color.Transparent;
+            menuButton.onHoverState.BorderColor = Color.Transparent;
+            menuButton.onHoverState.FillColor = Color.FromArgb(72, 217, 217, 217);
+            menuButton.onHoverState.ForeColor = ColorTranslator.FromHtml("#D9D9D9");
+            menuButton.onHoverState.BorderRadius = 0;
+
+            menuButton.OnPressedState.BorderColor = Color.Transparent;
+            menuButton.OnPressedState.FillColor = Color.FromArgb(72, 217, 217, 217);
+            menuButton.OnPressedState.ForeColor = Color.FromArgb(72, 217, 217, 217);
+
+
+
+            //Font
+            //Create your private font collection object.
+            PrivateFontCollection pfc = new PrivateFontCollection();
+
+            //Select your font from the resources.
+            //My font here is "Digireu.ttf"
+            int fontLength = Properties.Resources.Lexend_Regular.Length;
+
+            // create a buffer to read in to
+            byte[] fontdata = Properties.Resources.Lexend_Regular;
+
+            // create an unsafe memory block for the font data
+            var data = Marshal.AllocCoTaskMem(fontLength);
+
+            // copy the bytes to the unsafe memory block
+            Marshal.Copy(fontdata, 0, data, fontLength);
+
+            // pass the font to the font collection
+            //pfc.AddMemoryFont(data, fontLength);
+            //btnProduct.Font = new Font(pfc.Families[0], lblBrandName.Font.Size);
         }
 
         private void ShowFormInPanel(Form formToShow)
@@ -66,7 +121,7 @@ namespace project_ManaTV
             if (productExpand == false)
             {
                 productSideBar.Height += 10;
-                if (productSideBar.Height >= 305)
+                if (productSideBar.Height >= 235)
                 {
                     productExpand = true;
                     productTrans.Stop();
@@ -75,7 +130,7 @@ namespace project_ManaTV
             else
             {
                 productSideBar.Height -= 10;
-                if (productSideBar.Height <= 60)
+                if (productSideBar.Height <= 55)
                 {
                     productExpand = false;
                     productTrans.Stop();
@@ -108,7 +163,7 @@ namespace project_ManaTV
             if (staffExpand == false)
             {
                 staffSideBar.Height += 10;
-                if (staffSideBar.Height >= 184)
+                if (staffSideBar.Height >= 152)
                 {
                     staffExpand = true;
                     staffTrans.Stop();
@@ -117,7 +172,7 @@ namespace project_ManaTV
             else
             {
                 staffSideBar.Height -= 10;
-                if (staffSideBar.Height <= 60)
+                if (staffSideBar.Height <= 55)
                 {
                     staffExpand = false;
                     staffTrans.Stop();
@@ -266,19 +321,19 @@ namespace project_ManaTV
 
         private void btnHam_MouseEnter(object sender, EventArgs e)
         {
-            targetWidth = btnHam.Width + 10; // Ví dụ: tăng 20 pixel
-            targetHeight = btnHam.Height + 10; // Ví dụ: tăng 20 pixel
+            //targetWidth = btnHam.Width + 10; // Ví dụ: tăng 20 pixel
+            //targetHeight = btnHam.Height + 10; // Ví dụ: tăng 20 pixel
 
-            // Bắt đầu Timer
-            zoom.Start();
+            //// Bắt đầu Timer
+            //zoom.Start();
         }
 
         private void btnHam_MouseLeave(object sender, EventArgs e)
         {
-            zoom.Stop();
-            btnHam.Width = btnHam.MinimumSize.Width;
-            btnHam.Height = btnHam.MinimumSize.Height;
-            isZoomed = false;
+            //zoom.Stop();
+            //btnHam.Width = btnHam.MinimumSize.Width;
+            //btnHam.Height = btnHam.MinimumSize.Height;
+            //isZoomed = false;
         }
 
         private void btnHam_MouseClick(object sender, MouseEventArgs e)
@@ -293,7 +348,7 @@ namespace project_ManaTV
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
             //Mở form hien thi staff
-            m_Staff m_Staff = new m_Staff();
+            StaffRepository m_Staff = new StaffRepository();
             if (InitClasses.AddNewStaff.IsDisposed) {
                 InitClasses.AddNewStaff = new AddNewStaff();
             }
@@ -304,7 +359,7 @@ namespace project_ManaTV
 
         private void btnShowStaff_Click(object sender, EventArgs e)
         {
-            m_Staff m_Staff = new m_Staff();
+            StaffRepository m_Staff = new StaffRepository();
             
             StaffPresenter p_Staff = new StaffPresenter(InitClasses.staffView, m_Staff);
 

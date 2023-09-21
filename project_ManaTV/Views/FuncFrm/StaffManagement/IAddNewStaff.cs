@@ -18,6 +18,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
         string dob { get; set; }
         int id_Work { get; set; }
 
+
         event EventHandler AddData;
         event EventHandler LoadWorkData;
 

@@ -153,10 +153,11 @@
     <Compile Include="HelpMethod\HandleGridView.cs" />
     <Compile Include="HelpMethod\HandleImage.cs" />
     <Compile Include="InitClasses.cs" />
-    <Compile Include="Models\m_Staff.cs" />
-    <Compile Include="Models\m_Work.cs" />
+    <Compile Include="Repository\StaffRepository.cs" />
+    <Compile Include="Repository\WorkRepository.cs" />
     <Compile Include="Presenters\Staff\AddStaffPresenter.cs" />
     <Compile Include="Presenters\Staff\StaffPresenter.cs" />
+    <Compile Include="Repository\Database.cs" />
     <Compile Include="Views\Frm_Layout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,8 +171,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TVManagementDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Models\config.cs" />
-    <Compile Include="Models\Database.cs" />
     <Compile Include="Views\FuncFrm\StaffManagement\AddNewStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,16 +225,32 @@
     <None Include="TVManagementDataSet.xss">
       <DependentUpon>TVManagementDataSet.xsd</DependentUpon>
     </None>
+    <None Include="wwwroot\fonts\Lexend-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Models\" />
     <Folder Include="Views\FuncFrm\ProductManagement\" />
     <Folder Include="wwwroot\Products\" />
     <Folder Include="wwwroot\Users\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="wwwroot\assets\color-font.txt" />
+    <Content Include="wwwroot\assets\icons\bars-staggered-solid.png" />
+    <Content Include="wwwroot\assets\icons\bell-regular.png" />
+    <Content Include="wwwroot\assets\icons\chart-pie-solid.png" />
+    <Content Include="wwwroot\assets\icons\chevron-down-solid.png" />
+    <Content Include="wwwroot\assets\icons\circle-user-regular.png" />
+    <Content Include="wwwroot\assets\icons\file-invoice-dollar-solid.png" />
+    <Content Include="wwwroot\assets\icons\logoGroup4.jpg" />
+    <Content Include="wwwroot\assets\icons\magnifying-glass-solid.png" />
+    <Content Include="wwwroot\assets\icons\tv-solid.png" />
+    <Content Include="wwwroot\assets\icons\user-tie-solid.png" />
+    <Content Include="wwwroot\assets\icons\users-solid.png" />
     <Content Include="wwwroot\Others\female.png" />
     <Content Include="wwwroot\Others\male.png" />
     <Content Include="wwwroot\Others\more.png" />

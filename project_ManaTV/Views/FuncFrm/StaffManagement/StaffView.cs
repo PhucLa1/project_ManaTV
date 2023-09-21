@@ -1,7 +1,7 @@
 ﻿using Bunifu.UI.WinForms;
 using project_ManaTV.HelpMethod;
-using project_ManaTV.Models;
 using project_ManaTV.Presenters.Staff;
+using project_ManaTV.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,8 +109,8 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
 
         //Xử lí UI
         private void bunifuPictureBox3_Click(object sender, EventArgs e)
-        { 
-            m_Staff m_Staff = new m_Staff();
+        {
+            StaffRepository m_Staff = new StaffRepository();
             AddStaffPresenter addStaffPresenter = new AddStaffPresenter(m_Staff,InitClasses.AddNewStaff);
             InitClasses.AddNewStaff.Show();
         }

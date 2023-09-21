@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_ManaTV.Models
+namespace project_ManaTV.Repository
 {
-    internal class m_Staff
+    internal class StaffRepository
     {
         Database db = new Database();
 
@@ -16,6 +16,7 @@ namespace project_ManaTV.Models
             string query = "select *,Staff.id as 'staff_id' from Staff inner join Work on Staff.staff_work_id = Work.id;";
             db.SetQuery(query);
             return db.LoadAllRows();
+            
         }
 
         public List<Dictionary<string, object>> getStaffByValue(string value)
@@ -24,6 +25,7 @@ namespace project_ManaTV.Models
             db.SetQuery(query);
             return db.LoadAllRows("%" + value + "%");
         }
+
         public void AddNewStaff(string names,bool gender,string phoneNumber,string dob,string address,string email,int id_Work)
         {
             string query = "insert into Staff " +

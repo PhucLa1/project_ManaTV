@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_ManaTV.Models
+namespace project_ManaTV.Repository
 {
-    internal class m_Work
+    internal class WorkRepository
     {
         Database db = new Database();
 

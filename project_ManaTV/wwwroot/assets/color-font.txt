@@ -1,0 +1,5 @@
+- menu, bg-bar, bg-form: rbg(41, 55, 75, 0.96) | #29374B 96%
+- words, Current_tab, top-bar: #fff (white)
+- other_tab: #5E6E82
+- Font branch: KOULEN, regular 20
+- Font-menu: Lexend, regular 14

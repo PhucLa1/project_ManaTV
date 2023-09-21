@@ -15,8 +15,6 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
         //Attribute
         string valueSearch { get; set; }
        
-
-
         //Event
         event EventHandler LoadData;
         event EventHandler SearchData;

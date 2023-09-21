@@ -59,5 +59,15 @@ namespace project_ManaTV.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Lexend_Regular {
+            get {
+                object obj = ResourceManager.GetObject("Lexend_Regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

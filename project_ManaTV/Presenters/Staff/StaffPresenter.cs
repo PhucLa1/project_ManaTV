@@ -1,5 +1,5 @@
 ﻿using Bunifu.UI.WinForms;
-using project_ManaTV.Models;
+using project_ManaTV.Repository;
 using project_ManaTV.Views.FuncFrm.StaffManagement;
 using System;
 using System.Collections.Generic;
@@ -14,9 +14,9 @@ namespace project_ManaTV.Presenters
     internal class StaffPresenter
     {
         private readonly IStaffView view;
-        private readonly m_Staff model;
+        private readonly StaffRepository model;
 
-        public StaffPresenter(IStaffView view, m_Staff model)
+        public StaffPresenter(IStaffView view, StaffRepository model)
         {
             this.view = view;
             this.model = model;

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.Design.AxImporter;
 
-namespace project_ManaTV.Models
+namespace project_ManaTV.Repository
 {
     internal class Database
     {
