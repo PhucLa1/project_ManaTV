@@ -34,6 +34,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
         void GetCountOfStaff(Dictionary<string, object> numberStaff);
         void isClicked(string search);
         void CheckEnable();
+        void ShowMessageOfDel(string message, BunifuSnackbar.MessageTypes messageTypes);
         //
     }
 }

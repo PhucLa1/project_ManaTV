@@ -39,6 +39,7 @@ namespace project_ManaTV
                 }
                 else if (Status == "Update")
                 {
+                    //MessageBox.Show("1");
                     UpdateData?.Invoke(this, EventArgs.Empty);
                 }
                 else if (Status == "Delete")
@@ -254,9 +255,13 @@ namespace project_ManaTV
                 Male.Checked = false;
                 Female.Checked = true;
             }
-            if ((string)value["staff_image"] != null)
+            if ((string)value["staff_image"] != null || (string)value["staff_image"] != "")
             {
                 ImageUser.Image = HandleImage.filePath("Users",(string)value["staff_image"]);
+            }
+            else
+            {
+                ImageUser.Image = HandleImage.filePath("Users", "person.png");
             }
         }
 
@@ -376,6 +381,7 @@ namespace project_ManaTV
         {
             this.Dispose();
         }
+
 
         //Xử lí valiadate
 

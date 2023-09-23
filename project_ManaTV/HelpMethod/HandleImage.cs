@@ -73,7 +73,15 @@ namespace project_ManaTV.HelpMethod
             {
                 Directory.CreateDirectory(imagesFolderPath);
             }
-            File.Copy(selectedFilePath, targetPath, true);
+            if(selectedFilePath != "")
+            {
+                File.Copy(selectedFilePath, targetPath, true);
+
+            }
+            else
+            {
+                genName = "";
+            }            
             return genName;
         }
 

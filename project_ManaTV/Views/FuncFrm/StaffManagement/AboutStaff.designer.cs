@@ -262,6 +262,7 @@
             this.btnSave.TextMarginLeft = 0;
             this.btnSave.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSave.UseDefaultRadiusAndThickness = true;
+           // this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -782,7 +783,7 @@
             this.Female.BindingControl = null;
             this.Female.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.Female.BorderThickness = 1;
-            this.Female.Checked = false;
+            this.Female.Checked = true;
             this.Female.Location = new System.Drawing.Point(93, 14);
             this.Female.Name = "Female";
             this.Female.OutlineColor = System.Drawing.Color.DodgerBlue;

@@ -212,7 +212,12 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
             btnThird.Visible = true;
             btnFourth.Visible = true;
             btnFive.Visible = true;
-            if (TotalPage == 1)
+            btnFirst.Text = "1";
+            btnSecond.Text = "2";
+            btnThird.Text = "3";
+            btnFourth.Text = "4";
+            btnFive.Text = "5";
+            if (TotalPage <= 1)
             {
                 btnSecond.Visible = false;
                 btnThird.Visible = false;
@@ -446,7 +451,13 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
             }
         }
 
-
-
+        public void ShowMessageOfDel(string message, BunifuSnackbar.MessageTypes messageTypes)
+        {
+            bunifuSnackbar1.Show(this, message,
+                messageTypes,
+                1000,
+                "",
+                BunifuSnackbar.Positions.TopRight);
+        }
     }
 }
