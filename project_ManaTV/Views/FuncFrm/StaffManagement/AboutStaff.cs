@@ -25,6 +25,7 @@ namespace project_ManaTV
         private bool Gend;
         public AboutStaff(int id, string status)
         {
+            //tes pussh
             InitializeComponent();
             //Sự kiện clear các field và làm mất tầm nhìn của cái panel
             this.Id = id;
