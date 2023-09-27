@@ -3,6 +3,7 @@ using project_ManaTV.Repository;
 using project_ManaTV.Views.FuncFrm.StaffManagement;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,29 +26,49 @@ namespace project_ManaTV.Presenters
         }
         private void AssociationLoadEvent()
         {
-            this.view.LoadData += OnLoadData;
-            this.view.SearchData += OnSearchData;
-            this.view.UpdateData += OnUpdataData;
+            view.SearchData += OnSearchData;
+            view.CountPageChanged += OnCountPageChanged;
+            view.GetNumberOfStaff += OnGetNumberOfStaff;
+            view.PageChanged += OnPageChanged;
         }
 
-        private void OnUpdataData(object sender, EventArgs e)
+        private void OnPageChanged(object sender, EventArgs e)
         {
+            int totalRows = (int)this.model.getNumberOfStaff(view.valueSearch)["number"];           
+            view.totalPages = (int)Math.Ceiling((double)totalRows / view.pageSize);            
+            int startIndex = (view.currentPage - 1) * view.pageSize + 1 > totalRows ? 1 : (view.currentPage - 1) * view.pageSize + 1;
+            if (startIndex == 1)
+            {
+                view.currentPage = 1;
+            }
+            view.HandlePagination();
+            view.CheckEnable();
+            view.isClicked(view.currentPage.ToString());
+            int endIndex = (view.currentPage) * view.pageSize > totalRows ? totalRows : (view.currentPage) * view.pageSize;
+            var allStaff = this.model.getStaffByValue(view.valueSearch,startIndex - 1, endIndex - startIndex + 1);
+           // MessageBox.Show(totalRows + " + " + view.valueSearch);
+            this.view.ClearGridView();
+            this.view.displayStaff(allStaff);
+            view.ChangeLabelOfShowing($"Showing {startIndex} to {endIndex} of {totalRows} entries");
+            //MessageBox.Show(view.valueSearch);
+        }
 
+        private void OnGetNumberOfStaff(object sender, EventArgs e)
+        {
+            var data = this.model.getNumberOfStaff(view.valueSearch);        
+            view.GetCountOfStaff(data);
+            OnPageChanged(sender, e);
+        }
+
+        private void OnCountPageChanged(object sender, EventArgs e)
+        {
+            OnPageChanged(sender, e);
         }
 
         private void OnSearchData(object sender, EventArgs e)
         {
-            var data = this.model.getStaffByValue(this.view.valueSearch);
-            this.view.ClearGridView();
-            this.view.displayStaff(data);
+            //MessageBox.Show(view.valueSearch);
+            OnPageChanged(sender, e);
         }
-
-        private void OnLoadData(object sender, EventArgs e)
-        {
-            var data = this.model.getAllStaff();
-            this.view.ClearGridView();
-            this.view.displayStaff(data);
-        }
-
     }
 }

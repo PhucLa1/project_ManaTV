@@ -14,15 +14,26 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
 
         //Attribute
         string valueSearch { get; set; }
-       
+        int currentPage { get; set; }
+        int pageSize { get; set; }
+        int totalPages { get; set; }  
+        int totalRows { get; set; }
+
+
         //Event
-        event EventHandler LoadData;
         event EventHandler SearchData;
-        event EventHandler UpdateData;
+        event EventHandler CountPageChanged;
+        event EventHandler GetNumberOfStaff;
+        event EventHandler PageChanged;
 
 
         void displayStaff(List<Dictionary<string, object>> staffList);
         void ClearGridView();
-
+        void HandlePagination();
+        void ChangeLabelOfShowing(string label);
+        void GetCountOfStaff(Dictionary<string, object> numberStaff);
+        void isClicked(string search);
+        void CheckEnable();
+        //
     }
 }

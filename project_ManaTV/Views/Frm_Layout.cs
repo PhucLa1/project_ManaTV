@@ -89,12 +89,13 @@ namespace project_ManaTV
             // Hiển thị form con trong Panel
             formToShow.TopLevel = false;
             formToShow.FormBorderStyle = FormBorderStyle.None;
-            formToShow.Dock = DockStyle.Fill;
+            //formToShow.Dock = DockStyle.Fill;
             panelMainContent.Controls.Add(formToShow);
 
             // Đặt lại vị trí và kích thước của form con
-            formToShow.Location = new Point(0, 0); // Đặt vị trí ở góc trên bên trái của panel
-            formToShow.Size = panelMainContent.Size; // Đặt kích thước bằng kích thước của panel
+            //formToShow.Location = new Point(0, 0); // Đặt vị trí ở góc trên bên trái của panel
+            //formToShow.Size = panelMainContent.Size; // Đặt kích thước bằng kích thước của panel
+
 
             // Hiển thị form con
             formToShow.Show();
@@ -349,10 +350,10 @@ namespace project_ManaTV
         {
             //Mở form hien thi staff
             StaffRepository m_Staff = new StaffRepository();
-            if (InitClasses.AddNewStaff.IsDisposed) {
-                InitClasses.AddNewStaff = new AddNewStaff();
+            if (InitClasses.AddNewStaff == null || InitClasses.AddNewStaff.IsDisposed) {
+                InitClasses.AddNewStaff = new AboutStaff(-1,"Add");
             }
-            AddStaffPresenter p_Staff = new AddStaffPresenter(m_Staff,InitClasses.AddNewStaff);
+            AboutStaffPresenter p_Staff = new AboutStaffPresenter(m_Staff,InitClasses.AddNewStaff);
 
             InitClasses.AddNewStaff.Show();
         }
