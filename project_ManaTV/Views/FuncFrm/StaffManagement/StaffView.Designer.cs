@@ -1186,7 +1186,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(83)))), ((int)(((byte)(103)))));
             this.ClientSize = new System.Drawing.Size(1133, 717);
             this.Controls.Add(this.bunifuPanel1);
-            this.Name = "StaffView";
+           // this.Name = "StaffView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffView";
             this.Load += new System.EventHandler(this.StaffView_Load);

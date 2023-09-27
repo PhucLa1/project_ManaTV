@@ -133,6 +133,7 @@ namespace project_ManaTV
 
         public void ShowMessage(string message, BunifuSnackbar.MessageTypes messageTypes)
         {
+
             bunifuSnackbar1.Show(this, message,
             messageTypes,
             1000,

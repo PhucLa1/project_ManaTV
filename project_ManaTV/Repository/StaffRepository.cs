@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
-using static TheArtOfDev.HtmlRenderer.Adapters.RGraphicsPath;
 
 namespace project_ManaTV.Repository
 {

@@ -1,6 +1,6 @@
 ﻿using Bunifu.UI.WinForms;
 using project_ManaTV.HelpMethod;
-using project_ManaTV.Models;
+using project_ManaTV.Repository;
 using project_ManaTV.Views.FuncFrm.StaffManagement;
 using System;
 using System.Collections.Generic;
@@ -13,10 +13,10 @@ namespace project_ManaTV.Presenters.Staff
 {
     internal class AboutStaffPresenter
     {
-        private readonly m_Staff model;
+        private readonly StaffRepository model;
         private readonly IAboutStaff view; 
 
-        public AboutStaffPresenter(m_Staff model,IAboutStaff view)
+        public AboutStaffPresenter(StaffRepository model,IAboutStaff view)
         {
             this.view = view;
             this.model = model;
@@ -70,7 +70,7 @@ namespace project_ManaTV.Presenters.Staff
 
         private void OnLoadWorkData(object sender, EventArgs e)
         {
-            m_Work work = new m_Work();
+            WorkRepository work = new WorkRepository();
             var data = work.getAllWork();
             this.view.AddWorkInDropDown(data);
         }

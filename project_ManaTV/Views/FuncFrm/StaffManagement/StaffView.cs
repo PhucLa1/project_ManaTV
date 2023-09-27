@@ -89,7 +89,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                     
                     int x = int.Parse(gridViewStaff.Rows[e.RowIndex].Cells[0].Value.ToString());
                     //MessageBox.Show(actions + "");
-                    m_Staff m_Staff = new m_Staff();
+                    StaffRepository m_Staff = new StaffRepository();
                     if (actions == 8)
                     {
                         if (InitClasses.UpdateStaff == null || InitClasses.UpdateStaff.IsDisposed)
