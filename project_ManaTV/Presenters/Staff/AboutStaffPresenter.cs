@@ -37,7 +37,7 @@ namespace project_ManaTV.Presenters.Staff
         private void OnDeleteData(object sender, EventArgs e)
         {
             model.SoftDeleteStaff(view.id);
-            this.view.ShowMessage("Delete Success", BunifuSnackbar.MessageTypes.Success);
+            InitClasses.staffView.ShowMessageOfDel("Delete Success", BunifuSnackbar.MessageTypes.Success);
             InitClasses.DeleteStaff.Dispose();
             OnPageChangedWhenChangeData();
         }
@@ -87,8 +87,8 @@ namespace project_ManaTV.Presenters.Staff
                 string genName = HandleImage.SaveImage("Users");
                 this.model.AddNewStaff(this.view.name,
                     this.view.gender, this.view.phoneNumber, this.view.dob, this.view.address, this.view.email,
-                    this.view.id_Work,genName
-                    );                  
+                    this.view.id_Work, genName
+                    );
                 this.view.ShowMessage("Success! Congratulations on adding a new employee", BunifuSnackbar.MessageTypes.Success);
                 view.Reset();
             }

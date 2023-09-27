@@ -96,15 +96,26 @@ namespace project_ManaTV.Repository
             }
             using (reader = Excute(parameters)) 
             {
-                while (reader.Read())
+                if(reader != null && reader.HasRows) 
                 {
-                    Dictionary<string, object> row = new Dictionary<string, object>();
-
-                    for (int i = 0; i < reader.FieldCount; i++)
+                    while (reader.Read())
                     {
-                        row[reader.GetName(i)] = reader.GetValue(i);
+                        Dictionary<string, object> row = new Dictionary<string, object>();
+
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            if (reader.GetValue(i) == DBNull.Value)
+                            {
+                                row[reader.GetName(i)] = null;
+                            }
+                            else
+                            {
+                                row[reader.GetName(i)] = reader.GetValue(i);
+                            }
+
+                        }
+                        res.Add(row);
                     }
-                    res.Add(row);
                 }
             }
             command.Parameters.Clear();
@@ -137,21 +148,25 @@ namespace project_ManaTV.Repository
             Dictionary<string,object> res = new Dictionary<string,object>();
             using (SqlDataReader reader = Excute(parameters))
             {
-                while (reader.Read())
+                if(reader != null && reader.HasRows)
                 {
-                    for (int i = 0; i < reader.FieldCount; i++)
+                    while (reader.Read())
                     {
-                        if(reader.GetValue(i) == DBNull.Value)
+                        for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            res[reader.GetName(i)] = null;
+                            if (reader.GetValue(i) == DBNull.Value)
+                            {
+                                res[reader.GetName(i)] = null;
+                            }
+                            else
+                            {
+                                res[reader.GetName(i)] = reader.GetValue(i);
+                            }
+
                         }
-                        else
-                        {
-                            res[reader.GetName(i)] = reader.GetValue(i);
-                        }
-                        
                     }
                 }
+                
             }
             command.Parameters.Clear();
             return res;

@@ -41,6 +41,10 @@ namespace project_ManaTV.Presenters
             {
                 view.currentPage = 1;
             }
+            if(totalRows == 0)
+            {
+                startIndex = 0;
+            }
             view.HandlePagination();
             view.CheckEnable();
             view.isClicked(view.currentPage.ToString());
