@@ -8,7 +8,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace project_ManaTV.Repository
 {
-    internal class StaffRepository
+    public class StaffRepository
     {
         Database db = new Database();
 

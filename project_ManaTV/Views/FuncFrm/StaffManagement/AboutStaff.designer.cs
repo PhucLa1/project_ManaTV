@@ -262,7 +262,6 @@
             this.btnSave.TextMarginLeft = 0;
             this.btnSave.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSave.UseDefaultRadiusAndThickness = true;
-           // this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 

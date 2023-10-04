@@ -11,6 +11,8 @@ using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
+using project_ManaTV.Views.FuncFrm.CustomerView;
+
 namespace project_ManaTV
 {
 
@@ -28,8 +30,6 @@ namespace project_ManaTV
         }
 
 
-
-
         private void InitForm()
         {
 
@@ -37,18 +37,26 @@ namespace project_ManaTV
             searchFunction.FillColor = ColorTranslator.FromHtml("#ECF1F8");
             searchFunction.BorderColorActive = ColorTranslator.FromHtml("#D9D9D9");
             sidebar.BackColor = ColorTranslator.FromHtml("#29374B");
+            sidebar.Width = 244;
+            //panelMainContent.BackgroundColor = ColorTranslator.FromHtml("#29374B");
 
-           
-
-            var lstMenuButtons = new List<BunifuButton>() { btnDashboard , btnLogOut , btnProduct , btnStaff };
+            var lstMenuButtons = new List<BunifuButton>() { btnDashboard , btnLogOut , btnProduct , btnStaff, btnCustomerWrapper, btnInvoice };
             foreach (var btn in lstMenuButtons)
             {
                 CustomMenuButton(btn);
             }
+
+            var lstWrapperPanel = new List<FlowLayoutPanel>() { productSideBar, staffSideBar, fLayoutCustommer };
+            foreach (var wrapper in lstWrapperPanel)
+            {
+                CustomWrapperPanel(wrapper);
+            }
+
         }
         private void CustomMenuButton(BunifuButton menuButton)
         {
-            menuButton.IdleFillColor = Color.Transparent;
+            menuButton.Height = 48;
+            menuButton.IdleFillColor = ColorTranslator.FromHtml("#29374B");
             menuButton.onHoverState.BorderColor = Color.Transparent;
             menuButton.onHoverState.FillColor = Color.FromArgb(72, 217, 217, 217);
             menuButton.onHoverState.ForeColor = ColorTranslator.FromHtml("#D9D9D9");
@@ -80,6 +88,28 @@ namespace project_ManaTV
             // pass the font to the font collection
             //pfc.AddMemoryFont(data, fontLength);
             //btnProduct.Font = new Font(pfc.Families[0], lblBrandName.Font.Size);
+        }
+
+        private void CustomWrapperPanel(FlowLayoutPanel flowLayoutPanel)
+        {
+            flowLayoutPanel.Height = btnDashboard.Height;
+            flowLayoutPanel.BackColor = Color.FromArgb(40, 96, 144);
+            bool isFirst = true;
+            foreach (Control control in flowLayoutPanel.Controls)
+            {
+                if (control is BunifuButton button)
+                {
+                    if (isFirst)
+                    {
+                        isFirst = false;
+                        continue;
+                    }
+                    control.Height = 40;
+                    control.Font = new Font(control.Font.FontFamily, 10, control.Font.Style);
+
+                }
+                
+            }
         }
 
         private void ShowFormInPanel(Form formToShow)
@@ -131,7 +161,7 @@ namespace project_ManaTV
             else
             {
                 productSideBar.Height -= 10;
-                if (productSideBar.Height <= 55)
+                if (productSideBar.Height <= 48)
                 {
                     productExpand = false;
                     productTrans.Stop();
@@ -164,7 +194,7 @@ namespace project_ManaTV
             if (staffExpand == false)
             {
                 staffSideBar.Height += 10;
-                if (staffSideBar.Height >= 152)
+                if (staffSideBar.Height >= 130)
                 {
                     staffExpand = true;
                     staffTrans.Stop();
@@ -173,7 +203,7 @@ namespace project_ManaTV
             else
             {
                 staffSideBar.Height -= 10;
-                if (staffSideBar.Height <= 55)
+                if (staffSideBar.Height <= 48)
                 {
                     staffExpand = false;
                     staffTrans.Stop();
@@ -242,7 +272,7 @@ namespace project_ManaTV
             if (sidebarExpand == false)
             {
                 sidebar.Width += 5;
-                if (sidebar.Width >= 266)
+                if (sidebar.Width >= 244)
                 {
                     sidebarExpand = true;
                     sidebarTrans.Stop();
@@ -253,7 +283,7 @@ namespace project_ManaTV
             else
             {
                 sidebar.Width -= 5;
-                if (sidebar.Width <= 61)
+                if (sidebar.Width <= 54)
                 {
                     sidebarExpand = false;
                     sidebarTrans.Stop();
@@ -279,72 +309,12 @@ namespace project_ManaTV
 
 
 
-        private bool isDragging = false;
-        private int mouseX, mouseY;
-
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging)
-            {
-                this.Left += e.X - mouseX;
-                this.Top += e.Y - mouseY;
-            }
-        }
-
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                isDragging = false;
-            }
-        }
-
 
         private bool isZoomed = false;
         private int targetWidth;
         private int targetHeight;
 
 
-        private void zoom_Tick(object sender, EventArgs e)
-        {
-            if (btnHam.Width < targetWidth)
-                btnHam.Width += 1;
-            if (btnHam.Height < targetHeight)
-                btnHam.Height += 1;
-
-            // Kiểm tra xem nút đã phóng to đủ lớn chưa
-            if (btnHam.Width >= targetWidth && btnHam.Height >= targetHeight)
-            {
-                isZoomed = true;
-                zoom.Stop();
-            }
-        }
-
-        private void btnHam_MouseEnter(object sender, EventArgs e)
-        {
-            //targetWidth = btnHam.Width + 10; // Ví dụ: tăng 20 pixel
-            //targetHeight = btnHam.Height + 10; // Ví dụ: tăng 20 pixel
-
-            //// Bắt đầu Timer
-            //zoom.Start();
-        }
-
-        private void btnHam_MouseLeave(object sender, EventArgs e)
-        {
-            //zoom.Stop();
-            //btnHam.Width = btnHam.MinimumSize.Width;
-            //btnHam.Height = btnHam.MinimumSize.Height;
-            //isZoomed = false;
-        }
-
-        private void btnHam_MouseClick(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void panelMainContent_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
@@ -368,14 +338,59 @@ namespace project_ManaTV
             ShowFormInPanel(InitClasses.staffView);
         }
 
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
+
+
+        //CUSTOMER SIDE BAR
+        private void btnCustomerWrapper_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            customerTrans.Start();
+        }
+
+        private bool customerExpand = false;
+        private void customerTrans_Tick(object sender, EventArgs e)
+        {
+            if (customerExpand == false)
             {
-                isDragging = true;
-                mouseX = e.X;
-                mouseY = e.Y;
+                fLayoutCustommer.Height += 10;
+                if (fLayoutCustommer.Height >= 130)
+                {
+                    customerExpand = true;
+                    customerTrans.Stop();
+                }
             }
+            else
+            {
+                fLayoutCustommer.Height -= 10;
+                if (fLayoutCustommer.Height <= 48)
+                {
+                    customerExpand = false;
+                    customerTrans.Stop();
+                }
+            }
+        }
+
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnListCustomer_Click(object sender, EventArgs e)
+        {
+            var lstCustomerForm = new ListCustomers();
+            lstCustomerForm.Size = lstCustomerForm.tab;
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                //MessageBox.Show("ok");
+                lstCustomerForm.Size = panelMainContent.Size;
+                lstCustomerForm.tab = panelMainContent.Size;
+                lstCustomerForm.gridView = lstCustomerForm.tab;
+            };
+            ShowFormInPanel(lstCustomerForm);
+        }
+
+        private void btnTrashCustomer_Click(object sender, EventArgs e)
+        {
+
         }
 
 

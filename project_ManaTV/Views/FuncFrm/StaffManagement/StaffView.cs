@@ -356,9 +356,6 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
         public void displayStaff(List<Dictionary<string, object>> staffList)
         {
             //Ở đây rows 1 trang là 10;
-
-
-
             HandleGridView.SetMiddleCenter(7, gridViewStaff);
 
             Image imagePen = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "pen.png"));

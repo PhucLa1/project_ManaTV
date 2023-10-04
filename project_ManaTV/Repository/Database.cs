@@ -36,6 +36,8 @@ namespace project_ManaTV.Repository
 
         }
 
+        public string ConnectionString { get => connectionString;}
+
 
 
         public void Disconnect()

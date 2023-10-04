@@ -133,6 +133,7 @@
       <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -154,10 +155,25 @@
     <Compile Include="HelpMethod\HandleImage.cs" />
     <Compile Include="HelpMethod\Valiadated.cs" />
     <Compile Include="InitClasses.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
+    <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
     <Compile Include="Presenters\Staff\AboutStaffPresenter.cs" />
     <Compile Include="Presenters\Staff\StaffPresenter.cs" />
+    <Compile Include="Views\FuncFrm\CustomerView\FormCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\CustomerView\FormCustomer.Designer.cs">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.Designer.cs">
+      <DependentUpon>ListCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +209,12 @@
     <Compile Include="Views\FuncFrm\StaffManagement\StaffView.Designer.cs">
       <DependentUpon>StaffView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\FuncFrm\CustomerView\FormCustomer.resx">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\CustomerView\ListCustomers.resx">
+      <DependentUpon>ListCustomers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
       <DependentUpon>AboutStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,7 +266,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Views\FuncFrm\ProductManagement\" />
     <Folder Include="wwwroot\Products\" />
   </ItemGroup>
@@ -258,6 +279,7 @@
     <Content Include="wwwroot\assets\icons\file-invoice-dollar-solid.png" />
     <Content Include="wwwroot\assets\icons\logoGroup4.jpg" />
     <Content Include="wwwroot\assets\icons\magnifying-glass-solid.png" />
+    <None Include="wwwroot\assets\icons\plus-solid.png" />
     <Content Include="wwwroot\assets\icons\tv-solid.png" />
     <Content Include="wwwroot\assets\icons\user-tie-solid.png" />
     <Content Include="wwwroot\assets\icons\users-solid.png" />

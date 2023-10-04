@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project_ManaTV.Repository
 {
-    internal class WorkRepository
+    public class WorkRepository
     {
         Database db = new Database();
 

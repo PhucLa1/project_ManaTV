@@ -61,12 +61,52 @@ namespace project_ManaTV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chart_pie_solid {
+            get {
+                object obj = ResourceManager.GetObject("chart-pie-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] Lexend_Regular {
             get {
                 object obj = ResourceManager.GetObject("Lexend_Regular", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_solid {
+            get {
+                object obj = ResourceManager.GetObject("plus-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tv_solid {
+            get {
+                object obj = ResourceManager.GetObject("tv-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_tie_solid {
+            get {
+                object obj = ResourceManager.GetObject("user-tie-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
