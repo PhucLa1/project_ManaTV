@@ -18,7 +18,7 @@ namespace project_ManaTV.Presenters
 
         public List<Customer> GetAll()
         {
-            return _customerRepository.GetAll().ToList();
+            return _customerRepository.GetAll();
         }
 
         public Customer GetById(int id)

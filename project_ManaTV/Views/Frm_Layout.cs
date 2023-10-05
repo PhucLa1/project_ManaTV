@@ -39,6 +39,7 @@ namespace project_ManaTV
             sidebar.BackColor = ColorTranslator.FromHtml("#29374B");
             sidebar.Width = 244;
             //panelMainContent.BackgroundColor = ColorTranslator.FromHtml("#29374B");
+            panelMainContent.Dock = DockStyle.Fill;
 
             var lstMenuButtons = new List<BunifuButton>() { btnDashboard , btnLogOut , btnProduct , btnStaff, btnCustomerWrapper, btnInvoice };
             foreach (var btn in lstMenuButtons)
@@ -377,14 +378,17 @@ namespace project_ManaTV
         private void btnListCustomer_Click(object sender, EventArgs e)
         {
             var lstCustomerForm = new ListCustomers();
-            lstCustomerForm.Size = lstCustomerForm.tab;
+            lstCustomerForm.Size = panelMainContent.Size;
+            lstCustomerForm.tab = panelMainContent.Size;
+            lstCustomerForm.gridView = new Size(lstCustomerForm.tab.Width, lstCustomerForm.gridView.Height);
             panelMainContent.SizeChanged += (s, ev) =>
             {
                 //MessageBox.Show("ok");
                 lstCustomerForm.Size = panelMainContent.Size;
                 lstCustomerForm.tab = panelMainContent.Size;
-                lstCustomerForm.gridView = lstCustomerForm.tab;
+                lstCustomerForm.gridView = new Size(lstCustomerForm.tab.Width, lstCustomerForm.gridView.Height);
             };
+
             ShowFormInPanel(lstCustomerForm);
         }
 

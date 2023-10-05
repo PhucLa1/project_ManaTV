@@ -63,6 +63,26 @@ namespace project_ManaTV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap angle_left_solid {
+            get {
+                object obj = ResourceManager.GetObject("angle-left-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap angle_right_solid {
+            get {
+                object obj = ResourceManager.GetObject("angle-right-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chart_pie_solid {
             get {
                 object obj = ResourceManager.GetObject("chart-pie-solid", resourceCulture);

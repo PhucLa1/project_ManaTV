@@ -15,13 +15,21 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
     public partial class ListCustomers : Form
     {
         private CustomerPresenter _customerPresenter;
+
         public ListCustomers()
         {
             _customerPresenter = new CustomerPresenter();
+           
             InitializeComponent();
+            InitForm();
         }
 
-        public Size gridView { set => gridCustomer.Size = value; }
+        private void InitForm()
+        {
+            
+        }
+
+        public Size gridView { get => gridCustomer.Size; set => gridCustomer.Size = value; }
         public Size tab { get => tabList.Size; set => tabList.Size = value; }
 
         private void ListCustomers_Load(object sender, EventArgs e)
@@ -84,6 +92,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             Image actionDelete = HandleImage.ZoomOutImage(HandleImage.filePath("assets/icons", "delete.png"));
             foreach (var customer in _customerPresenter.GetAll())
             {
+                //Show top view
                 gridCustomer.Rows.Add(new object[]
                 {
                     customer.Id,

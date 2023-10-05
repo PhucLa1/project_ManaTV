@@ -19,5 +19,6 @@ namespace project_ManaTV
         //Khoi tao form them nhan vien
         public static AboutStaff AddNewStaff,UpdateStaff,DeleteStaff,DetailStaff;
 
+
     }
 }

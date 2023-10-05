@@ -13,9 +13,10 @@ namespace project_ManaTV.Repository
     {
         Database db = new Database();
 
-        public IEnumerable<Customer> GetAll()
+        public List<Customer> GetAll()
         {
             var lstCustomer = new List<Customer>();
+            
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
@@ -42,6 +43,7 @@ namespace project_ManaTV.Repository
         public Customer GetById(int id)
         {
             var customer = new Customer();
+
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {

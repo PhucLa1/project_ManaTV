@@ -271,6 +271,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="wwwroot\assets\color-font.txt" />
+    <None Include="wwwroot\assets\icons\angle-left-solid.png" />
+    <None Include="wwwroot\assets\icons\angle-right-solid.png" />
     <Content Include="wwwroot\assets\icons\bars-staggered-solid.png" />
     <Content Include="wwwroot\assets\icons\bell-regular.png" />
     <Content Include="wwwroot\assets\icons\chart-pie-solid.png" />
