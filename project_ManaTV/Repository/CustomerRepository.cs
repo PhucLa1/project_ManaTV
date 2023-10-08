@@ -33,6 +33,7 @@ namespace project_ManaTV.Repository
                         customer.Address = reader["customer_address"].ToString();
                         customer.PhoneNumber = reader["customer_phoneNumber"].ToString();
                         customer.Email = reader["customer_email"].ToString();
+                        customer.IsDeleted = (bool)reader["isDeleted"];
                         lstCustomer.Add(customer);
                     }
                 }
@@ -72,8 +73,8 @@ namespace project_ManaTV.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert Customers(customer_name, customer_email, customer_address, customer_phoneNumber, createdAt) " +
-                                        "values (@customer_name, @customer_email, @customer_address, @customer_phoneNumber, @createdAt)";
+                command.CommandText = "insert Customers(customer_name, customer_email, customer_address, customer_phoneNumber, createdAt, isDeleted) " +
+                                        "values (@customer_name, @customer_email, @customer_address, @customer_phoneNumber, @createdAt, 0)";
                 command.Parameters.Add("@customer_name", SqlDbType.NVarChar).Value = customer.FullName;
                 command.Parameters.Add("@customer_email", SqlDbType.NVarChar).Value = customer.Email;
                 command.Parameters.Add("@customer_address", SqlDbType.NVarChar).Value = customer.Address;
@@ -90,7 +91,21 @@ namespace project_ManaTV.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "delete Customers Pet where id=@id";
+                command.CommandText = "DELETE Customers where id=@id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void SetDeleteStatus(int id, bool status)
+        {
+            using (var connection = new SqlConnection(db.ConnectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "UPDATE Customers SET isDeleted = @status where id=@id";
+                command.Parameters.Add("@status", SqlDbType.Bit).Value = status?1:0;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.ExecuteNonQuery();
             }

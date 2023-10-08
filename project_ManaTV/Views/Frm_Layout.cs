@@ -378,6 +378,7 @@ namespace project_ManaTV
         private void btnListCustomer_Click(object sender, EventArgs e)
         {
             var lstCustomerForm = new ListCustomers();
+            ShowFormInPanel(lstCustomerForm);
             lstCustomerForm.Size = panelMainContent.Size;
             lstCustomerForm.tab = panelMainContent.Size;
             lstCustomerForm.gridView = new Size(lstCustomerForm.tab.Width, lstCustomerForm.gridView.Height);
@@ -388,17 +389,24 @@ namespace project_ManaTV
                 lstCustomerForm.tab = panelMainContent.Size;
                 lstCustomerForm.gridView = new Size(lstCustomerForm.tab.Width, lstCustomerForm.gridView.Height);
             };
-
-            ShowFormInPanel(lstCustomerForm);
         }
 
         private void btnTrashCustomer_Click(object sender, EventArgs e)
         {
-
+            var lstCustomerForm = new ListCustomers();
+            lstCustomerForm.ShowTabTrash();
+            ShowFormInPanel(lstCustomerForm);
+            lstCustomerForm.Size = panelMainContent.Size;
+            lstCustomerForm.tab = panelMainContent.Size;
+            lstCustomerForm.gridView = new Size(lstCustomerForm.tab.Width, lstCustomerForm.gridView.Height);
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                //MessageBox.Show("ok");
+                lstCustomerForm.Size = panelMainContent.Size;
+                lstCustomerForm.tab = panelMainContent.Size;
+                lstCustomerForm.gridView = new Size(lstCustomerForm.tab.Width, lstCustomerForm.gridView.Height);
+            };
+            
         }
-
-
-
-
     }
 }

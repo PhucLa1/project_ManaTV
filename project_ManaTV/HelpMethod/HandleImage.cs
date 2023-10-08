@@ -57,6 +57,7 @@ namespace project_ManaTV.HelpMethod
             {
                 selectedFilePath = openFileDialog1.FileName;
                 picBox.Image = new Bitmap(openFileDialog1.FileName);
+               
             }
         }
 
@@ -76,6 +77,7 @@ namespace project_ManaTV.HelpMethod
             if(selectedFilePath != "")
             {
                 File.Copy(selectedFilePath, targetPath, true);
+               
 
             }
             else
@@ -112,6 +114,7 @@ namespace project_ManaTV.HelpMethod
             }
 
             return new Bitmap(originalImage, newWidth, newHeight);
+            
         }
     }
 

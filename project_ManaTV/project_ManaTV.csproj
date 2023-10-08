@@ -162,6 +162,12 @@
     <Compile Include="Repository\WorkRepository.cs" />
     <Compile Include="Presenters\Staff\AboutStaffPresenter.cs" />
     <Compile Include="Presenters\Staff\StaffPresenter.cs" />
+    <Compile Include="Views\Components\ConfirmModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Components\ConfirmModal.Designer.cs">
+      <DependentUpon>ConfirmModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncFrm\CustomerView\FormCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,17 +215,25 @@
     <Compile Include="Views\FuncFrm\StaffManagement\StaffView.Designer.cs">
       <DependentUpon>StaffView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Components\ConfirmModal.resx">
+      <DependentUpon>ConfirmModal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\CustomerView\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\CustomerView\ListCustomers.resx">
       <DependentUpon>ListCustomers.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
       <DependentUpon>AboutStaff.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_Layout.resx">
       <DependentUpon>Frm_Layout.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -237,6 +251,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\StaffView.resx">
       <DependentUpon>StaffView.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -282,9 +297,12 @@
     <Content Include="wwwroot\assets\icons\logoGroup4.jpg" />
     <Content Include="wwwroot\assets\icons\magnifying-glass-solid.png" />
     <None Include="wwwroot\assets\icons\plus-solid.png" />
+    <None Include="wwwroot\assets\icons\trash-can-regular.png" />
+    <None Include="wwwroot\assets\icons\rotate-right-solid.png" />
     <Content Include="wwwroot\assets\icons\tv-solid.png" />
     <Content Include="wwwroot\assets\icons\user-tie-solid.png" />
     <Content Include="wwwroot\assets\icons\users-solid.png" />
+    <None Include="wwwroot\assets\images\logoGroup4.png" />
     <Content Include="wwwroot\Others\bin.png" />
     <Content Include="wwwroot\Others\eye.png" />
     <Content Include="wwwroot\Others\female.png" />

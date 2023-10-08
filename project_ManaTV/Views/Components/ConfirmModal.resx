@@ -117,35 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tv-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\tv-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACXSURBVHhe7dyxEUBQAERBpSlNJyLEKBCjhv+yDXbmCnjx
+        Tetxz+t2LjDM19T0j/16YJivKWExnrBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgI
+        i4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSPxheU1mtOOeX3VZ
+        7/W9EaUmAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="Lexend_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\fonts\Lexend-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chart-pie-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\chart-pie-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="angle-right-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\angle-right-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="plus-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\plus-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rotate-right-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\rotate-right-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trash-can-regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\trash-can-regular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user-tie-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\user-tie-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="angle-left-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\angle-left-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoGroup4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\images\logoGroup4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnConfirm.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACVSURBVHhe7dwxAQIxAMDAl9b9cVGE1Cd4ATrgoNluOAeZ
+        c73uOX4WHDR2WOv9eH7glN2UsDhOWCSERUJYJIRFQlgkhEVCWCSERUJYJIRFQlgkhEVCWCSERUJYJIRF
+        QlgkhEVCWCSERUJYJIRFQlgkhEVCWCSERUJYJIRFQlgkhEVCWCSERUJYJIRFQlgk/mG5JnPYHF/0QWDK
+        aRUZvwAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

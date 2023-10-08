@@ -263,7 +263,8 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                         btnFourth.Text = (fourth + 1).ToString();
                         btnFive.Text = (fiveth + 1).ToString();
                     }
-                }else if(TotalPage - 2 >= fiveth)
+                }
+                else if(TotalPage - 2 >= fiveth)
                 {
                     if (currentPage == fiveth)
                     {
@@ -291,64 +292,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                     btnFourth.Text = (fourth - 2).ToString();
                     btnFive.Text = (fiveth - 2).ToString();
                 }
-            //    if(currentPage == fourth)
-            //    {
-            //        if(TotalPage - 1 >= fiveth)
-            //        {
-            //            btnFirst.Text = (first + 1).ToString();
-            //            btnSecond.Text = (second + 1).ToString();
-            //            btnThird.Text = (third + 1).ToString();
-            //            btnFourth.Text = (fourth + 1).ToString();
-            //            btnFive.Text = (fiveth + 1).ToString();
-            //        }
-
-            //    }else if(currentPage == fiveth)
-            //    {
-            //        if(TotalPage - 2 >= fiveth)
-            //        {
-            //            btnFirst.Text = (first + 2).ToString();
-            //            btnSecond.Text = (second + 2).ToString();
-            //            btnThird.Text = (third + 2).ToString();
-            //            btnFourth.Text = (fourth + 2).ToString();
-            //            btnFive.Text = (fiveth + 2).ToString();
-            //        }else if(TotalPage - 1 >= fiveth)
-            //        {
-            //            btnFirst.Text = (first + 1).ToString();
-            //            btnSecond.Text = (second + 1).ToString();
-            //            btnThird.Text = (third + 1).ToString();
-            //            btnFourth.Text = (fourth + 1).ToString();
-            //            btnFive.Text = (fiveth + 1).ToString();
-            //        }
-            //    }
-            //    else if(currentPage == second)
-            //    {
-            //        if(first - 1 > 0)
-            //        {
-            //            btnFirst.Text = (first - 1).ToString();
-            //            btnSecond.Text = (second - 1).ToString();
-            //            btnThird.Text = (third - 1).ToString();
-            //            btnFourth.Text = (fourth - 1).ToString();
-            //            btnFive.Text = (fiveth - 1).ToString();
-            //        }
-
-            //    }else if(currentPage == first)
-            //    {
-            //        if(first - 2 > 0)
-            //        {
-            //            btnFirst.Text = (first - 2).ToString();
-            //            btnSecond.Text = (second - 2).ToString();
-            //            btnThird.Text = (third - 2).ToString();
-            //            btnFourth.Text = (fourth - 2).ToString();
-            //            btnFive.Text = (fiveth - 2).ToString();
-            //        }else if(first - 1>0)
-            //        {
-            //            btnFirst.Text = (first - 1).ToString();
-            //            btnSecond.Text = (second - 1).ToString();
-            //            btnThird.Text = (third - 1).ToString();
-            //            btnFourth.Text = (fourth - 1).ToString();
-            //            btnFive.Text = (fiveth - 1).ToString();
-            //        }
-            //    }
+           
 
             }
             //MessageBox.Show(currentPage.ToString());

@@ -52,7 +52,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.bunifuPictureBox3 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.lblBrandName = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPictureBox4 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.searchFunction = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -85,12 +85,12 @@
             this.zoom = new System.Windows.Forms.Timer(this.components);
             this.customersTableAdapter1 = new project_ManaTV.TVManagementDataSetTableAdapters.CustomersTableAdapter();
             this.customerTrans = new System.Windows.Forms.Timer(this.components);
-            this.panelMainContent = new Bunifu.UI.WinForms.BunifuPanel();
+            this.panelMainContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
-            this.bunifuPanel1.SuspendLayout();
+            this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -106,7 +106,7 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.flowLayoutPanel2);
-            this.panel1.Controls.Add(this.bunifuPanel1);
+            this.panel1.Controls.Add(this.panelLogo);
             this.panel1.Controls.Add(this.searchFunction);
             this.panel1.Controls.Add(this.btnHam);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -160,21 +160,16 @@
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // bunifuPanel1
+            // panelLogo
             // 
-            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
-            this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel1.BorderRadius = 3;
-            this.bunifuPanel1.BorderThickness = 1;
-            this.bunifuPanel1.Controls.Add(this.lblBrandName);
-            this.bunifuPanel1.Controls.Add(this.bunifuPictureBox4);
-            this.bunifuPanel1.Location = new System.Drawing.Point(51, 0);
-            this.bunifuPanel1.Name = "bunifuPanel1";
-            this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(196, 46);
-            this.bunifuPanel1.TabIndex = 3;
+            this.panelLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelLogo.Controls.Add(this.lblBrandName);
+            this.panelLogo.Controls.Add(this.bunifuPictureBox4);
+            this.panelLogo.Location = new System.Drawing.Point(51, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(196, 46);
+            this.panelLogo.TabIndex = 3;
             // 
             // lblBrandName
             // 
@@ -203,7 +198,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.bunifuPictureBox4.AutoSizeHeight = true;
             this.bunifuPictureBox4.BorderRadius = 0;
-            this.bunifuPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox4.Image")));
+            this.bunifuPictureBox4.Image = global::project_ManaTV.Properties.Resources.logoGroup4;
             this.bunifuPictureBox4.IsCircle = true;
             this.bunifuPictureBox4.Location = new System.Drawing.Point(5, 2);
             this.bunifuPictureBox4.Name = "bunifuPictureBox4";
@@ -317,7 +312,7 @@
             this.sidebar.ForeColor = System.Drawing.SystemColors.Menu;
             this.sidebar.Location = new System.Drawing.Point(0, 49);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(381, 716);
+            this.sidebar.Size = new System.Drawing.Size(244, 716);
             this.sidebar.TabIndex = 1;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebar_Paint);
             // 
@@ -1686,18 +1681,9 @@
             // 
             // panelMainContent
             // 
-            this.panelMainContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelMainContent.BackgroundColor = System.Drawing.Color.Transparent;
-            this.panelMainContent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMainContent.BackgroundImage")));
-            this.panelMainContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelMainContent.BorderColor = System.Drawing.Color.Transparent;
-            this.panelMainContent.BorderRadius = 3;
-            this.panelMainContent.BorderThickness = 1;
+            this.panelMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainContent.Location = new System.Drawing.Point(244, 49);
             this.panelMainContent.Name = "panelMainContent";
-            this.panelMainContent.ShowBorders = true;
             this.panelMainContent.Size = new System.Drawing.Size(1200, 716);
             this.panelMainContent.TabIndex = 2;
             // 
@@ -1708,14 +1694,16 @@
             this.Controls.Add(this.panelMainContent);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Layout";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "4Television";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
-            this.bunifuPanel1.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.sidebar.ResumeLayout(false);
@@ -1744,10 +1732,9 @@
         private TVManagementDataSet tVManagementDataSet;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox3;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
+        private System.Windows.Forms.Panel panelLogo;
         private Bunifu.UI.WinForms.BunifuLabel lblBrandName;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox4;
-        private Bunifu.UI.WinForms.BunifuPanel panelMainContent;
         private System.Windows.Forms.Timer zoom;
         private System.Windows.Forms.FlowLayoutPanel staffSideBar;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnStaff;
@@ -1769,6 +1756,7 @@
         private TVManagementDataSetTableAdapters.CustomersTableAdapter customersTableAdapter1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnTrashCustomer;
         private System.Windows.Forms.Timer customerTrans;
+        private System.Windows.Forms.Panel panelMainContent;
     }
 }
 

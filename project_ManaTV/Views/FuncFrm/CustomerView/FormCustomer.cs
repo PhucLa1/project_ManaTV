@@ -24,6 +24,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             this.mode = mode;
             _customerPresenter = customerPresenter;
             InitializeComponent();
+            pLine.Height = 5;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -100,11 +101,11 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
 
         private void SetFormStatus(bool status)
         {
-            txtId.Enabled = status;
-            txtFullname.Enabled = status;
-            txtEmail.Enabled = status;
-            txtPhoneNumber.Enabled = status;
-            txtAddress.Enabled = status;
+            txtId.ReadOnly = !status;
+            txtFullname.ReadOnly = !status;
+            txtEmail.ReadOnly = !status;
+            txtPhoneNumber.ReadOnly = !status;
+            txtAddress.ReadOnly = !status;
         }
         private void FormCustomer_MouseDown(object sender, MouseEventArgs e)
         {

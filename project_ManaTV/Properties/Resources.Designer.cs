@@ -103,9 +103,39 @@ namespace project_ManaTV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoGroup4 {
+            get {
+                object obj = ResourceManager.GetObject("logoGroup4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus_solid {
             get {
                 object obj = ResourceManager.GetObject("plus-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rotate_right_solid {
+            get {
+                object obj = ResourceManager.GetObject("rotate-right-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_can_regular {
+            get {
+                object obj = ResourceManager.GetObject("trash-can-regular", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

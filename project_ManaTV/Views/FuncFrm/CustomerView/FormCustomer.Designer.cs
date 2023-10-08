@@ -71,8 +71,8 @@
             this.btnReset = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pLine = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -815,21 +815,17 @@
             resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             // 
-            // bunifuPanel1
-            // 
-            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            resources.ApplyResources(this.bunifuPanel1, "bunifuPanel1");
-            this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel1.BorderRadius = 3;
-            this.bunifuPanel1.BorderThickness = 1;
-            this.bunifuPanel1.Name = "bunifuPanel1";
-            this.bunifuPanel1.ShowBorders = true;
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // pLine
+            // 
+            this.pLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            resources.ApplyResources(this.pLine, "pLine");
+            this.pLine.Name = "pLine";
             // 
             // FormCustomer
             // 
@@ -838,7 +834,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
-            this.Controls.Add(this.bunifuPanel1);
+            this.Controls.Add(this.pLine);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.lblFormName);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -884,7 +880,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnReset;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCancel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pLine;
     }
 }
