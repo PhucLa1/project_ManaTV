@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using project_ManaTV.Views.FuncFrm.CustomerView;
+using project_ManaTV.Views.FuncFrm.productView;
 
 namespace project_ManaTV
 {
@@ -407,6 +408,22 @@ namespace project_ManaTV
                 lstCustomerForm.gridView = new Size(lstCustomerForm.tab.Width, lstCustomerForm.gridView.Height);
             };
             
+        }
+
+        private void btnShowProduct_Click(object sender, EventArgs e)
+        {
+            ProductsView productsView = new ProductsView();
+            ShowFormInPanel(productsView);
+            productsView.Size = panelMainContent.Size;
+            productsView.tab = panelMainContent.Size;
+            productsView.gridView = new Size(productsView.tab.Width, productsView.gridView.Height);
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                //MessageBox.Show("ok");
+                productsView.Size = panelMainContent.Size;
+                productsView.tab = panelMainContent.Size;
+                productsView.gridView = new Size(productsView.tab.Width, productsView.gridView.Height);
+            };
         }
     }
 }

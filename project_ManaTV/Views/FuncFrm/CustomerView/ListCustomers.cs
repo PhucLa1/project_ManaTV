@@ -13,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Color = System.Drawing.Color;
+using Size = System.Drawing.Size;
 
 namespace project_ManaTV.Views.FuncFrm.CustomerView
 {
@@ -38,8 +40,8 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
         private void InitForm()
         {
             this.BackColor = ColorTranslator.FromHtml("#29374B");
-            tabList.BackColor = Color.White;
-            tabTrash.BackColor = Color.White;
+            tabList.BackColor = System.Drawing.Color.White;
+            tabTrash.BackColor = System.Drawing.Color.White;
             this.Padding = new Padding(0, 10, 0, 0);
 
             txtSearchCustomer.Height = dpFilterCustomer.Height;

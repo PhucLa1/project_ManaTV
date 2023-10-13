@@ -88,7 +88,6 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
 
         private Customer GetData()
         {
-            
             return new Customer
             {
                 Id = txtId.Text == ""?0:int.Parse(txtId.Text),

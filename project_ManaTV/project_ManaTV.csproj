@@ -34,103 +34,103 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.Licensing.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.1.5.3">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPages">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuRating">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuShapes">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.Deprecated">
-      <HintPath>..\..\framework\BunifuCrack\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+      <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -155,8 +155,17 @@
     <Compile Include="HelpMethod\HandleImage.cs" />
     <Compile Include="HelpMethod\Valiadated.cs" />
     <Compile Include="InitClasses.cs" />
+    <Compile Include="Models\Color.cs" />
+    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Designs.cs" />
+    <Compile Include="Models\Manufacturer.cs" />
+    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\Screen.cs" />
+    <Compile Include="Models\Size.cs" />
+    <Compile Include="Presenters\Colors\ColorPresenter.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
+    <Compile Include="Repository\ColorRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
@@ -179,6 +188,18 @@
     </Compile>
     <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.Designer.cs">
       <DependentUpon>ListCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\productView\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\productView\ProductForm.Designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\productView\ProductsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\productView\ProductsView.Designer.cs">
+      <DependentUpon>ProductsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.cs">
       <SubType>Form</SubType>
@@ -226,6 +247,12 @@
     <EmbeddedResource Include="Views\FuncFrm\CustomerView\ListCustomers.resx">
       <DependentUpon>ListCustomers.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\productView\ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\productView\ProductsView.resx">
+      <DependentUpon>ProductsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
       <DependentUpon>AboutStaff.cs</DependentUpon>
@@ -281,7 +308,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\FuncFrm\ProductManagement\" />
     <Folder Include="wwwroot\Products\" />
   </ItemGroup>
   <ItemGroup>

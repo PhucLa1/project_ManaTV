@@ -406,7 +406,7 @@
 </value>
   </data>
   <data name="lblBrandName.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 2px;font-family: '.VnHelvetInsH'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 191, 255); text-align: left; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: -8px;font-family: 'Microsoft Sans Serif'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 191, 255); text-align: left; }</value>
   </data>
   <data name="searchFunction.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3677,9 +3677,6 @@
   </metadata>
   <metadata name="tVManagementDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>791, 10</value>
-  </metadata>
-  <metadata name="tVManagementDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>580, 9</value>
   </metadata>
   <metadata name="tVManagementDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>580, 9</value>
