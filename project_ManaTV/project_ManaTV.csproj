@@ -132,6 +132,9 @@
     <Reference Include="Bunifu.UI.WinForms.Deprecated">
       <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
+    <Reference Include="Intersoft.Crosslight, Version=6.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.6.0.5000.975\lib\Intersoft.Crosslight.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -165,8 +168,10 @@
     <Compile Include="Models\Size.cs" />
     <Compile Include="Presenters\Colors\ColorPresenter.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
+    <Compile Include="Presenters\Designs\DesignPresenter.cs" />
     <Compile Include="Repository\ColorRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\DesignRepository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
     <Compile Include="Presenters\Staff\AboutStaffPresenter.cs" />
@@ -280,6 +285,7 @@
       <DependentUpon>StaffView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
