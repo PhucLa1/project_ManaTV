@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace project_ManaTV.Presenters.Colors
 {
@@ -56,5 +57,30 @@ namespace project_ManaTV.Presenters.Colors
             _colorRepository.DeleteById(color);
             Save();
         }
+
+        public void Delete(int id)
+        {
+            _colorRepository.Delete(id);
+            Save();
+        }
+        public List<Color> Search(string searchKey, string filterBy)
+        {
+            var lstResSearch = new List<Color>();
+            searchKey = searchKey.ToLower();
+            if (filterBy == "id") return _colorRepository.GetAll().Where(x => x.Id.ToString().Contains(searchKey)).ToList();
+            else if (filterBy == "name") return _colorRepository.GetAll().Where(x => x.Name.ToLower().Contains(searchKey)).ToList(); 
+            else if (filterBy == "value") return _colorRepository.GetAll().Where(x => x.Value.ToLower().Contains(searchKey)).ToList();
+            return lstResSearch;
+        }
+
+        public List<Color> GetByPagination(int pageNumber, int pageSize)
+        {
+            var lstColor = _colorRepository.GetAll();
+            totalCount = lstColor.Count;
+            totalPage = (int)Math.Ceiling((decimal)totalCount / pageSize);
+            skip = pageNumber * pageSize - pageSize;
+            return lstColor.Skip(0).Take(pageSize).ToList();
+        }
+
     }
 }

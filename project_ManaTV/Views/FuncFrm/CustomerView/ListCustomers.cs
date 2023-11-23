@@ -32,7 +32,6 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             InitForm();
             HandlePagination();
             AddEventPagination();
-
         }
 
 
@@ -425,6 +424,11 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
                 1000,
                 "",
                 BunifuSnackbar.Positions.TopRight);
+        }
+
+        private void gridTrashCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

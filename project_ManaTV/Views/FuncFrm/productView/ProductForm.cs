@@ -1,6 +1,7 @@
 ﻿using project_ManaTV.Models;
 using project_ManaTV.Presenters;
 using project_ManaTV.Presenters.Colors;
+using project_ManaTV.Presenters.Designs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,16 +17,20 @@ namespace project_ManaTV.Views.FuncFrm.productView
 {
     public partial class ProductForm : Form
     {
-        private ColorPresenter _colorPresenter;
-        private Color _color;
-        public event EventHandler AfterClick;
-        private string mode = "";
+
+        private ColorPresenter _colorPresenter;//
+        private DesignPresenter designPresenter;
+        private Color _color;//
+        private Models.Designs _design;
+        public event EventHandler AfterClick;//
+        private string mode = "";//
         public ProductForm(string method, ColorPresenter colorPresenter = null)
         {
             this.mode = method;
             _colorPresenter = colorPresenter;
             InitializeComponent();
         }
+
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
@@ -46,7 +51,7 @@ namespace project_ManaTV.Views.FuncFrm.productView
                 btnAdd.Visible=false;
             }
         }
-        private Color GetData()
+        private Color GetData()//
         {
             return new Color
             {
@@ -56,23 +61,34 @@ namespace project_ManaTV.Views.FuncFrm.productView
             };
         }
 
-        public void setData(Color color)
+        public void setData<T>(T data)//
         {
-            _color = color;
-            txtId.Text = color.Id.ToString();
-            txtColorname.Text = color.Name;
-            txtColorvalue.Text = color.Value;
+            if (data is Color color)
+            {
+                _color = color;
+                txtId.Text = color.Id.ToString();
+                txtColorname.Text = color.Name;
+                txtColorvalue.Text = color.Value;
+            }
+            if(data is Designs design)
+            {
+                _design = design;
+                txtId.Text = design.Id.ToString();
+                txtColorname.Text = design.Name;
+                txtColorvalue.Visible = false;
+                label3.Visible = false;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Color color = GetData();
+            Color color = GetData();//
             _colorPresenter.AddNew(color);
             AfterClick?.Invoke(this, EventArgs.Empty);
             this.Close();
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)//
         {
             if (mode == "update")
             {
@@ -93,7 +109,7 @@ namespace project_ManaTV.Views.FuncFrm.productView
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Color color = GetData();
+            Color color = GetData();//
             _colorPresenter.Update(color);
             AfterClick?.Invoke(this, EventArgs.Empty);
             this.Close();

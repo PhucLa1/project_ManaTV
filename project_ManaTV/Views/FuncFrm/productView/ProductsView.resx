@@ -127,35 +127,35 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnColorNext.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
         KG4AAUSrz6sAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnThirdColorPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
         KG4AAUSrz6sAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuButton3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSecondColorPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
         KG4AAUSrz6sAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuButton4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFirstColorPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
         KG4AAUSrz6sAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuButton5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnColorPrev.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
@@ -169,6 +169,15 @@
         V9+2X3Ps1zrhnTm+8azzuNcDb/y6EQ+JeMjEQyYeMvGQiYdMPGTiIRMPmXjIxEMmHjLxkImHTDxk4iET
         D5l4yMRDJh4y8ZCJh0w8ZOIhEw+ZeMjEQyYeMvGQiYdMPGTiIRMPmXjIxEMmHrJ/PG6oFHN8ABhNNTpj
         D+OWAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnRemoveColor.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAI8AAAAnCAYAAAA2LBsQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACTSURBVHhe7dwxEYRQFARB3DxkIA1zd8iC+jhg4g66agVM
+        vNs1c/xmTvhidbOt8d/3G75Y3YiHRDxk4iETD5l4yMRDJh4y8ZCJh0w8ZOIhEw+ZeMjEQyYeMvGQiYdM
+        PGTiIRMPmXjIxEMmHjLxkImHTDxk4iETD5l4yMRDJh4y8ZCJh0w8ZOIhEw/ZG483VIpr5ngAiCqmSrEy
+        qlYAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnSearchColor.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -189,6 +198,9 @@
         gAQxAhLECEgQIyBBjICEvxhd1/Xdh5nZ09v9OSkCeNsYN6+xGZtvCZocAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="CheckColor.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="IdColor.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -355,6 +367,98 @@
     <value>True</value>
   </metadata>
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
+        KG4AAUSrz6sAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bunifuButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
+        KG4AAUSrz6sAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bunifuButton3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
+        KG4AAUSrz6sAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bunifuButton4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
+        KG4AAUSrz6sAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bunifuButton5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADgAAAAuCAYAAAB9CdqYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAhSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAAAAAAAEcN
+        KG4AAUSrz6sAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnAddDesign.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAI8AAAAnCAYAAAA2LBsQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACUSURBVHhe7dwxEYNAAABBPICg73/eE17AJ0lmYoCrt1gH
+        V9+2X3Ps1zrhnTm+8azzuNcDb/y6EQ+JeMjEQyYeMvGQiYdMPGTiIRMPmXjIxEMmHjLxkImHTDxk4iET
+        D5l4yMRDJh4y8ZCJh0w8ZOIhEw+ZeMjEQyYeMvGQiYdMPGTiIRMPmXjIxEMmHrJ/PG6oFHN8ABhNNTpj
+        D+OWAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnRemoveDesign.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAI8AAAAnCAYAAAA2LBsQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACTSURBVHhe7dwxEYRQFARB3DxkIA1zd8iC+jhg4g66agVM
+        vNs1c/xmTvhidbOt8d/3G75Y3YiHRDxk4iETD5l4yMRDJh4y8ZCJh0w8ZOIhEw+ZeMjEQyYeMvGQiYdM
+        PGTiIRMPmXjIxEMmHjLxkImHTDxk4iETD5l4yMRDJh4y8ZCJh0w8ZOIhEw/ZG483VIpr5ngAiCqmSrEy
+        qlYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bunifuButton8.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHMAAAAmCAYAAAD3AKSiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACHSURBVHhe7dw5EYBAAMBApJ0HEIQncHKCeApEkNliFaTP
+        sh5zPHZ+b7wx9+2cF//2dhQzQswQMUPEDBEzRMwQMUPEDBEzRMwQMUPEDBEzRMwQMUPEDBEzRMwQMUPE
+        DBEzRMwQMUPEDBEzRMwQMUPEDBEzRMwQMUPEDBEzRMwQMUO+mAYVCXPcyQcW9zFqml4AAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="bunifuTextBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAASMAAAAmCAYAAACPmv0qAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC7SURBVHhe7dRBDcMwAARB80flyDAKowAaWfKnBJJ9zEj3
+        OQA7ADLWWp8558/M7Ont/pwUjbEPgDfs/pwUiRHwHjECEsQISBAjIEGMgAQxAhLECEgQIyBBjIAEMQIS
+        xAhIECMgQYyABDECEsQISBAjIEGMgAQxAhLECEgQIyBBjIAEMQISxAhIECMgQYyABDECEsQISBAjIEGM
+        gAQxAhLECEgQIyBBjICEvxhd1/Xdh5nZ09v9OSkCeNsYN6+xGZtvCZocAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="dataGridViewCheckBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="IdDesign.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="actionDesignDetails.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="actionDesignUpdate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="actionDesignRemove.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

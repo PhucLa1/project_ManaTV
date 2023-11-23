@@ -1,106 +1,103 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
+using project_ManaTV.Models;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using project_ManaTV.Models;
+
 namespace project_ManaTV.Repository
 {
-    public class ColorRepository
+    public class DesignRepository
     {
         Database db = new Database();
 
-        public List<Color> GetAll()
+        public List<Designs> GetAll()
         {
-            var lstColor = new List<Color>();
+            var lstDesign = new List<Designs>();
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from Colors";
+                command.CommandText = "Select * from Designs";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var color = new Color();
-                        color.Id = (int)reader["id"];
-                        color.Name = (string)reader["color_name"];
-                        color.Value = (string)reader["color_value"];
-                        color.Status = (byte)reader["color_status"];
-                        lstColor.Add(color);
+                        var design = new Designs();
+                        design.Id = (int)reader["id"];
+                        design.Name = (string)reader["design_name"];
+                        design.Status = (byte)reader["design_status"];
+                        lstDesign.Add(design);
                     }
                 }
             }
-            return lstColor;
+            return lstDesign;
         }
 
-        public Color GetById(int id)
+        public Designs GetById(int id)
         {
-            var color = new Color();
+            var design = new Designs();
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = $"Select * from Colors where id = {id}";
+                command.CommandText = $"Select * from Designs where id = {id}";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        color.Id = (int)reader["id"];
-                        color.Name = (string)reader["color_name"];
-                        color.Value = (string)reader["color_value"];
-                        color.Status = (byte)reader["color_status"];
+                        design.Id = (int)reader["id"];
+                        design.Name = (string)reader["design_name"];
+                        design.Status = (byte)reader["design_status"];
                     }
                 }
             }
-            return color;
+            return design;
         }
-        public void AddNew(Color color)
+        public void AddNew(Designs design)
         {
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "INSERT Colors (color_name, color_value, color_status)" +
-                    "Values (@color_name, @color_value, 1)";
-                command.Parameters.Add("@color_name", SqlDbType.NVarChar).Value = color.Name;
-                command.Parameters.Add("@color_value", SqlDbType.NVarChar).Value = color.Value;
+                command.CommandText = "INSERT Designs (design_name, design_status)" +
+                    "Values (@design_name, 1)";
+                command.Parameters.Add("@design_name", SqlDbType.NVarChar).Value = design.Name;
+                command.Parameters.Add("@design_status", SqlDbType.NVarChar).Value = design.Status;
                 command.ExecuteNonQuery();
             }
         }
 
-        public void Update(Color color)
+        public void Update(Designs design)
         {
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"update Colors 
-                                        set color_name=@color_name,
-                                            color_value= @color_value,
-                                            color_status= 1
+                command.CommandText = @"update Designs 
+                                        set design_name=@design_name,
+                                            design_status= 1
                                         where id=@id";
-                command.Parameters.Add("@color_name", SqlDbType.NVarChar).Value = color.Name;
-                command.Parameters.Add("@color_value", SqlDbType.NVarChar).Value = color.Value;
-                 command.Parameters.Add("@id", SqlDbType.Int).Value = color.Id;
+                command.Parameters.Add("@design_name", SqlDbType.NVarChar).Value = design.Name;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = design.Id;
                 command.ExecuteNonQuery();
             }
         }
-        public void DeleteById(Color color)
+        public void DeleteById(Designs design)
         {
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM Colors WHERE id = @id";
-                command.Parameters.Add("@id", SqlDbType.Int).Value = color.Id;
+                command.CommandText = "DELETE FROM Designs WHERE id = @id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = design.Id;
                 command.ExecuteNonQuery();
             }
         }
@@ -111,7 +108,7 @@ namespace project_ManaTV.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM Colors WHERE id = @id";
+                command.CommandText = "DELETE FROM Designs WHERE id = @id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.ExecuteNonQuery();
             }
