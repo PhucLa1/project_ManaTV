@@ -157,8 +157,12 @@
     <Compile Include="HelpMethod\HandleImage.cs" />
     <Compile Include="HelpMethod\Valiadated.cs" />
     <Compile Include="InitClasses.cs" />
+    <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Presenters\All\PaginationPresenter.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
+    <Compile Include="Presenters\Product\BrandPresenter.cs" />
+    <Compile Include="Repository\BrandRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
@@ -181,6 +185,24 @@
     </Compile>
     <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.Designer.cs">
       <DependentUpon>ListCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Brand\FormBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Brand\FormBrand.Designer.cs">
+      <DependentUpon>FormBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Brand\ListBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Brand\ListBrand.Designer.cs">
+      <DependentUpon>ListBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\ProductPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\ProductPanel.Designer.cs">
+      <DependentUpon>ProductPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.cs">
       <SubType>Form</SubType>
@@ -227,6 +249,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\CustomerView\ListCustomers.resx">
       <DependentUpon>ListCustomers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Brand\FormBrand.resx">
+      <DependentUpon>FormBrand.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Brand\ListBrand.resx">
+      <DependentUpon>ListBrand.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\ProductPanel.resx">
+      <DependentUpon>ProductPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
@@ -283,7 +317,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\FuncFrm\ProductManagement\" />
+    <Folder Include="Views\FuncFrm\ProductView\Product\" />
     <Folder Include="wwwroot\Products\" />
   </ItemGroup>
   <ItemGroup>
@@ -295,7 +329,9 @@
     <Content Include="wwwroot\assets\icons\chart-pie-solid.png" />
     <Content Include="wwwroot\assets\icons\chevron-down-solid.png" />
     <Content Include="wwwroot\assets\icons\circle-user-regular.png" />
+    <None Include="wwwroot\assets\icons\file-arrow-down-solid.png" />
     <Content Include="wwwroot\assets\icons\file-invoice-dollar-solid.png" />
+    <None Include="wwwroot\assets\icons\list-solid.png" />
     <Content Include="wwwroot\assets\icons\logoGroup4.jpg" />
     <Content Include="wwwroot\assets\icons\magnifying-glass-solid.png" />
     <None Include="wwwroot\assets\icons\plus-solid.png" />

@@ -12,6 +12,9 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using project_ManaTV.Views.FuncFrm.CustomerView;
+using project_ManaTV.Views.FuncFrm.BrandView;
+using project_ManaTV.Views.FuncFrm.ProductView;
+using Bunifu.UI.WinForms;
 
 namespace project_ManaTV
 {
@@ -22,6 +25,7 @@ namespace project_ManaTV
     public partial class Frm_Layout : Form
     {
         FontFamily[] fontFamilies;
+        private ProductPanel productPanel;
         public Frm_Layout()
         {
             InitializeComponent();
@@ -123,12 +127,6 @@ namespace project_ManaTV
             //formToShow.Dock = DockStyle.Fill;
             panelMainContent.Controls.Add(formToShow);
 
-            // Đặt lại vị trí và kích thước của form con
-            //formToShow.Location = new Point(0, 0); // Đặt vị trí ở góc trên bên trái của panel
-            //formToShow.Size = panelMainContent.Size; // Đặt kích thước bằng kích thước của panel
-
-
-            // Hiển thị form con
             formToShow.Show();
             
         }
@@ -153,7 +151,7 @@ namespace project_ManaTV
             if (productExpand == false)
             {
                 productSideBar.Height += 10;
-                if (productSideBar.Height >= 235)
+                if (productSideBar.Height >= 384)
                 {
                     productExpand = true;
                     productTrans.Stop();
@@ -306,15 +304,22 @@ namespace project_ManaTV
         private void btnProduct_Click(object sender, EventArgs e)
         {
             productTrans.Start();
+            productPanel = new ProductPanel();
+            productPanel.FRM_LAYOUT = this;
+            ShowFormInPanel(productPanel);
+            //productPanel.ShowTab("brand");
+            //productPanel.ShowFormInPanel_Brand(lstBrand);
+            productPanel.Size = panelMainContent.Size;
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                productPanel.Size = panelMainContent.Size;
+            };
         }
-
-
 
 
         private bool isZoomed = false;
         private int targetWidth;
         private int targetHeight;
-
 
 
         private void btnAddStaff_Click(object sender, EventArgs e)
@@ -345,6 +350,7 @@ namespace project_ManaTV
         private void btnCustomerWrapper_Click(object sender, EventArgs e)
         {
             customerTrans.Start();
+            
         }
 
         private bool customerExpand = false;
@@ -408,5 +414,65 @@ namespace project_ManaTV
             };
             
         }
+
+
+        //PRODUCT
+        private void btnAllProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnBrand_Click(object sender, EventArgs e)
+        {
+
+            var lstBrand = new FrmListBrands();
+            lstBrand.FRM_LAYOUT = this;
+            productPanel.ShowTab("brand");
+            productPanel.ShowFormInPanel_Brand(lstBrand);
+ 
+            //var lstBrand = new FrmListBrands();
+            //lstBrand.FRM_LAYOUT = this;
+            //var productPanel = new ProductPanel();
+            //ShowFormInPanel(productPanel);
+            //productPanel.ShowTab("brand");
+            //productPanel.ShowFormInPanel_Brand(lstBrand);
+            //productPanel.Size = panelMainContent.Size;
+            //panelMainContent.SizeChanged += (s, ev) =>
+            //{
+            //    productPanel.Size = panelMainContent.Size;
+            //};
+
+        }
+        private void btnDesign_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnScreen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnScreenSize_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOrigin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTrashProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+ 
+
     }
 }

@@ -33,8 +33,6 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
 
         }
 
-
-
         private void InitForm()
         {
             this.BackColor = ColorTranslator.FromHtml("#29374B");
@@ -63,6 +61,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             RenderListData(_customerPresenter.GetByPagination(pageNumber, pageSize));
         }
 
+        //CRUD on table
         private void gridCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -220,6 +219,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             var lstCustomer = _customerPresenter.GetByPagination(1, pageSize);
             HandlePagination();
             RenderListData(lstCustomer);
+          
         }
 
         private void SetActivePage(int pageNumber)
@@ -274,7 +274,6 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
 
 
         //TRASH
-
         private void gridTrashCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -423,6 +422,41 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
                 1000,
                 "",
                 BunifuSnackbar.Positions.TopRight);
+        }
+
+        private void tabList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowFilter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

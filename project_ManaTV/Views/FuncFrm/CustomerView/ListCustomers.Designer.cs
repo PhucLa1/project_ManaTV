@@ -90,9 +90,6 @@
             this.dpFilterTrash = new Bunifu.UI.WinForms.BunifuDropdown();
             this.txtSearchTrash = new Bunifu.UI.WinForms.BunifuTextBox();
             this.gridTrashCustomer = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tvManagementDataSet1 = new project_ManaTV.TVManagementDataSet();
-            this.snackBarTab = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.checkAll = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IDTrash = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,6 +98,9 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actionDeleteTrash = new System.Windows.Forms.DataGridViewImageColumn();
             this.actionRestore = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tvManagementDataSet1 = new project_ManaTV.TVManagementDataSet();
+            this.snackBarTab = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.tabCustomer.SuspendLayout();
             this.tabList.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -145,6 +145,7 @@
             this.tabList.TabIndex = 0;
             this.tabList.Text = "List Customers";
             this.tabList.UseVisualStyleBackColor = true;
+            this.tabList.Click += new System.EventHandler(this.tabList_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -156,6 +157,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(317, 49);
             this.flowLayoutPanel1.TabIndex = 14;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // label2
             // 
@@ -234,6 +236,7 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(325, 53);
             this.flowLayoutPanel3.TabIndex = 13;
+            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
             // 
             // btnNext
             // 
@@ -702,6 +705,7 @@
             this.label1.Size = new System.Drawing.Size(185, 33);
             this.label1.TabIndex = 12;
             this.label1.Text = "List Customers";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -711,6 +715,7 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(317, 49);
             this.flowLayoutPanel2.TabIndex = 11;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // btnAddNewCustomer
             // 
@@ -816,6 +821,7 @@
             this.flowFilter.Name = "flowFilter";
             this.flowFilter.Size = new System.Drawing.Size(604, 49);
             this.flowFilter.TabIndex = 10;
+            this.flowFilter.Paint += new System.Windows.Forms.PaintEventHandler(this.flowFilter_Paint);
             // 
             // btnSearchCustomer
             // 
@@ -1088,7 +1094,7 @@
             this.gridCustomer.Size = new System.Drawing.Size(1192, 433);
             this.gridCustomer.TabIndex = 3;
             this.gridCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomer_CellClick);
-//            this.gridCustomer.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCustomer_ColumnHeaderMouseClick);
+            this.gridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomer_CellContentClick);
             // 
             // ID
             // 
@@ -1655,6 +1661,81 @@
             this.gridTrashCustomer.TabIndex = 15;
             this.gridTrashCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridTrashCustomer_CellClick);
             // 
+            // checkAll
+            // 
+            this.checkAll.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.checkAll.FalseValue = "0";
+            this.checkAll.HeaderText = "   ☐";
+            this.checkAll.MinimumWidth = 6;
+            this.checkAll.Name = "checkAll";
+            this.checkAll.ReadOnly = true;
+            this.checkAll.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkAll.TrueValue = "1";
+            this.checkAll.Width = 50;
+            // 
+            // IDTrash
+            // 
+            this.IDTrash.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IDTrash.FillWeight = 244.6809F;
+            this.IDTrash.HeaderText = "ID";
+            this.IDTrash.MinimumWidth = 6;
+            this.IDTrash.Name = "IDTrash";
+            this.IDTrash.ReadOnly = true;
+            this.IDTrash.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IDTrash.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 63.82978F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Full name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 63.82978F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Phone number";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 63.82978F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.FillWeight = 63.82978F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // actionDeleteTrash
+            // 
+            this.actionDeleteTrash.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.actionDeleteTrash.HeaderText = "Action";
+            this.actionDeleteTrash.MinimumWidth = 6;
+            this.actionDeleteTrash.Name = "actionDeleteTrash";
+            this.actionDeleteTrash.ReadOnly = true;
+            this.actionDeleteTrash.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.actionDeleteTrash.Width = 50;
+            // 
+            // actionRestore
+            // 
+            this.actionRestore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.actionRestore.HeaderText = "";
+            this.actionRestore.MinimumWidth = 6;
+            this.actionRestore.Name = "actionRestore";
+            this.actionRestore.ReadOnly = true;
+            this.actionRestore.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.actionRestore.Width = 50;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1738,81 +1819,6 @@
             this.snackBarTab.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
             this.snackBarTab.WarningOptions.IconLeftMargin = 12;
             this.snackBarTab.ZoomCloseIcon = true;
-            // 
-            // checkAll
-            // 
-            this.checkAll.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.checkAll.FalseValue = "0";
-            this.checkAll.HeaderText = "   ☐";
-            this.checkAll.MinimumWidth = 6;
-            this.checkAll.Name = "checkAll";
-            this.checkAll.ReadOnly = true;
-            this.checkAll.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkAll.TrueValue = "1";
-            this.checkAll.Width = 50;
-            // 
-            // IDTrash
-            // 
-            this.IDTrash.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.IDTrash.FillWeight = 244.6809F;
-            this.IDTrash.HeaderText = "ID";
-            this.IDTrash.MinimumWidth = 6;
-            this.IDTrash.Name = "IDTrash";
-            this.IDTrash.ReadOnly = true;
-            this.IDTrash.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IDTrash.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 63.82978F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Full name";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 63.82978F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Phone number";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.FillWeight = 63.82978F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.FillWeight = 63.82978F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Address";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // actionDeleteTrash
-            // 
-            this.actionDeleteTrash.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.actionDeleteTrash.HeaderText = "Action";
-            this.actionDeleteTrash.MinimumWidth = 6;
-            this.actionDeleteTrash.Name = "actionDeleteTrash";
-            this.actionDeleteTrash.ReadOnly = true;
-            this.actionDeleteTrash.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.actionDeleteTrash.Width = 50;
-            // 
-            // actionRestore
-            // 
-            this.actionRestore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.actionRestore.HeaderText = "";
-            this.actionRestore.MinimumWidth = 6;
-            this.actionRestore.Name = "actionRestore";
-            this.actionRestore.ReadOnly = true;
-            this.actionRestore.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.actionRestore.Width = 50;
             // 
             // ListCustomers
             // 
