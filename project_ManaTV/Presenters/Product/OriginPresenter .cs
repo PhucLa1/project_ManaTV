@@ -10,24 +10,24 @@ using project_ManaTV.Repository;
 
 namespace project_ManaTV.Presenters
 {
-    public class BrandPresenter
+    public class OriginPresenter
     {
-        private BrandRepository _brandRepository;
-        public List<Brand> ListBrandRender { get; set; }
+        private OriginRepository _originRepository;
+        public List<Origin> ListOriginRender { get; set; }
 
 
         //Search
         private bool isSearch = false;
 
-        private PaginationPresenter<Brand> pgController;
+        private PaginationPresenter<Origin> pgController;
 
-        public BrandPresenter()
+        public OriginPresenter()
         {
-            _brandRepository = new BrandRepository();
+            _originRepository = new OriginRepository();
 
         }
 
-        public List<Brand> GetListByPagination(bool isDeleted = false)
+        public List<Origin> GetListByPagination(bool isDeleted = false)
         {
             if(!isSearch) pgController.UpdateData(GetAll(isDeleted));
             return pgController.GetListByPagination();
@@ -35,7 +35,7 @@ namespace project_ManaTV.Presenters
 
         public void SetPagination(BunifuButton btn1, BunifuButton btn2, BunifuButton btn3, BunifuButton btnPrev, BunifuButton btnNext, BunifuDropdown dropdown)
         {
-            pgController = new PaginationPresenter<Brand>(_brandRepository.GetAll(),btn1, btn2, btn3, btnPrev, btnNext, dropdown);
+            pgController = new PaginationPresenter<Origin>(_originRepository.GetAll(),btn1, btn2, btn3, btnPrev, btnNext, dropdown);
         }
 
         public void ResetPagination(bool isDeleted = false)
@@ -44,43 +44,42 @@ namespace project_ManaTV.Presenters
             pgController.ReInit(1, 10, GetAll(isDeleted));
         }
 
-        public List<Brand> Search(string searchKey, string filterBy, bool isDeleted = false)
+        public List<Origin> Search(string searchKey, string filterBy, bool isDeleted = false)
         {
             isSearch = true;
-            var lstResSearch = new List<Brand>();
+            var lstResSearch = new List<Origin>();
             searchKey = searchKey.ToLower();
             if (filterBy == "id") lstResSearch = GetAll(isDeleted).Where(x => x.Id.ToString().Contains(searchKey)).ToList();
             else if (filterBy == "name") lstResSearch = GetAll(isDeleted).Where(x => x.Name.ToLower().Contains(searchKey)).ToList();
-            else if (filterBy == "address") lstResSearch = GetAll(isDeleted).Where(x => x.Address.ToLower().Contains(searchKey)).ToList();
             pgController.ReInit(1, 10 ,lstResSearch);
             return pgController.GetListByPagination();
         }
 
-        public List<Brand> GetAll(bool isDeleted= false)
+        public List<Origin> GetAll(bool isDeleted= false)
         {
-            return _brandRepository.GetAll().ToList();
+            return _originRepository.GetAll().ToList();
         }
 
-        public Brand GetById(int id)
+        public Origin GetById(int id)
         {
-            return _brandRepository.GetById(id);
+            return _originRepository.GetById(id);
         }
 
-        public void AddNew(Brand brand)
+        public void AddNew(Origin origin)
         {
-            //brand.IsDeleted = false;
-            _brandRepository.AddNew(brand);
+            //origin.IsDeleted = false;
+            _originRepository.AddNew(origin);
         }
 
-        public void Update(Brand brand)
+        public void Update(Origin origin)
         {
-            //brand.IsDeleted = false;
-            _brandRepository.Update(brand);
+            //origin.IsDeleted = false;
+            _originRepository.Update(origin);
         }
 
         public void Delete(int id)
         {
-            _brandRepository.Delete(id);
+            _originRepository.Delete(id);
         }
 
 

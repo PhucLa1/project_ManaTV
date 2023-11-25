@@ -1,6 +1,6 @@
-﻿namespace project_ManaTV.Views.FuncFrm.BrandView
+﻿namespace project_ManaTV.Views.FuncFrm.ColorView
 {
-    partial class FrmListBrands
+    partial class FrmListColors
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListBrands));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListColors));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -64,6 +64,9 @@
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             this.gridData = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.B = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actionDetails = new System.Windows.Forms.DataGridViewImageColumn();
             this.actionUpdate = new System.Windows.Forms.DataGridViewImageColumn();
@@ -702,9 +705,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 24);
+            this.label1.Size = new System.Drawing.Size(179, 24);
             this.label1.TabIndex = 18;
-            this.label1.Text = "List Colors";
+            this.label1.Text = "List Manufacturers";
             // 
             // flowLayoutPanel2
             // 
@@ -946,7 +949,11 @@
             this.dpFilter.ItemHighLightForeColor = System.Drawing.Color.White;
             this.dpFilter.Items.AddRange(new object[] {
             "Id",
-            "Name"});
+            "Name",
+            "R",
+            "G",
+            "B",
+            "R,G,B"});
             this.dpFilter.ItemTopMargin = 3;
             this.dpFilter.Location = new System.Drawing.Point(277, 4);
             this.dpFilter.Margin = new System.Windows.Forms.Padding(4);
@@ -1031,6 +1038,7 @@
             this.txtSearch.TextPlaceholder = "Enter text";
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.WordWrap = true;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // gridData
             // 
@@ -1061,6 +1069,9 @@
             this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.R,
+            this.G,
+            this.B,
             this.colName,
             this.actionDetails,
             this.actionUpdate,
@@ -1097,6 +1108,24 @@
             this.ID.ReadOnly = true;
             this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ID.Width = 50;
+            // 
+            // R
+            // 
+            this.R.HeaderText = "R";
+            this.R.Name = "R";
+            this.R.ReadOnly = true;
+            // 
+            // G
+            // 
+            this.G.HeaderText = "G";
+            this.G.Name = "G";
+            this.G.ReadOnly = true;
+            // 
+            // B
+            // 
+            this.B.HeaderText = "B";
+            this.B.Name = "B";
+            this.B.ReadOnly = true;
             // 
             // colName
             // 
@@ -1136,7 +1165,7 @@
             this.actionDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.actionDelete.Width = 50;
             // 
-            // FrmListBrands
+            // FrmListColors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1149,9 +1178,9 @@
             this.Controls.Add(this.gridData);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmListBrands";
-            this.Text = "ListBrands";
-            this.Load += new System.EventHandler(this.ListBrands_Load);
+            this.Name = "FrmListColors";
+            this.Text = "ListColors";
+            this.Load += new System.EventHandler(this.ListColors_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tvManagementDataSet1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -1185,6 +1214,9 @@
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
         private System.Windows.Forms.DataGridView gridData;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G;
+        private System.Windows.Forms.DataGridViewTextBoxColumn B;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewImageColumn actionDetails;
         private System.Windows.Forms.DataGridViewImageColumn actionUpdate;

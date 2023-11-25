@@ -187,7 +187,7 @@
             this.lblBrandName.AutoSize = false;
             this.lblBrandName.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblBrandName.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblBrandName.Font = new System.Drawing.Font(".VnHelvetInsH", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrandName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrandName.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblBrandName.Location = new System.Drawing.Point(55, 5);
             this.lblBrandName.Name = "lblBrandName";
@@ -233,7 +233,7 @@
             this.searchFunction.BorderThickness = 0;
             this.searchFunction.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.searchFunction.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchFunction.DefaultFont = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchFunction.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchFunction.DefaultText = "";
             this.searchFunction.FillColor = System.Drawing.Color.LightSteelBlue;
             this.searchFunction.HideSelection = true;
@@ -315,7 +315,7 @@
             this.sidebar.Controls.Add(this.fLayoutCustommer);
             this.sidebar.Controls.Add(this.btnLogOut);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar.Font = new System.Drawing.Font(".VnBlackH", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sidebar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sidebar.ForeColor = System.Drawing.SystemColors.Menu;
             this.sidebar.Location = new System.Drawing.Point(0, 49);
             this.sidebar.Name = "sidebar";
@@ -352,7 +352,7 @@
             this.btnDashboard.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnDashboard.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnDashboard.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnDashboard.Font = new System.Drawing.Font("Rubik", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -454,7 +454,7 @@
             this.btnStaff.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnStaff.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnStaff.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnStaff.Font = new System.Drawing.Font("Rubik", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.Color.White;
             this.btnStaff.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStaff.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -746,7 +746,7 @@
             this.btnProduct.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProduct.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnProduct.Font = new System.Drawing.Font("Rubik", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.ForeColor = System.Drawing.Color.White;
             this.btnProduct.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduct.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -1566,7 +1566,7 @@
             this.btnInvoice.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnInvoice.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInvoice.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnInvoice.Font = new System.Drawing.Font("Rubik", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvoice.ForeColor = System.Drawing.Color.White;
             this.btnInvoice.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInvoice.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -1668,7 +1668,7 @@
             this.btnCustomerWrapper.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnCustomerWrapper.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCustomerWrapper.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnCustomerWrapper.Font = new System.Drawing.Font("Rubik", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerWrapper.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerWrapper.ForeColor = System.Drawing.Color.White;
             this.btnCustomerWrapper.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomerWrapper.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -1942,7 +1942,7 @@
             this.btnLogOut.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogOut.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnLogOut.Font = new System.Drawing.Font("Rubik", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.IconLeftCursor = System.Windows.Forms.Cursors.Default;

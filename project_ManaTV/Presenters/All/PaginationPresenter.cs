@@ -154,12 +154,12 @@ namespace project_ManaTV.Presenters
             {
                 if (btnPageNumber.Text == pageNumber.ToString())
                 {
-                    btnPageNumber.BackColor = Color.FromArgb(105, 181, 255);
+                    btnPageNumber.BackColor = System.Drawing.Color.FromArgb(105, 181, 255);
                     //btnPageNumber.ForeColor = Color.White;
                 }
                 else
                 {
-                    btnPageNumber.BackColor = Color.Transparent;
+                    btnPageNumber.BackColor = System.Drawing.Color.Transparent;
                     //btnPageNumber.ForeColor = Color.FromArgb(40, 96, 144);
                 }
             }

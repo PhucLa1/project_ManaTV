@@ -13,26 +13,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using project_ManaTV.Views.FuncFrm.BrandView;
 
-
-namespace project_ManaTV.Views.FuncFrm.BrandView
+namespace project_ManaTV.Views.FuncFrm.ColorView
 {
-    public partial class FrmListBrands : Form
+    public partial class FrmListColors : Form
     {
-        private BrandPresenter _objPresenter;
+        private ColorPresenter _objPresenter;
         private List<BunifuButton> _buttonList;
         public Form FRM_LAYOUT { get; set; }
-        public FrmListBrands()
+        public FrmListColors()
         {
-            _objPresenter = new BrandPresenter();
+            _objPresenter = new ColorPresenter();
             InitializeComponent();
             InitForm();
             _buttonList = new List<BunifuButton>() { btnFirstPage, btnSecondPage, btnThirdPage, btnPrev, btnNext };
             _objPresenter.SetPagination(btnFirstPage, btnSecondPage, btnThirdPage, btnPrev,btnNext, dpPageSize);
             AddEventListenerPagination();
- 
-
         }
 
         private void InitForm()
@@ -48,7 +44,7 @@ namespace project_ManaTV.Views.FuncFrm.BrandView
             btnAddNew.Location = new Point(btnAddNew.Location.X, dpFilter.Location.Y);
         }
 
-        private void ListBrands_Load(object sender, EventArgs e)
+        private void ListColors_Load(object sender, EventArgs e)
         {
             RenderListData(_objPresenter.GetListByPagination());
         }
@@ -64,7 +60,7 @@ namespace project_ManaTV.Views.FuncFrm.BrandView
                 {
                     var id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
                     var selectedObj = _objPresenter.GetById(id);
-                    var formObj = new FormBrand("details");
+                    var formObj = new FormColor("details");
                     formObj.SetData(selectedObj);
                     formObj.Show();
                 }
@@ -72,7 +68,7 @@ namespace project_ManaTV.Views.FuncFrm.BrandView
                 {
                     var id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
                     var selectedObj = _objPresenter.GetById(id);
-                    var formObj = new FormBrand("update", _objPresenter);
+                    var formObj = new FormColor("update", _objPresenter);
                     formObj.SetData(selectedObj);
                     formObj.AfterClick += (s, ev) => EventAfterSuccess("Updated Successfully!");
                     formObj.Show();
@@ -103,7 +99,7 @@ namespace project_ManaTV.Views.FuncFrm.BrandView
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            var formobj = new FormBrand("add", _objPresenter);
+            var formobj = new FormColor("add", _objPresenter);
             formobj.AfterClick += (s, ev) => EventAfterSuccess("Added successfully!");
             formobj.Show();
         }
@@ -121,7 +117,7 @@ namespace project_ManaTV.Views.FuncFrm.BrandView
         }
 
         //FORM EVENT
-        private void RenderListData(List<Brand> lstobj)
+        private void RenderListData(List<Colors> lstobj)
         {
             gridData.Rows.Clear();
             Image actionDetails = HandleImage.ZoomOutImage(HandleImage.filePath("assets/icons", "details.png"));
@@ -133,7 +129,10 @@ namespace project_ManaTV.Views.FuncFrm.BrandView
                 gridData.Rows.Add(new object[]
                 {
                     obj.Id,
-                    obj.Name,
+                    obj.R,
+                    obj.G,
+                    obj.B,
+                    obj.color_name,
                     actionDetails,
                     actionUpdate,
                     actionDelete
@@ -174,6 +173,9 @@ namespace project_ManaTV.Views.FuncFrm.BrandView
             ShowToast(message, BunifuSnackbar.MessageTypes.Success);
         }
 
-        
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

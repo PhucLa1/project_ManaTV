@@ -15,6 +15,8 @@ using project_ManaTV.Views.FuncFrm.CustomerView;
 using project_ManaTV.Views.FuncFrm.BrandView;
 using project_ManaTV.Views.FuncFrm.ProductView;
 using Bunifu.UI.WinForms;
+using project_ManaTV.Views.FuncFrm.ColorView;
+using project_ManaTV.Views.FuncFrm.OriginView;
 
 namespace project_ManaTV
 {
@@ -449,7 +451,10 @@ namespace project_ManaTV
 
         private void btnColor_Click(object sender, EventArgs e)
         {
-
+            var lstColors = new FrmListColors();
+            lstColors.FRM_LAYOUT = this;
+            productPanel.ShowTab("color");
+            productPanel.ShowFormInPanel_Color(lstColors);
         }
 
         private void btnScreen_Click(object sender, EventArgs e)
@@ -464,7 +469,10 @@ namespace project_ManaTV
 
         private void btnOrigin_Click(object sender, EventArgs e)
         {
-
+            var lstOrigins = new FrmListOrigins();
+            lstOrigins.FRM_LAYOUT = this;
+            productPanel.ShowTab("origin");
+            productPanel.ShowFormInPanel_Origin(lstOrigins);
         }
 
         private void btnTrashProduct_Click(object sender, EventArgs e)

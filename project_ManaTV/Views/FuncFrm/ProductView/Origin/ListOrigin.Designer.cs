@@ -1,6 +1,6 @@
-﻿namespace project_ManaTV.Views.FuncFrm.BrandView
+﻿namespace project_ManaTV.Views.FuncFrm.OriginView
 {
-    partial class FrmListBrands
+    partial class FrmListOrigins
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListBrands));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListOrigins));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -702,9 +702,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 24);
+            this.label1.Size = new System.Drawing.Size(179, 24);
             this.label1.TabIndex = 18;
-            this.label1.Text = "List Colors";
+            this.label1.Text = "List Manufacturers";
             // 
             // flowLayoutPanel2
             // 
@@ -1085,6 +1085,7 @@
             this.gridData.Size = new System.Drawing.Size(1184, 438);
             this.gridData.TabIndex = 15;
             this.gridData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellClick);
+            this.gridData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellContentClick);
             // 
             // ID
             // 
@@ -1136,7 +1137,7 @@
             this.actionDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.actionDelete.Width = 50;
             // 
-            // FrmListBrands
+            // FrmListOrigins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1149,9 +1150,9 @@
             this.Controls.Add(this.gridData);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmListBrands";
-            this.Text = "ListBrands";
-            this.Load += new System.EventHandler(this.ListBrands_Load);
+            this.Name = "FrmListOrigins";
+            this.Text = "ListOrigins";
+            this.Load += new System.EventHandler(this.ListOrigins_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tvManagementDataSet1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();

@@ -36,8 +36,8 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
         private void InitForm()
         {
             this.BackColor = ColorTranslator.FromHtml("#29374B");
-            tabList.BackColor = Color.White;
-            tabTrash.BackColor = Color.White;
+            tabList.BackColor = System.Drawing.Color.White;
+            tabTrash.BackColor = System.Drawing.Color.White;
             this.Padding = new Padding(0, 10, 0, 0);
 
             txtSearchCustomer.Height = dpFilterCustomer.Height;
@@ -228,12 +228,12 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             {
                 if (btnPageNumber.Text == pageNumber.ToString())
                 {
-                    btnPageNumber.BackColor = Color.FromArgb(105, 181, 255);
+                    btnPageNumber.BackColor = System.Drawing.Color.FromArgb(105, 181, 255);
                     //btnPageNumber.ForeColor = Color.White;
                 }
                 else
                 {
-                    btnPageNumber.BackColor = Color.Transparent;
+                    btnPageNumber.BackColor = System.Drawing.Color.Transparent;
                     //btnPageNumber.ForeColor = Color.FromArgb(40, 96, 144);
                 }
             }
