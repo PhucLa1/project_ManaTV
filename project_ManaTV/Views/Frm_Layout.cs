@@ -168,17 +168,10 @@ namespace project_ManaTV
             }
         }
 
-
-
-        private void startFormLoad()
-        {
-
-        }
         private int x;
         private int y;
         private void Form1_Load(object sender, EventArgs e)
         {
-
             x = this.Left;
             y = this.Top;
         }
@@ -303,12 +296,15 @@ namespace project_ManaTV
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            
             productTrans.Start();
+            var lstProduct = new FrmListProducts();
+            lstProduct.FRM_LAYOUT = this;
             productPanel = new ProductPanel();
             productPanel.FRM_LAYOUT = this;
             ShowFormInPanel(productPanel);
-            //productPanel.ShowTab("brand");
-            //productPanel.ShowFormInPanel_Brand(lstBrand);
+            productPanel.ShowTab("product");
+            productPanel.ShowFormInPanel_Product(lstProduct);
             productPanel.Size = panelMainContent.Size;
             panelMainContent.SizeChanged += (s, ev) =>
             {
@@ -419,7 +415,10 @@ namespace project_ManaTV
         //PRODUCT
         private void btnAllProduct_Click(object sender, EventArgs e)
         {
-
+            var lstProduct = new FrmListProducts();
+            lstProduct.FRM_LAYOUT = this;
+            productPanel.ShowTab("product");
+            productPanel.ShowFormInPanel_Product(lstProduct);
         }
         private void btnBrand_Click(object sender, EventArgs e)
         {

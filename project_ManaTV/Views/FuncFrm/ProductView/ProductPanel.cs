@@ -50,6 +50,7 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
         {
             if (tabName == "brand") wrapperProduct.SelectedTab = tabBrand;
             else if (tabName == "design") wrapperProduct.SelectedTab = tabDesign;
+            else if (tabName == "product") wrapperProduct.SelectedTab = tabProductList;
         }
 
         public void ShowFormInPanel_Brand(Form formToShow)
@@ -66,7 +67,22 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
                 formToShow.Size = panelBrand.Size;
             };
             formToShow.Show();
+        }
 
+        public void ShowFormInPanel_Product(Form formToShow)
+        {
+            panelProduct.Controls.Clear();
+
+            // Hiển thị form con trong Panel
+            formToShow.TopLevel = false;
+            formToShow.FormBorderStyle = FormBorderStyle.None;
+            formToShow.Dock = DockStyle.Fill;
+            panelProduct.Controls.Add(formToShow);
+            panelProduct.SizeChanged += (s, ev) =>
+            {
+                formToShow.Size = panelProduct.Size;
+            };
+            formToShow.Show();
         }
 
         //Change Tab
@@ -74,7 +90,13 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
         {
             switch (wrapperProduct.SelectedIndex)
             {
-
+                case 0:
+                    {
+                        var lstProduct = new FrmListProducts();
+                        lstProduct.FRM_LAYOUT = this.FRM_LAYOUT;
+                        ShowFormInPanel_Product(lstProduct);
+                        break;
+                    }
                 case 1:
                     {
                         var lstBrand = new FrmListBrands();

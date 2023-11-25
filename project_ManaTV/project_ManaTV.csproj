@@ -157,12 +157,16 @@
     <Compile Include="HelpMethod\HandleImage.cs" />
     <Compile Include="HelpMethod\Valiadated.cs" />
     <Compile Include="InitClasses.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Presenters\All\PaginationPresenter.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
+    <Compile Include="Presenters\Product\ProductPresenter.cs" />
     <Compile Include="Presenters\Product\BrandPresenter.cs" />
     <Compile Include="Repository\BrandRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
@@ -203,6 +207,18 @@
     </Compile>
     <Compile Include="Views\FuncFrm\ProductView\ProductPanel.Designer.cs">
       <DependentUpon>ProductPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\ListProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\ListProduct.Designer.cs">
+      <DependentUpon>ListProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.cs">
       <SubType>Form</SubType>
@@ -263,6 +279,14 @@
       <DependentUpon>ProductPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Product\FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Product\ListProduct.resx">
+      <DependentUpon>ListProduct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
       <DependentUpon>AboutStaff.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -317,7 +341,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\FuncFrm\ProductView\Product\" />
     <Folder Include="wwwroot\Products\" />
   </ItemGroup>
   <ItemGroup>
@@ -351,4 +374,8 @@
     <Content Include="wwwroot\Users\male.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

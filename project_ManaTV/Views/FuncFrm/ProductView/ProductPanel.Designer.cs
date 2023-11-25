@@ -39,8 +39,10 @@
             this.tabScreen = new System.Windows.Forms.TabPage();
             this.tabScreenSize = new System.Windows.Forms.TabPage();
             this.tabOrigin = new System.Windows.Forms.TabPage();
+            this.panelProduct = new System.Windows.Forms.Panel();
             this.wrapperProduct.SuspendLayout();
             this.tabProductList.SuspendLayout();
+            this.panelProducts.SuspendLayout();
             this.tabBrand.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +80,7 @@
             // 
             // panelProducts
             // 
+            this.panelProducts.Controls.Add(this.panelProduct);
             this.panelProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelProducts.Location = new System.Drawing.Point(3, 2);
             this.panelProducts.Name = "panelProducts";
@@ -165,6 +168,14 @@
             this.tabOrigin.Text = "List Origins";
             this.tabOrigin.UseVisualStyleBackColor = true;
             // 
+            // panelProduct
+            // 
+            this.panelProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelProduct.Location = new System.Drawing.Point(0, 0);
+            this.panelProduct.Name = "panelProduct";
+            this.panelProduct.Size = new System.Drawing.Size(1504, 784);
+            this.panelProduct.TabIndex = 0;
+            // 
             // ProductPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -176,6 +187,7 @@
             this.Text = "ProductPanel";
             this.wrapperProduct.ResumeLayout(false);
             this.tabProductList.ResumeLayout(false);
+            this.panelProducts.ResumeLayout(false);
             this.tabBrand.ResumeLayout(false);
             this.tabBrand.PerformLayout();
             this.ResumeLayout(false);
@@ -195,5 +207,6 @@
         private System.Windows.Forms.TabPage tabOrigin;
         private System.Windows.Forms.Panel panelProducts;
         private System.Windows.Forms.Panel panelBrand;
+        private System.Windows.Forms.Panel panelProduct;
     }
 }
