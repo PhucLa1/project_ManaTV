@@ -32,8 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b">
       <HintPath>..\..\framework\BunifuCrack\Bunifu.Licensing.dll</HintPath>
@@ -160,6 +158,10 @@
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\ScreenSize.cs" />
+    <Compile Include="Models\Screen.cs" />
+    <Compile Include="Models\Design.cs" />
+
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Presenters\All\PaginationPresenter.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
@@ -167,6 +169,13 @@
     <Compile Include="Presenters\Product\BrandPresenter.cs" />
     <Compile Include="Repository\BrandRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Presenters\Product\ScreenSizePresenter.cs" />
+    <Compile Include="Presenters\Product\ScreenPresenter.cs" />
+    <Compile Include="Presenters\Product\DesignPresenter.cs" />
+    <Compile Include="Repository\ScreenSizeRepository.cs" />
+    <Compile Include="Repository\ScreenRepository.cs" />
+    <Compile Include="Repository\DesignRepository.cs" />
+
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
@@ -190,6 +199,42 @@
     <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.Designer.cs">
       <DependentUpon>ListCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.Designer.cs">
+      <DependentUpon>FormScreenSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\ScreenSize\ListScreenSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\ScreenSize\ListScreenSize.Designer.cs">
+      <DependentUpon>ListScreenSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Screen\FormScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Screen\FormScreen.Designer.cs">
+      <DependentUpon>FormScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Screen\ListScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Screen\ListScreen.Designer.cs">
+      <DependentUpon>ListScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Design\FormDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Design\FormDesign.Designer.cs">
+      <DependentUpon>FormDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Design\ListDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Design\ListDesign.Designer.cs">
+      <DependentUpon>ListDesign.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncFrm\ProductView\Brand\FormBrand.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +253,7 @@
     <Compile Include="Views\FuncFrm\ProductView\ProductPanel.Designer.cs">
       <DependentUpon>ProductPanel.cs</DependentUpon>
     </Compile>
+    
     <Compile Include="Views\FuncFrm\ProductView\Product\FormProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +313,31 @@
       <DependentUpon>ListCustomers.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.resx">
+      <DependentUpon>FormScreenSize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\ScreenSize\ListScreenSize.resx">
+      <DependentUpon>ListScreenSize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Screen\FormScreen.resx">
+      <DependentUpon>FormScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Screen\ListScreen.resx">
+      <DependentUpon>ListScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Design\FormDesign.resx">
+      <DependentUpon>FormDesign.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Design\ListDesign.resx">
+      <DependentUpon>ListDesign.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    
     <EmbeddedResource Include="Views\FuncFrm\ProductView\Brand\FormBrand.resx">
       <DependentUpon>FormBrand.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -341,6 +412,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\FuncFrm\ProductManagement\" />
     <Folder Include="wwwroot\Products\" />
   </ItemGroup>
   <ItemGroup>

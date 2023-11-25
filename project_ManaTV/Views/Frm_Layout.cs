@@ -12,9 +12,13 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using project_ManaTV.Views.FuncFrm.CustomerView;
+using Bunifu.UI.WinForms;
+using project_ManaTV.Views.FuncFrm.DesignView;
+using project_ManaTV.Views.FuncFrm.ScreenView;
+using project_ManaTV.Views.FuncFrm.ScreenSizeView;
 using project_ManaTV.Views.FuncFrm.BrandView;
 using project_ManaTV.Views.FuncFrm.ProductView;
-using Bunifu.UI.WinForms;
+
 
 namespace project_ManaTV
 {
@@ -420,6 +424,7 @@ namespace project_ManaTV
             productPanel.ShowTab("product");
             productPanel.ShowFormInPanel_Product(lstProduct);
         }
+
         private void btnBrand_Click(object sender, EventArgs e)
         {
 
@@ -443,7 +448,10 @@ namespace project_ManaTV
         }
         private void btnDesign_Click(object sender, EventArgs e)
         {
-            
+            var lstDesign = new FrmListDesigns();
+            lstDesign.FRM_LAYOUT = this;
+            productPanel.ShowTab("design");
+            productPanel.ShowFormInPanel_Design(lstDesign);
         }
 
         private void btnColor_Click(object sender, EventArgs e)
@@ -453,12 +461,18 @@ namespace project_ManaTV
 
         private void btnScreen_Click(object sender, EventArgs e)
         {
-
+            var lstScreen = new FrmListScreens();
+            lstScreen.FRM_LAYOUT = this;
+            productPanel.ShowTab("screen");
+            productPanel.ShowFormInPanel_Brand(lstScreen);
         }
 
         private void btnScreenSize_Click(object sender, EventArgs e)
         {
-
+            var lstScreenSize = new FrmListScreenSizes();
+            lstScreenSize.FRM_LAYOUT = this;
+            productPanel.ShowTab("screenSize");
+            productPanel.ShowFormInPanel_Brand(lstScreenSize);
         }
 
         private void btnOrigin_Click(object sender, EventArgs e)
