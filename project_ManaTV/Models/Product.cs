@@ -18,7 +18,7 @@ namespace project_ManaTV.Models
         public int CountryId { get; set; }
         public int ProductAmount { get; set; }
         public int ProductImportMoney { get; set; }
-        public int? ProductSellMoney { get; set; }
+        public int? ProductSellMoney { get; set; } = 0;
         public bool IsDeleted { get; set; }
 
     }

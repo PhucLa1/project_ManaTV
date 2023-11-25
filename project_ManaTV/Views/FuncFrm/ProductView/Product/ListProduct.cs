@@ -83,9 +83,9 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
                     {
                         try
                         {
-                            _objPresenter.Delete(id);
-                            EventAfterSuccess("Deleted successfully!");
-                        }
+                            _objPresenter.SetDeleteStatus(id, true);
+                            EventAfterSuccess("Data has been move to trash!");
+                        } 
                         catch (Exception)
                         {
                             MessageBox.Show("Delete failed!");

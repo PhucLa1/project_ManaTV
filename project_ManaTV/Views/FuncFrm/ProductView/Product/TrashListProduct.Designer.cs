@@ -1,6 +1,6 @@
 ﻿namespace project_ManaTV.Views.FuncFrm.ProductView
 {
-    partial class FrmListProducts
+    partial class FrmTrashListProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListProducts));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTrashListProducts));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -56,29 +57,30 @@
             this.btnFirstPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnPrev = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAddNew = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flowFilter = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSearch = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.dpFilter = new Bunifu.UI.WinForms.BunifuDropdown();
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.gridData = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.conCorlor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actionDetails = new System.Windows.Forms.DataGridViewImageColumn();
-            this.actionUpdate = new System.Windows.Forms.DataGridViewImageColumn();
-            this.actionDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRestoreCustomer = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnRemoveTrash = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.gridTrashCustomer = new System.Windows.Forms.DataGridView();
+            this.checkAll = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IDTrash = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actionDeleteTrash = new System.Windows.Forms.DataGridViewImageColumn();
+            this.actionRestore = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tvManagementDataSet1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.flowFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
+            this.flowLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTrashCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // tvManagementDataSet1
@@ -707,110 +709,9 @@
             this.label1.Font = new System.Drawing.Font("Open Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 33);
+            this.label1.Size = new System.Drawing.Size(185, 33);
             this.label1.TabIndex = 18;
-            this.label1.Text = "List Products";
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.btnAddNew);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 42);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(317, 49);
-            this.flowLayoutPanel2.TabIndex = 17;
-            // 
-            // btnAddNew
-            // 
-            this.btnAddNew.AllowAnimations = true;
-            this.btnAddNew.AllowMouseEffects = true;
-            this.btnAddNew.AllowToggling = false;
-            this.btnAddNew.AnimationSpeed = 200;
-            this.btnAddNew.AutoGenerateColors = false;
-            this.btnAddNew.AutoRoundBorders = false;
-            this.btnAddNew.AutoSizeLeftIcon = false;
-            this.btnAddNew.AutoSizeRightIcon = true;
-            this.btnAddNew.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.btnAddNew.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddNew.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(164)))), ((int)(((byte)(77)))));
-            this.btnAddNew.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddNew.BackgroundImage")));
-            this.btnAddNew.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnAddNew.ButtonText = "Add new";
-            this.btnAddNew.ButtonTextMarginLeft = 0;
-            this.btnAddNew.ColorContrastOnClick = 45;
-            this.btnAddNew.ColorContrastOnHover = 45;
-            this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.btnAddNew.CustomizableEdges = borderEdges6;
-            this.btnAddNew.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddNew.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnAddNew.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnAddNew.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnAddNew.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnAddNew.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddNew.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNew.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnAddNew.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnAddNew.IconMarginLeft = 11;
-            this.btnAddNew.IconPadding = 10;
-            this.btnAddNew.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddNew.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnAddNew.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnAddNew.IconSize = 15;
-            this.btnAddNew.IdleBorderColor = System.Drawing.Color.Transparent;
-            this.btnAddNew.IdleBorderRadius = 1;
-            this.btnAddNew.IdleBorderThickness = 1;
-            this.btnAddNew.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(164)))), ((int)(((byte)(77)))));
-            this.btnAddNew.IdleIconLeftImage = global::project_ManaTV.Properties.Resources.plus_solid;
-            this.btnAddNew.IdleIconRightImage = null;
-            this.btnAddNew.IndicateFocus = false;
-            this.btnAddNew.Location = new System.Drawing.Point(3, 2);
-            this.btnAddNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnAddNew.OnDisabledState.BorderRadius = 1;
-            this.btnAddNew.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnAddNew.OnDisabledState.BorderThickness = 1;
-            this.btnAddNew.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnAddNew.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnAddNew.OnDisabledState.IconLeftImage = null;
-            this.btnAddNew.OnDisabledState.IconRightImage = null;
-            this.btnAddNew.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnAddNew.onHoverState.BorderRadius = 1;
-            this.btnAddNew.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnAddNew.onHoverState.BorderThickness = 1;
-            this.btnAddNew.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnAddNew.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.onHoverState.IconLeftImage = null;
-            this.btnAddNew.onHoverState.IconRightImage = null;
-            this.btnAddNew.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAddNew.OnIdleState.BorderRadius = 1;
-            this.btnAddNew.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnAddNew.OnIdleState.BorderThickness = 1;
-            this.btnAddNew.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(164)))), ((int)(((byte)(77)))));
-            this.btnAddNew.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.OnIdleState.IconLeftImage = global::project_ManaTV.Properties.Resources.plus_solid;
-            this.btnAddNew.OnIdleState.IconRightImage = null;
-            this.btnAddNew.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnAddNew.OnPressedState.BorderRadius = 1;
-            this.btnAddNew.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnAddNew.OnPressedState.BorderThickness = 1;
-            this.btnAddNew.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnAddNew.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.OnPressedState.IconLeftImage = null;
-            this.btnAddNew.OnPressedState.IconRightImage = null;
-            this.btnAddNew.Size = new System.Drawing.Size(115, 39);
-            this.btnAddNew.TabIndex = 0;
-            this.btnAddNew.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAddNew.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddNew.TextMarginLeft = 0;
-            this.btnAddNew.TextPadding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnAddNew.UseDefaultRadiusAndThickness = true;
-            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            this.label1.Text = "Trash Products";
             // 
             // flowFilter
             // 
@@ -844,11 +745,11 @@
             this.btnSearch.ColorContrastOnClick = 45;
             this.btnSearch.ColorContrastOnHover = 45;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.btnSearch.CustomizableEdges = borderEdges7;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnSearch.CustomizableEdges = borderEdges6;
             this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSearch.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSearch.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1037,23 +938,217 @@
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.WordWrap = true;
             // 
-            // gridData
+            // flowLayoutPanel6
             // 
-            this.gridData.AllowUserToAddRows = false;
-            this.gridData.AllowUserToDeleteRows = false;
-            this.gridData.AllowUserToOrderColumns = true;
-            this.gridData.AllowUserToResizeRows = false;
+            this.flowLayoutPanel6.Controls.Add(this.btnRestoreCustomer);
+            this.flowLayoutPanel6.Controls.Add(this.btnRemoveTrash);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(8, 44);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(317, 49);
+            this.flowLayoutPanel6.TabIndex = 21;
+            // 
+            // btnRestoreCustomer
+            // 
+            this.btnRestoreCustomer.AllowAnimations = true;
+            this.btnRestoreCustomer.AllowMouseEffects = true;
+            this.btnRestoreCustomer.AllowToggling = false;
+            this.btnRestoreCustomer.AnimationSpeed = 200;
+            this.btnRestoreCustomer.AutoGenerateColors = false;
+            this.btnRestoreCustomer.AutoRoundBorders = false;
+            this.btnRestoreCustomer.AutoSizeLeftIcon = false;
+            this.btnRestoreCustomer.AutoSizeRightIcon = true;
+            this.btnRestoreCustomer.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.btnRestoreCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.btnRestoreCustomer.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
+            this.btnRestoreCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRestoreCustomer.BackgroundImage")));
+            this.btnRestoreCustomer.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestoreCustomer.ButtonText = "Restore";
+            this.btnRestoreCustomer.ButtonTextMarginLeft = 0;
+            this.btnRestoreCustomer.ColorContrastOnClick = 45;
+            this.btnRestoreCustomer.ColorContrastOnHover = 45;
+            this.btnRestoreCustomer.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnRestoreCustomer.CustomizableEdges = borderEdges7;
+            this.btnRestoreCustomer.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRestoreCustomer.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRestoreCustomer.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRestoreCustomer.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRestoreCustomer.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnRestoreCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRestoreCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnRestoreCustomer.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestoreCustomer.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRestoreCustomer.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnRestoreCustomer.IconMarginLeft = 11;
+            this.btnRestoreCustomer.IconPadding = 10;
+            this.btnRestoreCustomer.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRestoreCustomer.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRestoreCustomer.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnRestoreCustomer.IconSize = 15;
+            this.btnRestoreCustomer.IdleBorderColor = System.Drawing.Color.Transparent;
+            this.btnRestoreCustomer.IdleBorderRadius = 1;
+            this.btnRestoreCustomer.IdleBorderThickness = 1;
+            this.btnRestoreCustomer.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
+            this.btnRestoreCustomer.IdleIconLeftImage = global::project_ManaTV.Properties.Resources.rotate_right_solid;
+            this.btnRestoreCustomer.IdleIconRightImage = null;
+            this.btnRestoreCustomer.IndicateFocus = false;
+            this.btnRestoreCustomer.Location = new System.Drawing.Point(3, 2);
+            this.btnRestoreCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRestoreCustomer.Name = "btnRestoreCustomer";
+            this.btnRestoreCustomer.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRestoreCustomer.OnDisabledState.BorderRadius = 1;
+            this.btnRestoreCustomer.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestoreCustomer.OnDisabledState.BorderThickness = 1;
+            this.btnRestoreCustomer.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRestoreCustomer.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRestoreCustomer.OnDisabledState.IconLeftImage = null;
+            this.btnRestoreCustomer.OnDisabledState.IconRightImage = null;
+            this.btnRestoreCustomer.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRestoreCustomer.onHoverState.BorderRadius = 1;
+            this.btnRestoreCustomer.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestoreCustomer.onHoverState.BorderThickness = 1;
+            this.btnRestoreCustomer.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRestoreCustomer.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnRestoreCustomer.onHoverState.IconLeftImage = null;
+            this.btnRestoreCustomer.onHoverState.IconRightImage = null;
+            this.btnRestoreCustomer.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRestoreCustomer.OnIdleState.BorderRadius = 1;
+            this.btnRestoreCustomer.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestoreCustomer.OnIdleState.BorderThickness = 1;
+            this.btnRestoreCustomer.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(147)))));
+            this.btnRestoreCustomer.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnRestoreCustomer.OnIdleState.IconLeftImage = global::project_ManaTV.Properties.Resources.rotate_right_solid;
+            this.btnRestoreCustomer.OnIdleState.IconRightImage = null;
+            this.btnRestoreCustomer.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnRestoreCustomer.OnPressedState.BorderRadius = 1;
+            this.btnRestoreCustomer.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestoreCustomer.OnPressedState.BorderThickness = 1;
+            this.btnRestoreCustomer.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnRestoreCustomer.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnRestoreCustomer.OnPressedState.IconLeftImage = null;
+            this.btnRestoreCustomer.OnPressedState.IconRightImage = null;
+            this.btnRestoreCustomer.Size = new System.Drawing.Size(121, 39);
+            this.btnRestoreCustomer.TabIndex = 1;
+            this.btnRestoreCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRestoreCustomer.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRestoreCustomer.TextMarginLeft = 0;
+            this.btnRestoreCustomer.TextPadding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnRestoreCustomer.UseDefaultRadiusAndThickness = true;
+            this.btnRestoreCustomer.Click += new System.EventHandler(this.btnRestoreCustomer_Click);
+            // 
+            // btnRemoveTrash
+            // 
+            this.btnRemoveTrash.AllowAnimations = true;
+            this.btnRemoveTrash.AllowMouseEffects = true;
+            this.btnRemoveTrash.AllowToggling = false;
+            this.btnRemoveTrash.AnimationSpeed = 200;
+            this.btnRemoveTrash.AutoGenerateColors = false;
+            this.btnRemoveTrash.AutoRoundBorders = false;
+            this.btnRemoveTrash.AutoSizeLeftIcon = false;
+            this.btnRemoveTrash.AutoSizeRightIcon = true;
+            this.btnRemoveTrash.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.btnRemoveTrash.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemoveTrash.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRemoveTrash.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemoveTrash.BackgroundImage")));
+            this.btnRemoveTrash.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemoveTrash.ButtonText = "Remove";
+            this.btnRemoveTrash.ButtonTextMarginLeft = 0;
+            this.btnRemoveTrash.ColorContrastOnClick = 45;
+            this.btnRemoveTrash.ColorContrastOnHover = 45;
+            this.btnRemoveTrash.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.btnRemoveTrash.CustomizableEdges = borderEdges8;
+            this.btnRemoveTrash.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRemoveTrash.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRemoveTrash.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRemoveTrash.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRemoveTrash.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnRemoveTrash.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRemoveTrash.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveTrash.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveTrash.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRemoveTrash.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnRemoveTrash.IconMarginLeft = 11;
+            this.btnRemoveTrash.IconPadding = 10;
+            this.btnRemoveTrash.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemoveTrash.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRemoveTrash.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnRemoveTrash.IconSize = 15;
+            this.btnRemoveTrash.IdleBorderColor = System.Drawing.Color.Transparent;
+            this.btnRemoveTrash.IdleBorderRadius = 1;
+            this.btnRemoveTrash.IdleBorderThickness = 1;
+            this.btnRemoveTrash.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRemoveTrash.IdleIconLeftImage = global::project_ManaTV.Properties.Resources.trash_can_regular;
+            this.btnRemoveTrash.IdleIconRightImage = null;
+            this.btnRemoveTrash.IndicateFocus = false;
+            this.btnRemoveTrash.Location = new System.Drawing.Point(130, 2);
+            this.btnRemoveTrash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveTrash.Name = "btnRemoveTrash";
+            this.btnRemoveTrash.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRemoveTrash.OnDisabledState.BorderRadius = 1;
+            this.btnRemoveTrash.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemoveTrash.OnDisabledState.BorderThickness = 1;
+            this.btnRemoveTrash.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRemoveTrash.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRemoveTrash.OnDisabledState.IconLeftImage = null;
+            this.btnRemoveTrash.OnDisabledState.IconRightImage = null;
+            this.btnRemoveTrash.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRemoveTrash.onHoverState.BorderRadius = 1;
+            this.btnRemoveTrash.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemoveTrash.onHoverState.BorderThickness = 1;
+            this.btnRemoveTrash.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRemoveTrash.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveTrash.onHoverState.IconLeftImage = null;
+            this.btnRemoveTrash.onHoverState.IconRightImage = null;
+            this.btnRemoveTrash.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRemoveTrash.OnIdleState.BorderRadius = 1;
+            this.btnRemoveTrash.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemoveTrash.OnIdleState.BorderThickness = 1;
+            this.btnRemoveTrash.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRemoveTrash.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveTrash.OnIdleState.IconLeftImage = global::project_ManaTV.Properties.Resources.trash_can_regular;
+            this.btnRemoveTrash.OnIdleState.IconRightImage = null;
+            this.btnRemoveTrash.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnRemoveTrash.OnPressedState.BorderRadius = 1;
+            this.btnRemoveTrash.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemoveTrash.OnPressedState.BorderThickness = 1;
+            this.btnRemoveTrash.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnRemoveTrash.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveTrash.OnPressedState.IconLeftImage = null;
+            this.btnRemoveTrash.OnPressedState.IconRightImage = null;
+            this.btnRemoveTrash.Size = new System.Drawing.Size(113, 39);
+            this.btnRemoveTrash.TabIndex = 1;
+            this.btnRemoveTrash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRemoveTrash.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRemoveTrash.TextMarginLeft = 0;
+            this.btnRemoveTrash.TextPadding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnRemoveTrash.UseDefaultRadiusAndThickness = true;
+            this.btnRemoveTrash.Click += new System.EventHandler(this.btnRemoveTrash_Click);
+            // 
+            // gridTrashCustomer
+            // 
+            this.gridTrashCustomer.AllowUserToAddRows = false;
+            this.gridTrashCustomer.AllowUserToDeleteRows = false;
+            this.gridTrashCustomer.AllowUserToOrderColumns = true;
+            this.gridTrashCustomer.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridTrashCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridTrashCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridData.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gridTrashCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridTrashCustomer.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gridTrashCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridTrashCustomer.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridTrashCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
@@ -1061,20 +1156,20 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridData.ColumnHeadersHeight = 30;
-            this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.colName,
-            this.conCorlor,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.actionDetails,
-            this.actionUpdate,
-            this.actionDelete});
+            this.gridTrashCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridTrashCustomer.ColumnHeadersHeight = 30;
+            this.gridTrashCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridTrashCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.checkAll,
+            this.IDTrash,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.Column1,
+            this.Column2,
+            this.actionDeleteTrash,
+            this.actionRestore});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
@@ -1082,130 +1177,134 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gridData.EnableHeadersVisualStyles = false;
-            this.gridData.Location = new System.Drawing.Point(9, 95);
-            this.gridData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridData.Name = "gridData";
-            this.gridData.ReadOnly = true;
-            this.gridData.RowHeadersVisible = false;
-            this.gridData.RowHeadersWidth = 51;
-            this.gridData.RowTemplate.Height = 40;
-            this.gridData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridData.Size = new System.Drawing.Size(1184, 438);
-            this.gridData.TabIndex = 15;
-            this.gridData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellClick);
+            this.gridTrashCustomer.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridTrashCustomer.EnableHeadersVisualStyles = false;
+            this.gridTrashCustomer.Location = new System.Drawing.Point(8, 97);
+            this.gridTrashCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridTrashCustomer.Name = "gridTrashCustomer";
+            this.gridTrashCustomer.ReadOnly = true;
+            this.gridTrashCustomer.RowHeadersVisible = false;
+            this.gridTrashCustomer.RowHeadersWidth = 51;
+            this.gridTrashCustomer.RowTemplate.Height = 40;
+            this.gridTrashCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridTrashCustomer.Size = new System.Drawing.Size(1184, 418);
+            this.gridTrashCustomer.TabIndex = 22;
+            this.gridTrashCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellClick);
             // 
-            // ID
+            // checkAll
             // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID.FillWeight = 244.6809F;
-            this.ID.Frozen = true;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ID.Width = 50;
+            this.checkAll.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.checkAll.FalseValue = "0";
+            this.checkAll.HeaderText = "   ☐";
+            this.checkAll.MinimumWidth = 6;
+            this.checkAll.Name = "checkAll";
+            this.checkAll.ReadOnly = true;
+            this.checkAll.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkAll.TrueValue = "1";
+            this.checkAll.Width = 50;
             // 
-            // colName
+            // IDTrash
             // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colName.FillWeight = 63.82978F;
-            this.colName.HeaderText = "Product Name (M + D + S)";
-            this.colName.MinimumWidth = 6;
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Width = 250;
+            this.IDTrash.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IDTrash.FillWeight = 244.6809F;
+            this.IDTrash.HeaderText = "ID";
+            this.IDTrash.MinimumWidth = 6;
+            this.IDTrash.Name = "IDTrash";
+            this.IDTrash.ReadOnly = true;
+            this.IDTrash.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IDTrash.Width = 50;
             // 
-            // conCorlor
+            // dataGridViewTextBoxColumn2
             // 
-            this.conCorlor.HeaderText = "Color";
-            this.conCorlor.MinimumWidth = 6;
-            this.conCorlor.Name = "conCorlor";
-            this.conCorlor.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn2.FillWeight = 63.82978F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name(M + D + S)";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 250;
             // 
-            // Column4
+            // dataGridViewTextBoxColumn3
             // 
-            this.Column4.HeaderText = "Size";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.FillWeight = 63.82978F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Color";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // Column5
+            // dataGridViewTextBoxColumn4
             // 
-            this.Column5.HeaderText = "Origin";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.FillWeight = 63.82978F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Size";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // Column6
+            // dataGridViewTextBoxColumn5
             // 
-            this.Column6.HeaderText = "Price";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.FillWeight = 63.82978F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Origin";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // Column7
+            // Column1
             // 
-            this.Column7.HeaderText = "Import Amount";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.Column1.HeaderText = "Price";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // actionDetails
+            // Column2
             // 
-            this.actionDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.actionDetails.HeaderText = "";
-            this.actionDetails.MinimumWidth = 6;
-            this.actionDetails.Name = "actionDetails";
-            this.actionDetails.ReadOnly = true;
-            this.actionDetails.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.actionDetails.Width = 50;
+            this.Column2.HeaderText = "Imported Amount";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
-            // actionUpdate
+            // actionDeleteTrash
             // 
-            this.actionUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.actionUpdate.HeaderText = "Action";
-            this.actionUpdate.MinimumWidth = 6;
-            this.actionUpdate.Name = "actionUpdate";
-            this.actionUpdate.ReadOnly = true;
-            this.actionUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.actionUpdate.Width = 50;
+            this.actionDeleteTrash.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.actionDeleteTrash.HeaderText = "Action";
+            this.actionDeleteTrash.MinimumWidth = 6;
+            this.actionDeleteTrash.Name = "actionDeleteTrash";
+            this.actionDeleteTrash.ReadOnly = true;
+            this.actionDeleteTrash.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.actionDeleteTrash.Width = 50;
             // 
-            // actionDelete
+            // actionRestore
             // 
-            this.actionDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.actionDelete.HeaderText = "";
-            this.actionDelete.MinimumWidth = 6;
-            this.actionDelete.Name = "actionDelete";
-            this.actionDelete.ReadOnly = true;
-            this.actionDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.actionDelete.Width = 50;
+            this.actionRestore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.actionRestore.HeaderText = "";
+            this.actionRestore.MinimumWidth = 6;
+            this.actionRestore.Name = "actionRestore";
+            this.actionRestore.ReadOnly = true;
+            this.actionRestore.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.actionRestore.Width = 50;
             // 
-            // FrmListProducts
+            // FrmTrashListProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 595);
+            this.Controls.Add(this.gridTrashCustomer);
+            this.Controls.Add(this.flowLayoutPanel6);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowFilter);
-            this.Controls.Add(this.gridData);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmListProducts";
-            this.Text = "ListProducts";
-            this.Load += new System.EventHandler(this.ListProducts_Load);
+            this.Name = "FrmTrashListProducts";
+            this.Text = "TrashListProducts";
+            this.Load += new System.EventHandler(this.TrashListProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tvManagementDataSet1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.flowFilter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridTrashCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1224,22 +1323,23 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnFirstPage;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPrev;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAddNew;
         private System.Windows.Forms.FlowLayoutPanel flowFilter;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearch;
         private Bunifu.UI.WinForms.BunifuDropdown dpFilter;
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
-        private System.Windows.Forms.DataGridView gridData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn conCorlor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewImageColumn actionDetails;
-        private System.Windows.Forms.DataGridViewImageColumn actionUpdate;
-        private System.Windows.Forms.DataGridViewImageColumn actionDelete;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRestoreCustomer;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRemoveTrash;
+        private System.Windows.Forms.DataGridView gridTrashCustomer;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn checkAll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDTrash;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewImageColumn actionDeleteTrash;
+        private System.Windows.Forms.DataGridViewImageColumn actionRestore;
     }
 }

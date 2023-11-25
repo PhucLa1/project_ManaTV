@@ -14,6 +14,12 @@ namespace project_ManaTV.Presenters
     {
         private ProductRepository _productRepository;
         private BrandRepository _brandRepository;
+        private ColorRepository _colorRepository;
+        private DesignRepository _designRepository;
+        private OriginRepository _origindRepository;
+        private ScreenRepository _screenRepository;
+        private ScreenSizeRepository _screenSizeRepository;
+
         public List<Product> ListProductRender { get; set; }
 
 
@@ -26,6 +32,11 @@ namespace project_ManaTV.Presenters
         {
             _productRepository = new ProductRepository();
             _brandRepository = new BrandRepository();
+            _colorRepository = new ColorRepository();
+            _designRepository = new DesignRepository();
+            _origindRepository = new OriginRepository();
+            _screenRepository = new ScreenRepository();
+            _screenSizeRepository = new ScreenSizeRepository();
 
         }
 
@@ -60,18 +71,42 @@ namespace project_ManaTV.Presenters
 
         public List<ProductViewModel> GetAll(bool isDeleted= false)
         {
-            return _productRepository.GetAll().ToList();
+            return _productRepository.GetAll().Where(x=>x.IsDeleted == isDeleted).ToList();
         }
         public List<Brand> GetAllBrand(bool isDeleted = false)
         {
             return _brandRepository.GetAll().ToList();
+        }
+        public List<Colors> GetAllColor(bool isDeleted = false)
+        {
+            return _colorRepository.GetAll().ToList();
+        }
+        public List<Design> GetAllDesign(bool isDeleted = false)
+        {
+            return _designRepository.GetAll().ToList();
+        }
+        public List<Origin> GetAllOrigin(bool isDeleted = false)
+        {
+            return _origindRepository.GetAll().ToList();
+        }
+        public List<Screen> GetAllScreen(bool isDeleted = false)
+        {
+            return _screenRepository.GetAll().ToList();
+        }
+        public List<ScreenSize> GetAllScreenSize(bool isDeleted = false)
+        {
+            return _screenSizeRepository.GetAll().ToList();
         }
         public ProductViewModel GetById(int id)
         {
             return _productRepository.GetById(id);
         }
 
-       
+        public void SetDeleteStatus(int id, bool status)
+        {
+            _productRepository.SetDeleteStatus(id, status);
+        }
+
 
         public void AddNew(Product product)
         {

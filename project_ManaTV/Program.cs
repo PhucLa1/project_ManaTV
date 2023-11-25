@@ -27,7 +27,7 @@ namespace project_ManaTV
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(InitClasses.layout);
-            //Application.Run(new ProductPanel());
+            //Application.Run(new FrmTrashListProducts());
         }
     }
 }

@@ -18,6 +18,9 @@ using project_ManaTV.Views.FuncFrm.ScreenView;
 using project_ManaTV.Views.FuncFrm.ScreenSizeView;
 using project_ManaTV.Views.FuncFrm.BrandView;
 using project_ManaTV.Views.FuncFrm.ProductView;
+using Bunifu.UI.WinForms;
+using project_ManaTV.Views.FuncFrm.ColorView;
+using project_ManaTV.Views.FuncFrm.OriginView;
 
 
 namespace project_ManaTV
@@ -432,18 +435,6 @@ namespace project_ManaTV
             lstBrand.FRM_LAYOUT = this;
             productPanel.ShowTab("brand");
             productPanel.ShowFormInPanel_Brand(lstBrand);
- 
-            //var lstBrand = new FrmListBrands();
-            //lstBrand.FRM_LAYOUT = this;
-            //var productPanel = new ProductPanel();
-            //ShowFormInPanel(productPanel);
-            //productPanel.ShowTab("brand");
-            //productPanel.ShowFormInPanel_Brand(lstBrand);
-            //productPanel.Size = panelMainContent.Size;
-            //panelMainContent.SizeChanged += (s, ev) =>
-            //{
-            //    productPanel.Size = panelMainContent.Size;
-            //};
 
         }
         private void btnDesign_Click(object sender, EventArgs e)
@@ -456,7 +447,10 @@ namespace project_ManaTV
 
         private void btnColor_Click(object sender, EventArgs e)
         {
-
+            var lstColors = new FrmListColors();
+            lstColors.FRM_LAYOUT = this;
+            productPanel.ShowTab("color");
+            productPanel.ShowFormInPanel_Color(lstColors);
         }
 
         private void btnScreen_Click(object sender, EventArgs e)
@@ -477,12 +471,18 @@ namespace project_ManaTV
 
         private void btnOrigin_Click(object sender, EventArgs e)
         {
-
+            var lstOrigins = new FrmListOrigins();
+            lstOrigins.FRM_LAYOUT = this;
+            productPanel.ShowTab("origin");
+            productPanel.ShowFormInPanel_Origin(lstOrigins);
         }
 
         private void btnTrashProduct_Click(object sender, EventArgs e)
         {
-
+            var lstTrashListProducts = new FrmTrashListProducts();
+            lstTrashListProducts.FRM_LAYOUT = this;
+            productPanel.ShowTab("trash");
+            productPanel.ShowFormInPanel_Trash(lstTrashListProducts);
         }
 
  

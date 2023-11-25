@@ -100,8 +100,8 @@ namespace project_ManaTV.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert Products(product_name, manufacturer_id, design_id, color_id, screen_id, size_id, country_id, product_amount, product_import_money,isDeleted) " +
-                                        "values (@product_name, @manufacturer_id, @design_id, @color_id, @screen_id, @size_id, @country_id, @product_amount, @product_import_money, 0)";
+                command.CommandText = "insert Products(product_name, manufacturer_id, design_id, color_id, screen_id, size_id, country_id, product_amount, product_import_money, product_sell_money,isDeleted) " +
+                                        "values (@product_name, @manufacturer_id, @design_id, @color_id, @screen_id, @size_id, @country_id, @product_amount, @product_import_money, @product_sell_money, 0)";
                 command.Parameters.Add("@product_name", SqlDbType.NVarChar).Value = product.Name;
                 command.Parameters.Add("@manufacturer_id", SqlDbType.Int).Value = product.ManufacturerId;
                 command.Parameters.Add("@design_id", SqlDbType.Int).Value = product.DesignId;
@@ -111,6 +111,7 @@ namespace project_ManaTV.Repository
                 command.Parameters.Add("@country_id", SqlDbType.Int).Value = product.CountryId;
                 command.Parameters.Add("@product_amount", SqlDbType.Int).Value = product.ProductAmount;
                 command.Parameters.Add("@product_import_money", SqlDbType.Int).Value = product.ProductImportMoney;
+                command.Parameters.Add("@product_sell_money", SqlDbType.Int).Value = product.ProductSellMoney;
                 command.ExecuteNonQuery();
             }
         }
@@ -158,7 +159,8 @@ namespace project_ManaTV.Repository
                                             size_id= @size_id,
                                             country_id= @country_id,
                                             product_amount= @product_amount,
-                                            product_import_money= @product_import_money
+                                            product_import_money= @product_import_money, 
+                                            product_sell_money= @product_sell_money
                                         where id=@id";
                 command.Parameters.Add("@product_name", SqlDbType.NVarChar).Value = product.Name;
                 command.Parameters.Add("@manufacturer_id", SqlDbType.Int).Value = product.ManufacturerId;
@@ -169,6 +171,7 @@ namespace project_ManaTV.Repository
                 command.Parameters.Add("@country_id", SqlDbType.Int).Value = product.CountryId;
                 command.Parameters.Add("@product_amount", SqlDbType.Int).Value = product.ProductAmount;
                 command.Parameters.Add("@product_import_money", SqlDbType.Int).Value = product.ProductImportMoney;
+                command.Parameters.Add("@product_sell_money", SqlDbType.Int).Value = product.ProductSellMoney;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = product.Id;
                 command.ExecuteNonQuery();
             }

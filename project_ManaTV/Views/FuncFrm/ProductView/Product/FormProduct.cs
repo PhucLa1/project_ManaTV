@@ -33,12 +33,56 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
 
         public void LoadComboBox()
         {
-            var dataSource = _objectPresenter.GetAllBrand();
-            dataSource.Add(new Brand() { Id = 0, Name = "No Bbrand" });
-            cbManu.DataSource = dataSource;
+            //Brand
+            var dataSourceBrand = _objectPresenter.GetAllBrand();
+            dataSourceBrand.Add(new Brand() { Id = 0, Name = "No Brand" });
+            cbManu.DataSource = dataSourceBrand;
             cbManu.DisplayMember = "Name";
             cbManu.ValueMember = "Id";
             cbManu.SelectedValue = 0;
+
+            //Color
+            var dataSourceColor = _objectPresenter.GetAllColor();
+            dataSourceColor.Add(new Colors() { Id = 0, color_name = "No Color" });
+            cbColor.DataSource = dataSourceColor;
+            cbColor.DisplayMember = "color_name";
+            cbColor.ValueMember = "Id";
+            cbColor.SelectedValue = 0;
+
+            //Design
+            var dataSourceDesign = _objectPresenter.GetAllDesign();
+            dataSourceDesign.Add(new Design() { Id = 0, Name = "No Design" });
+            cbDesign.DataSource = dataSourceDesign;
+            cbDesign.DisplayMember = "Name";
+            cbDesign.ValueMember = "Id";
+            cbDesign.SelectedValue = 0;
+
+
+            //Origin
+            var dataSourceOrigin = _objectPresenter.GetAllOrigin();
+            dataSourceOrigin.Add(new Origin() { Id = 0, Name = "No Origin" });
+            cbCountry.DataSource = dataSourceOrigin;
+            cbCountry.DisplayMember = "Name";
+            cbCountry.ValueMember = "Id";
+            cbCountry.SelectedValue = 0;
+
+
+            //Screen
+            var dataSourceScreen = _objectPresenter.GetAllScreen();
+            dataSourceScreen.Add(new Models.Screen() { Id = 0, Name = "No Screen" });
+            cbScreen.DataSource = dataSourceScreen;
+            cbScreen.DisplayMember = "Name";
+            cbScreen.ValueMember = "Id";
+            cbScreen.SelectedValue = 0;
+
+
+            //ScreenSize
+            var dataSourceScreenSize = _objectPresenter.GetAllScreenSize();
+            dataSourceScreenSize.Add(new ScreenSize() { Id = 0, Screen_size = 0 });
+            cbSize.DataSource = dataSourceScreenSize;
+            cbSize.DisplayMember = "Screen_size";
+            cbSize.ValueMember = "Id";
+            cbSize.SelectedValue = 0;
 
 
             //Event
@@ -93,7 +137,11 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
 
             //SELECT
             cbManu.SelectedValue = product.ManufacturerId;
-            
+            cbColor.SelectedValue = product.ColorId;
+            cbCountry.SelectedValue = product.CountryId;
+            cbDesign.SelectedValue = product.DesignId;
+            cbScreen.SelectedValue = product.ScreenId;
+            cbSize.SelectedValue = product.SizeId;
 
 
         }
@@ -110,7 +158,8 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
                 ScreenId = (int)cbScreen.SelectedValue,
                 SizeId = (int)cbSize.SelectedValue,
                 ProductAmount = txtPrice.Text == "" ? 0 : int.Parse(txtPrice.Text),
-                ProductImportMoney = txtImportedAmount.Text == "" ? 0 : int.Parse(txtImportedAmount.Text)
+                ProductImportMoney = txtImportedAmount.Text == "" ? 0 : int.Parse(txtImportedAmount.Text),
+                ProductSellMoney = txtPrice.Text == "" ? 0 : int.Parse(txtPrice.Text)
             };
         }
 
@@ -209,10 +258,11 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
 
         public string GenerateProductName()
         {
-            var manu = cbManu.SelectedText != "No brand" ? cbManu.SelectedText : "";
-            var design = cbDesign.SelectedText != "No design" ? cbDesign.SelectedText : "";
-            var screen = cbScreen.SelectedText != "No screen" ? cbScreen.SelectedText : "";
-            return manu + " " + design + " " + screen;
+            var manu = cbManu.Text != "No Brand" ? cbManu.Text : "";
+            var design = cbDesign.Text != "No Design" ? cbDesign.Text : "";
+            var screen = cbScreen.Text != "No Screen" ? cbScreen.Text : "";
+            var tvName = manu + " " + design + " " + screen;
+            return tvName;
         }
 
         public void ShowToast(string message, BunifuSnackbar.MessageTypes messageTypes)

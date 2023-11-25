@@ -158,15 +158,20 @@
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Origin.cs" />
+    <Compile Include="Models\Colors.cs" />
     <Compile Include="Models\ScreenSize.cs" />
     <Compile Include="Models\Screen.cs" />
     <Compile Include="Models\Design.cs" />
-
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Presenters\All\PaginationPresenter.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
+    <Compile Include="Presenters\Product\OriginPresenter .cs" />
+    <Compile Include="Presenters\Product\ColorPresenter.cs" />
     <Compile Include="Presenters\Product\ProductPresenter.cs" />
     <Compile Include="Presenters\Product\BrandPresenter.cs" />
+    <Compile Include="Repository\OriginRepository.cs" />
+    <Compile Include="Repository\ColorRepository.cs" />
     <Compile Include="Repository\BrandRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Presenters\Product\ScreenSizePresenter.cs" />
@@ -175,7 +180,6 @@
     <Compile Include="Repository\ScreenSizeRepository.cs" />
     <Compile Include="Repository\ScreenRepository.cs" />
     <Compile Include="Repository\DesignRepository.cs" />
-
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
@@ -198,6 +202,12 @@
     </Compile>
     <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.Designer.cs">
       <DependentUpon>ListCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\TrashListProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\TrashListProduct.Designer.cs">
+      <DependentUpon>TrashListProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.cs">
       <SubType>Form</SubType>
@@ -235,6 +245,30 @@
     <Compile Include="Views\FuncFrm\ProductView\Design\ListDesign.Designer.cs">
       <DependentUpon>ListDesign.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Origin\FormOrigin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Origin\FormOrigin.Designer.cs">
+      <DependentUpon>FormOrigin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Origin\ListOrigin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Origin\ListOrigin.Designer.cs">
+      <DependentUpon>ListOrigin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Colors\FormColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Colors\FormColor.Designer.cs">
+      <DependentUpon>FormColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Colors\ListColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Colors\ListColor.Designer.cs">
+      <DependentUpon>ListColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncFrm\ProductView\Brand\FormBrand.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,7 +287,6 @@
     <Compile Include="Views\FuncFrm\ProductView\ProductPanel.Designer.cs">
       <DependentUpon>ProductPanel.cs</DependentUpon>
     </Compile>
-    
     <Compile Include="Views\FuncFrm\ProductView\Product\FormProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +346,26 @@
       <DependentUpon>ListCustomers.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Origin\FormOrigin.resx">
+      <DependentUpon>FormOrigin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Origin\ListOrigin.resx">
+      <DependentUpon>ListOrigin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Colors\FormColor.resx">
+      <DependentUpon>FormColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Colors\ListColor.resx">
+      <DependentUpon>ListColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Product\TrashListProduct.resx">
+      <DependentUpon>TrashListProduct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.resx">
       <DependentUpon>FormScreenSize.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -337,7 +390,6 @@
       <DependentUpon>ListDesign.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    
     <EmbeddedResource Include="Views\FuncFrm\ProductView\Brand\FormBrand.resx">
       <DependentUpon>FormBrand.cs</DependentUpon>
       <SubType>Designer</SubType>

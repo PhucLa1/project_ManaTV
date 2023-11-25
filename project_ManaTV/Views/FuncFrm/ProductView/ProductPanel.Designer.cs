@@ -35,19 +35,28 @@
             this.panelBrand = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.tabDesign = new System.Windows.Forms.TabPage();
-            this.tabColor = new System.Windows.Forms.TabPage();
-            this.tabScreen = new System.Windows.Forms.TabPage();
-            this.tabScreenSize = new System.Windows.Forms.TabPage();
-            this.tabOrigin = new System.Windows.Forms.TabPage();
             this.panelDesign = new System.Windows.Forms.Panel();
+            this.tabColor = new System.Windows.Forms.TabPage();
+            this.panelColor = new System.Windows.Forms.Panel();
+            this.panel1dfg = new System.Windows.Forms.Panel();
+            this.tabScreen = new System.Windows.Forms.TabPage();
             this.panelScreen = new System.Windows.Forms.Panel();
+            this.tabScreenSize = new System.Windows.Forms.TabPage();
             this.panelScreenSize = new System.Windows.Forms.Panel();
+            this.tabOrigin = new System.Windows.Forms.TabPage();
+            this.panelOrigin = new System.Windows.Forms.Panel();
+            this.tabTrash = new System.Windows.Forms.TabPage();
+            this.panelTrash = new System.Windows.Forms.Panel();
             this.wrapperProduct.SuspendLayout();
             this.tabProductList.SuspendLayout();
             this.tabBrand.SuspendLayout();
             this.tabDesign.SuspendLayout();
+            this.tabColor.SuspendLayout();
+            this.panelColor.SuspendLayout();
             this.tabScreen.SuspendLayout();
             this.tabScreenSize.SuspendLayout();
+            this.tabOrigin.SuspendLayout();
+            this.tabTrash.SuspendLayout();
             this.SuspendLayout();
             // 
             // wrapperProduct
@@ -59,6 +68,7 @@
             this.wrapperProduct.Controls.Add(this.tabScreen);
             this.wrapperProduct.Controls.Add(this.tabScreenSize);
             this.wrapperProduct.Controls.Add(this.tabOrigin);
+            this.wrapperProduct.Controls.Add(this.tabTrash);
             this.wrapperProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wrapperProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wrapperProduct.Location = new System.Drawing.Point(0, 0);
@@ -115,10 +125,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Open Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 29);
+            this.label3.Size = new System.Drawing.Size(0, 33);
             this.label3.TabIndex = 13;
             // 
             // tabDesign
@@ -132,8 +142,17 @@
             this.tabDesign.Text = "List Designs";
             this.tabDesign.UseVisualStyleBackColor = true;
             // 
+            // panelDesign
+            // 
+            this.panelDesign.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesign.Location = new System.Drawing.Point(3, 3);
+            this.panelDesign.Name = "panelDesign";
+            this.panelDesign.Size = new System.Drawing.Size(1203, 625);
+            this.panelDesign.TabIndex = 0;
+            // 
             // tabColor
             // 
+            this.tabColor.Controls.Add(this.panelColor);
             this.tabColor.Location = new System.Drawing.Point(4, 36);
             this.tabColor.Name = "tabColor";
             this.tabColor.Padding = new System.Windows.Forms.Padding(3);
@@ -141,6 +160,23 @@
             this.tabColor.TabIndex = 3;
             this.tabColor.Text = "List Colors";
             this.tabColor.UseVisualStyleBackColor = true;
+            // 
+            // panelColor
+            // 
+            this.panelColor.Controls.Add(this.panel1dfg);
+            this.panelColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelColor.Location = new System.Drawing.Point(3, 3);
+            this.panelColor.Name = "panelColor";
+            this.panelColor.Size = new System.Drawing.Size(1203, 625);
+            this.panelColor.TabIndex = 0;
+            // 
+            // panel1dfg
+            // 
+            this.panel1dfg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1dfg.Location = new System.Drawing.Point(0, 0);
+            this.panel1dfg.Name = "panel1dfg";
+            this.panel1dfg.Size = new System.Drawing.Size(1203, 625);
+            this.panel1dfg.TabIndex = 0;
             // 
             // tabScreen
             // 
@@ -153,6 +189,14 @@
             this.tabScreen.Text = "List Screen";
             this.tabScreen.UseVisualStyleBackColor = true;
             // 
+            // panelScreen
+            // 
+            this.panelScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelScreen.Location = new System.Drawing.Point(3, 3);
+            this.panelScreen.Name = "panelScreen";
+            this.panelScreen.Size = new System.Drawing.Size(1203, 625);
+            this.panelScreen.TabIndex = 0;
+            // 
             // tabScreenSize
             // 
             this.tabScreenSize.Controls.Add(this.panelScreenSize);
@@ -164,8 +208,17 @@
             this.tabScreenSize.Text = "List Screen Size";
             this.tabScreenSize.UseVisualStyleBackColor = true;
             // 
+            // panelScreenSize
+            // 
+            this.panelScreenSize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelScreenSize.Location = new System.Drawing.Point(3, 3);
+            this.panelScreenSize.Name = "panelScreenSize";
+            this.panelScreenSize.Size = new System.Drawing.Size(1203, 625);
+            this.panelScreenSize.TabIndex = 0;
+            // 
             // tabOrigin
             // 
+            this.tabOrigin.Controls.Add(this.panelOrigin);
             this.tabOrigin.Location = new System.Drawing.Point(4, 36);
             this.tabOrigin.Name = "tabOrigin";
             this.tabOrigin.Padding = new System.Windows.Forms.Padding(3);
@@ -174,29 +227,32 @@
             this.tabOrigin.Text = "List Origins";
             this.tabOrigin.UseVisualStyleBackColor = true;
             // 
-            // panelDesign
+            // panelOrigin
             // 
-            this.panelDesign.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesign.Location = new System.Drawing.Point(3, 3);
-            this.panelDesign.Name = "panelDesign";
-            this.panelDesign.Size = new System.Drawing.Size(1203, 625);
-            this.panelDesign.TabIndex = 0;
+            this.panelOrigin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelOrigin.Location = new System.Drawing.Point(3, 3);
+            this.panelOrigin.Name = "panelOrigin";
+            this.panelOrigin.Size = new System.Drawing.Size(1203, 625);
+            this.panelOrigin.TabIndex = 0;
             // 
-            // panelScreen
+            // tabTrash
             // 
-            this.panelScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelScreen.Location = new System.Drawing.Point(3, 3);
-            this.panelScreen.Name = "panelScreen";
-            this.panelScreen.Size = new System.Drawing.Size(1203, 625);
-            this.panelScreen.TabIndex = 0;
+            this.tabTrash.Controls.Add(this.panelTrash);
+            this.tabTrash.Location = new System.Drawing.Point(4, 36);
+            this.tabTrash.Name = "tabTrash";
+            this.tabTrash.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTrash.Size = new System.Drawing.Size(1209, 631);
+            this.tabTrash.TabIndex = 7;
+            this.tabTrash.Text = "Trash";
+            this.tabTrash.UseVisualStyleBackColor = true;
             // 
-            // panelScreenSize
+            // panelTrash
             // 
-            this.panelScreenSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelScreenSize.Location = new System.Drawing.Point(3, 3);
-            this.panelScreenSize.Name = "panelScreenSize";
-            this.panelScreenSize.Size = new System.Drawing.Size(1203, 625);
-            this.panelScreenSize.TabIndex = 0;
+            this.panelTrash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTrash.Location = new System.Drawing.Point(3, 3);
+            this.panelTrash.Name = "panelTrash";
+            this.panelTrash.Size = new System.Drawing.Size(1203, 625);
+            this.panelTrash.TabIndex = 0;
             // 
             // ProductPanel
             // 
@@ -212,8 +268,12 @@
             this.tabBrand.ResumeLayout(false);
             this.tabBrand.PerformLayout();
             this.tabDesign.ResumeLayout(false);
+            this.tabColor.ResumeLayout(false);
+            this.panelColor.ResumeLayout(false);
             this.tabScreen.ResumeLayout(false);
             this.tabScreenSize.ResumeLayout(false);
+            this.tabOrigin.ResumeLayout(false);
+            this.tabTrash.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -234,5 +294,10 @@
         private System.Windows.Forms.Panel panelDesign;
         private System.Windows.Forms.Panel panelScreen;
         private System.Windows.Forms.Panel panelScreenSize;
+        private System.Windows.Forms.Panel panelColor;
+        private System.Windows.Forms.Panel panel1dfg;
+        private System.Windows.Forms.Panel panelOrigin;
+        private System.Windows.Forms.TabPage tabTrash;
+        private System.Windows.Forms.Panel panelTrash;
     }
 }

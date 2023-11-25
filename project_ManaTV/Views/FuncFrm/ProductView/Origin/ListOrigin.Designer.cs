@@ -1,6 +1,6 @@
-﻿namespace project_ManaTV.Views.FuncFrm.ProductView
+﻿namespace project_ManaTV.Views.FuncFrm.OriginView
 {
-    partial class FrmListProducts
+    partial class FrmListOrigins
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListProducts));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListOrigins));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -65,11 +65,6 @@
             this.gridData = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.conCorlor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actionDetails = new System.Windows.Forms.DataGridViewImageColumn();
             this.actionUpdate = new System.Windows.Forms.DataGridViewImageColumn();
             this.actionDelete = new System.Windows.Forms.DataGridViewImageColumn();
@@ -704,12 +699,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 33);
+            this.label1.Size = new System.Drawing.Size(286, 36);
             this.label1.TabIndex = 18;
-            this.label1.Text = "List Products";
+            this.label1.Text = "List Origin Country";
             // 
             // flowLayoutPanel2
             // 
@@ -1067,11 +1062,6 @@
             this.gridData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.colName,
-            this.conCorlor,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
             this.actionDetails,
             this.actionUpdate,
             this.actionDelete});
@@ -1084,7 +1074,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridData.EnableHeadersVisualStyles = false;
-            this.gridData.Location = new System.Drawing.Point(9, 95);
+            this.gridData.Location = new System.Drawing.Point(8, 95);
             this.gridData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridData.Name = "gridData";
             this.gridData.ReadOnly = true;
@@ -1095,6 +1085,7 @@
             this.gridData.Size = new System.Drawing.Size(1184, 438);
             this.gridData.TabIndex = 15;
             this.gridData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellClick);
+            this.gridData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellContentClick);
             // 
             // ID
             // 
@@ -1110,48 +1101,11 @@
             // 
             // colName
             // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colName.FillWeight = 63.82978F;
-            this.colName.HeaderText = "Product Name (M + D + S)";
+            this.colName.HeaderText = "Name";
             this.colName.MinimumWidth = 6;
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
-            this.colName.Width = 250;
-            // 
-            // conCorlor
-            // 
-            this.conCorlor.HeaderText = "Color";
-            this.conCorlor.MinimumWidth = 6;
-            this.conCorlor.Name = "conCorlor";
-            this.conCorlor.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Size";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Origin";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Price";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Import Amount";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
             // 
             // actionDetails
             // 
@@ -1183,7 +1137,7 @@
             this.actionDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.actionDelete.Width = 50;
             // 
-            // FrmListProducts
+            // FrmListOrigins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1196,9 +1150,9 @@
             this.Controls.Add(this.gridData);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmListProducts";
-            this.Text = "ListProducts";
-            this.Load += new System.EventHandler(this.ListProducts_Load);
+            this.Name = "FrmListOrigins";
+            this.Text = "ListOrigins";
+            this.Load += new System.EventHandler(this.ListOrigins_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tvManagementDataSet1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -1233,11 +1187,6 @@
         private System.Windows.Forms.DataGridView gridData;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn conCorlor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewImageColumn actionDetails;
         private System.Windows.Forms.DataGridViewImageColumn actionUpdate;
         private System.Windows.Forms.DataGridViewImageColumn actionDelete;
