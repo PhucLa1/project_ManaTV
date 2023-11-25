@@ -1,7 +1,9 @@
 ﻿
 using project_ManaTV.Presenters;
 using project_ManaTV.Presenters.Staff;
+using project_ManaTV.Views.FuncFrm.BrandView;
 using project_ManaTV.Views.FuncFrm.CustomerView;
+using project_ManaTV.Views.FuncFrm.ProductView;
 using project_ManaTV.Views.FuncFrm.StaffManagement;
 using System;
 using System.Collections.Generic;
@@ -25,7 +27,7 @@ namespace project_ManaTV
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(InitClasses.layout);
-            //Application.Run(new ListCustomers());
+            //Application.Run(new ProductPanel());
         }
     }
 }

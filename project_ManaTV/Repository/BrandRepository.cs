@@ -9,66 +9,69 @@ using System.Threading.Tasks;
 
 namespace project_ManaTV.Repository
 {
-    public class DesignRepository
+    public class BrandRepository
     {
         Database db = new Database();
 
-        public List<Design> GetAll()
+        public List<Brand> GetAll()
         {
-            var lstDesign = new List<Design>();
+            var lstBrand = new List<Brand>();
             
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from Designs";
+                command.CommandText = "Select *from Manufacturer";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var Design = new Design();
-                        Design.Id = (int)reader["id"];
-                        Design.Name = reader["design_name"].ToString();
-                        lstDesign.Add(Design);
+                        var brand = new Brand();
+                        brand.Id = (int)reader["id"];
+                        brand.Name = reader["manufacturer_name"].ToString();
+                        brand.Address = reader["manufacturer_address"].ToString();
+                        lstBrand.Add(brand);
                     }
                 }
             }
-            return lstDesign;
+            return lstBrand;
         }
 
-        public Design GetById(int id)
+        public Brand GetById(int id)
         {
-            var Design = new Design();
+            var brand = new Brand();
 
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = $"Select * from Designs where id = {id}";
+                command.CommandText = $"Select * from Manufacturer where id = {id}";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Design.Id = (int)reader["id"];
-                        Design.Name = reader["design_name"].ToString();
+                        brand.Id = (int)reader["id"];
+                        brand.Name = reader["manufacturer_name"].ToString();
+                        brand.Address = reader["manufacturer_address"].ToString();
                     }
                 }
             }
-            return Design;
+            return brand;
         }
 
-        public void AddNew(Design Design)
+        public void AddNew(Brand brand)
         {
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert Designs(design_name) " +
-                                        "values (@design_name)";
-                command.Parameters.Add("@design_name", SqlDbType.NVarChar).Value = Design.Name;
+                command.CommandText = "insert Manufacturer(manufacturer_name, manufacturer_address) " +
+                                        "values (@manufacturer_name, @manufacturer_address)";
+                command.Parameters.Add("@manufacturer_name", SqlDbType.NVarChar).Value = brand.Name;
+                command.Parameters.Add("@manufacturer_address", SqlDbType.NVarChar).Value = brand.Address;
                 command.ExecuteNonQuery();
             }
         }
@@ -80,23 +83,25 @@ namespace project_ManaTV.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE Designs where id=@id";
+                command.CommandText = "DELETE Manufacturer where id=@id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.ExecuteNonQuery();
             }
         }
 
-        public void Update(Design customer)
+        public void Update(Brand customer)
         {
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"update Designs 
-                                        set design_name=@design_name
+                command.CommandText = @"update Manufacturer 
+                                        set manufacturer_name=@manufacturer_name,
+                                            manufacturer_address= @manufacturer_address
                                         where id=@id";
-                command.Parameters.Add("@design_name", SqlDbType.NVarChar).Value = customer.Name;
+                command.Parameters.Add("@manufacturer_name", SqlDbType.NVarChar).Value = customer.Name;
+                command.Parameters.Add("@manufacturer_address", SqlDbType.NVarChar).Value = customer.Address;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = customer.Id;
                 command.ExecuteNonQuery();
             }

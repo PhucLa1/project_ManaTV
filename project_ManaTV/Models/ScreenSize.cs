@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace project_ManaTV.Models
 {
-    public class Screen
+    public class ScreenSize
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public float Screen_size { get; set; }
     }
 }

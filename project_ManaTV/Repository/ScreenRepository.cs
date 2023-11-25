@@ -9,66 +9,66 @@ using System.Threading.Tasks;
 
 namespace project_ManaTV.Repository
 {
-    public class DesignRepository
+    public class ScreenRepository
     {
         Database db = new Database();
 
-        public List<Design> GetAll()
+        public List<Screen> GetAll()
         {
-            var lstDesign = new List<Design>();
+            var lstScreen = new List<Screen>();
             
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from Designs";
+                command.CommandText = "Select * from Screen";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var Design = new Design();
-                        Design.Id = (int)reader["id"];
-                        Design.Name = reader["design_name"].ToString();
-                        lstDesign.Add(Design);
+                        var Screen = new Screen();
+                        Screen.Id = (int)reader["id"];
+                        Screen.Name = reader["screen_name"].ToString();
+                        lstScreen.Add(Screen);
                     }
                 }
             }
-            return lstDesign;
+            return lstScreen;
         }
 
-        public Design GetById(int id)
+        public Screen GetById(int id)
         {
-            var Design = new Design();
+            var Screen = new Screen();
 
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = $"Select * from Designs where id = {id}";
+                command.CommandText = $"Select * from Screen where id = {id}";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Design.Id = (int)reader["id"];
-                        Design.Name = reader["design_name"].ToString();
+                        Screen.Id = (int)reader["id"];
+                        Screen.Name = reader["screen_name"].ToString();
                     }
                 }
             }
-            return Design;
+            return Screen;
         }
 
-        public void AddNew(Design Design)
+        public void AddNew(Screen Screen)
         {
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert Designs(design_name) " +
-                                        "values (@design_name)";
-                command.Parameters.Add("@design_name", SqlDbType.NVarChar).Value = Design.Name;
+                command.CommandText = "insert Screen(screen_name) " +
+                                        "values (@screen_name)";
+                command.Parameters.Add("@screen_name", SqlDbType.NVarChar).Value = Screen.Name;
                 command.ExecuteNonQuery();
             }
         }
@@ -80,23 +80,23 @@ namespace project_ManaTV.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE Designs where id=@id";
+                command.CommandText = "DELETE Screen where id=@id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.ExecuteNonQuery();
             }
         }
 
-        public void Update(Design customer)
+        public void Update(Screen customer)
         {
             using (var connection = new SqlConnection(db.ConnectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"update Designs 
-                                        set design_name=@design_name
+                command.CommandText = @"update Screen 
+                                        set screen_name=@screen_name
                                         where id=@id";
-                command.Parameters.Add("@design_name", SqlDbType.NVarChar).Value = customer.Name;
+                command.Parameters.Add("@screen_name", SqlDbType.NVarChar).Value = customer.Name;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = customer.Id;
                 command.ExecuteNonQuery();
             }

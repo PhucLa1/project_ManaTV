@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project_ManaTV.Models
 {
-    public class Screen
+    public class Design
     {
         public int Id { get; set; }
         public string Name { get; set; }

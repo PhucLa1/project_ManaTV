@@ -32,6 +32,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b">
       <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.Licensing.dll</HintPath>
@@ -132,9 +134,6 @@
     <Reference Include="Bunifu.UI.WinForms.Deprecated">
       <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
-    <Reference Include="Intersoft.Crosslight, Version=6.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Intersoft.Crosslight.6.0.5000.975\lib\Intersoft.Crosslight.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -158,20 +157,22 @@
     <Compile Include="HelpMethod\HandleImage.cs" />
     <Compile Include="HelpMethod\Valiadated.cs" />
     <Compile Include="InitClasses.cs" />
-    <Compile Include="Models\Color.cs" />
-    <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Designs.cs" />
-    <Compile Include="Models\Manufacturer.cs" />
-    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\ScreenSize.cs" />
     <Compile Include="Models\Screen.cs" />
-    <Compile Include="Models\Size.cs" />
-    <Compile Include="Presenters\Colors\ColorPresenter.cs" />
+    <Compile Include="Models\Design.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Presenters\All\PaginationPresenter.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
-    <Compile Include="Presenters\Designs\DesignPresenter.cs" />
-    <Compile Include="Repository\ColorRepository.cs" />
-    <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Presenters\Product\ScreenSizePresenter.cs" />
+    <Compile Include="Presenters\Product\ScreenPresenter.cs" />
+    <Compile Include="Presenters\Product\DesignPresenter.cs" />
+    <Compile Include="Presenters\Product\BrandPresenter.cs" />
+    <Compile Include="Repository\ScreenSizeRepository.cs" />
+    <Compile Include="Repository\ScreenRepository.cs" />
     <Compile Include="Repository\DesignRepository.cs" />
+    <Compile Include="Repository\BrandRepository.cs" />
+    <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
     <Compile Include="Presenters\Staff\AboutStaffPresenter.cs" />
@@ -194,17 +195,59 @@
     <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.Designer.cs">
       <DependentUpon>ListCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FuncFrm\productView\ProductForm.cs">
+    <Compile Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FuncFrm\productView\ProductForm.Designer.cs">
-      <DependentUpon>ProductForm.cs</DependentUpon>
+    <Compile Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.Designer.cs">
+      <DependentUpon>FormScreenSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FuncFrm\productView\ProductsView.cs">
+    <Compile Include="Views\FuncFrm\ProductView\ScreenSize\ListScreenSize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FuncFrm\productView\ProductsView.Designer.cs">
-      <DependentUpon>ProductsView.cs</DependentUpon>
+    <Compile Include="Views\FuncFrm\ProductView\ScreenSize\ListScreenSize.Designer.cs">
+      <DependentUpon>ListScreenSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Screen\FormScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Screen\FormScreen.Designer.cs">
+      <DependentUpon>FormScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Screen\ListScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Screen\ListScreen.Designer.cs">
+      <DependentUpon>ListScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Design\FormDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Design\FormDesign.Designer.cs">
+      <DependentUpon>FormDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Design\ListDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Design\ListDesign.Designer.cs">
+      <DependentUpon>ListDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Brand\FormBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Brand\FormBrand.Designer.cs">
+      <DependentUpon>FormBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Brand\ListBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Brand\ListBrand.Designer.cs">
+      <DependentUpon>ListBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\ProductPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\ProductPanel.Designer.cs">
+      <DependentUpon>ProductPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.cs">
       <SubType>Form</SubType>
@@ -253,11 +296,41 @@
       <DependentUpon>ListCustomers.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FuncFrm\productView\ProductForm.resx">
-      <DependentUpon>ProductForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.resx">
+      <DependentUpon>FormScreenSize.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FuncFrm\productView\ProductsView.resx">
-      <DependentUpon>ProductsView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\ScreenSize\ListScreenSize.resx">
+      <DependentUpon>ListScreenSize.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Screen\FormScreen.resx">
+      <DependentUpon>FormScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Screen\ListScreen.resx">
+      <DependentUpon>ListScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Design\FormDesign.resx">
+      <DependentUpon>FormDesign.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Design\ListDesign.resx">
+      <DependentUpon>ListDesign.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Brand\FormBrand.resx">
+      <DependentUpon>FormBrand.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Brand\ListBrand.resx">
+      <DependentUpon>ListBrand.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\ProductPanel.resx">
+      <DependentUpon>ProductPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
       <DependentUpon>AboutStaff.cs</DependentUpon>
@@ -285,7 +358,6 @@
       <DependentUpon>StaffView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -314,6 +386,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\FuncFrm\ProductView\Product\" />
     <Folder Include="wwwroot\Products\" />
   </ItemGroup>
   <ItemGroup>
@@ -325,7 +398,9 @@
     <Content Include="wwwroot\assets\icons\chart-pie-solid.png" />
     <Content Include="wwwroot\assets\icons\chevron-down-solid.png" />
     <Content Include="wwwroot\assets\icons\circle-user-regular.png" />
+    <None Include="wwwroot\assets\icons\file-arrow-down-solid.png" />
     <Content Include="wwwroot\assets\icons\file-invoice-dollar-solid.png" />
+    <None Include="wwwroot\assets\icons\list-solid.png" />
     <Content Include="wwwroot\assets\icons\logoGroup4.jpg" />
     <Content Include="wwwroot\assets\icons\magnifying-glass-solid.png" />
     <None Include="wwwroot\assets\icons\plus-solid.png" />

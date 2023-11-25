@@ -13,8 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Color = System.Drawing.Color;
-using Size = System.Drawing.Size;
 
 namespace project_ManaTV.Views.FuncFrm.CustomerView
 {
@@ -32,15 +30,14 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             InitForm();
             HandlePagination();
             AddEventPagination();
+
         }
-
-
 
         private void InitForm()
         {
             this.BackColor = ColorTranslator.FromHtml("#29374B");
-            tabList.BackColor = System.Drawing.Color.White;
-            tabTrash.BackColor = System.Drawing.Color.White;
+            tabList.BackColor = Color.White;
+            tabTrash.BackColor = Color.White;
             this.Padding = new Padding(0, 10, 0, 0);
 
             txtSearchCustomer.Height = dpFilterCustomer.Height;
@@ -64,6 +61,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             RenderListData(_customerPresenter.GetByPagination(pageNumber, pageSize));
         }
 
+        //CRUD on table
         private void gridCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -221,6 +219,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             var lstCustomer = _customerPresenter.GetByPagination(1, pageSize);
             HandlePagination();
             RenderListData(lstCustomer);
+          
         }
 
         private void SetActivePage(int pageNumber)
@@ -275,7 +274,6 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
 
 
         //TRASH
-
         private void gridTrashCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -426,7 +424,37 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
                 BunifuSnackbar.Positions.TopRight);
         }
 
-        private void gridTrashCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tabList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowFilter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

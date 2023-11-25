@@ -145,6 +145,7 @@
             this.tabList.TabIndex = 0;
             this.tabList.Text = "List Customers";
             this.tabList.UseVisualStyleBackColor = true;
+            this.tabList.Click += new System.EventHandler(this.tabList_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -156,6 +157,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(317, 49);
             this.flowLayoutPanel1.TabIndex = 14;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // label2
             // 
@@ -234,6 +236,7 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(325, 53);
             this.flowLayoutPanel3.TabIndex = 13;
+            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
             // 
             // btnNext
             // 
@@ -696,12 +699,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Open Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(2, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 29);
+            this.label1.Size = new System.Drawing.Size(185, 33);
             this.label1.TabIndex = 12;
             this.label1.Text = "List Customers";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -711,6 +715,7 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(317, 49);
             this.flowLayoutPanel2.TabIndex = 11;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // btnAddNewCustomer
             // 
@@ -816,6 +821,7 @@
             this.flowFilter.Name = "flowFilter";
             this.flowFilter.Size = new System.Drawing.Size(604, 49);
             this.flowFilter.TabIndex = 10;
+            this.flowFilter.Paint += new System.Windows.Forms.PaintEventHandler(this.flowFilter_Paint);
             // 
             // btnSearchCustomer
             // 
@@ -1088,6 +1094,7 @@
             this.gridCustomer.Size = new System.Drawing.Size(1192, 433);
             this.gridCustomer.TabIndex = 3;
             this.gridCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomer_CellClick);
+            this.gridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomer_CellContentClick);
             // 
             // ID
             // 
@@ -1653,7 +1660,6 @@
             this.gridTrashCustomer.Size = new System.Drawing.Size(1192, 500);
             this.gridTrashCustomer.TabIndex = 15;
             this.gridTrashCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridTrashCustomer_CellClick);
-            this.gridTrashCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridTrashCustomer_CellContentClick);
             // 
             // checkAll
             // 
@@ -1733,10 +1739,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Open Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 29);
+            this.label3.Size = new System.Drawing.Size(78, 33);
             this.label3.TabIndex = 13;
             this.label3.Text = "Trash";
             // 

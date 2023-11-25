@@ -91,12 +91,32 @@ namespace project_ManaTV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_arrow_down_solid {
+            get {
+                object obj = ResourceManager.GetObject("file-arrow-down-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] Lexend_Regular {
             get {
                 object obj = ResourceManager.GetObject("Lexend_Regular", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list_solid {
+            get {
+                object obj = ResourceManager.GetObject("list-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
