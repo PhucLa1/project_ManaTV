@@ -1,7 +1,10 @@
 ﻿
 using project_ManaTV.Presenters;
 using project_ManaTV.Presenters.Staff;
+using project_ManaTV.Views.FuncFrm.Bill;
 using project_ManaTV.Views.FuncFrm.CustomerView;
+using project_ManaTV.Views.FuncFrm.Dashboard;
+using project_ManaTV.Views.FuncFrm.Login;
 using project_ManaTV.Views.FuncFrm.StaffManagement;
 using System;
 using System.Collections.Generic;
@@ -24,7 +27,7 @@ namespace project_ManaTV
         {
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(InitClasses.layout);
+            Application.Run(new BillOverall(1));
             //Application.Run(new ListCustomers());
         }
     }

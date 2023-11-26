@@ -18,6 +18,8 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
         int pageSize { get; set; }
         int totalPages { get; set; }  
         int totalRows { get; set; }
+        List<int> list { get; set; }
+
 
 
         //Event
@@ -25,6 +27,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
         event EventHandler CountPageChanged;
         event EventHandler GetNumberOfStaff;
         event EventHandler PageChanged;
+        event EventHandler DeleteStaff;
 
 
         void displayStaff(List<Dictionary<string, object>> staffList);

@@ -142,6 +142,7 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -157,18 +158,37 @@
     <Compile Include="HelpMethod\HandleImage.cs" />
     <Compile Include="HelpMethod\Valiadated.cs" />
     <Compile Include="InitClasses.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
+    <Compile Include="Presenters\Dashboard\DashboardPresenter.cs" />
+    <Compile Include="Presenters\Login\LoginPresenter.cs" />
+    <Compile Include="Repository\BillRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\DashboardRespository.cs" />
+    <Compile Include="Repository\Database.cs" />
+    <Compile Include="Repository\LoginRespository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
     <Compile Include="Presenters\Staff\AboutStaffPresenter.cs" />
     <Compile Include="Presenters\Staff\StaffPresenter.cs" />
+    <Compile Include="Views\Components\ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Components\ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Components\ConfirmModal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Components\ConfirmModal.Designer.cs">
       <DependentUpon>ConfirmModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillOverall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillOverall.Designer.cs">
+      <DependentUpon>BillOverall.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncFrm\CustomerView\FormCustomer.cs">
       <SubType>Form</SubType>
@@ -182,13 +202,24 @@
     <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.Designer.cs">
       <DependentUpon>ListCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FuncFrm\Dashboard\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Dashboard\Dashboard.designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.designer.cs">
       <DependentUpon>AboutStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Database.cs" />
     <Compile Include="Views\Frm_Layout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,24 +233,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TVManagementDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Database.cs" />
     <Compile Include="Views\FuncFrm\StaffManagement\IAboutStaff.cs" />
     <Compile Include="Views\FuncFrm\StaffManagement\IStaffView.cs" />
-    <Compile Include="Views\FuncFrm\StaffManagement\StaffCalender.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FuncFrm\StaffManagement\StaffCalender.Designer.cs">
-      <DependentUpon>StaffCalender.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\StaffView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\StaffView.Designer.cs">
       <DependentUpon>StaffView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Components\ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\ConfirmModal.resx">
       <DependentUpon>ConfirmModal.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Bill\BillOverall.resx">
+      <DependentUpon>BillOverall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\CustomerView\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
@@ -228,6 +258,12 @@
     <EmbeddedResource Include="Views\FuncFrm\CustomerView\ListCustomers.resx">
       <DependentUpon>ListCustomers.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Dashboard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
       <DependentUpon>AboutStaff.cs</DependentUpon>
@@ -248,9 +284,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\FuncFrm\StaffManagement\StaffCalender.resx">
-      <DependentUpon>StaffCalender.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\StaffView.resx">
       <DependentUpon>StaffView.cs</DependentUpon>
       <SubType>Designer</SubType>

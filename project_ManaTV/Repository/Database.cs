@@ -152,7 +152,7 @@ namespace project_ManaTV.Repository
             {
                 if(reader != null && reader.HasRows)
                 {
-                    while (reader.Read())
+                    if (reader.Read())
                     {
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
