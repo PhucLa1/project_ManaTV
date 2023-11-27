@@ -27,7 +27,7 @@ namespace project_ManaTV
         {
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BillOverall(1));
+            Application.Run(new Dashboard());
             //Application.Run(new ListCustomers());
         }
     }

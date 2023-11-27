@@ -1,4 +1,5 @@
 ﻿
+using project_ManaTV.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,20 +12,22 @@ using System.Windows.Forms;
 
 namespace project_ManaTV.Views.FuncFrm.Dashboard
 {
-    public partial class ListForm : Form
+    public partial class Dashboard : Form
     {
         //Fields
-
+        private readonly DashboardRespository dashboardRepo;
         private Button currentButton;
         private DateTime startDate;
         private DateTime endDate;
         //Constructor
-        public ListForm()
+        public Dashboard()
         {
             InitializeComponent();
             //Default - Last 7 days
+            dashboardRepo = new DashboardRespository();
+            int total = dashboardRepo.GetTotalProductQuantity();
             SetDateMenuButtonsUI(btnLast7Days);
-
+            lblNumOrders.Text = total.ToString();
         }
         private void SetDateMenuButtonsUI(object button)
         {
@@ -143,5 +146,7 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
         {
 
         }
+
+      
     }
 }
