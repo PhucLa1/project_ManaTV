@@ -109,7 +109,7 @@ namespace project_ManaTV.Repository
             return db.LoadRow(productID);
         }
 
-
+        //Insert to Import Bill
         public void InsertToImportBill(int supplier_id, int staff_id)
         {
             string query = "insert into ImportBill(supplier_id,staff_id,import_date) values (@supplier_id,@staff_id,@import_date)";
@@ -133,6 +133,24 @@ namespace project_ManaTV.Repository
             var res = db.Excute(price,(float)price*1.1,id);
         }
 
+        //Insert into Sale Bill
+        public void InsertIntoSellBill(int customer_id, int staff_id)
+        {
+            string query = "insert into SellBill(customer_id,staff_id,sell_date) values(@customer_id,@staff_id,@sell_date)";
+            db.SetQuery(query);
+            var res = db.Excute(customer_id,staff_id,DateTime.UtcNow.AddHours(7));
+        }
+        public void InsertIntoSellBillDetail(int product_id, int import_amount, int price)
+        {
+            string queryToGetBill = "select TOP 1 id from SellBill order by id desc ";
+            db.SetQuery(queryToGetBill);
+            int sell_bill_id = int.Parse(db.LoadRow()["id"].ToString());
+
+            string query = "insert into SellBillDetail(product_id,sell_amount,sell_bill_id,price) values(@product_id,@sell_amount,@sell_bill_id,@price)";
+            db.SetQuery(query);
+            var res = db.Excute(product_id, import_amount, sell_bill_id, price);
+        }
+
         //Datatable
         public List<Dictionary<string,object>> GetAllImportBill(string value, int startIndex, int count)
         {
@@ -151,11 +169,39 @@ namespace project_ManaTV.Repository
             return db.LoadRow("%" + value + "%");
         }
 
-        public List<Dictionary<string,object>> GetDetailBillByBillID(int billID)
+        public List<Dictionary<string, object>> GetAllSellBill(string value, int startIndex, int count)
         {
-            string query = "select ImportBillDetail.id,Products.id as 'Product ID',price,import_amount from ImportBillDetail inner join Products on ImportBillDetail.product_id = Products.id where import_bill_id = @id";
+            string query = "select SellBill.id,staff_name,customer_name,sell_date " +
+                "from SellBill inner join Customers on SellBill.customer_id = Customers.id " +
+                " inner join Staff on SellBill.staff_id = Staff.id " +
+                " where sell_date like @value " +
+                " ORDER BY SellBill.id OFFSET @startIndex ROWS FETCH NEXT @count ROWS ONLY; ";
             db.SetQuery(query);
-            return db.LoadAllRows(billID);
+            return db.LoadAllRows("%" + value + "%", startIndex, count);
+        }
+        public Dictionary<string, object> GetNumberSellBill(string value)
+        {
+            string query = "select count(*) as 'number' from SellBill where sell_date like @value ";
+            db.SetQuery(query);
+            return db.LoadRow("%" + value + "%");
+        }
+
+        public List<Dictionary<string,object>> GetDetailBillByBillID(int status ,int billID)
+        {
+            if(status == 1) //Hóa đơn nhập
+            {
+                string query = "select ImportBillDetail.id,Products.id as 'Product ID',price,import_amount from ImportBillDetail inner join Products on ImportBillDetail.product_id = Products.id where import_bill_id = @id";
+                db.SetQuery(query);
+                return db.LoadAllRows(billID);
+            }
+            else //Hóa đơn bán
+            {
+                string query = "select SellBillDetail.id,Products.id as 'Product ID',sell_amount,price from SellBillDetail inner join Products on SellBillDetail.product_id = Products.id where sell_bill_id = @id";
+                db.SetQuery(query);
+                return db.LoadAllRows(billID);
+            }
+
+
         }
     }
 }

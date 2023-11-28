@@ -1,6 +1,7 @@
 ﻿using Bunifu.UI.WinForms;
 using project_ManaTV.Repository;
 using project_ManaTV.Views.Components;
+using project_ManaTV.Views.FuncFrm.CustomerView;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         private int totalMoney = 0;
         private int staffID;
         private int supplierID;
+        private int customerID;
         public Dictionary<int,Product> products = new Dictionary<int, Product>();
         private BillRepository bR = new BillRepository();
         private int status;
@@ -51,6 +53,25 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             InitSupplier();
             //Total Money
             lbTotal.Text = "0";
+
+            //Nếu là hóa đơn bán 
+            if(status == 0)
+            {
+                lbCustomer.Text = "Choose customer";
+                lbSupplier.Visible = false;
+                lbSupplier.Dispose();
+                SupplierDD.Visible = false;
+                btnImportOrSale.Text = "Sell";
+                lbBill.Text = $"Sell Bill";
+            }
+            //Import Bill
+            else
+            {
+                btnAddCustomer.Visible = false;
+                lbCustomer.Visible = false;
+                btnImportOrSale.Text = "Import";
+                lbBill.Text = $"Import Bill";
+            }
         }
 
         private void InitSupplier()
@@ -200,9 +221,10 @@ namespace project_ManaTV.Views.FuncFrm.Bill
 
         private void btnImportOrSale_Click(object sender, EventArgs e)
         {
-            if(status == 1) //Là nhập hàng
+            ICollection<int> keys = products.Keys;
+            if (status == 1) //Là nhập hàng
             {
-                ICollection<int> keys = products.Keys;
+                
                 if (StaffDD.SelectedItem != null && SupplierDD.SelectedItem != null && keys.Count != 0)
                 {
 
@@ -240,11 +262,56 @@ namespace project_ManaTV.Views.FuncFrm.Bill
                         ShowMessage("Supplier have not been selected yet", BunifuSnackbar.MessageTypes.Error);
                     }
                 }
+            }
+            else //Sale Bill
+            {
+                if(StaffDD.SelectedItem != null && lbCustomer.Text != "Choose customer")
+                {
+                    staffID = int.Parse(StaffDD.Text.Substring(StaffDD.Text.IndexOf(':') + 1).Trim());
 
+                    //Insert vào db
+                    bR.InsertIntoSellBill(customerID, staffID);
+                    foreach (int key in keys)
+                    {
+                        bR.InsertIntoSellBillDetail
+                            (products[key].i, products[key].numberProduct, products[key].priceProduct);
+                    }
+
+                    //Xóa hết các thông tin ở đó đii
+                    products.Clear();
+                    productFLP.Controls.Clear();
+                    setTotalMoney();
+
+                    //Hiện thông báo
+                    ShowMessage($"You have successfully sell goods on the day {DateTime.UtcNow.AddHours(7)}", BunifuSnackbar.MessageTypes.Success);
+                }
+                else
+                {
+                    if (StaffDD.SelectedItem == null)
+                    {
+                        ShowMessage("Employees have not been selected yet", BunifuSnackbar.MessageTypes.Error);
+                    }
+                    if(lbCustomer.Text == "Choose customer")
+                    {
+                        ShowMessage("Customers have not been selected yet", BunifuSnackbar.MessageTypes.Error);
+                    }
+                }
             }
         }
 
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+           // MessageBox.Show("1");
+            ListCustomers listCustomers = new ListCustomers();
 
+            listCustomers.OpenToChoose += (s, ev) =>
+            {
+                lbCustomer.Text = listCustomers.customerName;
+                customerID = listCustomers.IDCus;
+                listCustomers.Dispose();
+            };
+            listCustomers.ShowDialog();
+        }
 
         private void SizeDD_SelectedIndexChanged(object sender, EventArgs e)
         {

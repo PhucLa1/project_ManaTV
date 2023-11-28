@@ -4,6 +4,7 @@ using project_ManaTV.HelpMethod;
 using project_ManaTV.Models;
 using project_ManaTV.Presenters;
 using project_ManaTV.Views.Components;
+using project_ManaTV.Views.FuncFrm.Bill;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,11 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
         private List<BunifuButton> lstPageNumberBtn;
         private int pageSize = 10;
         private int pageNumber = 1;
+
+        //Chuẩn bị cho phần hóa đơn bán
+        public event EventHandler OpenToChoose;
+        public int IDCus;
+        public string customerName;
         public ListCustomers()
         {
             _customerPresenter = new CustomerPresenter();
@@ -81,7 +87,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
                     //ShowToast("ok ddaays", BunifuSnackbar.MessageTypes.Success);
                     //MessageBox.Show("Details: "+ id);
                 }
-                if (clickedColumn.Name == "actionUpdate")
+                else if (clickedColumn.Name == "actionUpdate")
                 {
                     var id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
                     var selectedCustomer = _customerPresenter.GetById(id);
@@ -94,7 +100,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
                     };
                     formCustomer.Show();
                 }
-                if (clickedColumn.Name == "actionDelete")
+                else if (clickedColumn.Name == "actionDelete")
                 {
                     var id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
                     var confirmModal = new ConfirmModal("delete");
@@ -106,6 +112,13 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
                     };
                     confirmModal.ShowDialog();
                     //MessageBox.Show("Delete");
+                }
+                else
+                {
+                    MessageBox.Show("Chọn r");
+                    IDCus = int.Parse(selectedRow.Cells["ID"].Value.ToString());
+                    customerName = selectedRow.Cells["Fullname"].Value.ToString();
+                    OpenToChoose?.Invoke(sender, EventArgs.Empty);
                 }
 
             }

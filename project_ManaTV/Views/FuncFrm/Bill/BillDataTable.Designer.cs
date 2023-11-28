@@ -39,6 +39,9 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ImportBillGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +52,6 @@
             this.ddRows = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.pagination = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbDate = new System.Windows.Forms.Label();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.btnPrev = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnFirst = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSecond = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -58,8 +59,17 @@
             this.btnFourth = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnFive = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnNext = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.SellBillGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ImportBillGrid)).BeginInit();
             this.pagination.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SellBillGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // ImportBillGrid
@@ -225,7 +235,7 @@
             "50",
             "100"});
             this.ddRows.ItemTopMargin = 3;
-            this.ddRows.Location = new System.Drawing.Point(70, 53);
+            this.ddRows.Location = new System.Drawing.Point(70, 52);
             this.ddRows.Name = "ddRows";
             this.ddRows.Size = new System.Drawing.Size(71, 32);
             this.ddRows.TabIndex = 20;
@@ -241,7 +251,7 @@
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuLabel1.Location = new System.Drawing.Point(12, 53);
+            this.bunifuLabel1.Location = new System.Drawing.Point(12, 52);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(52, 28);
@@ -266,32 +276,6 @@
             this.pagination.Name = "pagination";
             this.pagination.Size = new System.Drawing.Size(341, 48);
             this.pagination.TabIndex = 23;
-            // 
-            // lbDate
-            // 
-            this.lbDate.AutoSize = true;
-            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            this.lbDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-            this.lbDate.Location = new System.Drawing.Point(997, 54);
-            this.lbDate.MinimumSize = new System.Drawing.Size(130, 0);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(130, 27);
-            this.lbDate.TabIndex = 26;
-            this.lbDate.Text = "Mar 13, 2023";
-            this.lbDate.Click += new System.EventHandler(this.lbDate_Click);
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.CustomFormat = "MMM dd, yyyy";
-            this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(1005, 56);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(122, 23);
-            this.dtpStartDate.TabIndex = 27;
-            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
             // 
             // btnPrev
             // 
@@ -919,6 +903,136 @@
             this.btnNext.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnNext.UseDefaultRadiusAndThickness = true;
             // 
+            // lbDate
+            // 
+            this.lbDate.AutoSize = true;
+            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.lbDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
+            this.lbDate.Location = new System.Drawing.Point(997, 53);
+            this.lbDate.MinimumSize = new System.Drawing.Size(130, 0);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(130, 27);
+            this.lbDate.TabIndex = 26;
+            this.lbDate.Text = "Mar 13, 2023";
+            this.lbDate.Click += new System.EventHandler(this.lbDate_Click);
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.CustomFormat = "MMM dd, yyyy";
+            this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStartDate.Location = new System.Drawing.Point(1005, 56);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(122, 23);
+            this.dtpStartDate.TabIndex = 27;
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
+            // 
+            // SellBillGrid
+            // 
+            this.SellBillGrid.AllowCustomTheming = false;
+            this.SellBillGrid.AllowUserToAddRows = false;
+            this.SellBillGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.SellBillGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.SellBillGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.SellBillGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SellBillGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.SellBillGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SellBillGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.SellBillGrid.ColumnHeadersHeight = 40;
+            this.SellBillGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewImageColumn1});
+            this.SellBillGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.SellBillGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SellBillGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.SellBillGrid.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.SellBillGrid.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.SellBillGrid.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.SellBillGrid.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.SellBillGrid.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.SellBillGrid.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.SellBillGrid.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.SellBillGrid.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.SellBillGrid.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.SellBillGrid.CurrentTheme.Name = null;
+            this.SellBillGrid.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.SellBillGrid.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SellBillGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.SellBillGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.SellBillGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SellBillGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            this.SellBillGrid.EnableHeadersVisualStyles = false;
+            this.SellBillGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.SellBillGrid.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.SellBillGrid.HeaderBgColor = System.Drawing.Color.Empty;
+            this.SellBillGrid.HeaderForeColor = System.Drawing.Color.White;
+            this.SellBillGrid.Location = new System.Drawing.Point(12, 99);
+            this.SellBillGrid.Name = "SellBillGrid";
+            this.SellBillGrid.ReadOnly = true;
+            this.SellBillGrid.RowHeadersVisible = false;
+            this.SellBillGrid.RowHeadersWidth = 51;
+            this.SellBillGrid.RowTemplate.Height = 40;
+            this.SellBillGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.SellBillGrid.Size = new System.Drawing.Size(1120, 552);
+            this.SellBillGrid.TabIndex = 0;
+            this.SellBillGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Staff Name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Customer Name";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Sell Date";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Detail";
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
             // BillDataTable
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -930,12 +1044,14 @@
             this.Controls.Add(this.ddRows);
             this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.lbShowing);
+            this.Controls.Add(this.SellBillGrid);
             this.Controls.Add(this.ImportBillGrid);
             this.Name = "BillDataTable";
             this.Text = "BillDataTable";
             this.Load += new System.EventHandler(this.BillDataTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImportBillGrid)).EndInit();
             this.pagination.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SellBillGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -962,5 +1078,11 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnNext;
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private Bunifu.UI.WinForms.BunifuDataGridView SellBillGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

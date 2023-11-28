@@ -45,8 +45,10 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             set { TotalRows = value; }
         }
 
-        public BillDataTable()
+        // 0 : sell 1 : import
+        public BillDataTable(int _status)
         {
+            status = _status;
             InitializeComponent();
             AssociateAndRaiseViewEvents();
         }
@@ -56,22 +58,11 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             set => lbDate.Text = value;
         }
 
-
+        public int status;
 
 
         private void AssociateAndRaiseViewEvents()
         {
-
-            //Sự kiện tìm kiếm
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
             //Sự kiện thay đổi dữ liệu trong datagridview
             ImportBillGrid.CellContentClick += (s, e) =>
             {
@@ -81,9 +72,18 @@ namespace project_ManaTV.Views.FuncFrm.Bill
                     int x = int.Parse(ImportBillGrid.Rows[e.RowIndex].Cells[0].Value.ToString());
                     BillDetail bD = new BillDetail(1, x);
                     bD.Show();
+                }                           
+            };
+
+            SellBillGrid.CellContentClick += (s, e) =>
+            {
+                int actions = e.ColumnIndex;
+                if (actions == 4)
+                {
+                    int x = int.Parse(SellBillGrid.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    BillDetail bD = new BillDetail(0, x);
+                    bD.Show();
                 }
-                
-              
             };
 
             //Sự kiện đổi trang dữ liệu
@@ -256,7 +256,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             }
             //MessageBox.Show(currentPage.ToString());
         }
-        public void displayBill(List<Dictionary<string, object>> ImportList)
+        public void displayImportBill(List<Dictionary<string, object>> ImportList)
         {
             HandleGridView.SetMiddleCenter(5, ImportBillGrid);
             //Ở đây rows 1 trang là 10;
@@ -264,10 +264,6 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             Image imageEye = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "eye.png"));
             foreach (var item in ImportList)
             {
-
-
-
-
                 ImportBillGrid.Rows.Add(
                     new object[]
                     {
@@ -279,7 +275,27 @@ namespace project_ManaTV.Views.FuncFrm.Bill
                     }
                     );
             }
+        }
 
+        public void displaySellBill(List<Dictionary<string, object>> SellList)
+        {
+            HandleGridView.SetMiddleCenter(5, SellBillGrid);
+            //Ở đây rows 1 trang là 10;
+            SellBillGrid.Rows.Clear();
+            Image imageEye = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "eye.png"));
+            foreach (var item in SellList)
+            {
+                SellBillGrid.Rows.Add(
+                    new object[]
+                    {
+                        item["id"].ToString(),
+                        item["staff_name"].ToString(),
+                        item["customer_name"].ToString(),
+                        item["sell_date"].ToString(),
+                        imageEye
+                    }
+                    );
+            }
         }
 
         public void ChangeLabelOfShowing(string label)
@@ -337,6 +353,14 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         {
             valueSearch = "";
             GetNumberOfStaff?.Invoke(this, EventArgs.Empty);
+            if(status == 1)
+            {
+                SellBillGrid.Visible = false;
+            }
+            else
+            {
+                ImportBillGrid.Visible = false;
+            }
         }
 
 
@@ -353,6 +377,8 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             dtpStartDate.Select();
             SendKeys.Send("%{DOWN}");
         }
+
+
     }
 }
 

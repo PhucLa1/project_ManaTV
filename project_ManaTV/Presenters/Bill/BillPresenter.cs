@@ -24,32 +24,67 @@ namespace project_ManaTV.Presenters.Bill
 
         private void OnPageChanged(object sender, EventArgs e)
         {
-            int totalRows = (int)bR.GetNumberImportBill(view.valueSearch)["number"];
-            view.totalPages = (int)Math.Ceiling((double)totalRows / view.pageSize);
-            int startIndex = (view.currentPage - 1) * view.pageSize + 1 > totalRows ? 1 : (view.currentPage - 1) * view.pageSize + 1;
-            if (startIndex == 1)
+            if(view.status == 1)
             {
-                view.currentPage = 1;
+                int totalRows = (int)bR.GetNumberImportBill(view.valueSearch)["number"];
+                view.totalPages = (int)Math.Ceiling((double)totalRows / view.pageSize);
+                int startIndex = (view.currentPage - 1) * view.pageSize + 1 > totalRows ? 1 : (view.currentPage - 1) * view.pageSize + 1;
+                if (startIndex == 1)
+                {
+                    view.currentPage = 1;
+                }
+                if (totalRows == 0)
+                {
+                    startIndex = 0;
+                }
+                view.HandlePagination();
+                view.CheckEnable();
+                view.isClicked(view.currentPage.ToString());
+                int endIndex = (view.currentPage) * view.pageSize > totalRows ? totalRows : (view.currentPage) * view.pageSize;
+                var allImport = bR.GetAllImportBill(view.valueSearch, startIndex - 1, endIndex - startIndex + 1);
+                // MessageBox.Show(totalRows + " + " + view.valueSearch);
+                this.view.displayImportBill(allImport);
+                view.ChangeLabelOfShowing($"Showing {startIndex} to {endIndex} of {totalRows} entries");
             }
-            if (totalRows == 0)
+            else
             {
-                startIndex = 0;
+                int totalRows = (int)bR.GetNumberSellBill(view.valueSearch)["number"];
+                view.totalPages = (int)Math.Ceiling((double)totalRows / view.pageSize);
+                int startIndex = (view.currentPage - 1) * view.pageSize + 1 > totalRows ? 1 : (view.currentPage - 1) * view.pageSize + 1;
+                if (startIndex == 1)
+                {
+                    view.currentPage = 1;
+                }
+                if (totalRows == 0)
+                {
+                    startIndex = 0;
+                }
+                view.HandlePagination();
+                view.CheckEnable();
+                view.isClicked(view.currentPage.ToString());
+                int endIndex = (view.currentPage) * view.pageSize > totalRows ? totalRows : (view.currentPage) * view.pageSize;
+                var allSell = bR.GetAllSellBill(view.valueSearch, startIndex - 1, endIndex - startIndex + 1);
+                // MessageBox.Show(totalRows + " + " + view.valueSearch);
+                this.view.displaySellBill(allSell);
+                view.ChangeLabelOfShowing($"Showing {startIndex} to {endIndex} of {totalRows} entries");
             }
-            view.HandlePagination();
-            view.CheckEnable();
-            view.isClicked(view.currentPage.ToString());
-            int endIndex = (view.currentPage) * view.pageSize > totalRows ? totalRows : (view.currentPage) * view.pageSize;
-            var allImport = bR.GetAllImportBill(view.valueSearch, startIndex - 1, endIndex - startIndex + 1);
-            // MessageBox.Show(totalRows + " + " + view.valueSearch);
-            this.view.displayBill(allImport);
-            view.ChangeLabelOfShowing($"Showing {startIndex} to {endIndex} of {totalRows} entries");
+
         }
 
         private void OnGetNumberOfBill(object sender, EventArgs e)
         {
-            var data = bR.GetNumberImportBill(view.valueSearch);
-            view.GetCountOfBill(data);
+            if(view.status == 1)
+            {
+                var data = bR.GetNumberImportBill(view.valueSearch);
+                view.GetCountOfBill(data);
+            }
+            else
+            {
+                var data = bR.GetNumberSellBill(view.valueSearch);
+                view.GetCountOfBill(data);
+            }
             OnPageChanged(sender, e);
+
         }
     }
 }
