@@ -72,6 +72,7 @@
             this.btnFive = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnNext = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
+            this.btn_export = new System.Windows.Forms.Button();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewStaff)).BeginInit();
             this.pagination.SuspendLayout();
@@ -79,9 +80,7 @@
             // 
             // bunifuPanel1
             // 
-           // this.bunifuPanel1.BackgroundColor = System.Drawing.Color.Transparent;
-            //this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
-            //this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuPanel1.Controls.Add(this.btn_export);
             this.bunifuPanel1.Controls.Add(this.ddRows);
             this.bunifuPanel1.Controls.Add(this.lbShowing);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
@@ -156,7 +155,7 @@
             this.lbShowing.Location = new System.Drawing.Point(29, 658);
             this.lbShowing.Name = "lbShowing";
             this.lbShowing.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbShowing.Size = new System.Drawing.Size(193, 20);
+            this.lbShowing.Size = new System.Drawing.Size(151, 15);
             this.lbShowing.TabIndex = 17;
             this.lbShowing.Text = "Showing 1 to 10 of 36 entries";
             this.lbShowing.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -173,7 +172,7 @@
             this.bunifuLabel1.Location = new System.Drawing.Point(26, 22);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(52, 28);
+            this.bunifuLabel1.Size = new System.Drawing.Size(42, 21);
             this.bunifuLabel1.TabIndex = 16;
             this.bunifuLabel1.Text = "Show:";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1247,13 +1246,23 @@
             this.bunifuSnackbar1.WarningOptions.IconLeftMargin = 12;
             this.bunifuSnackbar1.ZoomCloseIcon = true;
             // 
+            // btn_export
+            // 
+            this.btn_export.Location = new System.Drawing.Point(641, 31);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.Size = new System.Drawing.Size(112, 23);
+            this.btn_export.TabIndex = 19;
+            this.btn_export.Text = "Export to Excel";
+            this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            // 
             // StaffView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(83)))), ((int)(((byte)(103)))));
             this.ClientSize = new System.Drawing.Size(1133, 717);
             this.Controls.Add(this.bunifuPanel1);
-           // this.Name = "StaffView";
+            //this.Name = "StaffView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffView";
             this.Load += new System.EventHandler(this.StaffView_Load);
@@ -1293,5 +1302,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Column2;
         private System.Windows.Forms.DataGridViewImageColumn Column3;
         private Bunifu.UI.WinForms.BunifuSnackbar bunifuSnackbar1;
+        private System.Windows.Forms.Button btn_export;
     }
 }

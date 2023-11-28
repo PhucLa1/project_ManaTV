@@ -42,6 +42,7 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
             txtSearch.Location = new Point(txtSearch.Location.X, dpFilter.Location.Y);
             btnSearch.Location = new Point(btnSearch.Location.X, dpFilter.Location.Y);
             btnAddNew.Location = new Point(btnAddNew.Location.X, dpFilter.Location.Y);
+            button1.Location = new Point(button1.Location.X, dpFilter.Location.Y);
         }
 
         private void ListColors_Load(object sender, EventArgs e)
@@ -174,6 +175,27 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Tên tiêu đề trong bảng sheet lấy từ form
+            var sheetTitle = label1.Text;
+            if (btnExport.ShowDialog() == DialogResult.OK)
+                {
+                ExportToExcel export = new ExportToExcel(gridData, btnExport.FileName , sheetTitle);
+                }
+            }
+
+            private void btnExport_FileOk(object sender, CancelEventArgs e)
+        {
+            //ExportToExcel export = new ExportToExcel(gridData, "hi");
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -293,7 +293,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblFormName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,7 +412,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnReset.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -498,14 +498,38 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>401, 177</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="txtR.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADsAAAAUCAYAAAAz30VQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVFhH7c9BCcAADEPR+FfVUhmTMQEbgar4zYdccns6
-        18w8VfVRZ99SJR/k7FtqsKiCpRYstWCpBUstWGrBUruL7e7XB3X2LfVK0g9YiYzI2CDgVgAAAABJRU5E
-        rkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAADsAAAAnCAYAAACxMTBTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVGhD7c+xCcBADARB9V+VhMpwGS7Aj0CJW9jfhUsu
+        m7iu7n4y86NufEuNmIPc+JYqFpVYamKpiaUmlppYamKpiaUmlppYamKpiaUmlppYamKpiaUmltoPW1Xv
+        HNSNb6m3FHEAPr1MzU1jc0AAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="txtR.Location" type="System.Drawing.Point, System.Drawing">
@@ -521,7 +545,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="txtR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
+    <value>59, 39</value>
   </data>
   <data name="txtR.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -536,7 +560,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txtR.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>391, 105</value>
@@ -560,14 +584,14 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtB.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADsAAAAUCAYAAAAz30VQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVFhH7c9BCcAADEPR+FfVUhmTMQEbgar4zYdccns6
-        18w8VfVRZ99SJR/k7FtqsKiCpRYstWCpBUstWGrBUruL7e7XB3X2LfVK0g9YiYzI2CDgVgAAAABJRU5E
-        rkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAADsAAAAnCAYAAACxMTBTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVGhD7c+xCcBADARB9V+VhMpwGS7Aj0CJW9jfhUsu
+        m7iu7n4y86NufEuNmIPc+JYqFpVYamKpiaUmlppYamKpiaUmlppYamKpiaUmlppYamKpiaUmltoPW1Xv
+        HNSNb6m3FHEAPr1MzU1jc0AAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="txtB.Location" type="System.Drawing.Point, System.Drawing">
@@ -583,7 +607,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="txtB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
+    <value>59, 39</value>
   </data>
   <data name="txtB.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -598,7 +622,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txtB.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -631,14 +655,14 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txtG.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADsAAAAUCAYAAAAz30VQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVFhH7c9BCcAADEPR+FfVUhmTMQEbgar4zYdccns6
-        18w8VfVRZ99SJR/k7FtqsKiCpRYstWCpBUstWGrBUruL7e7XB3X2LfVK0g9YiYzI2CDgVgAAAABJRU5E
-        rkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAADsAAAAnCAYAAACxMTBTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVGhD7c+xCcBADARB9V+VhMpwGS7Aj0CJW9jfhUsu
+        m7iu7n4y86NufEuNmIPc+JYqFpVYamKpiaUmlppYamKpiaUmlppYamKpiaUmlppYamKpiaUmltoPW1Xv
+        HNSNb6m3FHEAPr1MzU1jc0AAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="txtG.Location" type="System.Drawing.Point, System.Drawing">
@@ -654,7 +678,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="txtG.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
+    <value>59, 39</value>
   </data>
   <data name="txtG.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -669,7 +693,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txtG.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -702,7 +726,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 64</value>

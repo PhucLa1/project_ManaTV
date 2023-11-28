@@ -16,6 +16,8 @@ using System.Windows.Forms;
 using Utilities.BunifuDataGridView.Transitions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace project_ManaTV.Views.FuncFrm.StaffManagement
 {
@@ -399,6 +401,12 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                 1000,
                 "",
                 BunifuSnackbar.Positions.TopRight);
+        }
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+ 
+
         }
     }
 }

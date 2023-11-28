@@ -58,6 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddNew = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.flowFilter = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSearch = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.dpFilter = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -71,6 +72,7 @@
             this.actionDetails = new System.Windows.Forms.DataGridViewImageColumn();
             this.actionUpdate = new System.Windows.Forms.DataGridViewImageColumn();
             this.actionDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnExport = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.tvManagementDataSet1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -705,13 +707,15 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 24);
+            this.label1.Size = new System.Drawing.Size(107, 24);
             this.label1.TabIndex = 18;
-            this.label1.Text = "List Manufacturers";
+            this.label1.Text = "List Colors";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.btnAddNew);
+            this.flowLayoutPanel2.Controls.Add(this.button1);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 42);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -809,6 +813,17 @@
             this.btnAddNew.TextPadding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnAddNew.UseDefaultRadiusAndThickness = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(124, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 33);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Export To Excel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // flowFilter
             // 
@@ -1165,6 +1180,10 @@
             this.actionDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.actionDelete.Width = 50;
             // 
+            // btnExport
+            // 
+            this.btnExport.FileOk += new System.ComponentModel.CancelEventHandler(this.btnExport_FileOk);
+            // 
             // FrmListColors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1221,5 +1240,7 @@
         private System.Windows.Forms.DataGridViewImageColumn actionDetails;
         private System.Windows.Forms.DataGridViewImageColumn actionUpdate;
         private System.Windows.Forms.DataGridViewImageColumn actionDelete;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.SaveFileDialog btnExport;
     }
 }
