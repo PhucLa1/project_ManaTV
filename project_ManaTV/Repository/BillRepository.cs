@@ -27,14 +27,14 @@ namespace project_ManaTV.Repository
             if(color != "") { color_status = $"color_name = '{color}'"; }
 
             string query = $"select " +
-    $"Products.id,product_amount,product_import_money,product_sell_money," +
-    $"design_name,manufacturer_name,color_name,screen_name,screen_size from Products " +
-    $"inner join Designs on Products.design_id = Designs.id " +
-    $"inner join Manufacturer on Manufacturer.id = Products.manufacturer_id " +
-    $"inner join Colors on Colors.id = Products.color_id " +
-    $"inner join Screen on Screen.id = Products.screen_id " +
-    $"inner join ScreenSize on ScreenSize.id = Products.size_id " +
-    $"where {design_status} and {color_status} and {screen_status} and {size_status}";
+            $"Products.id,product_amount,product_import_money,product_sell_money," +
+            $"design_name,manufacturer_name,color_name,screen_name,screen_size from Products " +
+            $"inner join Designs on Products.design_id = Designs.id " +
+            $"inner join Manufacturer on Manufacturer.id = Products.manufacturer_id " +
+            $"inner join Colors on Colors.id = Products.color_id " +
+            $"inner join Screen on Screen.id = Products.screen_id " +
+            $"inner join ScreenSize on ScreenSize.id = Products.size_id " +
+            $"where {design_status} and {color_status} and {screen_status} and {size_status}";
             //Chạy truy vấn
             db.SetQuery(query);
             
