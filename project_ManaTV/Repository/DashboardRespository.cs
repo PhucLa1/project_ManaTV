@@ -125,12 +125,12 @@ namespace project_ManaTV.Repository
 			return resultRows;
 		}
 
-		public List<Dictionary<string, object>> GetImportBillBySupplName(string suplierName,DateTime fromDate, DateTime toDate)
+		public List<Dictionary<string, object>> GetImportBillBySupplName(string suplierName, DateTime fromDate, DateTime toDate)
 		{
 			string fromDateStr = fromDate.ToString("yyyy-MM-dd");
 			string toDateStr = toDate.ToString("yyyy-MM-dd");
 			string supplyString = "1=1";
-			if (suplierName != null) { supplyString = $" S.supplier_name = {suplierName}"; };
+			if (suplierName != null) { supplyString = $" S.supplier_name = '{suplierName}' "; };
 			string query = $@"
 				SELECT 
 					IB.id AS import_bill_id,
@@ -153,6 +153,17 @@ namespace project_ManaTV.Repository
 			List<Dictionary<string, object>> resultRows = db.LoadAllRows(fromDateStr, toDateStr);
 			return resultRows;
 		}
+
+		public List<Dictionary<string, object>> GetAllSupplier()
+		{
+			string query = @"SELECT supplier_name , supplier_address FROM Supplier";
+			db.SetQuery(query);
+			List<Dictionary<string, object>> resultRows = db.LoadAllRows();
+			return resultRows;
+		}
+
 	}
+
+
 }
 

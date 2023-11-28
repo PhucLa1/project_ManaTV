@@ -62,17 +62,6 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.lblTotalProfit = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.chartTopSuplier = new System.Windows.Forms.DataVisualization.Charting.Chart();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.pictureBox6 = new System.Windows.Forms.PictureBox();
-			this.pictureBox5 = new System.Windows.Forms.PictureBox();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
-			this.lblNumProducts = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.lblNumSuppliers = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.lblNumCustomers = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.dgvSellBill = new System.Windows.Forms.DataGridView();
 			this.sell_bill_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,21 +75,17 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.label12 = new System.Windows.Forms.Label();
 			this.btnOkCustomDate = new System.Windows.Forms.PictureBox();
 			this.panel6 = new System.Windows.Forms.Panel();
+			this.CbxSupplier = new System.Windows.Forms.ComboBox();
 			this.dgvImportBill = new System.Windows.Forms.DataGridView();
-			this.label14 = new System.Windows.Forms.Label();
-			this.pictureBox8 = new System.Windows.Forms.PictureBox();
-			this.panel7 = new System.Windows.Forms.Panel();
-			this.label19 = new System.Windows.Forms.Label();
-			this.bunifuVScrollBar1 = new Bunifu.UI.WinForms.BunifuVScrollBar();
-			this.chartGrossRevenue = new LiveCharts.WinForms.CartesianChart();
 			this.import_bill_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.import_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.import_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.suplier_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.supplier_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.pictureBox11 = new System.Windows.Forms.PictureBox();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label18 = new System.Windows.Forms.Label();
+			this.label14 = new System.Windows.Forms.Label();
+			this.pictureBox8 = new System.Windows.Forms.PictureBox();
+			this.bunifuVScrollBar1 = new Bunifu.UI.WinForms.BunifuVScrollBar();
+			this.chartGrossRevenue = new LiveCharts.WinForms.CartesianChart();
 			this.colorsTableAdapter1 = new project_ManaTV.TVManagementDataSetTableAdapters.ColorsTableAdapter();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -109,10 +94,6 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.chartTopSuplier)).BeginInit();
-			this.panel4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			this.panel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSellBill)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -120,8 +101,6 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.panel6.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvImportBill)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-			this.panel7.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -450,142 +429,16 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			title1.Text = "5 Best selling products";
 			this.chartTopSuplier.Titles.Add(title1);
 			// 
-			// panel4
-			// 
-			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-			this.panel4.Controls.Add(this.pictureBox6);
-			this.panel4.Controls.Add(this.pictureBox5);
-			this.panel4.Controls.Add(this.pictureBox4);
-			this.panel4.Controls.Add(this.lblNumProducts);
-			this.panel4.Controls.Add(this.label9);
-			this.panel4.Controls.Add(this.lblNumSuppliers);
-			this.panel4.Controls.Add(this.label8);
-			this.panel4.Controls.Add(this.label7);
-			this.panel4.Controls.Add(this.lblNumCustomers);
-			this.panel4.Controls.Add(this.label6);
-			this.panel4.Location = new System.Drawing.Point(14, 403);
-			this.panel4.Margin = new System.Windows.Forms.Padding(5);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(230, 318);
-			this.panel4.TabIndex = 10;
-			// 
-			// pictureBox6
-			// 
-			this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-			this.pictureBox6.Location = new System.Drawing.Point(13, 165);
-			this.pictureBox6.Name = "pictureBox6";
-			this.pictureBox6.Size = new System.Drawing.Size(45, 43);
-			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox6.TabIndex = 3;
-			this.pictureBox6.TabStop = false;
-			// 
-			// pictureBox5
-			// 
-			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-			this.pictureBox5.Location = new System.Drawing.Point(13, 105);
-			this.pictureBox5.Name = "pictureBox5";
-			this.pictureBox5.Size = new System.Drawing.Size(45, 43);
-			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox5.TabIndex = 3;
-			this.pictureBox5.TabStop = false;
-			// 
-			// pictureBox4
-			// 
-			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-			this.pictureBox4.Location = new System.Drawing.Point(13, 51);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(45, 43);
-			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox4.TabIndex = 3;
-			this.pictureBox4.TabStop = false;
-			// 
-			// lblNumProducts
-			// 
-			this.lblNumProducts.AutoSize = true;
-			this.lblNumProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNumProducts.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.lblNumProducts.Location = new System.Drawing.Point(59, 185);
-			this.lblNumProducts.Name = "lblNumProducts";
-			this.lblNumProducts.Size = new System.Drawing.Size(97, 29);
-			this.lblNumProducts.TabIndex = 6;
-			this.lblNumProducts.Text = "100000";
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-			this.label9.Location = new System.Drawing.Point(60, 165);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(89, 25);
-			this.label9.TabIndex = 5;
-			this.label9.Text = "Products";
-			// 
-			// lblNumSuppliers
-			// 
-			this.lblNumSuppliers.AutoSize = true;
-			this.lblNumSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNumSuppliers.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.lblNumSuppliers.Location = new System.Drawing.Point(59, 127);
-			this.lblNumSuppliers.Name = "lblNumSuppliers";
-			this.lblNumSuppliers.Size = new System.Drawing.Size(97, 29);
-			this.lblNumSuppliers.TabIndex = 4;
-			this.lblNumSuppliers.Text = "100000";
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-			this.label8.Location = new System.Drawing.Point(60, 105);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(94, 25);
-			this.label8.TabIndex = 3;
-			this.label8.Text = "Suppliers";
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label7.Location = new System.Drawing.Point(10, 10);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(178, 29);
-			this.label7.TabIndex = 2;
-			this.label7.Text = "Total Counters";
-			// 
-			// lblNumCustomers
-			// 
-			this.lblNumCustomers.AutoSize = true;
-			this.lblNumCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNumCustomers.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.lblNumCustomers.Location = new System.Drawing.Point(59, 65);
-			this.lblNumCustomers.Name = "lblNumCustomers";
-			this.lblNumCustomers.Size = new System.Drawing.Size(97, 29);
-			this.lblNumCustomers.TabIndex = 1;
-			this.lblNumCustomers.Text = "100000";
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-			this.label6.Location = new System.Drawing.Point(60, 45);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(107, 25);
-			this.label6.TabIndex = 0;
-			this.label6.Text = "Customers";
-			// 
 			// panel5
 			// 
 			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
 			this.panel5.Controls.Add(this.dgvSellBill);
 			this.panel5.Controls.Add(this.label13);
 			this.panel5.Controls.Add(this.pictureBox7);
-			this.panel5.Location = new System.Drawing.Point(254, 403);
+			this.panel5.Location = new System.Drawing.Point(19, 403);
 			this.panel5.Margin = new System.Windows.Forms.Padding(5);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(941, 318);
+			this.panel5.Size = new System.Drawing.Size(1176, 318);
 			this.panel5.TabIndex = 11;
 			// 
 			// dgvSellBill
@@ -619,13 +472,13 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.dgvSellBill.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvSellBill.EnableHeadersVisualStyles = false;
 			this.dgvSellBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(111)))));
-			this.dgvSellBill.Location = new System.Drawing.Point(15, 45);
+			this.dgvSellBill.Location = new System.Drawing.Point(30, 45);
 			this.dgvSellBill.Name = "dgvSellBill";
 			this.dgvSellBill.RowHeadersVisible = false;
 			this.dgvSellBill.RowHeadersWidth = 51;
 			this.dgvSellBill.RowTemplate.Height = 35;
 			this.dgvSellBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvSellBill.Size = new System.Drawing.Size(905, 238);
+			this.dgvSellBill.Size = new System.Drawing.Size(1123, 238);
 			this.dgvSellBill.TabIndex = 3;
 			// 
 			// sell_bill_id
@@ -670,7 +523,7 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			// pictureBox7
 			// 
 			this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-			this.pictureBox7.Location = new System.Drawing.Point(890, 3);
+			this.pictureBox7.Location = new System.Drawing.Point(1123, 10);
 			this.pictureBox7.Name = "pictureBox7";
 			this.pictureBox7.Size = new System.Drawing.Size(30, 30);
 			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -728,14 +581,24 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			// panel6
 			// 
 			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+			this.panel6.Controls.Add(this.CbxSupplier);
 			this.panel6.Controls.Add(this.dgvImportBill);
 			this.panel6.Controls.Add(this.label14);
 			this.panel6.Controls.Add(this.pictureBox8);
-			this.panel6.Location = new System.Drawing.Point(254, 731);
+			this.panel6.Location = new System.Drawing.Point(19, 731);
 			this.panel6.Margin = new System.Windows.Forms.Padding(5);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(941, 318);
+			this.panel6.Size = new System.Drawing.Size(1176, 318);
 			this.panel6.TabIndex = 14;
+			// 
+			// CbxSupplier
+			// 
+			this.CbxSupplier.FormattingEnabled = true;
+			this.CbxSupplier.Location = new System.Drawing.Point(869, 9);
+			this.CbxSupplier.Name = "CbxSupplier";
+			this.CbxSupplier.Size = new System.Drawing.Size(229, 28);
+			this.CbxSupplier.TabIndex = 4;
+			this.CbxSupplier.SelectedIndexChanged += new System.EventHandler(this.CbxSupplier_SelectedIndexChanged);
 			// 
 			// dgvImportBill
 			// 
@@ -775,8 +638,43 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.dgvImportBill.RowHeadersWidth = 51;
 			this.dgvImportBill.RowTemplate.Height = 35;
 			this.dgvImportBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvImportBill.Size = new System.Drawing.Size(883, 240);
+			this.dgvImportBill.Size = new System.Drawing.Size(1138, 240);
 			this.dgvImportBill.TabIndex = 3;
+			// 
+			// import_bill_id
+			// 
+			this.import_bill_id.HeaderText = "id";
+			this.import_bill_id.MinimumWidth = 6;
+			this.import_bill_id.Name = "import_bill_id";
+			this.import_bill_id.ReadOnly = true;
+			// 
+			// import_total
+			// 
+			this.import_total.HeaderText = "import total";
+			this.import_total.MinimumWidth = 6;
+			this.import_total.Name = "import_total";
+			this.import_total.ReadOnly = true;
+			// 
+			// import_date
+			// 
+			this.import_date.HeaderText = "import date";
+			this.import_date.MinimumWidth = 6;
+			this.import_date.Name = "import_date";
+			this.import_date.ReadOnly = true;
+			// 
+			// suplier_name
+			// 
+			this.suplier_name.HeaderText = "suplier_name";
+			this.suplier_name.MinimumWidth = 6;
+			this.suplier_name.Name = "suplier_name";
+			this.suplier_name.ReadOnly = true;
+			// 
+			// supplier_address
+			// 
+			this.supplier_address.HeaderText = "supplier address";
+			this.supplier_address.MinimumWidth = 6;
+			this.supplier_address.Name = "supplier_address";
+			this.supplier_address.ReadOnly = true;
 			// 
 			// label14
 			// 
@@ -792,36 +690,12 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			// pictureBox8
 			// 
 			this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-			this.pictureBox8.Location = new System.Drawing.Point(868, 8);
+			this.pictureBox8.Location = new System.Drawing.Point(1123, 9);
 			this.pictureBox8.Name = "pictureBox8";
 			this.pictureBox8.Size = new System.Drawing.Size(30, 30);
 			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox8.TabIndex = 3;
 			this.pictureBox8.TabStop = false;
-			// 
-			// panel7
-			// 
-			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-			this.panel7.Controls.Add(this.pictureBox11);
-			this.panel7.Controls.Add(this.label17);
-			this.panel7.Controls.Add(this.label18);
-			this.panel7.Controls.Add(this.label19);
-			this.panel7.Location = new System.Drawing.Point(14, 734);
-			this.panel7.Margin = new System.Windows.Forms.Padding(5);
-			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(230, 318);
-			this.panel7.TabIndex = 11;
-			// 
-			// label19
-			// 
-			this.label19.AutoSize = true;
-			this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label19.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label19.Location = new System.Drawing.Point(10, 10);
-			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(75, 29);
-			this.label19.TabIndex = 2;
-			this.label19.Text = "Fillter";
 			// 
 			// bunifuVScrollBar1
 			// 
@@ -872,73 +746,6 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.chartGrossRevenue.TabIndex = 15;
 			this.chartGrossRevenue.Text = "cartesianChart";
 			// 
-			// import_bill_id
-			// 
-			this.import_bill_id.HeaderText = "id";
-			this.import_bill_id.MinimumWidth = 6;
-			this.import_bill_id.Name = "import_bill_id";
-			this.import_bill_id.ReadOnly = true;
-			// 
-			// import_total
-			// 
-			this.import_total.HeaderText = "import total";
-			this.import_total.MinimumWidth = 6;
-			this.import_total.Name = "import_total";
-			this.import_total.ReadOnly = true;
-			// 
-			// import_date
-			// 
-			this.import_date.HeaderText = "import date";
-			this.import_date.MinimumWidth = 6;
-			this.import_date.Name = "import_date";
-			this.import_date.ReadOnly = true;
-			// 
-			// suplier_name
-			// 
-			this.suplier_name.HeaderText = "suplier_name";
-			this.suplier_name.MinimumWidth = 6;
-			this.suplier_name.Name = "suplier_name";
-			this.suplier_name.ReadOnly = true;
-			// 
-			// supplier_address
-			// 
-			this.supplier_address.HeaderText = "supplier address";
-			this.supplier_address.MinimumWidth = 6;
-			this.supplier_address.Name = "supplier_address";
-			this.supplier_address.ReadOnly = true;
-			// 
-			// pictureBox11
-			// 
-			this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-			this.pictureBox11.Location = new System.Drawing.Point(18, 239);
-			this.pictureBox11.Name = "pictureBox11";
-			this.pictureBox11.Size = new System.Drawing.Size(45, 43);
-			this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox11.TabIndex = 3;
-			this.pictureBox11.TabStop = false;
-			// 
-			// label17
-			// 
-			this.label17.AutoSize = true;
-			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label17.Location = new System.Drawing.Point(85, 253);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(97, 29);
-			this.label17.TabIndex = 4;
-			this.label17.Text = "100000";
-			// 
-			// label18
-			// 
-			this.label18.AutoSize = true;
-			this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-			this.label18.Location = new System.Drawing.Point(88, 228);
-			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(94, 25);
-			this.label18.TabIndex = 3;
-			this.label18.Text = "Suppliers";
-			// 
 			// colorsTableAdapter1
 			// 
 			this.colorsTableAdapter1.ClearBeforeFill = true;
@@ -947,13 +754,11 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(28)))), ((int)(((byte)(63)))));
-			this.ClientSize = new System.Drawing.Size(1204, 1028);
+			this.ClientSize = new System.Drawing.Size(1204, 730);
 			this.Controls.Add(this.chartGrossRevenue);
 			this.Controls.Add(this.bunifuVScrollBar1);
-			this.Controls.Add(this.panel7);
 			this.Controls.Add(this.panel6);
 			this.Controls.Add(this.panel5);
-			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.btnOkCustomDate);
 			this.Controls.Add(this.lbEndDate);
 			this.Controls.Add(this.label12);
@@ -985,11 +790,6 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.panel3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.chartTopSuplier)).EndInit();
-			this.panel4.ResumeLayout(false);
-			this.panel4.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			this.panel5.ResumeLayout(false);
 			this.panel5.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSellBill)).EndInit();
@@ -999,9 +799,6 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.panel6.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvImportBill)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-			this.panel7.ResumeLayout(false);
-			this.panel7.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1027,14 +824,6 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
         private System.Windows.Forms.Label lblTotalProfit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTopSuplier;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblNumProducts;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblNumSuppliers;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblNumCustomers;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvSellBill;
         private System.Windows.Forms.Label label13;
@@ -1047,17 +836,12 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox btnOkCustomDate;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView dgvImportBill;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label19;
         private Bunifu.UI.WinForms.BunifuVScrollBar bunifuVScrollBar1;
 		private LiveCharts.WinForms.CartesianChart chartGrossRevenue;
 		private System.Windows.Forms.DataGridViewTextBoxColumn sell_bill_id;
@@ -1069,9 +853,7 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 		private System.Windows.Forms.DataGridViewTextBoxColumn import_date;
 		private System.Windows.Forms.DataGridViewTextBoxColumn suplier_name;
 		private System.Windows.Forms.DataGridViewTextBoxColumn supplier_address;
-		private System.Windows.Forms.PictureBox pictureBox11;
-		private System.Windows.Forms.Label label17;
-		private System.Windows.Forms.Label label18;
 		private TVManagementDataSetTableAdapters.ColorsTableAdapter colorsTableAdapter1;
+		private System.Windows.Forms.ComboBox CbxSupplier;
 	}
 }

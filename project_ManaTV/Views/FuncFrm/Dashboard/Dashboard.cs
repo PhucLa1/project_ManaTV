@@ -52,7 +52,7 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
                 dataPoint.Label = deliveryCount.ToString();
                 dataPoint.LegendText = $"{supplierName} - {address}";
                 dataPoint.ToolTip = $"{supplierName} - {address}";
-
+           
                 dataPoint.IsValueShownAsLabel = false;
             }
             chartTopSuplier.Series.Add(seriesPieChart);
@@ -108,11 +108,16 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
                 int importBillId = Convert.ToInt32(item["import_bill_id"]);
 				string suplierAddress = Convert.ToString(item["supplier_address"]);
 				dgvImportBill.Rows.Add(importBillId, total_import, importDate, suplierName, suplierAddress);
+            }
+            List<Dictionary<string, object>> listSupllier = dashboardRepo.GetAllSupplier();
+            foreach (var item in listSupllier)
+            {
+                string supplier_name_address = Convert.ToString(item["supplier_name"]) + " - " + Convert.ToString(item["supplier_address"]);
+				CbxSupplier.Items.Add(supplier_name_address);
 			}
 
 
-
-		}
+        }
 
         private void SetDateMenuButtonsUI(object button)
         {
@@ -241,6 +246,25 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 
         }
 
-      
+		private void CbxSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+			dgvImportBill.Rows.Clear();
+			string[] parts = this.CbxSupplier.SelectedItem.ToString().Split('-');
+            string supplier_name = "";
+			if (parts.Length > 1)
+			{
+				 supplier_name = parts[0].Trim();
+			}
+			List<Dictionary<string, object>> listImportBill = dashboardRepo.GetImportBillBySupplName(supplier_name, dtpStartDate.Value, dtpEndDate.Value);
+			foreach (var item in listImportBill)
+			{
+				double total_import = Convert.ToDouble(item["import_total"]);
+				DateTime importDate = Convert.ToDateTime(item["import_date"]);
+				string suplierName = Convert.ToString(item["supplier_name"]);
+                int importBillId = Convert.ToInt32(item["import_bill_id"]);
+                string suplierAddress = Convert.ToString(item["supplier_address"]);
+				dgvImportBill.Rows.Add(importBillId, total_import, importDate, suplierName, suplierAddress);
+			}
+		}
     }
 }
