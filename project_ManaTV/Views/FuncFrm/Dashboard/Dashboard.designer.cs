@@ -426,7 +426,7 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
 			title1.ForeColor = System.Drawing.Color.WhiteSmoke;
 			title1.Name = "Title1";
-			title1.Text = "5 Best selling products";
+			title1.Text = "Top 5 Best supplier";
 			this.chartTopSuplier.Titles.Add(title1);
 			// 
 			// panel5
@@ -516,9 +516,9 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.label13.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.label13.Location = new System.Drawing.Point(10, 10);
 			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(171, 29);
+			this.label13.Size = new System.Drawing.Size(138, 29);
 			this.label13.TabIndex = 2;
-			this.label13.Text = "Excellent staff";
+			this.label13.Text = "List sell bill";
 			// 
 			// pictureBox7
 			// 
@@ -683,9 +683,9 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.label14.Location = new System.Drawing.Point(10, 10);
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(171, 29);
+			this.label14.Size = new System.Drawing.Size(168, 29);
 			this.label14.TabIndex = 2;
-			this.label14.Text = "Excellent staff";
+			this.label14.Text = "List export bill";
 			// 
 			// pictureBox8
 			// 
@@ -754,7 +754,7 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(28)))), ((int)(((byte)(63)))));
-			this.ClientSize = new System.Drawing.Size(1204, 730);
+			this.ClientSize = new System.Drawing.Size(1204, 743);
 			this.Controls.Add(this.chartGrossRevenue);
 			this.Controls.Add(this.bunifuVScrollBar1);
 			this.Controls.Add(this.panel6);
