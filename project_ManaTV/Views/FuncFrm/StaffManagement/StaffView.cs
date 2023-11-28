@@ -26,7 +26,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
         //----------------------------------------------------------------------------
         //Các attribute
 
-
+        public Form FRM_LAYOUT { get; set; }//thêm FRM_Layout
         private int CurrentPage = 1;
         private int PageSize = 10;
         private int TotalPage;

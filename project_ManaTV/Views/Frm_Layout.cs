@@ -12,6 +12,9 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using project_ManaTV.Views.FuncFrm.CustomerView;
+using project_ManaTV.Views.FuncFrm.Bill;
+using project_ManaTV.Presenters.Bill;
+using project_ManaTV.Views.FuncFrm.Dashboard;
 
 namespace project_ManaTV
 {
@@ -22,6 +25,8 @@ namespace project_ManaTV
     public partial class Frm_Layout : Form
     {
         FontFamily[] fontFamilies;
+        private BillDataTable billData;
+        private Dashboard dashBoard;
         public Frm_Layout()
         {
             InitializeComponent();
@@ -123,14 +128,8 @@ namespace project_ManaTV
             //formToShow.Dock = DockStyle.Fill;
             panelMainContent.Controls.Add(formToShow);
 
-            // Đặt lại vị trí và kích thước của form con
-            //formToShow.Location = new Point(0, 0); // Đặt vị trí ở góc trên bên trái của panel
-            //formToShow.Size = panelMainContent.Size; // Đặt kích thước bằng kích thước của panel
-
-
-            // Hiển thị form con
             formToShow.Show();
-            
+
         }
 
 
@@ -332,11 +331,14 @@ namespace project_ManaTV
         private void btnShowStaff_Click(object sender, EventArgs e)
         {
             StaffRepository m_Staff = new StaffRepository();
-            
             StaffPresenter p_Staff = new StaffPresenter(InitClasses.staffView, m_Staff);
-
-
+            InitClasses.staffView.FRM_LAYOUT = this;
             ShowFormInPanel(InitClasses.staffView);
+            InitClasses.staffView.Size = panelMainContent.Size;
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                InitClasses.staffView.Size = panelMainContent.Size;
+            };
         }
 
 
@@ -405,6 +407,22 @@ namespace project_ManaTV
                 lstCustomerForm.Size = panelMainContent.Size;
                 lstCustomerForm.tab = panelMainContent.Size;
                 lstCustomerForm.gridView = new Size(lstCustomerForm.tab.Width, lstCustomerForm.gridView.Height);
+            };
+            
+        }
+
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            billData = new BillDataTable(0);
+            BillPresenter billPresenter = new BillPresenter(billData);
+            billData.FRM_LAYOUT = this;
+            ShowFormInPanel(billData);
+            billData.Size = panelMainContent.Size;
+
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                billData.Size = panelMainContent.Size;
             };
             
         }

@@ -29,9 +29,7 @@ namespace project_ManaTV
         {
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            BillDataTable billData = new BillDataTable(0);
-            BillPresenter billPresenter = new BillPresenter(billData);
-            Application.Run(billData);
+            Application.Run(InitClasses.layout);
             //Application.Run(new ListCustomers());
         }
     }
