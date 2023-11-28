@@ -160,6 +160,7 @@
     <Compile Include="InitClasses.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Presenters\Bill\BillPresenter.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
     <Compile Include="Presenters\Dashboard\DashboardPresenter.cs" />
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
@@ -183,6 +184,24 @@
     </Compile>
     <Compile Include="Views\Components\ConfirmModal.Designer.cs">
       <DependentUpon>ConfirmModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillDataTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillDataTable.Designer.cs">
+      <DependentUpon>BillDataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillDetail.Designer.cs">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncFrm\Bill\BillOverall.cs">
       <SubType>Form</SubType>
@@ -247,6 +266,15 @@
     <EmbeddedResource Include="Views\Components\ConfirmModal.resx">
       <DependentUpon>ConfirmModal.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Bill\BillDataTable.resx">
+      <DependentUpon>BillDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Bill\BillDetail.resx">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\Bill\BillOverall.resx">
       <DependentUpon>BillOverall.cs</DependentUpon>
@@ -317,7 +345,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\FuncFrm\ProductManagement\" />
-    <Folder Include="wwwroot\Products\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="wwwroot\assets\color-font.txt" />
@@ -345,6 +372,9 @@
     <Content Include="wwwroot\Others\more.png" />
     <Content Include="wwwroot\Others\pen.png" />
     <Content Include="wwwroot\Others\person.png" />
+    <Content Include="wwwroot\Products\Virtual\1.jpg" />
+    <Content Include="wwwroot\Products\Virtual\2.jpg" />
+    <Content Include="wwwroot\Products\Virtual\3.jpg" />
     <Content Include="wwwroot\Users\male.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

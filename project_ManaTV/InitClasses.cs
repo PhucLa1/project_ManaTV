@@ -1,4 +1,5 @@
 ﻿
+using project_ManaTV.Views.FuncFrm.Bill;
 using project_ManaTV.Views.FuncFrm.StaffManagement;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace project_ManaTV
         //Khoi tao form them nhan vien
         public static AboutStaff AddNewStaff,UpdateStaff,DeleteStaff,DetailStaff;
 
+        public static BillOverall bO;
 
     }
 }

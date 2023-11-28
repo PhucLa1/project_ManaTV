@@ -1,47 +1,41 @@
-﻿using Bunifu.UI.WinForms;
-using Bunifu.UI.WinForms.BunifuButton;
+﻿using Bunifu.UI.WinForms.BunifuButton;
+using Bunifu.UI.WinForms;
 using project_ManaTV.HelpMethod;
-using project_ManaTV.Presenters.Staff;
 using project_ManaTV.Repository;
-using project_ManaTV.Views.Components;
+using project_ManaTV.Views.FuncFrm.StaffManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Utilities.BunifuDataGridView.Transitions;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Globalization;
 
-namespace project_ManaTV.Views.FuncFrm.StaffManagement
+namespace project_ManaTV.Views.FuncFrm.Bill
 {
-    public partial class StaffView : Form, IStaffView
+    public partial class BillDataTable : Form
     {
-
-        //----------------------------------------------------------------------------
-        //Các attribute
-
-
         private int CurrentPage = 1;
         private int PageSize = 10;
         private int TotalPage;
         private int TotalRows;
-        private List<int> listInt = new List<int>();
-        public int currentPage {
-            get { return CurrentPage; } 
-            set { CurrentPage = value; } 
+        public int currentPage
+        {
+            get { return CurrentPage; }
+            set { CurrentPage = value; }
         }
-        public int pageSize {
+        public int pageSize
+        {
             get { return PageSize; }
             set { PageSize = value; }
         }
 
-        public int totalPages {
+        public int totalPages
+        {
             get { return TotalPage; }
             set { TotalPage = value; }
         }
@@ -51,95 +45,57 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
             set { TotalRows = value; }
         }
 
-        public StaffView()
+        public BillDataTable()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
         }
         public string valueSearch
         {
-            get { return txtSearch.Text.Trim(); }
-            set { txtSearch.Text = value; }
+            get => lbDate.Text;
+            set => lbDate.Text = value;
         }
 
-        List<int> IStaffView.list {
-             get  { return listInt; }
-            set { listInt = value; }
-        }
+
 
 
         private void AssociateAndRaiseViewEvents()
         {
-            
+
             //Sự kiện tìm kiếm
             try
             {
-                btnSrc.Click += delegate { SearchData?.Invoke(this, EventArgs.Empty); };
-                txtSearch.KeyUp += (s, e) =>
-                {
-                    //MessageBox.Show(txtSearch.Text); // Giá trị của txtSearch.Text đã được cập nhật ở đây.
-                    SearchData?.Invoke(this, EventArgs.Empty);
-                };
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
             //Sự kiện thay đổi dữ liệu trong datagridview
-            gridViewStaff.CellContentClick += (s, e) =>
+            ImportBillGrid.CellContentClick += (s, e) =>
             {
                 int actions = e.ColumnIndex;
-                if (actions >= 8)
+                if(actions == 4)
                 {
-                    
-                    int x = int.Parse(gridViewStaff.Rows[e.RowIndex].Cells[0].Value.ToString());
-                    //MessageBox.Show(actions + "");
-                    StaffRepository m_Staff = new StaffRepository();
-                    if (actions == 8)
-                    {
-                        if (InitClasses.UpdateStaff == null || InitClasses.UpdateStaff.IsDisposed)
-                        {
-                            InitClasses.UpdateStaff = new AboutStaff(x, "Update");
-                        }
-                        AboutStaffPresenter UpdatePresenter = new AboutStaffPresenter(m_Staff, InitClasses.UpdateStaff);
-                        InitClasses.UpdateStaff.Show();
-                    }
-                    else if (actions == 9)
-                    {                       
-                        if (InitClasses.DetailStaff == null || InitClasses.DetailStaff.IsDisposed)
-                        {
-                            InitClasses.DetailStaff = new AboutStaff(x, "Detail");
-                        }
-                        AboutStaffPresenter DetailStaffPresenter = new AboutStaffPresenter(m_Staff, InitClasses.DetailStaff);
-                        InitClasses.DetailStaff.Show();
-                    }
-                    else if (actions == 10)
-                    {
-                        if (InitClasses.DeleteStaff == null || InitClasses.DeleteStaff.IsDisposed)
-                        {
-                            InitClasses.DeleteStaff = new AboutStaff(x, "Delete");
-                        }
-                        AboutStaffPresenter DeleteStaffPresenter = new AboutStaffPresenter(m_Staff, InitClasses.DeleteStaff);
-                        InitClasses.DeleteStaff.Show();
-                    }else if(actions == 11)
-                    {
-                        listInt.Add(x);
-                    }
+                    int x = int.Parse(ImportBillGrid.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    BillDetail bD = new BillDetail(1, x);
+                    bD.Show();
                 }
                 
+              
             };
 
             //Sự kiện đổi trang dữ liệu
-            
+
             btnPrev.Enabled = false;
             CheckEnable();
 
-            
+
             btnPrev.Click += (s, e) =>
             {
                 btnNext.Enabled = true;
-                if (CurrentPage > 2 )
+                if (CurrentPage > 2)
                 {
                     CurrentPage--;
                     btnPrev.Enabled = true;
@@ -149,14 +105,14 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                     CurrentPage--;
                     btnPrev.Enabled = false;
                 }
-                PageChanged?.Invoke( this, EventArgs.Empty );
-              
+                PageChanged?.Invoke(this, EventArgs.Empty);
+
             };
 
             btnNext.Click += (s, e) =>
             {
                 btnPrev.Enabled = true;
-                if (CurrentPage < TotalPage -1 )
+                if (CurrentPage < TotalPage - 1)
                 {
                     btnNext.Enabled = true;
                     CurrentPage += 1;
@@ -178,7 +134,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
             btnSecond.Click += (s, e) =>
             {
                 CurrentPage = int.Parse(btnSecond.Text);
-                PageChanged?.Invoke(this, EventArgs.Empty);              
+                PageChanged?.Invoke(this, EventArgs.Empty);
             };
             btnThird.Click += (s, e) =>
             {
@@ -200,29 +156,16 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
             //Su kien thay doi dong
             ddRows.SelectedIndexChanged += (s, e) =>
             {
-                PageSize = int.Parse(ddRows.SelectedItem.ToString()); 
-                CountPageChanged?.Invoke(this, EventArgs.Empty);
+                PageSize = int.Parse(ddRows.SelectedItem.ToString());
+                PageChanged?.Invoke(this, EventArgs.Empty);
             };
-
-            BtnDel.Click += (s, e) => {
-                
-                ConfirmModal confirm = new ConfirmModal("delete");
-                confirm.Show();
-                confirm.ConfirmClick += (sv, ev) =>
-                {
-                    DeleteStaff?.Invoke(this, EventArgs.Empty);
-                };
-
-            };
-
         }
 
 
-        public event EventHandler SearchData;
-        public event EventHandler CountPageChanged;
+
+
         public event EventHandler GetNumberOfStaff;
         public event EventHandler PageChanged;
-        public event EventHandler DeleteStaff;
 
         public void HandlePagination()
         {
@@ -256,20 +199,20 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
 
             //Chuyển số nếu trang quá trang
             ChangePage();
-            
+
         }
         private void ChangePage()
         {
             int first = int.Parse(btnFirst.Text);
             int second = int.Parse(btnSecond.Text);
-            int third = int.Parse (btnThird.Text);
+            int third = int.Parse(btnThird.Text);
             int fourth = int.Parse(btnFourth.Text);
             int fiveth = int.Parse(btnFive.Text);
             if (TotalPage > 5)
             {
-                if(TotalPage - 1 >= fiveth)
+                if (TotalPage - 1 >= fiveth)
                 {
-                    if(currentPage == fourth || currentPage == fiveth)
+                    if (currentPage == fourth || currentPage == fiveth)
                     {
                         btnFirst.Text = (first + 1).ToString();
                         btnSecond.Text = (second + 1).ToString();
@@ -278,7 +221,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                         btnFive.Text = (fiveth + 1).ToString();
                     }
                 }
-                else if(TotalPage - 2 >= fiveth)
+                else if (TotalPage - 2 >= fiveth)
                 {
                     if (currentPage == fiveth)
                     {
@@ -288,9 +231,10 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                         btnFourth.Text = (fourth + 2).ToString();
                         btnFive.Text = (fiveth + 2).ToString();
                     }
-                }else if(first - 1 > 0)
+                }
+                else if (first - 1 > 0)
                 {
-                    if(currentPage == second || currentPage == first)
+                    if (currentPage == second || currentPage == first)
                     {
                         btnFirst.Text = (first - 1).ToString();
                         btnSecond.Text = (second - 1).ToString();
@@ -298,7 +242,8 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                         btnFourth.Text = (fourth - 1).ToString();
                         btnFive.Text = (fiveth - 1).ToString();
                     }
-                }else if(first - 2 > 0)
+                }
+                else if (first - 2 > 0)
                 {
                     btnFirst.Text = (first - 2).ToString();
                     btnSecond.Text = (second - 2).ToString();
@@ -306,55 +251,35 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                     btnFourth.Text = (fourth - 2).ToString();
                     btnFive.Text = (fiveth - 2).ToString();
                 }
-           
+
 
             }
             //MessageBox.Show(currentPage.ToString());
         }
-        public void displayStaff(List<Dictionary<string, object>> staffList)
+        public void displayBill(List<Dictionary<string, object>> ImportList)
         {
+            HandleGridView.SetMiddleCenter(5, ImportBillGrid);
             //Ở đây rows 1 trang là 10;
-            HandleGridView.SetMiddleCenter(7, gridViewStaff);
-
-            Image imagePen = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "pen.png"));
+            ImportBillGrid.Rows.Clear();
             Image imageEye = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "eye.png"));
-            Image imageBin = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "bin.png"));
-
-
-            foreach (var item in staffList)
+            foreach (var item in ImportList)
             {
-                
-                Image imageGen = ((bool)item["staff_gender"] == true)?
-                    HandleImage.ZoomOutImage(HandleImage.filePath("Others", "male.png")):
-                    HandleImage.ZoomOutImage(HandleImage.filePath("Others","female.png"));
-                
 
-                gridViewStaff.Rows.Add(
+
+
+
+                ImportBillGrid.Rows.Add(
                     new object[]
                     {
-                        
-                        item["staff_id"].ToString(),
+                        item["id"].ToString(),
                         item["staff_name"].ToString(),
-                        imageGen,
-                        item["staff_phoneNumber"].ToString(),
-                        item["staff_dob"].ToString(),
-                        item["staff_address"].ToString(),
-                        item["staff_email"].ToString(),
-                        item["work_name"].ToString(),
-                        imagePen,imageEye,imageBin
+                        item["supplier_name"].ToString(),
+                        item["import_date"].ToString(),
+                        imageEye
                     }
                     );
             }
 
-        }
-
-        private void StaffView_Load(object sender, EventArgs e)
-        {
-            GetNumberOfStaff?.Invoke(this, EventArgs.Empty);         
-        }
-        public void ClearGridView()
-        {
-            gridViewStaff.Rows.Clear();
         }
 
         public void ChangeLabelOfShowing(string label)
@@ -362,11 +287,11 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
             lbShowing.Text = label;
         }
 
-        public void GetCountOfStaff(Dictionary<string, object> numberStaff)
+        public void GetCountOfBill(Dictionary<string, object> numberBill)
         {
             ddRows.Text = "10";
-            TotalRows = (int)numberStaff["number"];
-            TotalPage = (int)Math.Ceiling((double)((int)numberStaff["number"]) / PageSize);
+            TotalRows = (int)numberBill["number"];
+            TotalPage = (int)Math.Ceiling((double)((int)numberBill["number"]) / PageSize);
         }
         public void isClicked(string search)
         {
@@ -381,7 +306,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                     else
                     {
                         button.IdleFillColor = Color.FromArgb(40, 96, 144);
-                        
+
                     }
 
                 }
@@ -397,7 +322,8 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
             else
             {
                 btnNext.Enabled = false;
-            }if(CurrentPage > 1)
+            }
+            if (CurrentPage > 1)
             {
                 btnPrev.Enabled = true;
             }
@@ -407,13 +333,26 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
             }
         }
 
-        public void ShowMessageOfDel(string message, BunifuSnackbar.MessageTypes messageTypes)
+        private void BillDataTable_Load(object sender, EventArgs e)
         {
-            bunifuSnackbar1.Show(this, message,
-                messageTypes,
-                1000,
-                "",
-                BunifuSnackbar.Positions.TopRight);
+            valueSearch = "";
+            GetNumberOfStaff?.Invoke(this, EventArgs.Empty);
+        }
+
+
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            valueSearch = dtpStartDate.Value.ToString("yyyy-MM-dd");
+            lbDate.Text = valueSearch;
+            PageChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void lbDate_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Select();
+            SendKeys.Send("%{DOWN}");
         }
     }
 }
+

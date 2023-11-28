@@ -1,6 +1,8 @@
 ﻿
 using project_ManaTV.Presenters;
+using project_ManaTV.Presenters.Bill;
 using project_ManaTV.Presenters.Staff;
+using project_ManaTV.Views.Components;
 using project_ManaTV.Views.FuncFrm.Bill;
 using project_ManaTV.Views.FuncFrm.CustomerView;
 using project_ManaTV.Views.FuncFrm.Dashboard;
@@ -27,7 +29,9 @@ namespace project_ManaTV
         {
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard());
+            BillDataTable billDataTable = new BillDataTable();
+            BillPresenter billPresenter = new BillPresenter(billDataTable);
+            Application.Run(billDataTable);
             //Application.Run(new ListCustomers());
         }
     }

@@ -127,7 +127,6 @@ namespace project_ManaTV.Repository
 
             return topSuppliers;
         }
-
         public DataTable GetInvoiceDetails(DateTime fromDate, DateTime toDate)
         {
             DataTable invoiceDetails = new DataTable();

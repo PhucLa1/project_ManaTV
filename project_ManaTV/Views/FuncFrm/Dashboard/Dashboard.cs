@@ -25,9 +25,12 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
             InitializeComponent();
             //Default - Last 7 days
             dashboardRepo = new DashboardRespository();
-            int total = dashboardRepo.GetTotalProductQuantity();
+            int totalNumOrders = dashboardRepo.GetTotalProductQuantity();
+            int totalNumPurchases = dashboardRepo.GetTotalProductQuantity();
+
             SetDateMenuButtonsUI(btnLast7Days);
-            lblNumOrders.Text = total.ToString();
+            lblNumOrders.Text = totalNumOrders.ToString();
+            lblTotalPurchases.Text = totalNumPurchases.ToString();
         }
         private void SetDateMenuButtonsUI(object button)
         {
