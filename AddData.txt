@@ -1,0 +1,131 @@
+--Thêm dữ liệu cho bảng nhà phân phối
+insert into Supplier(supplier_name,supplier_address,supplier_phoneNumber) values('SamSung','Itaewon','0912345122')
+insert into Supplier(supplier_name,supplier_address,supplier_phoneNumber) values('Sony','Saka Bukayo','0123456789')
+insert into Supplier(supplier_name,supplier_address,supplier_phoneNumber) values('SamSung','VietSkaa','0987654321')
+insert into Supplier(supplier_name,supplier_address,supplier_phoneNumber) values('SamSung','Tokyoo','0345678901')
+
+--Thêm dữ liệu vào bảng màu sắc
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Black', 0, 0, 0);
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Dark Black', 5, 5, 5);
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Pure Black', 10, 10, 10);
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Deep Black', 15, 15, 15);
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Jet Black', 20, 20, 20);
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Night Black', 25, 25, 25);
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Absolute Black', 30, 30, 30);
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Matte Black', 35, 35, 35);
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Carbon Black', 40, 40, 40);
+INSERT INTO Colors (color_name, R, G, B) VALUES ('Pitch Black', 45, 45, 45);
+
+--Thêm dữ liệu vào bảng màn hình
+INSERT INTO Screen (screen_name) VALUES ('LED');
+INSERT INTO Screen (screen_name) VALUES ('OLED');
+INSERT INTO Screen (screen_name) VALUES ('QLED');
+INSERT INTO Screen (screen_name) VALUES ('Plasma');
+INSERT INTO Screen (screen_name) VALUES ('CRT');
+INSERT INTO Screen (screen_name) VALUES ('MicroLED');
+INSERT INTO Screen (screen_name) VALUES ('Mini-LED');
+
+--Thêm dữ liệu vào bảng kích thước màn hình 
+INSERT INTO ScreenSize (screen_size) VALUES (32);
+INSERT INTO ScreenSize (screen_size) VALUES (40);
+INSERT INTO ScreenSize (screen_size) VALUES (48);
+INSERT INTO ScreenSize (screen_size) VALUES (50);
+INSERT INTO ScreenSize (screen_size) VALUES (55);
+INSERT INTO ScreenSize (screen_size) VALUES (60);
+INSERT INTO ScreenSize (screen_size) VALUES (65);
+INSERT INTO ScreenSize (screen_size) VALUES (70);
+INSERT INTO ScreenSize (screen_size) VALUES (75);
+INSERT INTO ScreenSize (screen_size) VALUES (80);
+INSERT INTO ScreenSize (screen_size) VALUES (85);
+INSERT INTO ScreenSize (screen_size) VALUES (90);
+INSERT INTO ScreenSize (screen_size) VALUES (95);
+INSERT INTO ScreenSize (screen_size) VALUES (100);
+INSERT INTO ScreenSize (screen_size) VALUES (105);
+INSERT INTO ScreenSize (screen_size) VALUES (110);
+INSERT INTO ScreenSize (screen_size) VALUES (115);
+INSERT INTO ScreenSize (screen_size) VALUES (120);
+INSERT INTO ScreenSize (screen_size) VALUES (125);
+INSERT INTO ScreenSize (screen_size) VALUES (130);
+
+--Thêm dữ liệu vào bảng kiểu dáng
+INSERT INTO Designs (design_name) VALUES ('Flat Screen');
+INSERT INTO Designs (design_name) VALUES ('Curved Screen');
+INSERT INTO Designs (design_name) VALUES ('Frameless');
+INSERT INTO Designs (design_name) VALUES ('Android TV');
+INSERT INTO Designs (design_name) VALUES ('Smart TV');
+INSERT INTO Designs (design_name) VALUES ('TV Box');
+INSERT INTO Designs (design_name) VALUES ('TV Projector');
+INSERT INTO Designs (design_name) VALUES ('TV Soundbar');
+
+--Thêm dữ liệu vào bảng nước sản xuất
+INSERT INTO CountryOfManufacture (country_name) VALUES ('Korea');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('Japan');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('China');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('India');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('Germany');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('France');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('Italy');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('United States');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('Canada');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('Australia');
+INSERT INTO CountryOfManufacture (country_name) VALUES ('VietNam');
+
+--Thêm dữ liệu vào bảng hãng sản xuẩt
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Samsung', 'Vietnam');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Apple', 'USA');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Toyota', 'Japan');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Huawei', 'China');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('LG', 'South Korea');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('BMW', 'Germany');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Sony', 'Japan');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Dell', 'USA');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Ford', 'USA');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Honda', 'Japan');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Audi', 'Germany');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Lenovo', 'China');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('General Motors', 'USA');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Nissan', 'Japan');
+INSERT INTO Manufacturer (manufacturer_name, manufacturer_address) VALUES ('Porsche', 'Germany');
+
+alter table Products add product_import_money int
+alter table Products add product_sell_money int
+
+
+
+
+EXEC sp_rename 'Colors.B', 'G', 'COLUMN';
+ALTER TABLE Colors
+ALTER COLUMN R int;
+alter table Colors add G int
+alter table Colors add B int
+
+DECLARE @counter INT = 1;
+
+WHILE @counter <= 50
+BEGIN
+    DECLARE @manufacturer_id INT = FLOOR(RAND() * 15) + 1;
+    DECLARE @design_id INT = FLOOR(RAND() * 8) + 1;
+    DECLARE @color_id INT = FLOOR(RAND() * 10) + 1;
+    DECLARE @screen_id INT = FLOOR(RAND() * 7) + 1;
+    DECLARE @size_id INT = FLOOR(RAND() * 20) + 1;
+
+    -- Kiểm tra xem cặp giá trị đã tồn tại trong bảng chưa
+    IF NOT EXISTS (
+        SELECT 1
+        FROM Products
+        WHERE manufacturer_id = @manufacturer_id
+        AND design_id = @design_id
+        AND color_id = @color_id
+        AND screen_id = @screen_id
+        AND size_id = @size_id
+    )
+    BEGIN
+        INSERT INTO Products(manufacturer_id, design_id, color_id, screen_id, size_id, product_amount, product_import_money, product_sell_money)
+        VALUES (@manufacturer_id, @design_id, @color_id, @screen_id, @size_id, 100, 1200, 3000);
+        SET @counter = @counter + 1;
+    END;
+END;
+
+
+
+

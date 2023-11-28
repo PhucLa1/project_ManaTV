@@ -30,6 +30,17 @@ namespace project_ManaTV.Presenters
             view.CountPageChanged += OnCountPageChanged;
             view.GetNumberOfStaff += OnGetNumberOfStaff;
             view.PageChanged += OnPageChanged;
+            view.DeleteStaff += OnDeleteStaff;
+        }
+
+        private void OnDeleteStaff(object sender, EventArgs e)
+        {
+            foreach(int x in view.list)
+            {
+                model.SoftDeleteStaff(x);
+            }
+            OnPageChanged(sender, e);
+
         }
 
         private void OnPageChanged(object sender, EventArgs e)
@@ -54,7 +65,6 @@ namespace project_ManaTV.Presenters
             this.view.ClearGridView();
             this.view.displayStaff(allStaff);
             view.ChangeLabelOfShowing($"Showing {startIndex} to {endIndex} of {totalRows} entries");
-            //MessageBox.Show(view.valueSearch);
         }
 
         private void OnGetNumberOfStaff(object sender, EventArgs e)

@@ -1,6 +1,8 @@
 ﻿
 using project_ManaTV.Presenters;
+using project_ManaTV.Presenters.Bill;
 using project_ManaTV.Presenters.Staff;
+using project_ManaTV.Views.FuncFrm.Bill;
 using project_ManaTV.Views.FuncFrm.BrandView;
 using project_ManaTV.Views.FuncFrm.CustomerView;
 using project_ManaTV.Views.FuncFrm.ProductView;
@@ -27,7 +29,8 @@ namespace project_ManaTV
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(InitClasses.layout);
-            //Application.Run(new FrmTrashListProducts());
+            //Application.Run(new BillOverall(1));
+            //Application.Run(new BillDetail(1,1));
         }
     }
 }

@@ -21,6 +21,9 @@ using project_ManaTV.Views.FuncFrm.ProductView;
 using Bunifu.UI.WinForms;
 using project_ManaTV.Views.FuncFrm.ColorView;
 using project_ManaTV.Views.FuncFrm.OriginView;
+using project_ManaTV.Views.FuncFrm.Bill;
+using project_ManaTV.Presenters.Bill;
+using project_ManaTV.Views.FuncFrm.Dashboard;
 
 
 namespace project_ManaTV
@@ -33,6 +36,8 @@ namespace project_ManaTV
     {
         FontFamily[] fontFamilies;
         private ProductPanel productPanel;
+        private BillDataTable billData;
+        private Dashboard dashBoard;
         public Frm_Layout()
         {
             InitializeComponent();
@@ -135,7 +140,7 @@ namespace project_ManaTV
             panelMainContent.Controls.Add(formToShow);
 
             formToShow.Show();
-            
+
         }
 
 
@@ -340,11 +345,14 @@ namespace project_ManaTV
         private void btnShowStaff_Click(object sender, EventArgs e)
         {
             StaffRepository m_Staff = new StaffRepository();
-            
             StaffPresenter p_Staff = new StaffPresenter(InitClasses.staffView, m_Staff);
-
-
+            InitClasses.staffView.FRM_LAYOUT = this;
             ShowFormInPanel(InitClasses.staffView);
+            InitClasses.staffView.Size = panelMainContent.Size;
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                InitClasses.staffView.Size = panelMainContent.Size;
+            };
         }
 
 
@@ -487,5 +495,21 @@ namespace project_ManaTV
 
  
 
+
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            billData = new BillDataTable(0);
+            BillPresenter billPresenter = new BillPresenter(billData);
+            billData.FRM_LAYOUT = this;
+            ShowFormInPanel(billData);
+            billData.Size = panelMainContent.Size;
+
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                billData.Size = panelMainContent.Size;
+            };
+            
+        }
     }
 }
