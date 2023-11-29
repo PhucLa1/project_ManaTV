@@ -17,7 +17,7 @@ namespace project_ManaTV.Views.Components
     {
         private BillRepository bR = new BillRepository();
         private int imageIndex = 0;
-        private int maxIndex; 
+        private int maxIndex;
         private List<string> imagePaths;
         public int i;
 
@@ -44,13 +44,13 @@ namespace project_ManaTV.Views.Components
             InitializeComponent();
             i = _i;
 
-            
+
 
         }
 
         private void ImageProduct_Tick(object sender, EventArgs e)
         {
-            if(maxIndex != 0)
+            if (maxIndex != 0)
             {
                 imageIndex++;
                 if (imageIndex >= imagePaths.Count)
@@ -58,7 +58,7 @@ namespace project_ManaTV.Views.Components
                     imageIndex = 0;
                 }
                 pictureBox1.Image = HandleImage.filePath("Products", imagePaths[imageIndex]);
-            }                   
+            }
         }
 
         private void Product_Load(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace project_ManaTV.Views.Components
             //Phần ảnh
             maxIndex = bR.GetImageByProductID(i).Count();
             imagePaths = bR.GetImageByProductID(i);
-            if(maxIndex != 0)
+            if (maxIndex != 0)
             {
                 pictureBox1.Image = HandleImage.filePath("Products", imagePaths[imageIndex]);
             }
@@ -108,8 +108,6 @@ namespace project_ManaTV.Views.Components
                 DataChanged?.Invoke(this, EventArgs.Empty);
             }
         }
-
-
 
 
         private void priceTxt_TextChanged(object sender, EventArgs e)

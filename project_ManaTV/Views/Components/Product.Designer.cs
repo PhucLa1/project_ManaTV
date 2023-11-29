@@ -163,7 +163,7 @@
             this.priceTxt.UseSystemPasswordChar = false;
             this.priceTxt.WordWrap = true;
             this.priceTxt.TextChanged += new System.EventHandler(this.priceTxt_TextChanged);
-            
+
             // 
             // productNumber
             // 

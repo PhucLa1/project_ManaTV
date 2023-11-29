@@ -2,6 +2,7 @@
 using project_ManaTV.Repository;
 using project_ManaTV.Views.Components;
 using project_ManaTV.Views.FuncFrm.CustomerView;
+using project_ManaTV.Views.FuncFrm.ProductView.Product;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         private int staffID;
         private int supplierID;
         private int customerID;
-        public Dictionary<int,Product> products = new Dictionary<int, Product>();
+        public Dictionary<int, Product> products = new Dictionary<int, Product>();
         private BillRepository bR = new BillRepository();
         private int status;
         public BillOverall(int _status)
@@ -44,7 +45,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
 
         private void BillOverall_Load(object sender, EventArgs e)
         {
-           
+
             //Init variable
             InitVariable();
 
@@ -63,7 +64,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             lbTotal.Text = "0";
 
             //Nếu là hóa đơn bán 
-            if(status == 0)
+            if (status == 0)
             {
                 lbCustomer.Text = "Choose customer";
                 lbSupplier.Visible = false;
@@ -104,7 +105,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         {
             ProductDGV.Rows.Clear();
             var result = bR.GetFilterProduct(screen, size, design, color);
-            foreach(var item in result)
+            foreach (var item in result)
             {
                 ProductDGV.Rows.Add(new object[]
                 {
@@ -174,12 +175,6 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         {
             int x = int.Parse(ProductDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
             Product productControl = new Product(x);
-            productControl.Size = productFLP.Size;
-            productFLP.SizeChanged += (s, ev) =>
-            {
-                productControl.Size = productFLP.Size;
-            };
-
             //Thêm vào trong danh sách
             if (products.ContainsKey(x))
             {
@@ -201,18 +196,18 @@ namespace project_ManaTV.Views.FuncFrm.Bill
                 setTotalMoney();
                 productControl.Dispose();
             };
-            
+
 
 
 
             //Chỉnh scroll bar
             int totalWidth = productFLP.Controls.Count * productControl.Height;
             // Thay YourUserControlWidth bằng chiều rộng của UserControl
-            if(totalWidth - productFLP.ClientSize.Height > scrollBarHeight.Minimum)
+            if (totalWidth - productFLP.ClientSize.Height > scrollBarHeight.Minimum)
             {
                 scrollBarHeight.Maximum = totalWidth - productFLP.ClientSize.Height + 50;
             }
-            
+
         }
 
 
@@ -224,7 +219,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             {
                 //MessageBox.Show(key.ToString());
                 totalMoney += products[key].numberProduct * products[key].priceProduct;
-                
+
             }
             lbTotal.Text = totalMoney.ToString();
         }
@@ -238,14 +233,14 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             ICollection<int> keys = products.Keys;
             if (status == 1) //Là nhập hàng
             {
-                
+
                 if (StaffDD.SelectedItem != null && SupplierDD.SelectedItem != null && keys.Count != 0)
                 {
 
                     //Các dữ liệu 
                     staffID = int.Parse(StaffDD.Text.Substring(StaffDD.Text.IndexOf(':') + 1).Trim());
                     supplierID = int.Parse(SupplierDD.Text.Substring(SupplierDD.Text.IndexOf(':') + 1).Trim());
-                    
+
                     //Insert vào db
                     bR.InsertToImportBill(supplierID, staffID);
 
@@ -268,11 +263,11 @@ namespace project_ManaTV.Views.FuncFrm.Bill
                 }
                 else
                 {
-                    if(StaffDD.SelectedItem == null)
+                    if (StaffDD.SelectedItem == null)
                     {
                         ShowMessage("Employees have not been selected yet", BunifuSnackbar.MessageTypes.Error);
                     }
-                    if(SupplierDD.SelectedItem == null)
+                    if (SupplierDD.SelectedItem == null)
                     {
                         ShowMessage("Supplier have not been selected yet", BunifuSnackbar.MessageTypes.Error);
                     }
@@ -280,7 +275,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             }
             else //Sale Bill
             {
-                if(StaffDD.SelectedItem != null && lbCustomer.Text != "Choose customer")
+                if (StaffDD.SelectedItem != null && lbCustomer.Text != "Choose customer")
                 {
                     staffID = int.Parse(StaffDD.Text.Substring(StaffDD.Text.IndexOf(':') + 1).Trim());
 
@@ -306,7 +301,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
                     {
                         ShowMessage("Employees have not been selected yet", BunifuSnackbar.MessageTypes.Error);
                     }
-                    if(lbCustomer.Text == "Choose customer")
+                    if (lbCustomer.Text == "Choose customer")
                     {
                         ShowMessage("Customers have not been selected yet", BunifuSnackbar.MessageTypes.Error);
                     }
@@ -316,7 +311,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show("1");
+            // MessageBox.Show("1");
             ListCustomers listCustomers = new ListCustomers();
 
             listCustomers.OpenToChoose += (s, ev) =>
@@ -328,6 +323,39 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             listCustomers.ShowDialog();
         }
 
+        private void btnScanBarcode_Click(object sender, EventArgs e)
+        {
+            CameraScanner scanner = new CameraScanner();
+            scanner.BarcodeScanned += Form_BarcodeScanned;
+            scanner.Show();
+        }
+        private void Form_BarcodeScanned(object sender, string barcodeText)
+        {
+            int x = int.Parse(barcodeText.Substring(2));
+            Product productControl = new Product(x);
+            //Thêm vào trong danh sách
+            if (products.ContainsKey(x))
+            {
+                products[x].numberProduct++;
+            }
+            else
+            {
+                products.Add(x, productControl);
+                productFLP.Controls.Add(productControl);
+            }
+            setTotalMoney();
+            productControl.DataChanged += (s, ev) =>
+            {
+                setTotalMoney();
+            };
+            productControl.DisposeChange += (s, ev) =>
+            {
+                products.Remove(productControl.i);
+                setTotalMoney();
+                productControl.Dispose();
+            };
+
+        }
         private void SizeDD_SelectedIndexChanged(object sender, EventArgs e)
         {
             size = float.Parse(SizeDD.Text);

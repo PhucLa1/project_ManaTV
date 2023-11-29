@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b">
       <HintPath>..\..\..\xampp\htdocs\Workspace\C#\bunifu\BunifuCrack\Bunifu.Licensing.dll</HintPath>
     </Reference>
@@ -266,6 +275,12 @@
     <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.Designer.cs">
       <DependentUpon>ListCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\CameraScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\CameraScanner.Designer.cs">
+      <DependentUpon>CameraScanner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncFrm\ProductView\Product\TrashListProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -449,6 +464,9 @@
     <EmbeddedResource Include="Views\FuncFrm\ProductView\Colors\ListColor.resx">
       <DependentUpon>ListColor.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Product\CameraScanner.resx">
+      <DependentUpon>CameraScanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\ProductView\Product\TrashListProduct.resx">
       <DependentUpon>TrashListProduct.cs</DependentUpon>

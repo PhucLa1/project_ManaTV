@@ -148,6 +148,15 @@
   <data name="bunifuLabel9.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Microsoft Sans Serif'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
+  <data name="btnScanBarcode.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJUAAAAnCAYAAAAGoAoxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACbSURBVHhe7dLBCYNAAADB60O0XiEI6S9l+BIEw1nDPucx
+        sAXsWPbrt32fBwrzpzFjjA8k3p9MRclU5ExFzlTkTEXOVORMRc5U5ExFzlTkTEXOVORMRc5U5ExFzlTk
+        TEXOVORMRc5U5ExFzlTkTEXOVORMRc5U5ExFzlTkTEXOVORMRc5U5ExFzlTkTEXOVOTen9bjPmdAYT3u
+        8w/XLZZzWrHO1wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

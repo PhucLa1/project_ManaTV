@@ -171,10 +171,10 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             GenerateBarcode(_product);
 
         }
-        private Product GetData()
+        private project_ManaTV.Models.Product GetData()
         {
 
-            return new Product
+            return new project_ManaTV.Models.Product
             {
                 Id = txtId.Text == "" ? 0 : int.Parse(txtId.Text),
                 Name = txtName.Text,
@@ -220,7 +220,7 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
         }
 
 
-        private bool IsValid(Product data)
+        private bool IsValid(project_ManaTV.Models.Product data)
         {
             string message = "";
             if (data.ProductAmount < 0)
