@@ -511,5 +511,17 @@ namespace project_ManaTV
             };
             
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            var dashBoard = new Dashboard();
+            ShowFormInPanel(dashBoard);
+            dashBoard.Size = panelMainContent.Size;
+
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                dashBoard.Size = panelMainContent.Size;
+            };
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
     public partial class Dashboard : Form
     {
         //Fields
-        public Form FRM_LAYOUT { get; set; }
+        //public Form FRM_LAYOUT { get; set; }
         private readonly DashboardRespository dashboardRepo;
         private Button currentButton;
 		private DateTime startDate;
@@ -21,9 +21,12 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
 		public Dashboard()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.None;
+            this.Font = SystemFonts.DefaultFont;
             dashboardRepo = new DashboardRespository();
             //Default - Last 7 days
             SetDateMenuButtonsUI(btnLast7Days);
+
 			dtpStartDate.Value = DateTime.Today.AddDays(-7);
             dtpEndDate.Value = DateTime.Today;
         }
