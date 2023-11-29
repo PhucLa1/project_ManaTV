@@ -1,4 +1,5 @@
 ﻿using Bunifu.UI.WinForms;
+using project_ManaTV.HelpMethod;
 using project_ManaTV.Models;
 using project_ManaTV.Presenters;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,7 +99,7 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
         {
             this.Close();
         }
-
+   
         private void FormProduct_Load(object sender, EventArgs e)
         {
             if(mode == "details")
@@ -106,6 +108,7 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
                 btnUpdate.Visible = false;
                 btnReset.Visible = false;
                 SetFormStatus(false);
+                btnUpload.Visible = false;
             }
             else if(mode == "update")
             {
@@ -122,6 +125,8 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             var formName = mode[0].ToString().ToUpper() +mode.Substring(1) + " " + "Product";
             this.Text = formName;
             lblFormName.Text = formName;
+
+  
 
         }
 
@@ -143,10 +148,25 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             cbScreen.SelectedValue = product.ScreenId;
             cbSize.SelectedValue = product.SizeId;
 
+            //Images
+            var lstImages = _objectPresenter.GetAllImages(product.Id);
+            string startupPath = Application.StartupPath;
+            string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
+            string imagesFolderPath = Path.Combine(grandParentDirectory, "wwwroot" + "\\Products\\Virtual");
+
+            var lstPathImage = new List<string>();
+            foreach (var imgName in lstImages)
+            {
+                lstPathImage.Add(Path.Combine(imagesFolderPath, imgName));
+            }
+            if(lstPathImage.Count > 0) GenerateListImages(lstPathImage);
+
+
 
         }
         private Product GetData()
         {
+
             return new Product
             {
                 Id = txtId.Text == "" ? 0 : int.Parse(txtId.Text),
@@ -163,6 +183,36 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             };
         }
 
+        private void UpdateListImage(int productId)
+        {
+            var res = new List<string>();
+            var lstImage = new List<PictureBox>();
+            foreach (PictureBox pic in fplImages.Controls)
+            {
+                if (pic.Image != null)
+                {
+                    res.Add(pic.Tag.ToString());
+                    lstImage.Add(pic);
+                }
+            }
+            try
+            {
+                _objectPresenter.UpdateProductImage(productId, res);
+                foreach (var item in lstImage)
+                {
+                    HandleImage.UploadImage(item.Image,"\\Products\\Virtual", item.Tag.ToString());
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+            
+        }
+
+   
         private bool IsValid(Product data)
         {
             string message = "";
@@ -211,10 +261,15 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             cbDesign.Enabled = status;
             cbScreen.Enabled = status;
             cbSize.Enabled = status;
+            foreach (PictureBox pic in fplImages.Controls)
+            {
+                pic.Enabled = status;
+            }
 
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
+            
             ResetForm();
         }
 
@@ -227,6 +282,8 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             try
             {
                 _objectPresenter.AddNew(data);
+                var newObjId = _objectPresenter.GetAll().LastOrDefault().Id;
+                UpdateListImage(newObjId);
                 AfterClick?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception)
@@ -245,6 +302,7 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             try
             {
                 _objectPresenter.Update(data);
+                UpdateListImage(data.Id);
                 AfterClick?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception)
@@ -272,6 +330,52 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
                 1000,
                 "",
                 BunifuSnackbar.Positions.TopRight);
+        }
+
+        public PictureBox GeneratePictureBox(string fileName)
+        {
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Image = Image.FromFile(fileName);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.Height = fplImages.Height - 30;
+            pictureBox.Width = fplImages.Height - 30;
+            pictureBox.Tag = Path.GetFileName(fileName);
+            return pictureBox;
+        }
+
+        public void GenerateListImages(List<string> lstFilePath)
+        {
+            fplImages.Controls.Clear();
+            foreach (var fileName in lstFilePath)
+            {
+                var pictureBox = GeneratePictureBox(fileName);
+                //pictureBox.Margin = 
+                fplImages.Controls.Add(pictureBox);
+                pictureBox.DoubleClick += (e, v) =>
+                {
+                    var deleteBox = MessageBox.Show("Do you really want to delete this?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (deleteBox == DialogResult.Yes)
+                    {
+                        fplImages.Controls.Remove(pictureBox);
+                        pictureBox.Image.Dispose();
+                        pictureBox.Dispose();
+                    }
+
+                };
+
+            }
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            openFileDialog.Filter = "Image Files (*.jpg, *.png, *.gif)|*.jpg;*.png;*.gif";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                GenerateListImages(openFileDialog.FileNames.ToList());
+            }
         }
     }
 }

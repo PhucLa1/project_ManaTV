@@ -19,7 +19,7 @@ namespace project_ManaTV.Presenters
         private OriginRepository _origindRepository;
         private ScreenRepository _screenRepository;
         private ScreenSizeRepository _screenSizeRepository;
-
+        private ProductImageRepository _productImageRepository;
         public List<Product> ListProductRender { get; set; }
 
 
@@ -37,6 +37,7 @@ namespace project_ManaTV.Presenters
             _origindRepository = new OriginRepository();
             _screenRepository = new ScreenRepository();
             _screenSizeRepository = new ScreenSizeRepository();
+            _productImageRepository = new ProductImageRepository();
 
         }
 
@@ -125,6 +126,20 @@ namespace project_ManaTV.Presenters
             _productRepository.Delete(id);
         }
 
+        //Images
+        public List<string> GetAllImages(int productId)
+        {
+            return _productImageRepository.GetAll().Where(x =>x.ProductId == productId).Select(x => x.ImagePath).ToList();
+        }
+
+        public void UpdateProductImage(int productId, List<string> lstImages)
+        {
+            _productImageRepository.DeleteByProductId(productId);
+            foreach (var imgPath in lstImages)
+            {
+                _productImageRepository.AddNew(new ProductImage() { ProductId = productId, ImagePath = imgPath });
+            }
+        }
 
 
     }

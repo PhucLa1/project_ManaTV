@@ -116,6 +116,28 @@ namespace project_ManaTV.HelpMethod
             return new Bitmap(originalImage, newWidth, newHeight);
             
         }
+
+        public static void UploadImage(Image image, string folderPath,string fileName)
+        {
+            try
+            {
+                if (image == null) throw new ArgumentNullException(nameof(image), "Hình ảnh không hợp lệ.");
+                string startupPath = Application.StartupPath;
+                string grandParentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(startupPath));
+                string directoryPath = Path.Combine(grandParentDirectory, "wwwroot"+folderPath);
+                string filePath = Path.Combine(directoryPath, fileName);
+                if (!Directory.Exists(directoryPath)) Directory.CreateDirectory(directoryPath);
+                if (File.Exists(filePath)) return;
+                if (image != null) image.Save(filePath);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Lưu hình ảnh thất bại.", ex);
+            }
+        }
+
     }
 
 }

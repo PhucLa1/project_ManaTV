@@ -80,6 +80,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pLine = new System.Windows.Forms.Panel();
             this.snackBarForm = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.fplImages = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -602,9 +605,13 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cbCountry);
             this.panel1.Controls.Add(this.cbSize);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.cbColor);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbScreen);
+            this.panel1.Controls.Add(this.txtId);
             this.panel1.Controls.Add(this.cbDesign);
+            this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.txtImportedAmount);
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.label8);
@@ -909,6 +916,25 @@
             this.snackBarForm.WarningOptions.IconLeftMargin = 12;
             this.snackBarForm.ZoomCloseIcon = true;
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            resources.ApplyResources(this.imageList1, "imageList1");
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // fplImages
+            // 
+            resources.ApplyResources(this.fplImages, "fplImages");
+            this.fplImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fplImages.Name = "fplImages";
+            // 
+            // btnUpload
+            // 
+            resources.ApplyResources(this.btnUpload, "btnUpload");
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
             // FormProduct
             // 
             this.AllowDrop = true;
@@ -916,12 +942,10 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
+            this.Controls.Add(this.btnUpload);
+            this.Controls.Add(this.fplImages);
             this.Controls.Add(this.pLine);
             this.Controls.Add(this.lblFormName);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.txtName);
             this.Controls.Add(this.panel1);
             this.Name = "FormProduct";
             this.Load += new System.EventHandler(this.FormProduct_Load);
@@ -966,5 +990,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.FlowLayoutPanel fplImages;
+        private System.Windows.Forms.Button btnUpload;
     }
 }

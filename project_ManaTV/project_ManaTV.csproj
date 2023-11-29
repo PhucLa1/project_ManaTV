@@ -170,6 +170,7 @@
     <Compile Include="HelpMethod\HandleImage.cs" />
     <Compile Include="HelpMethod\Valiadated.cs" />
     <Compile Include="InitClasses.cs" />
+    <Compile Include="Models\ProductImage.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Presenters\Product\ColorPresenter.cs" />
     <Compile Include="Presenters\Product\ProductPresenter.cs" />
     <Compile Include="Presenters\Product\BrandPresenter.cs" />
+    <Compile Include="Repository\ImageRepository.cs" />
     <Compile Include="Repository\OriginRepository.cs" />
     <Compile Include="Repository\ColorRepository.cs" />
     <Compile Include="Repository\BrandRepository.cs" />
