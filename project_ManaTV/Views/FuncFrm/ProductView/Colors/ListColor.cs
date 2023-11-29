@@ -3,6 +3,7 @@ using Bunifu.UI.WinForms.BunifuButton;
 using project_ManaTV.HelpMethod;
 using project_ManaTV.Models;
 using project_ManaTV.Presenters;
+using project_ManaTV.Repository;
 using project_ManaTV.Views.Components;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
 {
     public partial class FrmListColors : Form
     {
+        private Database db = new Database();
+
         private ColorPresenter _objPresenter;
         private List<BunifuButton> _buttonList;
         public Form FRM_LAYOUT { get; set; }
@@ -199,5 +202,15 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (btnExport.ShowDialog() == DialogResult.OK)
+            {
+                WorkRepository nw = new WorkRepository();
+                Report export = new Report(btnExport.FileName , nw.getAllWork() ,"First PDF");
+            }
+        }
     }
 }
+

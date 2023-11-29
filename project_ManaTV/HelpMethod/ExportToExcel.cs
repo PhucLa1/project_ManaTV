@@ -43,9 +43,6 @@ namespace project_ManaTV.HelpMethod
                             worksheet.Cells[4, i + 4].Font.color =Color.Blue ;
                             worksheet.Cells[4, i + 4].Borders.LineStyle= Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
 
-
-
-
                 }
                 // export nội dung trong DataGridView
                 for (int i = 0; i < dataGridView1.RowCount; i++)
