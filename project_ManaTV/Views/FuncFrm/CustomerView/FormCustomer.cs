@@ -9,6 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ManaTV.HelpMethod;
+using Bunifu.UI.WinForms;
+using project_ManaTV.Repository;
+using System.Messaging;
 
 namespace project_ManaTV.Views.FuncFrm.CustomerView
 {
@@ -116,13 +120,29 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
         {
             ResetForm();
         }
-
+        string errorMessage = "";
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var customer = GetData();
-            _customerPresenter.AddNew(customer);
-            AfterClick?.Invoke(this, EventArgs.Empty);
-            this.Close();
+            if (IsValid())
+            {
+                var customer = GetData();
+                _customerPresenter.AddNew(customer);
+                AfterClick?.Invoke(this, EventArgs.Empty);
+                this.Close();
+            }
+            else
+            {
+                ShowToast(errorMessage, BunifuSnackbar.MessageTypes.Error);
+            }
+            
+        }
+        public void ShowToast(string message, BunifuSnackbar.MessageTypes messageTypes)
+        {
+            bunifuSnackbar1.Show(this, message,
+                messageTypes,
+                1000,
+                "",
+                BunifuSnackbar.Positions.TopRight);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -132,5 +152,34 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             AfterClick?.Invoke(this, EventArgs.Empty);
             this.Close();
         }
+
+        public Boolean IsValid()
+        {
+            if(string.IsNullOrEmpty(txtFullname.Text) ||
+            string.IsNullOrEmpty(txtEmail.Text) ||
+            string.IsNullOrEmpty(txtPhoneNumber.Text) ||
+            string.IsNullOrEmpty(txtAddress.Text))
+            {
+                errorMessage = "Không được để trống trường nào cả";
+                return false;
+            }
+            if (Valiadated.checkName(txtFullname.Text) == false)
+            {
+                errorMessage = "Phải nhập đúng tên";
+                return false;
+            }
+            if (Valiadated.checkPhone(txtPhoneNumber.Text) == false)
+            {
+                errorMessage = "Phải nhập đúng số điện thoại";
+                return false;
+            }
+            if (Valiadated.checkEmail(txtEmail.Text) == false)
+            {
+                errorMessage = "Phải nhập đúng Email";
+                return false;
+            }
+            return true;
+        }
+        
     }
 }

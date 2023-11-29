@@ -20,6 +20,7 @@ namespace project_ManaTV
     public partial class AboutStaff : Form, IAboutStaff
     {
         //private Bitmap defaultImage;
+        public Form FRM_LAYOUT { get; set; }//thêm FRM_Layout
         private int Id;
         private string Status;
         private bool Gend;

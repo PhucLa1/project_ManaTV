@@ -31,8 +31,25 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             {
                 lbTitle.Text = "Sell Bill Detail";
             }
-            
 
+            //Setup header color
+            Color alterHeaderColor = Color.FromArgb(40, 96, 144);
+            detailBill.ColumnHeadersDefaultCellStyle.BackColor = alterHeaderColor;
+            detailBill.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            detailBill.ColumnHeadersDefaultCellStyle.SelectionBackColor = alterHeaderColor;
+            detailBill.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            //Setup Row Color
+            Color alterRowColor = Color.FromArgb(224, 224, 224);
+            detailBill.AlternatingRowsDefaultCellStyle.BackColor = alterRowColor;
+            detailBill.AlternatingRowsDefaultCellStyle.ForeColor = Color.Empty;
+            detailBill.AlternatingRowsDefaultCellStyle.SelectionBackColor = alterRowColor;
+            detailBill.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Empty;
+            //Setup Cell Color
+            Color alterFontColor = Color.FromArgb(64, 64, 64);
+            detailBill.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            detailBill.DefaultCellStyle.ForeColor = alterFontColor;
+            detailBill.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
+            detailBill.DefaultCellStyle.SelectionForeColor = alterHeaderColor;
             var billDetails = bR.GetDetailBillByBillID(status,i);
             string amount = status == 0 ? "sell_amount" : "import_amount";
             foreach (var bill in billDetails)

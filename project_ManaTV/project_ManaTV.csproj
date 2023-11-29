@@ -182,6 +182,7 @@
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Origin.cs" />
     <Compile Include="Models\Colors.cs" />
+    <Compile Include="Models\WorkShift.cs" />
     <Compile Include="Models\ScreenSize.cs" />
     <Compile Include="Models\Screen.cs" />
     <Compile Include="Models\Design.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Repository\DashboardRespository.cs" />
     <Compile Include="Repository\Database.cs" />
     <Compile Include="Repository\LoginRespository.cs" />
+    <Compile Include="Repository\ShiftWorkRespository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
     <Compile Include="Presenters\Staff\AboutStaffPresenter.cs" />
@@ -372,6 +374,12 @@
     <Compile Include="Views\FuncFrm\Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FuncFrm\ShiftWork\Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ShiftWork\Schedule.Designer.cs">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -496,6 +504,9 @@
     <EmbeddedResource Include="Views\FuncFrm\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ShiftWork\Schedule.resx">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
       <DependentUpon>AboutStaff.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -555,6 +566,7 @@
     <Content Include="wwwroot\assets\color-font.txt" />
     <None Include="wwwroot\assets\icons\angle-left-solid.png" />
     <None Include="wwwroot\assets\icons\angle-right-solid.png" />
+    <None Include="wwwroot\assets\icons\arrow-right-from-bracket-solid %281%29.png" />
     <Content Include="wwwroot\assets\icons\bars-staggered-solid.png" />
     <Content Include="wwwroot\assets\icons\bell-regular.png" />
     <Content Include="wwwroot\assets\icons\chart-pie-solid.png" />

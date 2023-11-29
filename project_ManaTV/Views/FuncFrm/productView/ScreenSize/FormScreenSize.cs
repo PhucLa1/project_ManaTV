@@ -78,12 +78,16 @@ namespace project_ManaTV.Views.FuncFrm.ScreenSizeView
             };
         }
 
-        private bool IsValid(ScreenSize data)
+        private bool IsValid()
         {
             string message = "";
-            if (data.Screen_size.ToString() == "")
+            if (txtSize.Text == "")
             {
-                message = "Name is required!";
+                message = "Size is required!";
+            }
+            if(!int.TryParse(txtSize.Text, out _))
+            {
+                message = "Size must be an integer!";
             }
             if (message != "")
             {
@@ -120,8 +124,9 @@ namespace project_ManaTV.Views.FuncFrm.ScreenSizeView
         //ADD - UPDATE - VIEW
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            
+            if (!IsValid()) return;
             var data = GetData();
-            if (!IsValid(data)) return;
             try
             {
                 _objectPresenter.AddNew(data);
@@ -138,8 +143,9 @@ namespace project_ManaTV.Views.FuncFrm.ScreenSizeView
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            
+            if (!IsValid()) return;
             var data = GetData();
-            if (!IsValid(data)) return;
             try
             {
                 _objectPresenter.Update(data);

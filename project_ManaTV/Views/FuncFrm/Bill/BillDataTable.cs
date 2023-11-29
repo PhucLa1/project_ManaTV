@@ -51,6 +51,39 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         {
             status = _status;
             InitializeComponent();
+            //Setup header color
+            Color alterHeaderColor = Color.FromArgb(40, 96, 144);
+            SellBillGrid.ColumnHeadersDefaultCellStyle.BackColor = alterHeaderColor;
+            SellBillGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            SellBillGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = alterHeaderColor;
+            SellBillGrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+
+            ImportBillGrid.ColumnHeadersDefaultCellStyle.BackColor = alterHeaderColor;
+            ImportBillGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            ImportBillGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = alterHeaderColor;
+            ImportBillGrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            //Setup Row Color
+            Color alterRowColor = Color.FromArgb(224, 224, 224);
+            SellBillGrid.AlternatingRowsDefaultCellStyle.BackColor = alterRowColor;
+            SellBillGrid.AlternatingRowsDefaultCellStyle.ForeColor = Color.Empty;
+            SellBillGrid.AlternatingRowsDefaultCellStyle.SelectionBackColor = alterRowColor;
+            SellBillGrid.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Empty;
+
+            ImportBillGrid.AlternatingRowsDefaultCellStyle.BackColor = alterRowColor;
+            ImportBillGrid.AlternatingRowsDefaultCellStyle.ForeColor = Color.Empty;
+            ImportBillGrid.AlternatingRowsDefaultCellStyle.SelectionBackColor = alterRowColor;
+            ImportBillGrid.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Empty;
+            //Setup Cell Color
+            Color alterFontColor = Color.FromArgb(64, 64, 64);
+            SellBillGrid.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            SellBillGrid.DefaultCellStyle.ForeColor = alterFontColor;
+            SellBillGrid.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
+            SellBillGrid.DefaultCellStyle.SelectionForeColor = alterHeaderColor;
+
+            ImportBillGrid.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            ImportBillGrid.DefaultCellStyle.ForeColor = alterFontColor;
+            ImportBillGrid.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
+            ImportBillGrid.DefaultCellStyle.SelectionForeColor = alterHeaderColor;
             AssociateAndRaiseViewEvents();
         }
         public string valueSearch
@@ -64,6 +97,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
 
         private void AssociateAndRaiseViewEvents()
         {
+
             //Sự kiện thay đổi dữ liệu trong datagridview
             ImportBillGrid.CellContentClick += (s, e) =>
             {
@@ -262,7 +296,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             HandleGridView.SetMiddleCenter(5, ImportBillGrid);
             //Ở đây rows 1 trang là 10;
             ImportBillGrid.Rows.Clear();
-            Image imageEye = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "eye.png"));
+            Image imageEye = HandleImage.ZoomOutImage(HandleImage.filePath("assets/icons", "details.png"));
             foreach (var item in ImportList)
             {
                 ImportBillGrid.Rows.Add(
@@ -283,7 +317,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             HandleGridView.SetMiddleCenter(5, SellBillGrid);
             //Ở đây rows 1 trang là 10;
             SellBillGrid.Rows.Clear();
-            Image imageEye = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "eye.png"));
+            Image imageEye = HandleImage.ZoomOutImage(HandleImage.filePath("assets/icons", "details.png"));
             foreach (var item in SellList)
             {
                 SellBillGrid.Rows.Add(
@@ -322,7 +356,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
                     }
                     else
                     {
-                        button.IdleFillColor = Color.FromArgb(40, 96, 144);
+                        button.IdleFillColor = Color.FromArgb(105, 181, 255);
 
                     }
 
@@ -357,6 +391,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             if(status == 1)
             {
                 SellBillGrid.Visible = false;
+
             }
             else
             {
@@ -379,7 +414,17 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             SendKeys.Send("%{DOWN}");
         }
 
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+            BillOverall bill = new BillOverall(0);
+            bill.Show();
+        }
 
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            BillOverall bill = new BillOverall(1);
+            bill.Show();
+        }
     }
 }
 

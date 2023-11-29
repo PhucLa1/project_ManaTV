@@ -12,7 +12,7 @@ namespace project_ManaTV.Views.FuncFrm.Dashboard
     public partial class Dashboard : Form
     {
         //Fields
-        //public Form FRM_LAYOUT { get; set; }
+        public Form FRM_LAYOUT { get; set; }
         private readonly DashboardRespository dashboardRepo;
         private Button currentButton;
 		private DateTime startDate;

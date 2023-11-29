@@ -25,7 +25,7 @@ namespace project_ManaTV.HelpMethod
         }
         public static bool checkName(string name)
         {
-            string pattern = @"^[a-zA-Z]{2,30}$";
+            string pattern = @"^[a-zA-Z\s]{2,30}$";
             bool isMatch = Regex.IsMatch(name, pattern);
             return isMatch;
         }

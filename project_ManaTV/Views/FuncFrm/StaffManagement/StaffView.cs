@@ -4,6 +4,7 @@ using project_ManaTV.HelpMethod;
 using project_ManaTV.Presenters.Staff;
 using project_ManaTV.Repository;
 using project_ManaTV.Views.Components;
+using project_ManaTV.Views.FuncFrm.ShiftWork;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
         //Các attribute
 
         public Form FRM_LAYOUT { get; set; }//thêm FRM_Layout
+        public Size gridView { get => gridViewStaff.Size; set => gridViewStaff.Size = value; }
         private int CurrentPage = 1;
         private int PageSize = 10;
         private int TotalPage;
@@ -54,6 +56,24 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
         public StaffView()
         {
             InitializeComponent();
+            //Setup header color
+            Color alterHeaderColor = Color.FromArgb(40, 96, 144);
+            gridViewStaff.ColumnHeadersDefaultCellStyle.BackColor = alterHeaderColor;
+            gridViewStaff.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            gridViewStaff.ColumnHeadersDefaultCellStyle.SelectionBackColor = alterHeaderColor;
+            gridViewStaff.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            //Setup Row Color
+            Color alterRowColor = Color.FromArgb(224, 224, 224);
+            gridViewStaff.AlternatingRowsDefaultCellStyle.BackColor = alterRowColor;
+            gridViewStaff.AlternatingRowsDefaultCellStyle.ForeColor = Color.Empty;
+            gridViewStaff.AlternatingRowsDefaultCellStyle.SelectionBackColor = alterRowColor;
+            gridViewStaff.AlternatingRowsDefaultCellStyle.SelectionForeColor= Color.Empty;
+            //Setup Cell Color
+            Color alterFontColor = Color.FromArgb(64, 64, 64);
+            gridViewStaff.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            gridViewStaff.DefaultCellStyle.ForeColor = alterFontColor;
+            gridViewStaff.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
+            gridViewStaff.DefaultCellStyle.SelectionForeColor = alterHeaderColor;
             AssociateAndRaiseViewEvents();
         }
         public string valueSearch
@@ -122,9 +142,14 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                         }
                         AboutStaffPresenter DeleteStaffPresenter = new AboutStaffPresenter(m_Staff, InitClasses.DeleteStaff);
                         InitClasses.DeleteStaff.Show();
-                    }else if(actions == 11)
+                    }else if(actions == 12)
                     {
                         listInt.Add(x);
+                    }
+                    else if (actions == 11)
+                    {
+                        Schedule schedule = new Schedule(x);
+                        schedule.Show();
                     }
                 }
                 
@@ -316,9 +341,10 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
             //Ở đây rows 1 trang là 10;
             HandleGridView.SetMiddleCenter(7, gridViewStaff);
 
-            Image imagePen = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "pen.png"));
-            Image imageEye = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "eye.png"));
-            Image imageBin = HandleImage.ZoomOutImage(HandleImage.filePath("Others", "bin.png"));
+            Image imagePen = HandleImage.ZoomOutImage(HandleImage.filePath("assets/icons", "edit.png"));
+            Image imageEye = HandleImage.ZoomOutImage(HandleImage.filePath("assets/icons", "details.png"));
+            Image imageBin = HandleImage.ZoomOutImage(HandleImage.filePath("assets/icons", "delete.png"));
+            Image imageSchedule = HandleImage.ZoomOutImage(HandleImage.filePath("assets/icons", "Schedule.png"));
 
 
             foreach (var item in staffList)
@@ -341,7 +367,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                         item["staff_address"].ToString(),
                         item["staff_email"].ToString(),
                         item["work_name"].ToString(),
-                        imagePen,imageEye,imageBin
+                        imagePen,imageEye,imageBin,imageSchedule,
                     }
                     );
             }
@@ -380,8 +406,7 @@ namespace project_ManaTV.Views.FuncFrm.StaffManagement
                     }
                     else
                     {
-                        button.IdleFillColor = Color.FromArgb(40, 96, 144);
-                        
+                        button.IdleFillColor = Color.FromArgb(105, 181, 255);
                     }
 
                 }

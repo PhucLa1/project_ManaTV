@@ -11,15 +11,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace project_ManaTV.Views.FuncFrm.Bill
 {
     public partial class BillOverall : Form
     {
         //0 : Sale Bill, 1 : Import Bill
+        public Form FRM_LAYOUT { get; set; }//thêm FRM_Layout
         private string screen, design, color;
         private float size;
         private int totalMoney = 0;
@@ -33,10 +36,15 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         {
             status = _status;
             InitializeComponent();
+            ProductDGV.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(40, 96, 144);
+            ProductDGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            ProductDGV.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            ProductDGV.ForeColor = System.Drawing.Color.WhiteSmoke;
         }
 
         private void BillOverall_Load(object sender, EventArgs e)
         {
+           
             //Init variable
             InitVariable();
 
@@ -166,6 +174,12 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         {
             int x = int.Parse(ProductDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
             Product productControl = new Product(x);
+            productControl.Size = productFLP.Size;
+            productFLP.SizeChanged += (s, ev) =>
+            {
+                productControl.Size = productFLP.Size;
+            };
+
             //Thêm vào trong danh sách
             if (products.ContainsKey(x))
             {
@@ -250,6 +264,7 @@ namespace project_ManaTV.Views.FuncFrm.Bill
 
                     //Hiện thông báo
                     ShowMessage($"You have successfully imported goods on the day {DateTime.UtcNow.AddHours(7)}", BunifuSnackbar.MessageTypes.Success);
+                    this.Close();
                 }
                 else
                 {
