@@ -1,4 +1,5 @@
 ﻿using Bunifu.UI.WinForms;
+using project_ManaTV.HelpMethod;
 using project_ManaTV.Models;
 using project_ManaTV.Presenters;
 using System;
@@ -24,7 +25,6 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
         {
             this.mode = mode;
             _objectPresenter = colorPresenter;
-            
             InitializeComponent();
             pLine.Height = 5;
         }
@@ -49,6 +49,10 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
             }
             else if (mode == "add")
             {
+                txtColorName.Enabled = false;
+                txtR.Enabled = false;
+                txtG.Enabled = false;
+                txtB.Enabled = false;
                 btnUpdate.Visible = false;
             }
             else
@@ -84,25 +88,37 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
                 color_name = txtColorName.Text
             };
         }
-
-        private bool IsValid(Colors data)
+        //Khánh thay đổi
+        private bool IsValid()
         {
             string message = "";
-            if (data.color_name == "")
+            if (txtColorName.Text == "")
             {
                 message = "Name is required!";
             }
-            else if(data.R.ToString() == "")
+            else if(txtR.Text == "")
             {
                 message = "R is required!";
             }
-            else if (data.G.ToString() == "")
+            else if (txtG.Text == "")
             {
                 message = "G is required!";
             }
-            else if (data.B.ToString() == "")
+            else if (txtB.Text == "")
             {
                 message = "B is required!";
+            }
+            else if (!int.TryParse(txtR.Text, out _))
+            {
+                message = "R must be an integer!";
+            }
+            else if (!int.TryParse(txtG.Text, out _))
+            {
+                message = "G must be an integer!";
+            }
+            else if (!int.TryParse(txtB.Text, out _))
+            {
+                message = "B must be an integer!";
             }
             if (message != "")
             {
@@ -145,8 +161,8 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
         //ADD - UPDATE - VIEW
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!IsValid()) return;
             var data = GetData();
-            if (!IsValid(data)) return;
             try
             {
                 _objectPresenter.AddNew(data);
@@ -163,8 +179,9 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            
+            if (!IsValid()) return;
             var data = GetData();
-            if (!IsValid(data)) return;
             try
             {
                 _objectPresenter.Update(data);
@@ -196,6 +213,7 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
         private void button1_Click(object sender, EventArgs e)
         {
             Color c = Color.Black;
+
             ColorDialog clrDialog = new ColorDialog();
 
             //show the colour dialog and check that user clicked ok
@@ -206,6 +224,9 @@ namespace project_ManaTV.Views.FuncFrm.ColorView
                 txtR.Text = c.R.ToString();
                 txtG.Text = c.G.ToString();
                 txtB.Text = c.B.ToString();
+                Color color = Color.FromArgb(c.R, c.G, c.B);
+                string colorName = ColorTranslator.ToHtml(color);
+                txtColorName.Text = colorName;
 
             }
         }

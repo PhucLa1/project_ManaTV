@@ -27,7 +27,7 @@ namespace project_ManaTV.Presenters
             totalCount = ListCustomerRender.Count;
             totalPage = (int)Math.Ceiling((decimal)totalCount / pageSize);
         }
-
+        
         public List<Customer> GetByPagination(int pageNumber, int pageSize)
         {
             var lstCustomer = ListCustomerRender.Where(x => x.IsDeleted == false);

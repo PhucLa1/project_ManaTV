@@ -265,6 +265,7 @@
             // 
             // pagination
             // 
+            this.pagination.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pagination.Controls.Add(this.btnPrev);
             this.pagination.Controls.Add(this.btnFirst);
             this.pagination.Controls.Add(this.btnSecond);
@@ -1042,6 +1043,7 @@
             // bunifuLabel2
             // 
             this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;

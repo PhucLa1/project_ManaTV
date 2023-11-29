@@ -83,6 +83,16 @@ namespace project_ManaTV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_right_from_bracket_solid__1_ {
+            get {
+                object obj = ResourceManager.GetObject("arrow-right-from-bracket-solid (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chart_pie_solid {
             get {
                 object obj = ResourceManager.GetObject("chart-pie-solid", resourceCulture);

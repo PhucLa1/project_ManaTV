@@ -174,6 +174,12 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         {
             int x = int.Parse(ProductDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
             Product productControl = new Product(x);
+            productControl.Size = productFLP.Size;
+            productFLP.SizeChanged += (s, ev) =>
+            {
+                productControl.Size = productFLP.Size;
+            };
+
             //Thêm vào trong danh sách
             if (products.ContainsKey(x))
             {
@@ -322,7 +328,6 @@ namespace project_ManaTV.Views.FuncFrm.Bill
             listCustomers.ShowDialog();
         }
 
-        
         private void SizeDD_SelectedIndexChanged(object sender, EventArgs e)
         {
             size = float.Parse(SizeDD.Text);

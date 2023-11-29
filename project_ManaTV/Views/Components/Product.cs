@@ -110,8 +110,6 @@ namespace project_ManaTV.Views.Components
         }
 
 
-
-
         private void priceTxt_TextChanged(object sender, EventArgs e)
         {
             DataChanged?.Invoke(this, EventArgs.Empty);

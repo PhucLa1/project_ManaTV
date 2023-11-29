@@ -120,12 +120,12 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtName.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAWwAAAAoCAYAAADaIcB3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADLSURBVHhe7dRBCQQxAATB+FeVJTJOxgm4JZDPOUhDFcxn
+        iVBORw0KGgoAAAANSUhEUgAAAWwAAAAsCAYAAABBsIJhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADZSURBVHhe7dRBCQQxAATB+FeVJTJOxgm4JZDPOUhDFcxn
         BPQAIGSt9Zlz/szM7L7tRp9cj7EPAO60G31yLdgANxNsgAjBBogQbIAIwQaIEGyACMEGiBBsgAjBBogQ
         bIAIwQaIEGyACMEGiBBsgAjBBogQbIAIwQaIEGyACMEGiBBsgAjBBogQbIAIwQaIEGyACMEGiBBsgAjB
-        BogQbIAIwQaIEGyACMEGiBBsgAjBBogQbIAIwQaI+Av28zzffZiZ2X3bjT65BuB+Y7wbD9l6JYC6DAAA
-        AABJRU5ErkJggg==
+        BogQbIAIwQaIEGyACMEGiBBsgAjBBogQbIAIwQaIEGyACMEGiBBsgAjBBoj4C/bzPN99mJnZfduNPrkG
+        4H5jvCKIXkvcZ1kNAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
@@ -142,7 +142,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 40</value>
+    <value>364, 44</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtName.TabIndex" type="System.Int32, mscorlib">
@@ -162,11 +162,11 @@
   </data>
   <data name="txtId.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGYAAAAoCAYAAAAMjY9+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACVSURBVHhe7dExDQMxAARB80dlyzACIwDysuQmCH6LWema
+        iVBORw0KGgoAAAANSUhEUgAAAGYAAAAsCAYAAACXHM1oAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACeSURBVHhe7dExDQMxAARB80dlyzACIwDysuQmCH6LWema
         a2co3N77M+f82fs7FpdljHOo0bG4LGBKgYkGJhqYaGCigYkGJhqYaGCigYkGJhqYaGCigYkGJhqYaGCi
-        gYkGJhqYaGCigYkGJhqYaGCigYkGJhqYaGCigYkGJhqYaGCigYkGJtofzFrrew57f8fisqjXGA+yZV7v
-        rVscxAAAAABJRU5ErkJggg==
+        gYkGJhqYaGCigYkGJhqYaGCigYkGJhqYaGCigYkGJhqYaGCigYkGJhqYaGCigYkGJtofzFrrew57f8fi
+        sqjXGA+p+5MhFEZ9xAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="txtId.Enabled" type="System.Boolean, mscorlib">
@@ -185,7 +185,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="txtId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 40</value>
+    <value>102, 44</value>
   </data>
   <data name="txtId.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -212,7 +212,7 @@
     <value>133, 74</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 19</value>
+    <value>121, 23</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -242,7 +242,7 @@
     <value>17, 74</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 19</value>
+    <value>25, 23</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -272,7 +272,7 @@
     <value>1, 9</value>
   </data>
   <data name="lblFormName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 21</value>
+    <value>132, 28</value>
   </data>
   <data name="lblFormName.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -295,7 +295,7 @@
   <data name="btnUpdate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFoAAAAnCAYAAACPFF8dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACMSURBVGhD7dAxDcMwAADB8KhSogXh8iuM7E7lcPBPN5z0
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACMSURBVGhD7dAxDcMwAADB8KhSogXh8iuM7E7lcPBPN5z0
         8x+vMX/v732zz3p8rDg+7PQ8Nno/oyNGR4yOGB0xOmJ0xOiI0RGjI0ZHjI4YHTE6YnTE6IjREaMjRkeM
         jhgdMTpidMToiNERoyNGR4yOGB0xOmJ0xOiI0RGjI0ZHjI48j88xrxXsc455/QGFeBsvHUp8HgAAAABJ
         RU5ErkJggg==
@@ -328,7 +328,7 @@
   <data name="btnAdd.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFoAAAAnCAYAAACPFF8dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACFSURBVGhD7ds5AYBAAMAw3ICM8wCCcINMngEJ1ylDDHTv
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACFSURBVGhD7ds5AYBAAMAw3ICM8wCCcINMngEJ1ylDDHTv
         sl77eJ1MNb7Q53YdN/N8jYUOCB0ROiJ0ROiI0BGhI0JHhI4IHRE6InRE6IjQEaEjQkeEjggdEToidETo
         iNARoSNCR4SOCB0ROiJ0ROiI0BGhI0JHhI4IHRE6InTkD+3Kmm4fD0oDvtP1aplwAAAAAElFTkSuQmCC
 </value>
@@ -361,7 +361,7 @@
     <value>RightToLeft</value>
   </data>
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 256</value>
+    <value>265, 102</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 43</value>
@@ -384,7 +384,7 @@
   <data name="btnReset.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFUAAAAnCAYAAAB+HwSQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACESURBVGhD7duhEYAwAARBXNpKaXSWobKAoIScW7Hi7fm/
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACESURBVGhD7duhEYAwAARBXNpKaXSWobKAoIScW7Hi7fm/
         9hpzP+PmkK/n9Y/NMbeo54kaEDUgakDUgKgBUQOiBkQNiBoQNSBqQNSAqAFRA6IGRA2IGhA1IGpA1ICo
         AVEDogZEDYgaEDUgakDUgKgBUQOiBkQNiBoQNSBq4IvqnXLWGvMFxoRx7HfSk3oAAAAASUVORK5CYII=
 </value>
@@ -416,7 +416,7 @@
   <data name="btnCancel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFUAAAAnCAYAAAB+HwSQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACNSURBVGhD7dCxDcJAEABBF0xKSGVGJ/dBGS4A9NTwm00w
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACNSURBVGhD7dCxDcJAEABBF0xKSGVGJ/dBGS4A9NTwm00w
         0sZ7nOf7c13Xlz3Wz2PF4/lik/XT1M1MDZgaMDVgasDUgKkBUwOmBkwNmBowNWBqwNSAqQFTA6YGTA2Y
         GjA1YGrA1ICpAVMDpgZMDZgaMDVgasDUgKkBUwOmBkwNmBowNfCfOjP3CvaYmfsHdC5y+W7cDYMAAAAA
         SUVORK5CYII=
@@ -447,7 +447,7 @@
     <value>0</value>
   </data>
   <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 257</value>
+    <value>11, 103</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 43</value>
@@ -471,7 +471,7 @@
     <value>6, 64</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 319</value>
+    <value>512, 169</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -580,7 +580,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>526, 394</value>
+    <value>526, 237</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>

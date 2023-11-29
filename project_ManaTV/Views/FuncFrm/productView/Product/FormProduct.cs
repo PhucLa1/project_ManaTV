@@ -1,4 +1,5 @@
 ﻿using Bunifu.UI.WinForms;
+using project_ManaTV.HelpMethod;
 using project_ManaTV.Models;
 using project_ManaTV.Presenters;
 using System;
@@ -166,11 +167,33 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
         private bool IsValid(Product data)
         {
             string message = "";
-            if (data.ProductAmount < 0)
+            if (data.ManufacturerId == 0)
+            {
+                message = " Manufacturer is required!";
+            }else if (data.DesignId == 0)
+            {
+                message = " Design is required!";
+            }else if (data.ScreenId == 0)
+            {
+                message = " Screen is required!";
+            }
+            else if (data.ColorId == 0)
+            {
+                message = " Colors is required!";
+            }
+            else if (data.SizeId == 0)
+            {
+                message = " Screen size is required!";
+            }
+            else if (data.CountryId == 0)
+            {
+                message = " Country is required!";
+            }
+            else if (data.ProductAmount <=0)
             {
                 message = " Price is not valid!";
             }
-            else if (data.ProductImportMoney < 0)
+            else if (data.ProductImportMoney <= 0)
             {
                 message = "Import Money is not valid!";
             }

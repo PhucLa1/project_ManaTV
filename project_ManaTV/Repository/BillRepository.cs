@@ -190,13 +190,29 @@ namespace project_ManaTV.Repository
         {
             if(status == 1) //Hóa đơn nhập
             {
-                string query = "select ImportBillDetail.id,Products.id as 'Product ID',price,import_amount from ImportBillDetail inner join Products on ImportBillDetail.product_id = Products.id where import_bill_id = @id";
+                string query = "select ImportBillDetail.id," +
+                    "'Tivi '+manufacturer_name+' '+screen_name+' '" +
+                    "+CAST(screen_size as varchar(50))+ ' '+" +
+                    "design_name  as 'Product ID',price,import_amount from ImportBillDetail " +
+                    "inner join Products on ImportBillDetail.product_id = Products.id " +
+                    "inner join Manufacturer on Products.manufacturer_id = Manufacturer.id " +
+                    "inner join Screen on Products.screen_id = Screen.id " +
+                    "inner join ScreenSize on Products.size_id = ScreenSize.id " +
+                    "inner join Designs on Products.design_id = Designs.id where import_bill_id = @id";
                 db.SetQuery(query);
                 return db.LoadAllRows(billID);
             }
             else //Hóa đơn bán
             {
-                string query = "select SellBillDetail.id,Products.id as 'Product ID',sell_amount,price from SellBillDetail inner join Products on SellBillDetail.product_id = Products.id where sell_bill_id = @id";
+                string query = "select SellBillDetail.id,'Tivi '" +
+                    "+manufacturer_name+' '+screen_name+' '+CAST(screen_size as varchar(50))+ ' '+" +
+                    "design_name  as 'Product ID',sell_amount,price from SellBillDetail " +
+                    "inner join Products on SellBillDetail.product_id = Products.id " +
+                    "inner join Manufacturer on Products.manufacturer_id = Manufacturer.id " +
+                    "inner join Screen on Products.screen_id = Screen.id " +
+                    "inner join ScreenSize on Products.size_id = ScreenSize.id " +
+                    "inner join Designs on Products.design_id = Designs.id " +
+                    "where sell_bill_id = @id";
                 db.SetQuery(query);
                 return db.LoadAllRows(billID);
             }

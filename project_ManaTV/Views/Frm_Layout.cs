@@ -350,9 +350,11 @@ namespace project_ManaTV
             InitClasses.staffView.FRM_LAYOUT = this;
             ShowFormInPanel(InitClasses.staffView);
             InitClasses.staffView.Size = panelMainContent.Size;
+            //InitClasses.staffView.gridView = new Size(InitClasses.staffView.Width, InitClasses.staffView.gridView.Height);
             panelMainContent.SizeChanged += (s, ev) =>
             {
                 InitClasses.staffView.Size = panelMainContent.Size;
+                //InitClasses.staffView.gridView = new Size(InitClasses.staffView.Width, InitClasses.staffView.gridView.Height);
             };
         }
 
