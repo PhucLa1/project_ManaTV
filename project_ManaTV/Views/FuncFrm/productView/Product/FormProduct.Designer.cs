@@ -62,6 +62,8 @@
             this.btnCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSaveBarCode = new System.Windows.Forms.Button();
+            this.picBarcode = new System.Windows.Forms.PictureBox();
             this.cbCountry = new System.Windows.Forms.ComboBox();
             this.cbSize = new System.Windows.Forms.ComboBox();
             this.cbColor = new System.Windows.Forms.ComboBox();
@@ -71,6 +73,7 @@
             this.txtPrice = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbManu = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -83,9 +86,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.fplImages = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUpload = new System.Windows.Forms.Button();
-            this.picBarcode = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnSaveBarCode = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -634,6 +634,20 @@
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Name = "panel1";
             // 
+            // btnSaveBarCode
+            // 
+            resources.ApplyResources(this.btnSaveBarCode, "btnSaveBarCode");
+            this.btnSaveBarCode.Name = "btnSaveBarCode";
+            this.btnSaveBarCode.UseVisualStyleBackColor = true;
+            this.btnSaveBarCode.Click += new System.EventHandler(this.btnSaveBarCode_Click);
+            // 
+            // picBarcode
+            // 
+            this.picBarcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.picBarcode, "picBarcode");
+            this.picBarcode.Name = "picBarcode";
+            this.picBarcode.TabStop = false;
+            // 
             // cbCountry
             // 
             this.cbCountry.FormattingEnabled = true;
@@ -813,6 +827,11 @@
             resources.ApplyResources(this.cbManu, "cbManu");
             this.cbManu.Name = "cbManu";
             // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
@@ -941,25 +960,6 @@
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
-            // 
-            // picBarcode
-            // 
-            this.picBarcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.picBarcode, "picBarcode");
-            this.picBarcode.Name = "picBarcode";
-            this.picBarcode.TabStop = false;
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            // 
-            // btnSaveBarCode
-            // 
-            resources.ApplyResources(this.btnSaveBarCode, "btnSaveBarCode");
-            this.btnSaveBarCode.Name = "btnSaveBarCode";
-            this.btnSaveBarCode.UseVisualStyleBackColor = true;
-            this.btnSaveBarCode.Click += new System.EventHandler(this.btnSaveBarCode_Click);
             // 
             // FormProduct
             // 
