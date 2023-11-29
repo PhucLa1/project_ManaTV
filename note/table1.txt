@@ -1,0 +1,35 @@
+****
+CÁC BƯỚC TẠO GIAO DIỆN CRUD WINFORM
+1. Tạo Model 
+	- Tạo Model gồm các thuộc tính ứng với các trường trong CSDL
+2. Tạo Repository
+	- Copy BrandRepository -> Đổi tên file -> Tên Class 
+	- Ấn Ctrl + H để Replace nhanh các tên "Brand" thành các tên Model muốn thay đổi
+	- Kiểm tra các tên bảng ở những câu string truy vấn để đúng với tên bảng và trường trong CSDL
+3. Tạo Presenter
+	- Copy BrandPresenter -> Đổi tên file -> Tên Class (các presenter cùng nằm trong 1 mục Product thì để chung)
+	- Ấn Ctrl + H để Replace nhanh các tên "Brand" thành các tên Model muốn thay đổi
+4. Tạo View
+	*Chú ý 1 view cho 1 bảng gồm 2 phần (List và Form)
+	- Copy folder Brand -> Đổi tên Folder 
+	-> Đổi tên 2 file FormBrand.cs và ListBrand.cs ví dụ đc 2 file tên là FormHung.cs và ListHung.cs
+	- Vào file ListBrand.cs
+		+ Ấn Ctrl + H để Replace nhanh các tên "Brand" thành các tên Model(Hung) muốn thay đổi
+		+ Thay chữ cuối của NameSpace từ "BrandView" -> "HungView"
+		+ Vào file ListBrand.cs.Designer.cs (mở ở phần mở rộng file FormHung.cs)
+			+ Thay chữ cuối của NameSpace từ "BrandView" -> "HungView"
+			+ Thay tên class giống hệt tên class của ListBrand.cs ("FrmListBrands" -> "FrmListHungs")
+			+ Ấn Ctrl + S 
+	- Làm tương tự với file FormBrand.cs
+
+5. Tinh chỉnh cho đúng với dữ liệu và trạng thái bảng mình làm
+	5.1. Trong file Frm_Layout
+		- copy code trong hàm btnBrand_Click -> sự kiện click tương ứng của mình làm bên dưới
+	5.2. Trong file ProductPanel.cs
+		- thêm(copy) if cho ShowTab
+		- thêm(copy) case trong wrapperProduct_SelectedIndexChanged
+		- thêm(copy) ShowFormInPanel_Brand thành ShowFormInPanel_....	
+	5.3. Trong file List...cs (file giống "ListHung.cs" vừa tạo)
+		- Tìm đến hàm RenderListData xem xem trên bảng phải render ra cột gì
+		- Đổi tên bảng trong Form (UI)
+	5.4. Làm tương tự fix cho Form...cs

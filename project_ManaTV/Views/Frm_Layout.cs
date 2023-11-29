@@ -12,12 +12,19 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using project_ManaTV.Views.FuncFrm.CustomerView;
-using project_ManaTV.Views.FuncFrm.BrandView;
-using project_ManaTV.Views.FuncFrm.ProductView;
 using Bunifu.UI.WinForms;
 using project_ManaTV.Views.FuncFrm.DesignView;
 using project_ManaTV.Views.FuncFrm.ScreenView;
 using project_ManaTV.Views.FuncFrm.ScreenSizeView;
+using project_ManaTV.Views.FuncFrm.BrandView;
+using project_ManaTV.Views.FuncFrm.ProductView;
+using Bunifu.UI.WinForms;
+using project_ManaTV.Views.FuncFrm.ColorView;
+using project_ManaTV.Views.FuncFrm.OriginView;
+using project_ManaTV.Views.FuncFrm.Bill;
+using project_ManaTV.Presenters.Bill;
+using project_ManaTV.Views.FuncFrm.Dashboard;
+
 
 namespace project_ManaTV
 {
@@ -29,6 +36,8 @@ namespace project_ManaTV
     {
         FontFamily[] fontFamilies;
         private ProductPanel productPanel;
+        private BillDataTable billData;
+        private Dashboard dashBoard;
         public Frm_Layout()
         {
             InitializeComponent();
@@ -54,7 +63,7 @@ namespace project_ManaTV
                 CustomMenuButton(btn);
             }
 
-            var lstWrapperPanel = new List<FlowLayoutPanel>() { productSideBar, staffSideBar, fLayoutCustommer };
+            var lstWrapperPanel = new List<FlowLayoutPanel>() { productSideBar, staffSideBar, fLayoutCustommer, flowLayoutInvoice };
             foreach (var wrapper in lstWrapperPanel)
             {
                 CustomWrapperPanel(wrapper);
@@ -131,7 +140,7 @@ namespace project_ManaTV
             panelMainContent.Controls.Add(formToShow);
 
             formToShow.Show();
-            
+
         }
 
 
@@ -173,15 +182,10 @@ namespace project_ManaTV
 
 
 
-        private void startFormLoad()
-        {
-
-        }
         private int x;
         private int y;
         private void Form1_Load(object sender, EventArgs e)
         {
-
             x = this.Left;
             y = this.Top;
         }
@@ -306,12 +310,15 @@ namespace project_ManaTV
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            
             productTrans.Start();
+            var lstProduct = new FrmListProducts();
+            lstProduct.FRM_LAYOUT = this;
             productPanel = new ProductPanel();
             productPanel.FRM_LAYOUT = this;
             ShowFormInPanel(productPanel);
-            //productPanel.ShowTab("brand");
-            //productPanel.ShowFormInPanel_Brand(lstBrand);
+            productPanel.ShowTab("product");
+            productPanel.ShowFormInPanel_Product(lstProduct);
             productPanel.Size = panelMainContent.Size;
             panelMainContent.SizeChanged += (s, ev) =>
             {
@@ -333,18 +340,20 @@ namespace project_ManaTV
                 InitClasses.AddNewStaff = new AboutStaff(-1,"Add");
             }
             AboutStaffPresenter p_Staff = new AboutStaffPresenter(m_Staff,InitClasses.AddNewStaff);
-
             InitClasses.AddNewStaff.Show();
         }
 
         private void btnShowStaff_Click(object sender, EventArgs e)
         {
             StaffRepository m_Staff = new StaffRepository();
-            
             StaffPresenter p_Staff = new StaffPresenter(InitClasses.staffView, m_Staff);
-
-
+            InitClasses.staffView.FRM_LAYOUT = this;
             ShowFormInPanel(InitClasses.staffView);
+            InitClasses.staffView.Size = panelMainContent.Size;
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                InitClasses.staffView.Size = panelMainContent.Size;
+            };
         }
 
 
@@ -422,8 +431,12 @@ namespace project_ManaTV
         //PRODUCT
         private void btnAllProduct_Click(object sender, EventArgs e)
         {
-
+            var lstProduct = new FrmListProducts();
+            lstProduct.FRM_LAYOUT = this;
+            productPanel.ShowTab("product");
+            productPanel.ShowFormInPanel_Product(lstProduct);
         }
+
         private void btnBrand_Click(object sender, EventArgs e)
         {
 
@@ -431,18 +444,6 @@ namespace project_ManaTV
             lstBrand.FRM_LAYOUT = this;
             productPanel.ShowTab("brand");
             productPanel.ShowFormInPanel_Brand(lstBrand);
- 
-            //var lstBrand = new FrmListBrands();
-            //lstBrand.FRM_LAYOUT = this;
-            //var productPanel = new ProductPanel();
-            //ShowFormInPanel(productPanel);
-            //productPanel.ShowTab("brand");
-            //productPanel.ShowFormInPanel_Brand(lstBrand);
-            //productPanel.Size = panelMainContent.Size;
-            //panelMainContent.SizeChanged += (s, ev) =>
-            //{
-            //    productPanel.Size = panelMainContent.Size;
-            //};
 
         }
         private void btnDesign_Click(object sender, EventArgs e)
@@ -455,7 +456,10 @@ namespace project_ManaTV
 
         private void btnColor_Click(object sender, EventArgs e)
         {
-
+            var lstColors = new FrmListColors();
+            lstColors.FRM_LAYOUT = this;
+            productPanel.ShowTab("color");
+            productPanel.ShowFormInPanel_Color(lstColors);
         }
 
         private void btnScreen_Click(object sender, EventArgs e)
@@ -476,15 +480,109 @@ namespace project_ManaTV
 
         private void btnOrigin_Click(object sender, EventArgs e)
         {
-
+            var lstOrigins = new FrmListOrigins();
+            lstOrigins.FRM_LAYOUT = this;
+            productPanel.ShowTab("origin");
+            productPanel.ShowFormInPanel_Origin(lstOrigins);
         }
 
         private void btnTrashProduct_Click(object sender, EventArgs e)
         {
-
+            var lstTrashListProducts = new FrmTrashListProducts();
+            lstTrashListProducts.FRM_LAYOUT = this;
+            productPanel.ShowTab("trash");
+            productPanel.ShowFormInPanel_Trash(lstTrashListProducts);
         }
 
- 
 
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            invoiceTrans.Start();
+            billData = new BillDataTable(0);
+            BillPresenter billPresenter = new BillPresenter(billData);
+            billData.FRM_LAYOUT = this;
+            ShowFormInPanel(billData);
+            billData.Size = panelMainContent.Size;
+
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                billData.Size = panelMainContent.Size;
+            };
+            
+        }
+        private bool invoiceExpand = false;
+        private void invoiceTrans_Tick(object sender, EventArgs e)
+        {
+            if (invoiceExpand == false)
+            {
+                flowLayoutInvoice.Height += 10;
+                if (flowLayoutInvoice.Height >= 210)
+                {
+                    invoiceExpand = true;
+                    invoiceTrans.Stop();
+                }
+            }
+            else
+            {
+                flowLayoutInvoice.Height -= 10;
+                if (flowLayoutInvoice.Height <= 48)
+                {
+                    invoiceExpand = false;
+                    invoiceTrans.Stop();
+                }
+            }
+        }
+
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+            BillOverall bill = new BillOverall(0);
+            bill.FRM_LAYOUT = this;
+            ShowFormInPanel(bill);
+            bill.Size = panelMainContent.Size;
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                bill.Size = panelMainContent.Size;
+            };
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            BillOverall bill = new BillOverall(1);
+            bill.FRM_LAYOUT = this;
+            ShowFormInPanel(bill);
+            bill.Size = panelMainContent.Size;
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                bill.Size = panelMainContent.Size;
+            };
+        }
+
+        private void btnListSell_Click(object sender, EventArgs e)
+        {
+            billData = new BillDataTable(0);
+            BillPresenter billPresenter = new BillPresenter(billData);
+            billData.FRM_LAYOUT = this;
+            ShowFormInPanel(billData);
+            billData.Size = panelMainContent.Size;
+
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                billData.Size = panelMainContent.Size;
+            };
+        }
+
+        private void btnListImport_Click(object sender, EventArgs e)
+        {
+            billData = new BillDataTable(1);
+            BillPresenter billPresenter = new BillPresenter(billData);
+            billData.FRM_LAYOUT = this;
+            ShowFormInPanel(billData);
+            billData.Size = panelMainContent.Size;
+
+            panelMainContent.SizeChanged += (s, ev) =>
+            {
+                billData.Size = panelMainContent.Size;
+            };
+        }
     }
 }

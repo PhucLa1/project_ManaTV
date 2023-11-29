@@ -32,8 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b">
       <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.Licensing.dll</HintPath>
@@ -134,6 +132,17 @@
     <Reference Include="Bunifu.UI.WinForms.Deprecated">
       <HintPath>..\..\source\repos\C#Winform\TeamProject\Bunifu\BunifuCrack\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -142,6 +151,8 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -151,37 +162,87 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HelpMethod\HandleGridView.cs" />
     <Compile Include="HelpMethod\HandleImage.cs" />
     <Compile Include="HelpMethod\Valiadated.cs" />
     <Compile Include="InitClasses.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Origin.cs" />
+    <Compile Include="Models\Colors.cs" />
     <Compile Include="Models\ScreenSize.cs" />
     <Compile Include="Models\Screen.cs" />
     <Compile Include="Models\Design.cs" />
-    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Presenters\All\PaginationPresenter.cs" />
+    <Compile Include="Presenters\Bill\BillPresenter.cs" />
     <Compile Include="Presenters\Customer\CustomerPresenter.cs" />
+    <Compile Include="Presenters\Product\OriginPresenter .cs" />
+    <Compile Include="Presenters\Product\ColorPresenter.cs" />
+    <Compile Include="Presenters\Product\ProductPresenter.cs" />
+    <Compile Include="Presenters\Product\BrandPresenter.cs" />
+    <Compile Include="Repository\OriginRepository.cs" />
+    <Compile Include="Repository\ColorRepository.cs" />
+    <Compile Include="Repository\BrandRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Presenters\Product\ScreenSizePresenter.cs" />
     <Compile Include="Presenters\Product\ScreenPresenter.cs" />
     <Compile Include="Presenters\Product\DesignPresenter.cs" />
-    <Compile Include="Presenters\Product\BrandPresenter.cs" />
     <Compile Include="Repository\ScreenSizeRepository.cs" />
     <Compile Include="Repository\ScreenRepository.cs" />
     <Compile Include="Repository\DesignRepository.cs" />
-    <Compile Include="Repository\BrandRepository.cs" />
+    <Compile Include="Presenters\Dashboard\DashboardPresenter.cs" />
+    <Compile Include="Presenters\Login\LoginPresenter.cs" />
+    <Compile Include="Repository\BillRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\DashboardRespository.cs" />
+    <Compile Include="Repository\Database.cs" />
+    <Compile Include="Repository\LoginRespository.cs" />
     <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\WorkRepository.cs" />
     <Compile Include="Presenters\Staff\AboutStaffPresenter.cs" />
     <Compile Include="Presenters\Staff\StaffPresenter.cs" />
+    <Compile Include="Views\Components\ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Components\ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Components\ConfirmModal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Components\ConfirmModal.Designer.cs">
       <DependentUpon>ConfirmModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillDataTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillDataTable.Designer.cs">
+      <DependentUpon>BillDataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillDetail.Designer.cs">
+      <DependentUpon>BillDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillOverall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Bill\BillOverall.Designer.cs">
+      <DependentUpon>BillOverall.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncFrm\CustomerView\FormCustomer.cs">
       <SubType>Form</SubType>
@@ -194,6 +255,12 @@
     </Compile>
     <Compile Include="Views\FuncFrm\CustomerView\ListCustomers.Designer.cs">
       <DependentUpon>ListCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\TrashListProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\TrashListProduct.Designer.cs">
+      <DependentUpon>TrashListProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.cs">
       <SubType>Form</SubType>
@@ -231,6 +298,30 @@
     <Compile Include="Views\FuncFrm\ProductView\Design\ListDesign.Designer.cs">
       <DependentUpon>ListDesign.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Origin\FormOrigin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Origin\FormOrigin.Designer.cs">
+      <DependentUpon>FormOrigin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Origin\ListOrigin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Origin\ListOrigin.Designer.cs">
+      <DependentUpon>ListOrigin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Colors\FormColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Colors\FormColor.Designer.cs">
+      <DependentUpon>FormColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Colors\ListColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Colors\ListColor.Designer.cs">
+      <DependentUpon>ListColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncFrm\ProductView\Brand\FormBrand.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,13 +340,36 @@
     <Compile Include="Views\FuncFrm\ProductView\ProductPanel.Designer.cs">
       <DependentUpon>ProductPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\ListProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\ProductView\Product\ListProduct.Designer.cs">
+      <DependentUpon>ListProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Dashboard\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Dashboard\Dashboard.designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncFrm\Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\AboutStaff.designer.cs">
       <DependentUpon>AboutStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Database.cs" />
     <Compile Include="Views\Frm_Layout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,24 +383,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TVManagementDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Database.cs" />
     <Compile Include="Views\FuncFrm\StaffManagement\IAboutStaff.cs" />
     <Compile Include="Views\FuncFrm\StaffManagement\IStaffView.cs" />
-    <Compile Include="Views\FuncFrm\StaffManagement\StaffCalender.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FuncFrm\StaffManagement\StaffCalender.Designer.cs">
-      <DependentUpon>StaffCalender.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\StaffView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FuncFrm\StaffManagement\StaffView.Designer.cs">
       <DependentUpon>StaffView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Components\ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\ConfirmModal.resx">
       <DependentUpon>ConfirmModal.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Bill\BillDataTable.resx">
+      <DependentUpon>BillDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Bill\BillDetail.resx">
+      <DependentUpon>BillDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Bill\BillOverall.resx">
+      <DependentUpon>BillOverall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\CustomerView\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
@@ -294,6 +416,26 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\CustomerView\ListCustomers.resx">
       <DependentUpon>ListCustomers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Origin\FormOrigin.resx">
+      <DependentUpon>FormOrigin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Origin\ListOrigin.resx">
+      <DependentUpon>ListOrigin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Colors\FormColor.resx">
+      <DependentUpon>FormColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Colors\ListColor.resx">
+      <DependentUpon>ListColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Product\TrashListProduct.resx">
+      <DependentUpon>TrashListProduct.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\ProductView\ScreenSize\FormScreenSize.resx">
@@ -332,6 +474,20 @@
       <DependentUpon>ProductPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Product\FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\ProductView\Product\ListProduct.resx">
+      <DependentUpon>ListProduct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Dashboard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncFrm\Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\AboutStaff.resx">
       <DependentUpon>AboutStaff.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -351,13 +507,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\FuncFrm\StaffManagement\StaffCalender.resx">
-      <DependentUpon>StaffCalender.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\FuncFrm\StaffManagement\StaffView.resx">
       <DependentUpon>StaffView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -386,8 +540,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\FuncFrm\ProductView\Product\" />
-    <Folder Include="wwwroot\Products\" />
+    <Folder Include="Views\FuncFrm\ProductManagement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="wwwroot\assets\color-font.txt" />
@@ -417,7 +570,14 @@
     <Content Include="wwwroot\Others\more.png" />
     <Content Include="wwwroot\Others\pen.png" />
     <Content Include="wwwroot\Others\person.png" />
+    <Content Include="wwwroot\Products\Virtual\1.jpg" />
+    <Content Include="wwwroot\Products\Virtual\2.jpg" />
+    <Content Include="wwwroot\Products\Virtual\3.jpg" />
     <Content Include="wwwroot\Users\male.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

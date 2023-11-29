@@ -13,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ManaTV.Views.FuncFrm.BrandView;
+
 
 namespace project_ManaTV.Views.FuncFrm.BrandView
 {
@@ -35,7 +37,7 @@ namespace project_ManaTV.Views.FuncFrm.BrandView
 
         private void InitForm()
         {
-            this.BackColor = Color.White;
+            this.BackColor = System.Drawing.Color.White;
 
             txtSearch.Height = dpFilter.Height;
             btnSearch.Height = dpFilter.Height;

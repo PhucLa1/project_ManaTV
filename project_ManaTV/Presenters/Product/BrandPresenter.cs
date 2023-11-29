@@ -66,8 +66,6 @@ namespace project_ManaTV.Presenters
             return _brandRepository.GetById(id);
         }
 
-       
-
         public void AddNew(Brand brand)
         {
             //brand.IsDeleted = false;

@@ -4,6 +4,7 @@ using project_ManaTV.HelpMethod;
 using project_ManaTV.Models;
 using project_ManaTV.Presenters;
 using project_ManaTV.Views.Components;
+using project_ManaTV.Views.FuncFrm.Bill;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,11 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
         private List<BunifuButton> lstPageNumberBtn;
         private int pageSize = 10;
         private int pageNumber = 1;
+
+        //Chuẩn bị cho phần hóa đơn bán
+        public event EventHandler OpenToChoose;
+        public int IDCus;
+        public string customerName;
         public ListCustomers()
         {
             _customerPresenter = new CustomerPresenter();
@@ -36,8 +42,8 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
         private void InitForm()
         {
             this.BackColor = ColorTranslator.FromHtml("#29374B");
-            tabList.BackColor = Color.White;
-            tabTrash.BackColor = Color.White;
+            tabList.BackColor = System.Drawing.Color.White;
+            tabTrash.BackColor = System.Drawing.Color.White;
             this.Padding = new Padding(0, 10, 0, 0);
 
             txtSearchCustomer.Height = dpFilterCustomer.Height;
@@ -80,7 +86,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
                     //ShowToast("ok ddaays", BunifuSnackbar.MessageTypes.Success);
                     //MessageBox.Show("Details: "+ id);
                 }
-                if (clickedColumn.Name == "actionUpdate")
+                else if (clickedColumn.Name == "actionUpdate")
                 {
                     var id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
                     var selectedCustomer = _customerPresenter.GetById(id);
@@ -93,7 +99,7 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
                     };
                     formCustomer.Show();
                 }
-                if (clickedColumn.Name == "actionDelete")
+                else if (clickedColumn.Name == "actionDelete")
                 {
                     var id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
                     var confirmModal = new ConfirmModal("delete");
@@ -105,6 +111,13 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
                     };
                     confirmModal.ShowDialog();
                     //MessageBox.Show("Delete");
+                }
+                else
+                {
+                    MessageBox.Show("Chọn thành công!");
+                    IDCus = int.Parse(selectedRow.Cells["ID"].Value.ToString());
+                    customerName = selectedRow.Cells["Fullname"].Value.ToString();
+                    OpenToChoose?.Invoke(sender, EventArgs.Empty);
                 }
 
             }
@@ -228,12 +241,12 @@ namespace project_ManaTV.Views.FuncFrm.CustomerView
             {
                 if (btnPageNumber.Text == pageNumber.ToString())
                 {
-                    btnPageNumber.BackColor = Color.FromArgb(105, 181, 255);
+                    btnPageNumber.BackColor = System.Drawing.Color.FromArgb(105, 181, 255);
                     //btnPageNumber.ForeColor = Color.White;
                 }
                 else
                 {
-                    btnPageNumber.BackColor = Color.Transparent;
+                    btnPageNumber.BackColor = System.Drawing.Color.Transparent;
                     //btnPageNumber.ForeColor = Color.FromArgb(40, 96, 144);
                 }
             }

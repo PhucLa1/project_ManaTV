@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.Design.AxImporter;
-
 namespace project_ManaTV.Repository
 {
     internal class Database
@@ -37,7 +28,6 @@ namespace project_ManaTV.Repository
         }
 
         public string ConnectionString { get => connectionString;}
-
 
 
         public void Disconnect()
@@ -67,29 +57,36 @@ namespace project_ManaTV.Repository
             return result;
         }
 
-        //Dung de danh cho nhung cau lenh update,insert
-        public SqlDataReader Excute(params object[] parameters)
-        {
-            if (reader != null && !reader.IsClosed)
-            {
-                reader.Close();
-            }
-            if (parameters != null)
-                {
-                    List<string> res = getValueOfQuery();
-                    for (int i = 0; i < parameters.Length; i++)
-                    {
-                        command.Parameters.AddWithValue(res[i], parameters[i]);
+		//Dung de danh cho nhung cau lenh update,insert
+		public SqlDataReader Excute(params object[] parameters)
+		{
+			try
+			{
+				if (reader != null && !reader.IsClosed)
+				{
+					reader.Close();
+				}
+				if (parameters != null)
+				{
+					List<string> res = getValueOfQuery();
+					for (int i = 0; i < parameters.Length; i++)
+					{
+					command.Parameters.AddWithValue(res[i], parameters[i]);
                     }
                 }
-                reader = command.ExecuteReader();
-                command.Parameters.Clear();
-                return reader;
-        }
 
-        //Lay nhieu dong du lieu
-
-        public List<Dictionary<string,object>> LoadAllRows(params object[] parameters)
+				reader = command.ExecuteReader();
+				command.Parameters.Clear();
+				return reader;
+			}
+			catch (Exception ex)
+			{
+                MessageBox.Show($"Exception1: {ex.Message}", "Error");
+                return null;
+			}
+		}
+		//Lay nhieu dong du lieu
+		public List<Dictionary<string,object>> LoadAllRows(params object[] parameters)
         {
             List<Dictionary<string, object>> res = new List<Dictionary<string, object>> { };
             if (reader != null && !reader.IsClosed)
@@ -112,7 +109,7 @@ namespace project_ManaTV.Repository
                             }
                             else
                             {
-                                row[reader.GetName(i)] = reader.GetValue(i);
+								row[reader.GetName(i)] = reader.GetValue(i);
                             }
 
                         }
@@ -152,20 +149,20 @@ namespace project_ManaTV.Repository
             {
                 if(reader != null && reader.HasRows)
                 {
-                    while (reader.Read())
+                    if (reader.Read())
                     {
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            if (reader.GetValue(i) == DBNull.Value)
-                            {
-                                res[reader.GetName(i)] = null;
-                            }
-                            else
-                            {
-                                res[reader.GetName(i)] = reader.GetValue(i);
-                            }
+							if (reader.GetValue(i) == DBNull.Value)
+							{
+								res[reader.GetName(i)] = null;
+							}
+							else
+							{
+								res[reader.GetName(i)] = reader.GetValue(i);
+							}
 
-                        }
+						}
                     }
                 }
                 
