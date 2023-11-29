@@ -83,9 +83,13 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.fplImages = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUpload = new System.Windows.Forms.Button();
+            this.picBarcode = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnSaveBarCode = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -603,6 +607,8 @@
             // 
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnSaveBarCode);
+            this.panel1.Controls.Add(this.picBarcode);
             this.panel1.Controls.Add(this.cbCountry);
             this.panel1.Controls.Add(this.cbSize);
             this.panel1.Controls.Add(this.label6);
@@ -616,6 +622,7 @@
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.cbManu);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.flowLayoutPanel3);
@@ -935,6 +942,25 @@
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
+            // picBarcode
+            // 
+            this.picBarcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.picBarcode, "picBarcode");
+            this.picBarcode.Name = "picBarcode";
+            this.picBarcode.TabStop = false;
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // btnSaveBarCode
+            // 
+            resources.ApplyResources(this.btnSaveBarCode, "btnSaveBarCode");
+            this.btnSaveBarCode.Name = "btnSaveBarCode";
+            this.btnSaveBarCode.UseVisualStyleBackColor = true;
+            this.btnSaveBarCode.Click += new System.EventHandler(this.btnSaveBarCode_Click);
+            // 
             // FormProduct
             // 
             this.AllowDrop = true;
@@ -953,6 +979,7 @@
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -993,5 +1020,8 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.FlowLayoutPanel fplImages;
         private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.PictureBox picBarcode;
+        private System.Windows.Forms.Button btnSaveBarCode;
+        private System.Windows.Forms.Label label11;
     }
 }

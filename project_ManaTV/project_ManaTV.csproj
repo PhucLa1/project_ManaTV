@@ -164,6 +164,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HelpMethod\HandleGridView.cs" />
@@ -543,6 +549,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\FuncFrm\ProductManagement\" />
+    <Folder Include="wwwroot\Products\Barcode\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="wwwroot\assets\color-font.txt" />

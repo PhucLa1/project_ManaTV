@@ -161,7 +161,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="txtId.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -203,7 +203,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txtId.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -233,7 +233,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -263,7 +263,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblFormName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -364,7 +364,7 @@
     <value>RightToLeft</value>
   </data>
   <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 436</value>
+    <value>265, 469</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 43</value>
@@ -382,7 +382,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>24</value>
   </data>
   <data name="btnReset.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -450,7 +450,7 @@
     <value>0</value>
   </data>
   <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 437</value>
+    <value>11, 466</value>
   </data>
   <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 43</value>
@@ -468,16 +468,64 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="btnSaveBarCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSaveBarCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 419</value>
+  </data>
+  <data name="btnSaveBarCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 27</value>
+  </data>
+  <data name="btnSaveBarCode.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnSaveBarCode.Text" xml:space="preserve">
+    <value>Save and export</value>
+  </data>
+  <data name="&gt;&gt;btnSaveBarCode.Name" xml:space="preserve">
+    <value>btnSaveBarCode</value>
+  </data>
+  <data name="&gt;&gt;btnSaveBarCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSaveBarCode.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnSaveBarCode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="picBarcode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 326</value>
+  </data>
+  <data name="picBarcode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 87</value>
+  </data>
+  <data name="picBarcode.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;picBarcode.Name" xml:space="preserve">
+    <value>picBarcode</value>
+  </data>
+  <data name="&gt;&gt;picBarcode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picBarcode.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;picBarcode.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="cbCountry.ItemHeight" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="cbCountry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 283</value>
+    <value>265, 257</value>
   </data>
   <data name="cbCountry.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 28</value>
@@ -495,13 +543,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;cbCountry.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="cbSize.ItemHeight" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="cbSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 283</value>
+    <value>14, 257</value>
   </data>
   <data name="cbSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 28</value>
@@ -519,13 +567,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;cbSize.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="cbColor.ItemHeight" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="cbColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 203</value>
+    <value>265, 184</value>
   </data>
   <data name="cbColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 28</value>
@@ -543,13 +591,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;cbColor.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbScreen.ItemHeight" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="cbScreen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 203</value>
+    <value>14, 184</value>
   </data>
   <data name="cbScreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 28</value>
@@ -567,13 +615,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;cbScreen.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="cbDesign.ItemHeight" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="cbDesign.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 127</value>
+    <value>265, 116</value>
   </data>
   <data name="cbDesign.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 28</value>
@@ -591,7 +639,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;cbDesign.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="txtImportedAmount.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -603,7 +651,7 @@
 </value>
   </data>
   <data name="txtImportedAmount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 364</value>
+    <value>11, 323</value>
   </data>
   <data name="txtImportedAmount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -630,7 +678,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txtImportedAmount.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="txtPrice.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -642,7 +690,7 @@
 </value>
   </data>
   <data name="txtPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 364</value>
+    <value>11, 403</value>
   </data>
   <data name="txtPrice.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -669,7 +717,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txtPrice.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -681,7 +729,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 251</value>
+    <value>261, 225</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 23</value>
@@ -702,13 +750,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="cbManu.ItemHeight" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="cbManu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 127</value>
+    <value>14, 116</value>
   </data>
   <data name="cbManu.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 28</value>
@@ -726,7 +774,40 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;cbManu.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 300</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 23</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Barcode</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -738,7 +819,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 171</value>
+    <value>261, 152</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 23</value>
@@ -759,7 +840,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -771,7 +852,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 251</value>
+    <value>10, 225</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -792,7 +873,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -804,7 +885,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 337</value>
+    <value>7, 296</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 23</value>
@@ -825,7 +906,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -837,7 +918,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 171</value>
+    <value>10, 152</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -858,7 +939,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>20</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -870,7 +951,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 337</value>
+    <value>10, 376</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 23</value>
@@ -891,7 +972,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>21</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -903,7 +984,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 95</value>
+    <value>261, 84</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 23</value>
@@ -924,7 +1005,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>22</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -936,7 +1017,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 95</value>
+    <value>10, 84</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 23</value>
@@ -957,13 +1038,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>23</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 263</value>
+    <value>6, 236</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 497</value>
+    <value>508, 529</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1078,10 +1159,10 @@
     <value>True</value>
   </data>
   <data name="fplImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 98</value>
+    <value>6, 89</value>
   </data>
   <data name="fplImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 154</value>
+    <value>508, 141</value>
   </data>
   <data name="fplImages.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1105,7 +1186,7 @@
     <value>415, 56</value>
   </data>
   <data name="btnUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 36</value>
+    <value>99, 27</value>
   </data>
   <data name="btnUpload.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1132,10 +1213,13 @@
     <value>83</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>526, 772</value>
+    <value>522, 773</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>

@@ -12,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
+using ZXing.Common;
 
 namespace project_ManaTV.Views.FuncFrm.ProductView
 {
@@ -113,10 +115,14 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             else if(mode == "update")
             {
                 btnAdd.Visible = false;
+                btnSaveBarCode.Visible = false;
+               
             }
             else if (mode == "add")
             {
                 btnUpdate.Visible = false;
+                btnSaveBarCode.Visible = false;
+
             }
             else
             {
@@ -161,7 +167,8 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             }
             if(lstPathImage.Count > 0) GenerateListImages(lstPathImage);
 
-
+            //Barcode
+            GenerateBarcode(_product);
 
         }
         private Product GetData()
@@ -377,5 +384,78 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
                 GenerateListImages(openFileDialog.FileNames.ToList());
             }
         }
+
+        private void btnSaveBarCode_Click(object sender, EventArgs e)
+        {
+            ExportBarcode(_product);
+        }
+
+        public void GenerateBarcode(ProductViewModel product)
+        {
+            // Tạo dữ liệu thông tin sản phẩm
+            string productData = $"PD{product.Id}";
+
+            // Cấu hình mã barcode
+            EncodingOptions options = new EncodingOptions
+            {
+                Width = picBarcode.Width - 10, // Chiều rộng của mã barcode
+                Height = picBarcode.Height - 10, // Chiều cao của mã barcode
+                Margin = 5 // Khoảng cách lề
+            };
+
+            BarcodeWriter writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128, // Loại mã barcode
+                Options = options
+            };
+
+            // Tạo mã barcode từ dữ liệu sản phẩm
+            Bitmap barcodeBitmap = writer.Write(productData);
+            picBarcode.Image = barcodeBitmap;
+            picBarcode.SizeMode = PictureBoxSizeMode.StretchImage;
+            // Lưu mã barcode vào file ảnh (tuỳ chọn)
+            //string barcodeImagePath = "barcode.png";
+            //barcodeBitmap.Save(barcodeImagePath);
+
+            //// Trả về đường dẫn file ảnh mã barcode
+            //return barcodeImagePath;
+        }
+
+        public void ExportBarcode(ProductViewModel product)
+        {
+            // Tạo dữ liệu thông tin sản phẩm
+            string productData = $"PD{product.Id}";
+
+            // Cấu hình mã barcode
+            EncodingOptions options = new EncodingOptions
+            {
+                Width = 300, // Chiều rộng của mã barcode
+                Height = 100, // Chiều cao của mã barcode
+                Margin = 10 // Khoảng cách lề
+            };
+
+            BarcodeWriter writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128, // Loại mã barcode
+                Options = options
+            };
+
+            // Tạo mã barcode từ dữ liệu sản phẩm
+            Bitmap barcodeBitmap = writer.Write(productData);
+            string barcodeName = $"PD{product.Id}.png";
+            try
+            {
+                HandleImage.UploadImage(barcodeBitmap, "\\Products\\Barcode", barcodeName);
+                ShowToast("Exported successfully!!!", BunifuSnackbar.MessageTypes.Success);
+            }
+            catch (Exception)
+            {
+                ShowToast("Exported failed!!!", BunifuSnackbar.MessageTypes.Error);
+                throw;
+            }
+            
+
+        }
+
     }
 }
