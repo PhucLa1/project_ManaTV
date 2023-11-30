@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListProducts));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -37,31 +40,22 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tvManagementDataSet1 = new project_ManaTV.TVManagementDataSet();
             this.snackBarTab = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.dpPageSize = new Bunifu.UI.WinForms.BunifuDropdown();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnNext = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnThirdPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnSecondPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnFirstPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnPrev = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAddNew = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flowFilter = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSearch = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.dpFilter = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             this.gridData = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +67,17 @@
             this.actionDetails = new System.Windows.Forms.DataGridViewImageColumn();
             this.actionUpdate = new System.Windows.Forms.DataGridViewImageColumn();
             this.actionDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.saveExcel = new System.Windows.Forms.SaveFileDialog();
+            this.btnNext = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnThirdPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnSecondPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnFirstPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnPrev = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnAddNew = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnExportExcel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnExportReport = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnSearch = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tvManagementDataSet1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -242,6 +247,232 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(257, 53);
             this.flowLayoutPanel3.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 29);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "List Products";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnAddNew);
+            this.flowLayoutPanel2.Controls.Add(this.btnExportExcel);
+            this.flowLayoutPanel2.Controls.Add(this.btnExportReport);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 42);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(481, 49);
+            this.flowLayoutPanel2.TabIndex = 17;
+            // 
+            // flowFilter
+            // 
+            this.flowFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowFilter.Controls.Add(this.btnSearch);
+            this.flowFilter.Controls.Add(this.dpFilter);
+            this.flowFilter.Controls.Add(this.txtSearch);
+            this.flowFilter.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowFilter.Location = new System.Drawing.Point(691, 42);
+            this.flowFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowFilter.Name = "flowFilter";
+            this.flowFilter.Size = new System.Drawing.Size(501, 49);
+            this.flowFilter.TabIndex = 16;
+            // 
+            // dpFilter
+            // 
+            this.dpFilter.BackColor = System.Drawing.Color.Transparent;
+            this.dpFilter.BackgroundColor = System.Drawing.Color.White;
+            this.dpFilter.BorderColor = System.Drawing.Color.Silver;
+            this.dpFilter.BorderRadius = 1;
+            this.dpFilter.Color = System.Drawing.Color.Silver;
+            this.dpFilter.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.dpFilter.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dpFilter.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.dpFilter.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dpFilter.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.dpFilter.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.dpFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.dpFilter.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.dpFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dpFilter.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.dpFilter.FillDropDown = true;
+            this.dpFilter.FillIndicator = false;
+            this.dpFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dpFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dpFilter.ForeColor = System.Drawing.Color.Black;
+            this.dpFilter.FormattingEnabled = true;
+            this.dpFilter.Icon = null;
+            this.dpFilter.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.dpFilter.IndicatorColor = System.Drawing.Color.Gray;
+            this.dpFilter.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.dpFilter.ItemBackColor = System.Drawing.Color.White;
+            this.dpFilter.ItemBorderColor = System.Drawing.Color.White;
+            this.dpFilter.ItemForeColor = System.Drawing.Color.Black;
+            this.dpFilter.ItemHeight = 25;
+            this.dpFilter.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.dpFilter.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.dpFilter.Items.AddRange(new object[] {
+            "Id",
+            "Name"});
+            this.dpFilter.ItemTopMargin = 3;
+            this.dpFilter.Location = new System.Drawing.Point(277, 4);
+            this.dpFilter.Margin = new System.Windows.Forms.Padding(4);
+            this.dpFilter.Name = "dpFilter";
+            this.dpFilter.Size = new System.Drawing.Size(124, 31);
+            this.dpFilter.TabIndex = 8;
+            this.dpFilter.Text = null;
+            this.dpFilter.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.dpFilter.TextLeftMargin = 5;
+            // 
+            // gridData
+            // 
+            this.gridData.AllowUserToAddRows = false;
+            this.gridData.AllowUserToDeleteRows = false;
+            this.gridData.AllowUserToOrderColumns = true;
+            this.gridData.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridData.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridData.ColumnHeadersHeight = 30;
+            this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.colName,
+            this.conCorlor,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.actionDetails,
+            this.actionUpdate,
+            this.actionDelete});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridData.EnableHeadersVisualStyles = false;
+            this.gridData.Location = new System.Drawing.Point(9, 95);
+            this.gridData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridData.Name = "gridData";
+            this.gridData.ReadOnly = true;
+            this.gridData.RowHeadersVisible = false;
+            this.gridData.RowHeadersWidth = 51;
+            this.gridData.RowTemplate.Height = 40;
+            this.gridData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridData.Size = new System.Drawing.Size(1183, 438);
+            this.gridData.TabIndex = 15;
+            this.gridData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID.FillWeight = 244.6809F;
+            this.ID.Frozen = true;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ID.Width = 50;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colName.FillWeight = 63.82978F;
+            this.colName.HeaderText = "Product Name (M + D + S)";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 250;
+            // 
+            // conCorlor
+            // 
+            this.conCorlor.HeaderText = "Color";
+            this.conCorlor.MinimumWidth = 6;
+            this.conCorlor.Name = "conCorlor";
+            this.conCorlor.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Size";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Origin";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Price";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Import Amount";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // actionDetails
+            // 
+            this.actionDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.actionDetails.HeaderText = "";
+            this.actionDetails.MinimumWidth = 6;
+            this.actionDetails.Name = "actionDetails";
+            this.actionDetails.ReadOnly = true;
+            this.actionDetails.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.actionDetails.Width = 50;
+            // 
+            // actionUpdate
+            // 
+            this.actionUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.actionUpdate.HeaderText = "Action";
+            this.actionUpdate.MinimumWidth = 6;
+            this.actionUpdate.Name = "actionUpdate";
+            this.actionUpdate.ReadOnly = true;
+            this.actionUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.actionUpdate.Width = 50;
+            // 
+            // actionDelete
+            // 
+            this.actionDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.actionDelete.HeaderText = "";
+            this.actionDelete.MinimumWidth = 6;
+            this.actionDelete.Name = "actionDelete";
+            this.actionDelete.ReadOnly = true;
+            this.actionDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.actionDelete.Width = 50;
             // 
             // btnNext
             // 
@@ -701,25 +932,6 @@
             this.btnPrev.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnPrev.UseDefaultRadiusAndThickness = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 29);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "List Products";
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.btnAddNew);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 42);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(317, 49);
-            this.flowLayoutPanel2.TabIndex = 17;
-            // 
             // btnAddNew
             // 
             this.btnAddNew.AllowAnimations = true;
@@ -812,18 +1024,189 @@
             this.btnAddNew.UseDefaultRadiusAndThickness = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
-            // flowFilter
+            // btnExportExcel
             // 
-            this.flowFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowFilter.Controls.Add(this.btnSearch);
-            this.flowFilter.Controls.Add(this.dpFilter);
-            this.flowFilter.Controls.Add(this.txtSearch);
-            this.flowFilter.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowFilter.Location = new System.Drawing.Point(691, 42);
-            this.flowFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowFilter.Name = "flowFilter";
-            this.flowFilter.Size = new System.Drawing.Size(501, 49);
-            this.flowFilter.TabIndex = 16;
+            this.btnExportExcel.AllowAnimations = true;
+            this.btnExportExcel.AllowMouseEffects = true;
+            this.btnExportExcel.AllowToggling = false;
+            this.btnExportExcel.AnimationSpeed = 200;
+            this.btnExportExcel.AutoGenerateColors = false;
+            this.btnExportExcel.AutoRoundBorders = false;
+            this.btnExportExcel.AutoSizeLeftIcon = false;
+            this.btnExportExcel.AutoSizeRightIcon = true;
+            this.btnExportExcel.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.btnExportExcel.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportExcel.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnExportExcel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExportExcel.BackgroundImage")));
+            this.btnExportExcel.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportExcel.ButtonText = "Export to excel";
+            this.btnExportExcel.ButtonTextMarginLeft = 0;
+            this.btnExportExcel.ColorContrastOnClick = 45;
+            this.btnExportExcel.ColorContrastOnHover = 45;
+            this.btnExportExcel.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnExportExcel.CustomizableEdges = borderEdges7;
+            this.btnExportExcel.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExportExcel.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnExportExcel.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnExportExcel.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnExportExcel.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExportExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportExcel.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnExportExcel.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnExportExcel.IconMarginLeft = 11;
+            this.btnExportExcel.IconPadding = 10;
+            this.btnExportExcel.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportExcel.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnExportExcel.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnExportExcel.IconSize = 15;
+            this.btnExportExcel.IdleBorderColor = System.Drawing.Color.Transparent;
+            this.btnExportExcel.IdleBorderRadius = 1;
+            this.btnExportExcel.IdleBorderThickness = 1;
+            this.btnExportExcel.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnExportExcel.IdleIconLeftImage = global::project_ManaTV.Properties.Resources.file_arrow_down_solid1;
+            this.btnExportExcel.IdleIconRightImage = null;
+            this.btnExportExcel.IndicateFocus = false;
+            this.btnExportExcel.Location = new System.Drawing.Point(124, 2);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnExportExcel.OnDisabledState.BorderRadius = 1;
+            this.btnExportExcel.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportExcel.OnDisabledState.BorderThickness = 1;
+            this.btnExportExcel.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnExportExcel.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnExportExcel.OnDisabledState.IconLeftImage = null;
+            this.btnExportExcel.OnDisabledState.IconRightImage = null;
+            this.btnExportExcel.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnExportExcel.onHoverState.BorderRadius = 1;
+            this.btnExportExcel.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportExcel.onHoverState.BorderThickness = 1;
+            this.btnExportExcel.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnExportExcel.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.onHoverState.IconLeftImage = null;
+            this.btnExportExcel.onHoverState.IconRightImage = null;
+            this.btnExportExcel.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExportExcel.OnIdleState.BorderRadius = 1;
+            this.btnExportExcel.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportExcel.OnIdleState.BorderThickness = 1;
+            this.btnExportExcel.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnExportExcel.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.OnIdleState.IconLeftImage = global::project_ManaTV.Properties.Resources.file_arrow_down_solid1;
+            this.btnExportExcel.OnIdleState.IconRightImage = null;
+            this.btnExportExcel.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnExportExcel.OnPressedState.BorderRadius = 1;
+            this.btnExportExcel.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportExcel.OnPressedState.BorderThickness = 1;
+            this.btnExportExcel.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnExportExcel.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.OnPressedState.IconLeftImage = null;
+            this.btnExportExcel.OnPressedState.IconRightImage = null;
+            this.btnExportExcel.Size = new System.Drawing.Size(151, 39);
+            this.btnExportExcel.TabIndex = 0;
+            this.btnExportExcel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnExportExcel.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExportExcel.TextMarginLeft = 0;
+            this.btnExportExcel.TextPadding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnExportExcel.UseDefaultRadiusAndThickness = true;
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
+            // 
+            // btnExportReport
+            // 
+            this.btnExportReport.AllowAnimations = true;
+            this.btnExportReport.AllowMouseEffects = true;
+            this.btnExportReport.AllowToggling = false;
+            this.btnExportReport.AnimationSpeed = 200;
+            this.btnExportReport.AutoGenerateColors = false;
+            this.btnExportReport.AutoRoundBorders = false;
+            this.btnExportReport.AutoSizeLeftIcon = false;
+            this.btnExportReport.AutoSizeRightIcon = true;
+            this.btnExportReport.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.btnExportReport.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportReport.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnExportReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExportReport.BackgroundImage")));
+            this.btnExportReport.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportReport.ButtonText = "Export report";
+            this.btnExportReport.ButtonTextMarginLeft = 0;
+            this.btnExportReport.ColorContrastOnClick = 45;
+            this.btnExportReport.ColorContrastOnHover = 45;
+            this.btnExportReport.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.btnExportReport.CustomizableEdges = borderEdges8;
+            this.btnExportReport.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExportReport.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnExportReport.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnExportReport.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnExportReport.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnExportReport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExportReport.ForeColor = System.Drawing.Color.White;
+            this.btnExportReport.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportReport.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnExportReport.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnExportReport.IconMarginLeft = 11;
+            this.btnExportReport.IconPadding = 10;
+            this.btnExportReport.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportReport.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnExportReport.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnExportReport.IconSize = 15;
+            this.btnExportReport.IdleBorderColor = System.Drawing.Color.Transparent;
+            this.btnExportReport.IdleBorderRadius = 1;
+            this.btnExportReport.IdleBorderThickness = 1;
+            this.btnExportReport.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnExportReport.IdleIconLeftImage = global::project_ManaTV.Properties.Resources.file_invoice_dollar_solid;
+            this.btnExportReport.IdleIconRightImage = null;
+            this.btnExportReport.IndicateFocus = false;
+            this.btnExportReport.Location = new System.Drawing.Point(281, 2);
+            this.btnExportReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExportReport.Name = "btnExportReport";
+            this.btnExportReport.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnExportReport.OnDisabledState.BorderRadius = 1;
+            this.btnExportReport.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportReport.OnDisabledState.BorderThickness = 1;
+            this.btnExportReport.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnExportReport.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnExportReport.OnDisabledState.IconLeftImage = null;
+            this.btnExportReport.OnDisabledState.IconRightImage = null;
+            this.btnExportReport.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnExportReport.onHoverState.BorderRadius = 1;
+            this.btnExportReport.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportReport.onHoverState.BorderThickness = 1;
+            this.btnExportReport.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnExportReport.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnExportReport.onHoverState.IconLeftImage = null;
+            this.btnExportReport.onHoverState.IconRightImage = null;
+            this.btnExportReport.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExportReport.OnIdleState.BorderRadius = 1;
+            this.btnExportReport.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportReport.OnIdleState.BorderThickness = 1;
+            this.btnExportReport.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnExportReport.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnExportReport.OnIdleState.IconLeftImage = global::project_ManaTV.Properties.Resources.file_invoice_dollar_solid;
+            this.btnExportReport.OnIdleState.IconRightImage = null;
+            this.btnExportReport.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnExportReport.OnPressedState.BorderRadius = 1;
+            this.btnExportReport.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnExportReport.OnPressedState.BorderThickness = 1;
+            this.btnExportReport.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnExportReport.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnExportReport.OnPressedState.IconLeftImage = null;
+            this.btnExportReport.OnPressedState.IconRightImage = null;
+            this.btnExportReport.Size = new System.Drawing.Size(151, 39);
+            this.btnExportReport.TabIndex = 0;
+            this.btnExportReport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnExportReport.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExportReport.TextMarginLeft = 0;
+            this.btnExportReport.TextPadding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnExportReport.UseDefaultRadiusAndThickness = true;
+            this.btnExportReport.Click += new System.EventHandler(this.btnExportReport_Click);
             // 
             // btnSearch
             // 
@@ -844,11 +1227,11 @@
             this.btnSearch.ColorContrastOnClick = 45;
             this.btnSearch.ColorContrastOnHover = 45;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.btnSearch.CustomizableEdges = borderEdges7;
+            borderEdges9.BottomLeft = true;
+            borderEdges9.BottomRight = true;
+            borderEdges9.TopLeft = true;
+            borderEdges9.TopRight = true;
+            this.btnSearch.CustomizableEdges = borderEdges9;
             this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSearch.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSearch.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -915,52 +1298,6 @@
             this.btnSearch.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSearch.UseDefaultRadiusAndThickness = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // dpFilter
-            // 
-            this.dpFilter.BackColor = System.Drawing.Color.Transparent;
-            this.dpFilter.BackgroundColor = System.Drawing.Color.White;
-            this.dpFilter.BorderColor = System.Drawing.Color.Silver;
-            this.dpFilter.BorderRadius = 1;
-            this.dpFilter.Color = System.Drawing.Color.Silver;
-            this.dpFilter.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.dpFilter.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dpFilter.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dpFilter.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dpFilter.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.dpFilter.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.dpFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.dpFilter.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.dpFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dpFilter.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.dpFilter.FillDropDown = true;
-            this.dpFilter.FillIndicator = false;
-            this.dpFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dpFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dpFilter.ForeColor = System.Drawing.Color.Black;
-            this.dpFilter.FormattingEnabled = true;
-            this.dpFilter.Icon = null;
-            this.dpFilter.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.dpFilter.IndicatorColor = System.Drawing.Color.Gray;
-            this.dpFilter.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.dpFilter.ItemBackColor = System.Drawing.Color.White;
-            this.dpFilter.ItemBorderColor = System.Drawing.Color.White;
-            this.dpFilter.ItemForeColor = System.Drawing.Color.Black;
-            this.dpFilter.ItemHeight = 25;
-            this.dpFilter.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.dpFilter.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.dpFilter.Items.AddRange(new object[] {
-            "Id",
-            "Name"});
-            this.dpFilter.ItemTopMargin = 3;
-            this.dpFilter.Location = new System.Drawing.Point(277, 4);
-            this.dpFilter.Margin = new System.Windows.Forms.Padding(4);
-            this.dpFilter.Name = "dpFilter";
-            this.dpFilter.Size = new System.Drawing.Size(124, 31);
-            this.dpFilter.TabIndex = 8;
-            this.dpFilter.Text = null;
-            this.dpFilter.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.dpFilter.TextLeftMargin = 5;
             // 
             // txtSearch
             // 
@@ -1037,152 +1374,6 @@
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.WordWrap = true;
             // 
-            // gridData
-            // 
-            this.gridData.AllowUserToAddRows = false;
-            this.gridData.AllowUserToDeleteRows = false;
-            this.gridData.AllowUserToOrderColumns = true;
-            this.gridData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridData.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridData.ColumnHeadersHeight = 30;
-            this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.colName,
-            this.conCorlor,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.actionDetails,
-            this.actionUpdate,
-            this.actionDelete});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gridData.EnableHeadersVisualStyles = false;
-            this.gridData.Location = new System.Drawing.Point(9, 95);
-            this.gridData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridData.Name = "gridData";
-            this.gridData.ReadOnly = true;
-            this.gridData.RowHeadersVisible = false;
-            this.gridData.RowHeadersWidth = 51;
-            this.gridData.RowTemplate.Height = 40;
-            this.gridData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridData.Size = new System.Drawing.Size(1183, 438);
-            this.gridData.TabIndex = 15;
-            this.gridData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID.FillWeight = 244.6809F;
-            this.ID.Frozen = true;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ID.Width = 50;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colName.FillWeight = 63.82978F;
-            this.colName.HeaderText = "Product Name (M + D + S)";
-            this.colName.MinimumWidth = 6;
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Width = 250;
-            // 
-            // conCorlor
-            // 
-            this.conCorlor.HeaderText = "Color";
-            this.conCorlor.MinimumWidth = 6;
-            this.conCorlor.Name = "conCorlor";
-            this.conCorlor.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Size";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Origin";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Price";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Import Amount";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // actionDetails
-            // 
-            this.actionDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.actionDetails.HeaderText = "";
-            this.actionDetails.MinimumWidth = 6;
-            this.actionDetails.Name = "actionDetails";
-            this.actionDetails.ReadOnly = true;
-            this.actionDetails.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.actionDetails.Width = 50;
-            // 
-            // actionUpdate
-            // 
-            this.actionUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.actionUpdate.HeaderText = "Action";
-            this.actionUpdate.MinimumWidth = 6;
-            this.actionUpdate.Name = "actionUpdate";
-            this.actionUpdate.ReadOnly = true;
-            this.actionUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.actionUpdate.Width = 50;
-            // 
-            // actionDelete
-            // 
-            this.actionDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.actionDelete.HeaderText = "";
-            this.actionDelete.MinimumWidth = 6;
-            this.actionDelete.Name = "actionDelete";
-            this.actionDelete.ReadOnly = true;
-            this.actionDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.actionDelete.Width = 50;
-            // 
             // FrmListProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -1241,5 +1432,8 @@
         private System.Windows.Forms.DataGridViewImageColumn actionDetails;
         private System.Windows.Forms.DataGridViewImageColumn actionUpdate;
         private System.Windows.Forms.DataGridViewImageColumn actionDelete;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnExportExcel;
+        private System.Windows.Forms.SaveFileDialog saveExcel;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnExportReport;
     }
 }

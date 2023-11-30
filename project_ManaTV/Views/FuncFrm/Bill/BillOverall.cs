@@ -332,6 +332,13 @@ namespace project_ManaTV.Views.FuncFrm.Bill
         private void Form_BarcodeScanned(object sender, string barcodeText)
         {
             int x = int.Parse(barcodeText.Substring(2));
+            var all = bR.GetFilterProduct("", 0, "", "");
+            bool isExist = all.Any(y => int.Parse(y["id"].ToString()) == x);
+            if (!isExist)
+            {
+                ShowMessage("Product is not exist", BunifuSnackbar.MessageTypes.Error);
+                return;
+            }
             Product productControl = new Product(x);
             //Thêm vào trong danh sách
             if (products.ContainsKey(x))

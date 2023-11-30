@@ -70,6 +70,10 @@ namespace project_ManaTV.Presenters
             return pgController.GetListByPagination();
         }
 
+        public List<Dictionary<string, object>> GetAllProduct()
+        {
+            return _productRepository.GetAllProduct();
+        }
         public List<ProductViewModel> GetAll(bool isDeleted= false)
         {
             return _productRepository.GetAll().Where(x=>x.IsDeleted == isDeleted).ToList();

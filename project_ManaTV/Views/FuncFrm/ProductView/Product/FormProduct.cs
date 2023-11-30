@@ -222,21 +222,56 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
 
         private bool IsValid(project_ManaTV.Models.Product data)
         {
-            string message = "";
-            if (data.ProductAmount < 0)
+            if (data.ManufacturerId <= 0)
             {
-                message = " Price is not valid!";
-            }
-            else if (data.ProductImportMoney < 0)
-            {
-                message = "Import Money is not valid!";
-            }
-            if (message != "")
-            {
-                ShowToast(message, BunifuSnackbar.MessageTypes.Error);
+                ShowToast("Manufacturer is required!", BunifuSnackbar.MessageTypes.Error);
                 return false;
             }
-            //ShowToast("Validated successfully", BunifuSnackbar.MessageTypes.Success);
+
+            if (data.DesignId <= 0)
+            {
+                ShowToast("Design is required!", BunifuSnackbar.MessageTypes.Error);
+                return false;
+            }
+
+            if (data.ScreenId <= 0)
+            {
+                ShowToast("Screen is required!", BunifuSnackbar.MessageTypes.Error);
+                return false;
+            }
+
+            if (data.ColorId <= 0)
+            {
+                ShowToast("Color is required!", BunifuSnackbar.MessageTypes.Error);
+                return false;
+            }
+
+            if (data.SizeId <= 0)
+            {
+                ShowToast("Size is required!", BunifuSnackbar.MessageTypes.Error);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(data.Name))
+            {
+                ShowToast("Name is required!", BunifuSnackbar.MessageTypes.Error);
+                return false;
+            }
+
+            if (data.ProductAmount <= 0)
+            {
+                ShowToast("Price should be greater than 0!", BunifuSnackbar.MessageTypes.Error);
+                return false;
+            }
+
+            if (data.ProductImportMoney <= 0)
+            {
+                ShowToast("Import Money should be greater than 0!", BunifuSnackbar.MessageTypes.Error);
+                return false;
+            }
+
+            // If all conditions pass, show success message (optional)
+            ShowToast("Validation successful", BunifuSnackbar.MessageTypes.Success);
             return true;
         }
         private void ResetForm()

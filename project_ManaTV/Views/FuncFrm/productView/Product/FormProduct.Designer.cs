@@ -650,30 +650,35 @@
             // 
             // cbCountry
             // 
+            this.cbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCountry.FormattingEnabled = true;
             resources.ApplyResources(this.cbCountry, "cbCountry");
             this.cbCountry.Name = "cbCountry";
             // 
             // cbSize
             // 
+            this.cbSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSize.FormattingEnabled = true;
             resources.ApplyResources(this.cbSize, "cbSize");
             this.cbSize.Name = "cbSize";
             // 
             // cbColor
             // 
+            this.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbColor.FormattingEnabled = true;
             resources.ApplyResources(this.cbColor, "cbColor");
             this.cbColor.Name = "cbColor";
             // 
             // cbScreen
             // 
+            this.cbScreen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbScreen.FormattingEnabled = true;
             resources.ApplyResources(this.cbScreen, "cbScreen");
             this.cbScreen.Name = "cbScreen";
             // 
             // cbDesign
             // 
+            this.cbDesign.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDesign.FormattingEnabled = true;
             resources.ApplyResources(this.cbDesign, "cbDesign");
             this.cbDesign.Name = "cbDesign";
@@ -823,6 +828,7 @@
             // 
             // cbManu
             // 
+            this.cbManu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbManu.FormattingEnabled = true;
             resources.ApplyResources(this.cbManu, "cbManu");
             this.cbManu.Name = "cbManu";

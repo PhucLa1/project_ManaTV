@@ -54,6 +54,15 @@ namespace project_ManaTV.Repository
             return lstProduct;
         }
 
+        public List<Dictionary<string, object>> GetAllProduct()
+        {
+            string query = $"SELECT id AS 'ID', product_name AS 'Product name', manufacturer_name AS 'Manufacturer', " +
+                $"design_name AS 'Design', color_name AS 'Color', screen_name AS 'Screen', screen_size AS 'Size', " +
+                $"country_name AS 'Country', product_amount AS 'Amount' FROM vwProduct";
+            db.SetQuery(query);
+            return db.LoadAllRows();
+        }
+
         public ProductViewModel GetById(int id)
         {
             var product = new ProductViewModel();

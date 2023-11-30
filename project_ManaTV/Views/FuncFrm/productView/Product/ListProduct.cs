@@ -40,10 +40,14 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             txtSearch.Height = dpFilter.Height;
             btnSearch.Height = dpFilter.Height;
             btnAddNew.Height = dpFilter.Height;
+            btnExportExcel.Height = dpFilter.Height;
+            btnExportReport.Height = dpFilter.Height;
 
             txtSearch.Location = new Point(txtSearch.Location.X, dpFilter.Location.Y);
             btnSearch.Location = new Point(btnSearch.Location.X, dpFilter.Location.Y);
             btnAddNew.Location = new Point(btnAddNew.Location.X, dpFilter.Location.Y);
+            btnExportExcel.Location = new Point(btnAddNew.Location.X, dpFilter.Location.Y);
+            btnExportReport.Location = new Point(btnAddNew.Location.X, dpFilter.Location.Y);
         }
 
         private void ListProducts_Load(object sender, EventArgs e)
@@ -177,6 +181,21 @@ namespace project_ManaTV.Views.FuncFrm.ProductView
             ShowToast(message, BunifuSnackbar.MessageTypes.Success);
         }
 
-        
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            if (saveExcel.ShowDialog() == DialogResult.OK)
+            {
+                FileHandler.ExportToExcel(gridData, saveExcel.FileName, "Product List");
+            }
+        }
+
+        private void btnExportReport_Click(object sender, EventArgs e)
+        {
+            if (saveExcel.ShowDialog() == DialogResult.OK)
+            {
+
+                FileHandler.ExportReport(saveExcel.FileName, _objPresenter.GetAllProduct(), "Product Report");
+            }
+        }
     }
 }

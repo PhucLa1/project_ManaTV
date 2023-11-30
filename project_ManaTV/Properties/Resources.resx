@@ -118,43 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tv-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\tv-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lexend_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\fonts\Lexend-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="chart-pie-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\wwwroot\assets\icons\chart-pie-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="angle-right-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\angle-right-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\wwwroot\assets\icons\plus-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rotate-right-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\rotate-right-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trash-can-regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\trash-can-regular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user-tie-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\user-tie-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logoGroup4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\wwwroot\assets\images\logoGroup4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="angle-left-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\wwwroot\assets\icons\angle-left-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="file-arrow-down-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\wwwroot\assets\icons\file-arrow-down-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="angle-right-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\wwwroot\assets\icons\angle-right-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="list-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\wwwroot\assets\icons\list-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="user-tie-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\wwwroot\assets\icons\user-tie-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rotate-right-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\wwwroot\assets\icons\rotate-right-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="arrow-right-from-bracket-solid (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\wwwroot\assets\icons\arrow-right-from-bracket-solid (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file-arrow-down-solid1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\wwwroot\assets\icons\file-arrow-down-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trash-can-regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\wwwroot\assets\icons\trash-can-regular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tv-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\wwwroot\assets\icons\tv-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="angle-left-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\wwwroot\assets\icons\angle-left-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lexend_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\wwwroot\fonts\Lexend-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="file-invoice-dollar-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\wwwroot\assets\icons\file-invoice-dollar-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
